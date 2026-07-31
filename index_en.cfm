@@ -1050,19 +1050,7 @@
         color: #ffffff !important;
       }
       .pricing-item-pro:before {
-        display: block !important;
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        background-image: url(assets/images/pro-table-top.png) !important;
-        background-repeat: no-repeat !important;
-        background-size: contain !important;
-        width: 250px !important;
-        height: 170px !important;
-        z-index: 1 !important;
-        content: '' !important;
-        opacity: 0.92 !important;
-        pointer-events: none !important;
+        display: none !important;
       }
       .pricing-item-pro:after {
         display: none !important;
@@ -1070,11 +1058,15 @@
       .pricing-item-pro h4 {
         position: relative !important;
         z-index: 5 !important;
-        margin-top: 10px !important;
+        margin-top: 15px !important;
         margin-bottom: 15px !important;
-        color: #ffffff !important;
-        text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.4) !important;
+        color: #13aff0 !important;
+        text-shadow: none !important;
         font-weight: 700 !important;
+        font-size: 22px !important;
+      }
+      .pricing-item-pro:hover h4 {
+        color: #ffffff !important;
       }
       .pricing-item-pro p, .pricing-item-pro ul, .pricing-item-pro span {
         position: relative !important;
