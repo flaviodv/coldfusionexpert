@@ -1073,6 +1073,7 @@
         margin-top: 10px !important;
         margin-bottom: 15px !important;
         color: #13aff0 !important;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25) !important;
         font-weight: 700 !important;
       }
       .pricing-item-pro:hover h4 {
