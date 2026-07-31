@@ -1,0 +1,306 @@
+/* ===== Herramientas / Tools section ===== */
+
+.tools-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  width: 100%;
+  padding: 130px 40px 80px 40px;
+  box-sizing: border-box;
+}
+
+/* --- Left sidebar (always present) --- */
+.tools-sidebar {
+  flex: 0 0 260px;
+  width: 260px;
+  position: sticky;
+  top: 110px;
+  max-height: calc(100vh - 130px);
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.06);
+  padding: 20px;
+}
+
+.tools-sidebar-home {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #2a2a2a;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+}
+
+.tools-sidebar-home:hover,
+.tools-sidebar-home.active {
+  color: #13aff0;
+}
+
+.tools-sidebar-category {
+  margin-bottom: 18px;
+}
+
+.tools-sidebar-category:last-child {
+  margin-bottom: 0;
+}
+
+.tools-sidebar-category h6 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8a8a8a;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.tools-sidebar-category ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tools-sidebar-category li a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  color: #2a2a2a;
+  padding: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.tools-sidebar-category li a i {
+  width: 16px;
+  text-align: center;
+  color: #13aff0;
+  font-size: 0.8rem;
+}
+
+.tools-sidebar-category li a:hover,
+.tools-sidebar-category li a.active {
+  color: #13aff0;
+  font-weight: 600;
+}
+
+/* --- Main content --- */
+.tools-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.tools-hero {
+  margin-bottom: 40px;
+}
+
+.tools-hero h1 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin-bottom: 12px;
+}
+
+.tools-hero p {
+  color: #5a5a5a;
+  max-width: 700px;
+}
+
+.tools-category-section {
+  margin-bottom: 50px;
+  scroll-margin-top: 120px;
+}
+
+.tools-category-section h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tools-category-section h2 i {
+  color: #13aff0;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.tool-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.06);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 10px 25px rgba(19, 175, 240, 0.15);
+}
+
+.tool-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(19, 175, 240, 0.1);
+  color: #13aff0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.tool-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin-bottom: 8px;
+}
+
+.tool-card p {
+  font-size: 0.9rem;
+  color: #5a5a5a;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.tool-card .btn-social {
+  align-self: flex-start;
+  font-size: 0.8rem;
+  padding: 6px 16px;
+}
+
+/* --- Individual tool page --- */
+.tools-breadcrumb {
+  font-size: 0.85rem;
+  color: #8a8a8a;
+  margin-bottom: 20px;
+}
+
+.tools-breadcrumb a {
+  color: #13aff0;
+}
+
+.tools-breadcrumb i {
+  font-size: 0.7rem;
+  margin: 0 6px;
+}
+
+.tool-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.tool-header-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(19, 175, 240, 0.1);
+  color: #13aff0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.tool-header h1 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin: 0;
+}
+
+.tool-placeholder {
+  border: 2px dashed rgba(19, 175, 240, 0.35);
+  border-radius: 15px;
+  padding: 50px 25px;
+  text-align: center;
+  color: #8a8a8a;
+  margin-bottom: 25px;
+}
+
+.tool-placeholder i {
+  font-size: 2rem;
+  color: #13aff0;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.tool-description {
+  color: #5a5a5a;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.tool-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .tools-layout {
+    flex-direction: column;
+    padding: 130px 20px 60px 20px;
+  }
+
+  .tools-sidebar {
+    position: static;
+    width: 100%;
+    max-height: none;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  /* Below this width the mobile burger menu (Back to Home + tools nav)
+     replaces the persistent sidebar - see header_en.cfm / header_es.cfm */
+  .tools-layout {
+    padding-top: 110px;
+  }
+
+  .tools-sidebar {
+    display: none;
+  }
+
+  .tools-hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .tool-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tool-actions .btn-social {
+    text-align: center;
+    justify-content: center;
+  }
+}

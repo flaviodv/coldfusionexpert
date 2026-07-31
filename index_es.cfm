@@ -100,7 +100,7 @@
         </div>
       </div>
       <div class="row" style="margin-top: 30px;">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
           <div class="service-item fourth-service">
             <div >
               <picture>
@@ -118,7 +118,7 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
           <div class="service-item first-service">
             <div >
               <picture>
@@ -130,6 +130,22 @@
                Soporte proactivo, parches de seguridad, copias de seguridad y monitoreo continuo. <br>
               <span class="highligth">¿Sus aplicaciones?</span> Estables, protegidas y a la vanguardia tecnológica.
             </p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="service-item second-service">
+            <div style="text-align:left!important">
+              <i class="fas fa-bullhorn" style="font-size: 40px; color: #13aff0;"></i>
+            </div>
+            <h4>Marketing Digital</h4>
+            <p>Estrategias de marketing digital, gestión de redes sociales, campañas publicitarias y crecimiento de marca online.
+              Somos <strong>Partners oficiales de <a href="https://viralify.digital" target="_blank" style="color:#0077b5; font-weight:600;">viralify.digital</a></strong> para potenciar la presencia digital de tu negocio.
+            </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Marketing%20Digital" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -520,6 +536,45 @@
               <i class="fa fa-envelope"></i> Consultar por Email
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="tools" class="services section" style="padding-top: 80px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Nuestras <em>Herramientas Gratuitas</em></h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Creadas por nosotros: una colección creciente de herramientas gratuitas para desarrolladores, marketing y productividad diaria - una destacada por categoría.</p>
+          </div>
+        </div>
+      </div>
+      <cfoutput>
+      <div class="tools-grid" style="margin-bottom: 40px;">
+        <cfloop array="#request.toolCategories#" index="local.ftCat">
+          <cfloop array="#request.toolOrder#" index="local.ftSlug">
+            <cfset local.ftTool = request.toolsRegistry[local.ftSlug]>
+            <cfif local.ftTool.category eq local.ftCat.slug and structKeyExists(local.ftTool, "featured") and local.ftTool.featured>
+              <div class="tool-card">
+                <div class="tool-card-icon"><i class="#local.ftTool.iconPrefix# #local.ftTool.icon#"></i></div>
+                <h4>#local.ftTool.titleEs#</h4>
+                <p>#local.ftTool.descEs#</p>
+                <a href="/tools/#local.ftSlug#.cfm" class="btn-social btn-linkedin">
+                  <i class="fas fa-arrow-right"></i> Ver Herramienta
+                </a>
+              </div>
+            </cfif>
+          </cfloop>
+        </cfloop>
+      </div>
+      </cfoutput>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <a href="/tools.cfm" class="btn-social btn-upwork">
+            <i class="fas fa-th-large"></i> Ver Todas las Herramientas
+          </a>
         </div>
       </div>
     </div>

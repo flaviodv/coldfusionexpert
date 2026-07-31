@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" type="image/png" href="assets/images/image-removebg-preview (2).png">
-    <link rel="shortcut icon" href="assets/images/image-removebg-preview (2).png">
+    <link rel="icon" type="image/png" href="/assets/images/image-removebg-preview (2).png">
+    <link rel="shortcut icon" href="/assets/images/image-removebg-preview (2).png">
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>ColdFusion Expert | Flavio Di Virgilio - Senior ColdFusion Developer, AWS &amp; AI Automation</title>
+        <cfoutput><title><cfif isDefined("request.pageTitle")>#request.pageTitle#<cfelse>ColdFusion Expert | Flavio Di Virgilio - Senior ColdFusion Developer, AWS &amp; AI Automation</cfif></title></cfoutput>
     <meta name="description" content="Flavio Di Virgilio - Senior Full-Stack Specialist in Adobe ColdFusion, Lucee Server, SQL Server, AWS Cloud, AI Automation (LLMs, RAG, OpenAI, Claude), and SEO/GEO. +15 years of experience. Live Zoom training courses and global consulting. Top Rated Plus on Upwork (100% Job Success).">
     <meta name="keywords" content="ColdFusion expert, ColdFusion developer, Lucee server, AI automation, OpenAI Claude Gemini APIs, RAG vectors, ColdFusion consulting, SEO GEO AI, ColdFusion Zoom courses, AWS EC2 RDS, Quebec Attractions, CompraInversa, Firebrand Creative, Upwork Top Rated">
     <meta name="author" content="Flavio Di Virgilio">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://coldfusionexpert.ar/?lan=en">
+    <cfoutput><meta name="robots" content="<cfif isDefined('request.pageNoindex') and request.pageNoindex>noindex, follow<cfelse>index, follow</cfif>"></cfoutput>
+    <cfoutput><link rel="canonical" href="<cfif isDefined('request.pageCanonical')>#request.pageCanonical#<cfelse>https://coldfusionexpert.ar/?lan=en</cfif>"></cfoutput>
     <link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/?lan=es">
     <link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/?lan=en">
     <link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/?lan=en">
@@ -134,12 +134,13 @@
     }
     </script>
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/templatemo-chain-app-dev.css">
-    <link rel="stylesheet" href="assets/css/animated.css">
-    <link rel="stylesheet" href="assets/css/owl.css">
+    <link rel="stylesheet" href="/assets/css/templatemo-chain-app-dev.css">
+    <link rel="stylesheet" href="/assets/css/animated.css">
+    <link rel="stylesheet" href="/assets/css/owl.css">
+    <link rel="stylesheet" href="/assets/css/tools.css">
     <style>
       p { color: #2a2a2a; }
       .our_services .wrppr .servce_img, img.servce_img {
@@ -434,6 +435,52 @@
       .header-area.header-sticky .nav li a {
         color: #2a2a2a !important;
       }
+      /* Logo: the desktop-only sizing above (min-width:992px) left the logo
+         unconstrained below that, rendering at native image size on mobile/tablet. */
+      .header-area .main-nav .logo img.logo-icon-img,
+      .header-area .main-nav .logo img.logo-text-img {
+        max-width: 100%;
+        height: auto;
+      }
+      @media (max-width: 991px) {
+        .header-area .main-nav .logo img.logo-icon-img {
+          height: 40px;
+          width: auto;
+        }
+        .header-area .main-nav .logo img.logo-text-img {
+          height: 24px;
+          width: auto;
+          margin-left: -4px;
+        }
+      }
+      /* Tools section: the mobile burger shows ONLY "back to home" + the tools
+         nav (not the full site menu). Desktop keeps the normal site nav always,
+         even on tools pages - the persistent left sidebar covers tools nav there. */
+      .nav-tools-mobile {
+        display: none;
+      }
+      .nav-category-label {
+        display: none;
+        padding: 10px 20px !important;
+        font-size: 0.75rem !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #8a8a8a !important;
+        font-weight: 700 !important;
+        background: #f7f9fc !important;
+        cursor: default;
+      }
+      @media (max-width: 767px) {
+        header.in-tools-section .nav-standard {
+          display: none !important;
+        }
+        header.in-tools-section .nav-tools-mobile {
+          display: block !important;
+        }
+        header.in-tools-section .nav-tools-mobile a {
+          padding-left: 20px !important;
+        }
+      }
     </style>
   </head>
 <body>
@@ -450,29 +497,46 @@
   </div>
   <!-- ***** Preloader End ***** -->
   <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+  <cfoutput><header class="header-area header-sticky wow slideInDown<cfif isDefined('request.isToolsSection') and request.isToolsSection> in-tools-section</cfif>" data-wow-duration="0.75s" data-wow-delay="0s"></cfoutput>
     <div class="container">
       <div class="row">
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="index.cfm" class="logo">
-              <img src="assets/images/image-removebg-preview (2).png" class="logo-icon-img" alt="ColdFusion">
-              <img src="assets/images/cf expert.png" class="logo-text-img" alt="ColdFusion Expert">
+            <a href="/index.cfm" class="logo">
+              <img src="/assets/images/image-removebg-preview (2).png" class="logo-icon-img" alt="ColdFusion">
+              <img src="/assets/images/cf expert.png" class="logo-text-img" alt="ColdFusion Expert">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-              <li class="scroll-to-section"><a href="#services">Services</a></li>
-              <li class="scroll-to-section"><a href="#pricing">Experience</a></li>
-              <li class="scroll-to-section"><a href="#seo">SEO / GEO</a></li>
-              <li class="scroll-to-section"><a href="#automation">AI Automation</a></li>
-              <li class="scroll-to-section"><a href="#courses">Zoom Courses</a></li>
-              <li class="scroll-to-section"><a href="#about">About</a></li>
-              <li class="scroll-to-section"><a href="#clients">Skills</a></li>
-              <li class="scroll-to-section"><a href="#Contact">Contact</a></li>
-            </ul>        
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#top" class="active">Home</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#services">Services</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#pricing">Experience</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#seo">SEO / GEO</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#automation">AI Automation</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#courses">Zoom Courses</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#tools">Tools</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#about">About</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#clients">Skills</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#Contact">Contact</a></li>
+              <cfif isDefined("request.isToolsSection") and request.isToolsSection>
+                <cfset local.mnCurrentFile = listLast(cgi.script_name, "/")>
+                <cfoutput>
+                <li class="nav-tools-mobile"><a href="/index.cfm"><i class="fas fa-arrow-left"></i> Back to Home</a></li>
+                <li class="nav-tools-mobile"><a href="/tools.cfm"<cfif local.mnCurrentFile eq 'tools.cfm'> class="active"</cfif>><i class="fas fa-toolbox"></i> All Tools</a></li>
+                <cfloop array="#request.toolCategories#" index="local.mnCat">
+                  <li class="nav-tools-mobile nav-category-label">#local.mnCat.labelEn#</li>
+                  <cfloop array="#request.toolOrder#" index="local.mnSlug">
+                    <cfset local.mnTool = request.toolsRegistry[local.mnSlug]>
+                    <cfif local.mnTool.category eq local.mnCat.slug>
+                      <li class="nav-tools-mobile"><a href="/tools/#local.mnSlug#.cfm"<cfif local.mnCurrentFile eq local.mnSlug & '.cfm'> class="active"</cfif>>#local.mnTool.titleEn#</a></li>
+                    </cfif>
+                  </cfloop>
+                </cfloop>
+                </cfoutput>
+              </cfif>
+            </ul>
             <a class='menu-trigger'>
                 <span>Menu</span>
             </a>

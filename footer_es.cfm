@@ -3,7 +3,7 @@
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading">
-            <h4>Contacto &amp; Contratación</h4>
+            <h4>Contacto &amp; Contrataci&oacute;n</h4>
           </div>
         </div>
       </div>
@@ -18,20 +18,20 @@
         </div>
         <div class="col-lg-4">
           <div class="footer-widget">
-            <h4>Navegación</h4>
+            <h4>Navegaci&oacute;n</h4>
             <ul>
-              <li><a href="#top">Inicio</a></li>
-              <li><a href="#services">Servicios</a></li>
-              <li><a href="#pricing">Experiencia</a></li>
-              <li><a href="#about">Acerca de</a></li>
-              <li><a href="#clients">Habilidades</a></li>
+              <li><a href="/index.cfm#top">Inicio</a></li>
+              <li><a href="/index.cfm#services">Servicios</a></li>
+              <li><a href="/index.cfm#pricing">Experiencia</a></li>
+              <li><a href="/index.cfm#about">Acerca de</a></li>
+              <li><a href="/index.cfm#clients">Habilidades</a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="footer-widget">
             <h4>Perfiles Profesionales</h4>
-            <p style="color: #fff; margin-bottom: 15px;">Conecta o contrata a través de las plataformas principales:</p>
+            <p style="color: #fff; margin-bottom: 15px;">Conecta o contrata a trav&eacute;  s de las plataformas principales:</p>
             <ul style="list-style: none; padding-left: 0;">
               <li style="margin-bottom: 10px;">
                 <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="btn-social btn-upwork" style="display: inline-flex;">
@@ -82,12 +82,12 @@
     <i class="fab fa-whatsapp"></i>
   </a>
   <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/animation.js"></script>
-  <script src="assets/js/imagesloaded.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/owl-carousel.js"></script>
+  <script src="/assets/js/animation.js"></script>
+  <script src="/assets/js/imagesloaded.js"></script>
+  <script src="/assets/js/popup.js"></script>
+  <script src="/assets/js/custom.js"></script>
 </body>
 </html>

@@ -1,0 +1,37 @@
+# CLAUDE.md
+
+Guidance for Claude Code (or any agent) working in this repository.
+
+## What this is
+
+Personal site + CV + consulting landing page for Flavio Di Virgilio (`coldfusionexpert.ar`), built in **ColdFusion/CFML** (Lucee). Bilingual (English/Spanish). Also hosts a growing **free tools** section (`/tools/`).
+
+## Architecture
+
+- **Bilingual routing**: language lives in `session.lan` (`"en"` or `"es"`), set in `Application.cfc`'s `onRequestStart` from `url.lan` if present. Content-switch pages follow the pattern:
+  - `index.cfm` → includes `index_en.cfm` or `index_es.cfm` based on `session.lan`.
+  - `tools.cfm` → includes `tools_en.cfm` or `tools_es.cfm`.
+  - Individual tool pages under `tools/*.cfm` read `session.lan` directly (no separate `_en`/`_es` files — see below).
+- **Header/footer are injected automatically** by `Application.cfc`:
+  - `onRequestStart` includes `header_en.cfm` or `header_es.cfm` before the page runs.
+  - `onRequestEnd` includes `footer_en.cfm` or `footer_es.cfm` after.
+  - **Do not** `cfinclude` header/footer manually in a page — it happens for every non-`.cfc` request already.
+- **Per-page SEO**: `Application.cfc` resolves `request.pageTitle` / `request.pageCanonical` / `request.pageNoindex` by matching the requested filename against `tools/_tools-registry.cfm` *before* including the header. `header_en.cfm`/`header_es.cfm` use those if defined, otherwise fall back to the homepage's hardcoded `<title>`/canonical. If you add a new top-level page that needs its own title, extend this lookup (don't hardcode more titles into the header partials).
+
+## Tools section (`/tools/`)
+
+- `tools/_tools-registry.cfm` — **single source of truth** for every tool: slug, category, icon, EN/ES title & description, `built` (false = still a skeleton, gets `noindex`), `featured` (true = shown on the homepage `#tools` preview, one per category).
+- `tools/_sidebar.cfm` — persistent left nav, grouped by category, reused on the landing page and every individual tool page.
+- `tools/_tool-page.cfm` — shared skeleton layout (breadcrumb, placeholder box, description, WhatsApp CTA) for a single tool. Each `tools/{slug}.cfm` file is ~2 lines: set `local.slug`, then `<cfinclude template="_tool-page.cfm">`.
+- To add a new tool: add one entry to the registry, create one `tools/{slug}.cfm` file, done — sidebar and landing pick it up automatically.
+- To make a tool "live": build the real widget inside its `_tool-page.cfm`-rendered placeholder area (or give it its own markup) and flip `built: true` in the registry so it stops being `noindex`.
+
+## Hard-learned gotchas
+
+- **Asset paths must be root-relative.** Everything in `header_en.cfm`/`header_es.cfm`/`footer_en.cfm`/`footer_es.cfm` (CSS, JS, images, the logo link) uses a leading `/` (e.g. `/assets/css/...`, not `assets/css/...`). These partials are shared by pages at different folder depths (root pages vs. `/tools/*.cfm`); a relative path silently 404s once a page isn't at the site root.
+- **`cfinclude` shares scope with the caller.** Plain `.cfm` pages have no automatic function-local scoping — a loop variable named `local.tool` in an included partial will clobber a same-named variable in the including template. Convention used here: give each partial's loop variables a short unique prefix (sidebar uses `local.sb*`, the homepage's featured-tools loop uses `local.ft*`, etc.). Follow this when adding new includes that loop.
+- **Design convention**: all pages under the Tools section (landing + every individual tool page) are **full-width** — `.tools-layout` in `assets/css/tools.css` intentionally has no `max-width` cap, unlike the rest of the site which sits inside Bootstrap's `.container`. Keep new tool-related markup inside `.tools-layout` / `.tools-main` rather than reintroducing a `.container` wrapper.
+
+## Multi-agent coordination
+
+`checklist.md` (index) + `checklist/*.md` (one file per tool category) track the tools backlog so multiple agents/sessions can pick up a category each without stepping on one another. `checklist/00-arquitectura.md` covers the shared architecture decisions (already implemented).

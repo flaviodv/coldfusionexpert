@@ -20,11 +20,11 @@
           <div class="footer-widget">
             <h4>Navigation</h4>
             <ul>
-              <li><a href="#top">Home</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#pricing">Experience</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#clients">Skills</a></li>
+              <li><a href="/index.cfm#top">Home</a></li>
+              <li><a href="/index.cfm#services">Services</a></li>
+              <li><a href="/index.cfm#pricing">Experience</a></li>
+              <li><a href="/index.cfm#about">About</a></li>
+              <li><a href="/index.cfm#clients">Skills</a></li>
             </ul>
           </div>
         </div>
@@ -75,12 +75,12 @@
     <i class="fab fa-whatsapp"></i>
   </a>
   <!-- Scripts -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/owl-carousel.js"></script>
-  <script src="assets/js/animation.js"></script>
-  <script src="assets/js/imagesloaded.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/custom.js"></script>
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/owl-carousel.js"></script>
+  <script src="/assets/js/animation.js"></script>
+  <script src="/assets/js/imagesloaded.js"></script>
+  <script src="/assets/js/popup.js"></script>
+  <script src="/assets/js/custom.js"></script>
 </body>
 </html>

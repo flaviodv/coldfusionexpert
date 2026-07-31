@@ -26,6 +26,27 @@ function onRequestStart(targetPage){
     }
 
     if(!findNoCase(".cfc", arguments.targetPage)){
+        include "tools/_tools-registry.cfm";
+
+        var fileName = getFileFromPath(arguments.targetPage);
+        var slug = listFirst(fileName, ".");
+        request.isToolsSection = false;
+        if(structKeyExists(request.toolsRegistry, slug)){
+            var tool = request.toolsRegistry[slug];
+            request.pageTitle = (session.lan eq "es")
+                ? tool.titleEs & " | ColdFusion Expert"
+                : tool.titleEn & " | ColdFusion Expert";
+            request.pageCanonical = "https://coldfusionexpert.ar/tools/" & slug & ".cfm?lan=" & session.lan;
+            request.pageNoindex = !tool.built;
+            request.isToolsSection = true;
+        } else if(fileName eq "tools.cfm"){
+            request.pageTitle = (session.lan eq "es")
+                ? "Nuestras Herramientas Gratuitas | ColdFusion Expert"
+                : "Our Free Tools | ColdFusion Expert";
+            request.pageCanonical = "https://coldfusionexpert.ar/tools.cfm?lan=" & session.lan;
+            request.isToolsSection = true;
+        }
+
         if(session.lan eq "es"){
             include "header_es.cfm";
         } else {
