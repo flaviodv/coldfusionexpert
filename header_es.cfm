@@ -226,6 +226,7 @@
       }
       .pricing-item-pro ul {
         flex-grow: 1;
+        text-align: left;
       }
       .float-whatsapp {
         position: fixed;
@@ -324,11 +325,22 @@
         z-index: 5 !important;
         margin-top: 10px !important;
         margin-bottom: 15px !important;
-        color: #13aff0 !important;
+        color: #000000 !important;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25) !important;
         font-weight: 700 !important;
       }
-      .pricing-item-pro:hover h4 {
+      .pricing-item-pro:hover {
+        background: #13aff0 !important;
+        transform: translateY(-6px) !important;
+        box-shadow: 0px 12px 30px rgba(19, 175, 240, 0.35) !important;
+      }
+      .pricing-item-pro:hover h4,
+      .pricing-item-pro:hover p,
+      .pricing-item-pro:hover ul,
+      .pricing-item-pro:hover li,
+      .pricing-item-pro:hover span,
+      .pricing-item-pro:hover i,
+      .pricing-item-pro:hover a:not(.btn-social) {
         color: #ffffff !important;
       }
       .pricing-item-pro p, .pricing-item-pro ul, .pricing-item-pro span {
@@ -427,12 +439,12 @@
             <ul class="nav">
               <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
               <li class="scroll-to-section"><a href="#services">Servicios</a></li>
+              <li class="scroll-to-section"><a href="#seo">SEO / GEO</a></li>
+              <li class="scroll-to-section"><a href="#automation">Automatización</a></li>
+              <li class="scroll-to-section"><a href="#courses">Cursos Zoom</a></li>
               <li class="scroll-to-section"><a href="#about">Acerca de</a></li>
               <li class="scroll-to-section"><a href="#clients">Habilidades</a></li>
               <li class="scroll-to-section"><a href="#pricing">Experiencia</a></li>
-              <li class="scroll-to-section"><a href="#courses">Cursos Zoom</a></li>
-              <li class="scroll-to-section"><a href="#seo">SEO / GEO</a></li>
-              <li class="scroll-to-section"><a href="#automation">Automatización</a></li>
               <li class="scroll-to-section"><a href="#Contact">Contacto</a></li>
             </ul>        
             <a class='menu-trigger'>

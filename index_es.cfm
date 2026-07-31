@@ -135,6 +135,256 @@
       </div>
     </div>
   </div>
+  <div id="seo" class="services section" style="padding-top: 80px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Optimización <em>SEO &amp; GEO (IA)</em></h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Estrategias avíanzadas de posicionamiento en motores de búsqueda tradicionales (Google, Bing) y optimización de visibilidad en Inteligencia Artificial (ChatGPT, Perplexity, Claude, Gemini).</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Pillar 1: Search Console & Technical SEO -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="service-item first-service" style="height: 100%; border-top: 4px solid #0077b5;">
+            <div style="text-align:left!important">
+              <i class="fas fa-search fa-2x" style="color: #0077b5; margin-bottom: 15px;"></i>
+            </div>
+            <h4>Google Search Console &amp; SEO Técnico</h4>
+            <p>(Search Engine Optimization / Optimización de Motores de Búsqueda)</p>
+            <p>
+              Auditoría integral e indexación en <strong>Google Search Console</strong> y <strong>Bing Webmaster Tools</strong>.
+              <br><br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Configuración de <strong>sitemap.xml</strong> multilingüe y <strong>robots.txt</strong>.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Implementación de etiquetas <strong>canonical</strong> y <strong>hreflang</strong>.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Corrección de errores de rastreo, coberturas e indexación de URLs.
+            </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Servicios%20SEO%20Técnico%20&%20Search%20Console" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Pillar 2: GEO & AI Indexation -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="service-item second-service" style="height: 100%; border-top: 4px solid #14a800;">
+            <div style="text-align:left!important">
+              <i class="fas fa-brain fa-2x" style="color: #14a800; margin-bottom: 15px;"></i>
+            </div>
+            <h4>GEO &amp; Visibilidad en Motores de IA</h4>
+            <p>(Generative Engine Optimization / Optimizacion de Motores Generativos)</p>
+            <p>
+              Optimización estructurada para que modelos de IA (ChatGPT, Perplexity, Claude) reconozcan y citen tu marca.
+              <br><br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Marcado de datos estructurados <strong>JSON-LD (Schema.org)</strong>.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Configuración de permisos explícitos para rastreadores de IA (GPTBot, ClaudeBot).<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Mapeo de grafo de entidad para máxima autoridad conceptual.
+            </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Servicios%20GEO%20&%20Indexación%20en%20IA" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Pillar 3: WPO & Core Web Vitals -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="service-item third-service" style="height: 100%; border-top: 4px solid #4e4376;">
+            <div style="text-align:left!important">
+              <i class="fas fa-tachometer-alt fa-2x" style="color: #4e4376; margin-bottom: 15px;"></i>
+            </div>
+            <h4>Core Web Vitals &amp; Rendimiento WPO</h4>
+            <p>
+              Velocidad de carga extrema y tiempos de respuesta mínimos en el servidor (TTFB) en ColdFusion, Lucee e IIS/AWS.
+              <br><br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Optimización de imágenes WebP/AVIF y minificación JS/CSS.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Tuning de caché de servidor y base de datos.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Máximas puntuaciones en <strong>Google PageSpeed Insights</strong>.
+            </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Servicios%20WPO%20&%20Core%20Web%20Vitals" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="automation" class="services section" style="background-color: #f7f9fc; padding-top: 80px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Soluciones de <em>Automatización con IA</em></h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Integración de Inteligencia Artificial, agentes autónomos y automatización inteligente de procesos para optimizar la eficiencia operativía y acelerar el desarrollo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Card 1: Integracion de APIs de IA -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="service-item first-service" style="border-top: 4px solid #0077b5;">
+            <div style="text-align:left!important">
+              <i class="fas fa-network-wired fa-2x" style="color: #0077b5; margin-bottom: 15px;"></i>
+            </div>
+            <h4>Integración de APIs de IA (LLMs)</h4>
+            <p>
+              Conexión de modelos de lenguaje avíanzados (ChatGPT 4o, Claude 3.5, Gemini 1.5, DeepSeek) a sistemas web existentes en ColdFusion, Lucee, PHP o Node.js.
+              <br><br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Arquitecturas <strong>RAG</strong> (Retrievíal-Augmented Generation) y bases vectoriales.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Asistentes virtuales inteligentes y agentes de atención 24/7.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Procesamiento automatizado de documentos, contratos y texto no estructurado.
+            </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustar%C3%ADa%20consultar%20sobre%20Integraci%C3%B3n%20de%20APIs%20de%20IA" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2: Automatizacion de Procesos Empresariales -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="service-item second-service" style="border-top: 4px solid #14a800;">
+            <div style="text-align:left!important">
+              <i class="fas fa-cogs fa-2x" style="color: #14a800; margin-bottom: 15px;"></i>
+            </div>
+            <h4>Automatización de Flujos Empresariales</h4>
+            <p>
+              Automatización inteligente de procesos en CRMs, ERPs y plataformas de comercio electrónico.
+              <br><br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Clasificación automática de clientes potenciales y respuestas inteligentes.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Integración de webhooks, automatización de facturación y reportes.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Eliminación de tareas manuales repetitivías aumentando la velocidad operativía.
+            </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustar%C3%ADa%20consultar%20sobre%20Automatizaci%C3%B3n%20de%20Flujos%20Empresariales" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3: AI-Driven Development -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="service-item third-service" style="border-top: 4px solid #4e4376;">
+            <div style="text-align:left!important">
+              <i class="fas fa-magic fa-2x" style="color: #4e4376; margin-bottom: 15px;"></i>
+            </div>
+            <h4>Desarrollo Acelerado con IA</h4>
+            <p>
+              Ingeniería de Prompts y uso estratégico de asistentes de IA (Claude Code, Codex, ChatGPT 4) para acelerar el desarrollo de software.
+              <br><br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Refactorización automatizada de código legacy ColdFusion.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Generación instantánea de pruebas unitarias y documentación técnica.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Reducción de tiempos de entrega hasta en un 60% garantizando máxima calidad.
+            </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustar%C3%ADa%20consultar%20sobre%20Desarrollo%20Acelerado%20con%20IA" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="courses" class="services section" style="background-color: #f7f9fc; padding-top: 80px; padding-bottom: 80px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
+            <h4>Cursos &amp; Capacitación <em>vía Zoom</em></h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Clases en vivo 1 a 1 y mentores personalizados para desarrolladores y equipos, cubriendo más de 25 años de conocimiento técnico y práctico acumulado.</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <!-- Curso 1 -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="service-item first-service" style="height: 100%; border-top: 4px solid #0077b5;">
+            <div style="text-align:left!important">
+              <i class="fas fa-video fa-2x" style="color: #0077b5; margin-bottom: 15px;"></i>
+            </div>
+            <h4>ColdFusion &amp; Lucee Mastery</h4>
+            <p>
+              Aprende desde los fundamentos hasta técnicas avíanzadas en <strong>Adobe ColdFusion (CF4 a CF2023) y Lucee Server</strong>.
+              <br><br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Arquitectura orientada a objetos (OOP) y patrones.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Migración de sistemas legacy antiguos.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Optimización de performance con FusionReactor.
+            </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Curso%20ColdFusion%20&%20Lucee" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Curso 2 -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="service-item second-service" style="height: 100%; border-top: 4px solid #14a800;">
+            <div style="text-align:left!important">
+              <i class="fas fa-database fa-2x" style="color: #14a800; margin-bottom: 15px;"></i>
+            </div>
+            <h4>Bases de Datos &amp; AWS Cloud</h4>
+            <p>
+              Domina el diseño, afinado de consultas y administración de infraestructura en la nube.
+              <br><br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Optimization de SQL Server, MySQL y PostgreSQL.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Despliegue de servidores IIS y Linux.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Administración de AWS (EC2, RDS, S3, Backups).
+            </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Curso%20Bases%20de%20Datos%20&%20AWS" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Curso 3 -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="service-item third-service" style="height: 100%; border-top: 4px solid #4e4376;">
+            <div style="text-align:left!important">
+              <i class="fas fa-robot fa-2x" style="color: #4e4376; margin-bottom: 15px;"></i>
+            </div>
+            <h4>APIs &amp; Programación con IA</h4>
+            <p>
+              Acelera tu desarrollo creando integraciones modernas y potenciando tu flujo con Inteligencia Artificial.
+              <br><br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> APIs RESTful y seguridad JWT.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Integración de Zoom, JustCall, Calendly.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Prompt Engineering avíanzado con ChatGPT, Claude Code y Gemini.
+            </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Curso%20APIs%20&%20Programación%20con%20IA" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 20px;">
+        <div class="col-lg-12 text-center">
+          <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display: inline-block; max-width: 700px;">
+            <h5 style="font-weight: 700; color: #2a2a2a; margin-bottom: 10px;"><i class="fas fa-graduation-cap" style="color: #14a800;"></i> ¿Te interesa coordinar una clase o entrenamiento para tu equipo?</h5>
+            <p style="margin-bottom: 20px;">Sesiones flexibles en vivo vía Zoom adaptadas a tus necesidades o proyectos específicos.</p>
+            <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20interesan%20tus%20cursos%20via%20Zoom" target="_blank" class="btn-social btn-upwork" style="display: inline-flex;">
+              <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+            </a>
+            <a href="mailto:flavio.di.virgilio@gmail.com?subject=Consulta%20Cursos%20Zoom%20ColdFusion" class="btn-social btn-linkedin" style="display: inline-flex;">
+              <i class="fa fa-envelope"></i> Consultar por Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div id="about" class="about-us section">
     <div class="container">
       <div class="row">
@@ -142,9 +392,9 @@
           <div class="section-heading">
             <h4>Sobre <em>Flavio Di Virgilio</em> &amp; Trayectoria</h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Analista de Sistemas graduado de la Universidad J.F. Kennedy de Buenos Aires y Diseador Multimedia de la Escuela Da Vinci. Cuento con más de 25 años de experiencia práctica en desarrollo Full-Stack en ColdFusion/CFML, diseo de arquitecturas orientadas a bases de datos y administración de servidores.
-            He liderado e implementado sistemas de comercio electrónico, diagnóstico médico e historial clínico (NQMBC), integración de servicios web (JWT, REST), gestión de clientes en tiempo real y administración de infraestructura en la nube AWS (EC2, RDS, S3).
-            Freelancer Top Rated Plus en Upwork (100% Job Success, +8,000 horas registradas). Destaco por mis sólidas habilidades lógicas y de resolución de problemas, autogestión y aplicación proactivía de herramientas de IA (ChatGPT, Claude, Codex, Gemini) para potenciar la productividad y la calidad del desarrollo.</p>
+            <p>Analista de Sistemas graduado de la Universidad J.F. Kennedy de Buenos Aires y Diseñador Multimedia de la Escuela Da Vinci, Flavio cuenta con más de 15 años de experiencia práctica en desarrollo Full-Stack en ColdFusion/CFML, diseño de arquitecturas orientadas a bases de datos y administración de servidores.
+            Ha liderado e implementado sistemas de comercio electrónico, diagnóstico médico e historial clínico (NQMBC), integración de servicios web (JWT, REST), gestión de clientes en tiempo real y administración de infraestructura en la nube AWS (EC2, RDS, S3).
+            Freelancer Top Rated Plus en Upwork (100% Job Success, +8,000 horas registradas), se destaca por sus sólidas habilidades lógicas y de resolución de problemas, su autogestión y la aplicación proactiva de herramientas de IA (ChatGPT, Claude, Codex, Gemini) para potenciar la productividad y la calidad del desarrollo.</p>
           </div>
           <div class="row">
             <div class="col-lg-6">
@@ -305,7 +555,7 @@
                             <div class="col-lg-12">
                               <div class="client-content">
                                 <img src="assets/images/quote.png" alt="">
-                                <p>“Diseo y administración de bases de datos relacionales y NoSQL de alto rendimiento: Microsoft SQL Server, MySQL, PostgreSQL y MongoDB. Optimización de queries complejas, Stored Procedures e índices.”</p>
+                                <p>Diseño y administración de bases de datos relacionales y NoSQL de alto rendimiento: Microsoft SQL Server, MySQL, PostgreSQL y MongoDB. Optimización de queries complejas, Stored Procedures e índices.</p>
                               </div>
                               <div class="down-content">
                                 <div class="right-content">
@@ -325,7 +575,7 @@
                             <div class="col-lg-12">
                               <div class="client-content">
                                 <img src="assets/images/quote.png" alt="">
-                                <p>“Desarrollo frontend dinámico e interactivo utilizando JavíaScript moderno, jQuery, AJAX, React.js, Node.js, Bootstrap y diseos responsivos adaptados a la mejor experiencia del usuario.”</p>
+                                <p>Desarrollo frontend dinámico e interactivo utilizando JavíaScript moderno, jQuery, AJAX, React.js, Node.js, Bootstrap y diseños responsivos adaptados a la mejor experiencia del usuario.</p>
                               </div>
                               <div class="down-content">
                                 <div class="right-content">
@@ -345,7 +595,7 @@
                             <div class="col-lg-12">
                               <div class="client-content">
                                 <img src="assets/images/quote.png" alt="">
-                                <p>“Gestión integral de infraestructura en la nube de Amazon Web Services (EC2, RDS snapshots/restores, buckets S3, Security Groups), servidores IIS en Windows y administración de ambientes Linux.”</p>
+                                <p>Gestión integral de infraestructura en la nube de Amazon Web Services (EC2, RDS snapshots/restores, buckets S3, Security Groups), servidores IIS en Windows y administración de ambientes Linux.</p>
                               </div>
                               <div class="down-content">
                                 <div class="right-content">
@@ -365,7 +615,7 @@
                             <div class="col-lg-12">
                               <div class="client-content">
                                 <img src="assets/images/quote.png" alt="">
-                                <p>“Integración de servicios web RESTful, seguridad JWT, PHP, soluciones avíanzadas en WordPress y aplicación estratégica de herramientas de IA (ChatGPT, Claude, Codex) para maximizar la velocidad de entrega.”</p>
+                                <p>Integración de servicios web RESTful, seguridad JWT, PHP, soluciones avíanzadas en WordPress y aplicación estratégica de herramientas de IA (ChatGPT, Claude, Codex) para maximizar la velocidad de entrega.</p>
                               </div>
                               <div class="down-content">
                                 <div class="right-content">
@@ -406,11 +656,11 @@
               <img src="assets/images/pricing-table-01.png" alt="Quebec Attractions">
             </div>
             <ul>
-              <li>- <strong>Sitio Oficial</strong>: <a href="https://quebecattractions.ca/" target="_blank" style="color:#0077b5; font-weight:600;">quebecattractions.ca</a></li>
-              <li>- Plataforma turística bilingüe líder en Quebec (atracciones, eventos y hospedaje).</li>
-              <li>- Desarrollo completo de la aplicación en <strong>Lucee CFML</strong>.</li>
-              <li>- Diseó e implementó <strong>100% de la interfaz visual (UI/UX)</strong> y maquetación responsivía.</li>
-              <li>- Administración integral de servidores e infraestructura.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Sitio Oficial</strong>: <a href="https://quebecattractions.ca/" target="_blank" style="color:#0077b5; font-weight:600;">quebecattractions.ca</a></li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Plataforma turística bilingüe líder en Quebec (atracciones, eventos y hospedaje).</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo completo de la aplicación en <strong>Lucee CFML</strong>.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Diseó e implementó <strong>100% de la interfaz visual (UI/UX)</strong> y maquetación responsivía.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Administración integral de servidores e infraestructura.</li>
             </ul>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Quebec%20Attractions" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
@@ -428,10 +678,10 @@
               <img src="assets/images/pricing-table-01.png" alt="CompraInversa">
             </div>
             <ul>
-              <li>- <strong>Marketplace Inteligente</strong>: <a href="https://comprainvesa.com/" target="_blank" style="color:#0077b5; font-weight:600;">comprainvesa.com</a></li>
-              <li>- Plataforma propia de marketplace para conectar demandas de compra con ofertas competitivías.</li>
-              <li>- Desarrollado con <strong>Adobe ColdFusion</strong> y <strong>Microsoft SQL Server</strong>.</li>
-              <li>- Integración de módulos asistidos por <strong>Inteligencia Artificial (IA)</strong> para emparejamiento de requerimientos y optimización de búsqueda.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Marketplace Inteligente</strong>: <a href="https://comprainvesa.com/" target="_blank" style="color:#0077b5; font-weight:600;">comprainvesa.com</a></li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Plataforma propia de marketplace para conectar demandas de compra con ofertas competitivías.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollado con <strong>Adobe ColdFusion</strong> y <strong>Microsoft SQL Server</strong>.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integración de módulos asistidos por <strong>Inteligencia Artificial (IA)</strong> para emparejamiento de requerimientos y optimización de búsqueda.</li>
             </ul>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20CompraInversa.com" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
@@ -449,10 +699,10 @@
               <img src="assets/images/pricing-table-01.png" alt="Firebrand Creative">
             </div>
             <ul>
-              <li>- <strong>Sitio Oficial</strong>: <a href="https://iamfirebrand.com/" target="_blank" style="color:#0077b5; font-weight:600;">iamfirebrand.com</a></li>
-              <li>- Desarrollo senior continuo para la agencia norteamericana Firebrand Creative.</li>
-              <li>- Construcción, optimización y mantenimiento de sistemas web para diversos clientes globales.</li>
-              <li>- Integraciones backend, desarrollo ColdFusion / PHP y soporte de plataformas complejas.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Sitio Oficial</strong>: <a href="https://iamfirebrand.com/" target="_blank" style="color:#0077b5; font-weight:600;">iamfirebrand.com</a></li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo senior continuo para la agencia norteamericana Firebrand Creative.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Construcción, optimización y mantenimiento de sistemas web para diversos clientes globales.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integraciones backend, desarrollo ColdFusion / PHP y soporte de plataformas complejas.</li>
             </ul>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Firebrand%20Creative" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
@@ -470,10 +720,10 @@
               <img src="assets/images/pricing-table-01.png" alt="Makeway">
             </div>
             <ul>
-              <li>- Gestión y optimización de rendimiento de sistemas CMS en ColdFusion y MySQL.</li>
-              <li>- Refactorización de código legacy para empresas como Darran Furniture (darran.com).</li>
-              <li>- Desarrollo para Trinity Furniture (trinityfurniture.com) y Peter Pepper Products.</li>
-              <li>- Creación de nuevías características y resolución de errores críticos.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Gestión y optimización de rendimiento de sistemas CMS en ColdFusion y MySQL.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Refactorización de código legacy para empresas como Darran Furniture (darran.com).</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo para Trinity Furniture (trinityfurniture.com) y Peter Pepper Products.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Creación de nuevías características y resolución de errores críticos.</li>
             </ul>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Makeway" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
@@ -491,10 +741,10 @@
               <img src="assets/images/pricing-table-01.png" alt="Contensive Svetness CRM">
             </div>
             <ul>
-              <li>- Desarrollo Senior Fullstack ColdFusion + SQL Server + AWS para Svetness CRM.</li>
-              <li>- Integración de APIs de comunicación: JustCall, Zoom y Calendly.</li>
-              <li>- Tuning de rendimiento de ColdFusion con FusionReactor y optimización MSSQL.</li>
-              <li>- Administración de infraestructura AWS (EC2, RDS, S3) y servidores Windows.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo Senior Fullstack ColdFusion + SQL Server + AWS para Svetness CRM.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integración de APIs de comunicación: JustCall, Zoom y Calendly.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Tuning de rendimiento de ColdFusion con FusionReactor y optimización MSSQL.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Administración de infraestructura AWS (EC2, RDS, S3) y servidores Windows.</li>
             </ul>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Svetness%20CRM" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
@@ -512,260 +762,12 @@
               <img src="assets/images/pricing-table-01.png" alt="Third Wave Digital">
             </div>
             <ul>
-              <li>- <strong>Third Wave Digital (2019)</strong>: Sistema de diagnóstico e historial clínico para cáncer de mama (NQMBC).</li>
-              <li>- <strong>FortSystems (2011-2018)</strong>: Desarrollo y administración de 800wine.com y plataformas multitienda.</li>
-              <li>- <strong>2Connect (2018-2020)</strong>: Desarrollo de plataforma web interactivía con ColdFusion, MySQL y Bootstrap.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Third Wave Digital (2019)</strong>: Sistema de diagnóstico e historial clínico para cáncer de mama (NQMBC).</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>FortSystems (2011-2018)</strong>: Desarrollo y administración de 800wine.com y plataformas multitienda.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>2Connect (2018-2020)</strong>: Desarrollo de plataforma web interactivía con ColdFusion, MySQL y Bootstrap.</li>
             </ul>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyectos%20Salud%20y%20E-Commerce" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="courses" class="services section" style="background-color: #f7f9fc; padding-top: 80px; padding-bottom: 80px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h4>Cursos &amp; Capacitación <em>vía Zoom</em></h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Clases en vivo 1 a 1 y mentores personalizados para desarrolladores y equipos sobre todo mi conocimiento técnico y práctico acumulado en +25 años.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Curso 1 -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="service-item first-service" style="height: 100%; border-top: 4px solid #0077b5;">
-            <div style="text-align:left!important">
-              <i class="fas fa-video fa-2x" style="color: #0077b5; margin-bottom: 15px;"></i>
-            </div>
-            <h4>ColdFusion &amp; Lucee Mastery</h4>
-            <p>
-              Aprende desde los fundamentos hasta técnicas avíanzadas en <strong>Adobe ColdFusion (CF4 a CF2023) y Lucee Server</strong>.
-              <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Arquitectura orientada a objetos (OOP) y patrones.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Migración de sistemas legacy antiguos.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Optimización de performance con FusionReactor.
-            </p>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Curso%20ColdFusion%20&%20Lucee" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Curso 2 -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="service-item second-service" style="height: 100%; border-top: 4px solid #14a800;">
-            <div style="text-align:left!important">
-              <i class="fas fa-database fa-2x" style="color: #14a800; margin-bottom: 15px;"></i>
-            </div>
-            <h4>Bases de Datos &amp; AWS Cloud</h4>
-            <p>
-              Domina el diseo, afinado de consultas y administración de infraestructura en la nube.
-              <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Optimization de SQL Server, MySQL y PostgreSQL.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Despliegue de servidores IIS y Linux.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Administración de AWS (EC2, RDS, S3, Backups).
-            </p>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Curso%20Bases%20de%20Datos%20&%20AWS" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Curso 3 -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="service-item third-service" style="height: 100%; border-top: 4px solid #4e4376;">
-            <div style="text-align:left!important">
-              <i class="fas fa-robot fa-2x" style="color: #4e4376; margin-bottom: 15px;"></i>
-            </div>
-            <h4>APIs &amp; Programación con IA</h4>
-            <p>
-              Acelera tu desarrollo creando integraciones modernas y potenciando tu flujo con Inteligencia Artificial.
-              <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> APIs RESTful y seguridad JWT.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Integración de Zoom, JustCall, Calendly.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Prompt Engineering avíanzado con ChatGPT, Claude Code y Gemini.
-            </p>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Curso%20APIs%20&%20Programación%20con%20IA" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row" style="margin-top: 20px;">
-        <div class="col-lg-12 text-center">
-          <div style="background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display: inline-block; max-width: 700px;">
-            <h5 style="font-weight: 700; color: #2a2a2a; margin-bottom: 10px;"><i class="fas fa-graduation-cap" style="color: #14a800;"></i> ¿Te interesa coordinar una clase o entrenamiento para tu equipo?</h5>
-            <p style="margin-bottom: 20px;">Sesiones flexibles en vivo vía Zoom adaptadas a tus necesidades o proyectos específicos.</p>
-            <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20interesan%20tus%20cursos%20via%20Zoom" target="_blank" class="btn-social btn-upwork" style="display: inline-flex;">
-              <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-            </a>
-            <a href="mailto:flavio.di.virgilio@gmail.com?subject=Consulta%20Cursos%20Zoom%20ColdFusion" class="btn-social btn-linkedin" style="display: inline-flex;">
-              <i class="fa fa-envelope"></i> Consultar por Email
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="seo" class="services section" style="padding-top: 80px; padding-bottom: 80px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h4>Optimización <em>SEO &amp; GEO (IA)</em></h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Estrategias avíanzadas de posicionamiento en motores de búsqueda tradicionales (Google, Bing) y optimización de visibilidad en Inteligencia Artificial (ChatGPT, Perplexity, Claude, Gemini).</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Pillar 1: Search Console & Technical SEO -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="service-item first-service" style="height: 100%; border-top: 4px solid #0077b5;">
-            <div style="text-align:left!important">
-              <i class="fas fa-search fa-2x" style="color: #0077b5; margin-bottom: 15px;"></i>
-            </div>
-            <h4>Google Search Console &amp; SEO Técnico</h4>
-            <p>
-              Auditoría integral e indexación en <strong>Google Search Console</strong> y <strong>Bing Webmaster Tools</strong>.
-              <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Configuración de <strong>sitemap.xml</strong> multilingüe y <strong>robots.txt</strong>.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Implementación de etiquetas <strong>canonical</strong> y <strong>hreflang</strong>.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Corrección de errores de rastreo, coberturas e indexación de URLs.
-            </p>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Servicios%20SEO%20Técnico%20&%20Search%20Console" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Pillar 2: GEO & AI Indexation -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="service-item second-service" style="height: 100%; border-top: 4px solid #14a800;">
-            <div style="text-align:left!important">
-              <i class="fas fa-brain fa-2x" style="color: #14a800; margin-bottom: 15px;"></i>
-            </div>
-            <h4>GEO &amp; Visibilidad en Motores de IA</h4>
-            <p>
-              Optimización estructurada para que modelos de IA (ChatGPT, Perplexity, Claude) reconozcan y citen tu marca.
-              <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Marcado de datos estructurados <strong>JSON-LD (Schema.org)</strong>.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Configuración de permisos explícitos para rastreadores de IA (GPTBot, ClaudeBot).<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Mapeo de grafo de entidad para máxima autoridad conceptual.
-            </p>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Servicios%20GEO%20&%20Indexación%20en%20IA" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Pillar 3: WPO & Core Web Vitals -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="service-item third-service" style="height: 100%; border-top: 4px solid #4e4376;">
-            <div style="text-align:left!important">
-              <i class="fas fa-tachometer-alt fa-2x" style="color: #4e4376; margin-bottom: 15px;"></i>
-            </div>
-            <h4>Core Web Vitals &amp; Rendimiento WPO</h4>
-            <p>
-              Velocidad de carga extrema y tiempos de respuesta mínimos en el servidor (TTFB) en ColdFusion, Lucee e IIS/AWS.
-              <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Optimización de imágenes WebP/AVIF y minificación JS/CSS.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Tuning de caché de servidor y base de datos.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Máximas puntuaciones en <strong>Google PageSpeed Insights</strong>.
-            </p>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Servicios%20WPO%20&%20Core%20Web%20Vitals" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="automation" class="services section" style="background-color: #f7f9fc; padding-top: 80px; padding-bottom: 80px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h4>Soluciones de <em>Automatización con IA</em></h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Integración de Inteligencia Artificial, agentes autónomos y automatización inteligente de procesos para optimizar la eficiencia operativía y acelerar el desarrollo.</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- Card 1: Integracion de APIs de IA -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="service-item first-service" style="border-top: 4px solid #0077b5;">
-            <div style="text-align:left!important">
-              <i class="fas fa-network-wired fa-2x" style="color: #0077b5; margin-bottom: 15px;"></i>
-            </div>
-            <h4>Integración de APIs de IA (LLMs)</h4>
-            <p>
-              Conexión de modelos de lenguaje avíanzados (ChatGPT 4o, Claude 3.5, Gemini 1.5, DeepSeek) a sistemas web existentes en ColdFusion, Lucee, PHP o Node.js.
-              <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Arquitecturas <strong>RAG</strong> (Retrievíal-Augmented Generation) y bases vectoriales.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Asistentes virtuales inteligentes y agentes de atención 24/7.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Procesamiento automatizado de documentos, contratos y texto no estructurado.
-            </p>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustar%C3%ADa%20consultar%20sobre%20Integraci%C3%B3n%20de%20APIs%20de%20IA" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 2: Automatizacion de Procesos Empresariales -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="service-item second-service" style="border-top: 4px solid #14a800;">
-            <div style="text-align:left!important">
-              <i class="fas fa-cogs fa-2x" style="color: #14a800; margin-bottom: 15px;"></i>
-            </div>
-            <h4>Automatización de Flujos Empresariales</h4>
-            <p>
-              Automatización inteligente de procesos en CRMs, ERPs y plataformas de comercio electrónico.
-              <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Clasificación automática de clientes potenciales y respuestas inteligentes.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Integración de webhooks, automatización de facturación y reportes.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Eliminación de tareas manuales repetitivías aumentando la velocidad operativía.
-            </p>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustar%C3%ADa%20consultar%20sobre%20Automatizaci%C3%B3n%20de%20Flujos%20Empresariales" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3: AI-Driven Development -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="service-item third-service" style="border-top: 4px solid #4e4376;">
-            <div style="text-align:left!important">
-              <i class="fas fa-magic fa-2x" style="color: #4e4376; margin-bottom: 15px;"></i>
-            </div>
-            <h4>Desarrollo Acelerado con IA</h4>
-            <p>
-              Ingeniería de Prompts y uso estratégico de asistentes de IA (Claude Code, Codex, ChatGPT 4) para acelerar el desarrollo de software.
-              <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Refactorización automatizada de código legacy ColdFusion.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Generación instantánea de pruebas unitarias y documentación técnica.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Reducción de tiempos de entrega hasta en un 60% garantizando máxima calidad.
-            </p>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustar%C3%ADa%20consultar%20sobre%20Desarrollo%20Acelerado%20con%20IA" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
                 <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
               </a>
             </div>
