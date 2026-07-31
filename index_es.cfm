@@ -62,7 +62,7 @@
             </div>
              <h4>Servicio de Consultoría ColdFusion</h4>
              <p> Adaptamos las estrategias para que se ajusten a los objetivos de su negocio.
-              Evíaluación de infraestructura, diagnóstico con FusionReactor y refactorización de código legacy. <br>
+              Evaluación de infraestructura, diagnóstico con FusionReactor y refactorización de código legacy. <br>
               <span class="highligth">¿El objetivo?</span> Maximizar la eficiencia, la seguridad y el rendimiento desde CF4 hasta Adobe ColdFusion 2023 y Lucee Server.
              </p>
           </div>
@@ -75,7 +75,7 @@
                 <img class="servce_img " src="assets/images/ColdFusion Web Application Development.svg" alt="ColdFusion Web Application Development" width="40" height="40">
             </picture></div>
            <h4>Desarrollo de Aplicaciones Web Personalizadas</h4>
-           <p>Desarrollo de aplicaciones web escalables, seguras y víanguardistas. 
+           <p>Desarrollo de aplicaciones web escalables, seguras y vanguardistas. 
             Experiencia en CRMs empresariales, plataformas de salud (NQMBC), e-commerce e integraciones dinámicas centradas en bases de datos. <br>
             <span class="highligth">¿Los beneficios?</span> Operaciones optimizadas y arquitectura orientada al usuario.
             </p>
@@ -128,8 +128,147 @@
              <h4>Administración Cloud AWS & Soporte Servidores</h4>
              <p>Administración experta de servidores staging y producción en AWS (EC2, RDS MSSQL/MySQL, S3) e IIS Server en Windows/Linux.
                Soporte proactivo, parches de seguridad, copias de seguridad y monitoreo continuo. <br>
-              <span class="highligth">¿Sus aplicaciones?</span> Estables, protegidas y a la víanguardia tecnológica.
+              <span class="highligth">¿Sus aplicaciones?</span> Estables, protegidas y a la vanguardia tecnológica.
             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Experiencia <em>Profesional </em> &amp; Proyectos</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Proyectos actuales, desarrollos propios con Inteligencia Artificial y trayectoria corporativa destacada.</p>
+          </div>
+        </div>
+        <!-- Card 1: Quebec Attractions -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>Quebec Attractions</h4>
+            <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Trabajo Actual | Lucee Server</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="Quebec Attractions">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Sitio Oficial</strong>: <a href="https://quebecattractions.ca/" target="_blank" style="color:#0077b5; font-weight:600;">quebecattractions.ca</a></li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Plataforma turística bilingüe líder en Quebec (atracciones, eventos y hospedaje).</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo completo de la aplicación en <strong>Lucee CFML</strong>.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Diseó e implementó <strong>100% de la interfaz visual (UI/UX)</strong> y maquetación responsiva.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Administración integral de servidores e infraestructura.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Quebec%20Attractions" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2: CompraInversa.com -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>CompraInversa.com</h4>
+            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Proyecto Personal | ColdFusion + IA</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="CompraInversa">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Marketplace Inteligente</strong>: <a href="https://comprainvesa.com/" target="_blank" style="color:#0077b5; font-weight:600;">comprainvesa.com</a></li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Plataforma propia de marketplace para conectar demandas de compra con ofertas competitivas.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollado con <strong>Adobe ColdFusion</strong> y <strong>Microsoft SQL Server</strong>.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integración de módulos asistidos por <strong>Inteligencia Artificial (IA)</strong> para emparejamiento de requerimientos y optimización de búsqueda.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20CompraInversa.com" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3: Firebrand Creative -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>Firebrand Creative</h4>
+            <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Trabajo Actual | Agencia Digital US</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="Firebrand Creative">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Sitio Oficial</strong>: <a href="https://iamfirebrand.com/" target="_blank" style="color:#0077b5; font-weight:600;">iamfirebrand.com</a></li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo senior continuo para la agencia norteamericana Firebrand Creative.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Construcción, optimización y mantenimiento de sistemas web para diversos clientes globales.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integraciones backend, desarrollo ColdFusion / PHP y soporte de plataformas complejas.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Firebrand%20Creative" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4: Makeway -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>Makeway &amp; Clientes Internacionales</h4>
+            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Sep 2023 - Presente</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="Makeway">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Gestión y optimización de rendimiento de sistemas CMS en ColdFusion y MySQL.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Refactorización de código legacy para empresas como Darran Furniture (darran.com).</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo para Trinity Furniture (trinityfurniture.com) y Peter Pepper Products.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Creación de nuevas características y resolución de errores críticos.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Makeway" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 5: Contensive Svetness CRM -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>Contensive - Svetness CRM</h4>
+            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Mar 2021 - Oct 2024</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="Contensive Svetness CRM">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo Senior Fullstack ColdFusion + SQL Server + AWS para Svetness CRM.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integración de APIs de comunicación: JustCall, Zoom y Calendly.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Tuning de rendimiento de ColdFusion con FusionReactor y optimización MSSQL.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Administración de infraestructura AWS (EC2, RDS, S3) y servidores Windows.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Svetness%20CRM" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 6: Third Wave Digital & FortSystems -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>Third Wave Digital, FortSystems &amp; 2Connect</h4>
+            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">2011 - 2020</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="Third Wave Digital">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Third Wave Digital (2019)</strong>: Sistema de diagnóstico e historial clínico para cáncer de mama (NQMBC).</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>FortSystems (2011-2018)</strong>: Desarrollo y administración de 800wine.com y plataformas multitienda.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>2Connect (2018-2020)</strong>: Desarrollo de plataforma web interactiva con ColdFusion, MySQL y Bootstrap.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyectos%20Salud%20y%20E-Commerce" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -142,7 +281,7 @@
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Optimización <em>SEO &amp; GEO (IA)</em></h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Estrategias avíanzadas de posicionamiento en motores de búsqueda tradicionales (Google, Bing) y optimización de visibilidad en Inteligencia Artificial (ChatGPT, Perplexity, Claude, Gemini).</p>
+            <p>Estrategias avanzadas de posicionamiento en motores de búsqueda tradicionales (Google, Bing) y optimización de visibilidad en Inteligencia Artificial (ChatGPT, Perplexity, Claude, Gemini).</p>
           </div>
         </div>
       </div>
@@ -222,7 +361,7 @@
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Soluciones de <em>Automatización con IA</em></h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Integración de Inteligencia Artificial, agentes autónomos y automatización inteligente de procesos para optimizar la eficiencia operativía y acelerar el desarrollo.</p>
+            <p>Integración de Inteligencia Artificial, agentes autónomos y automatización inteligente de procesos para optimizar la eficiencia operativa y acelerar el desarrollo.</p>
           </div>
         </div>
       </div>
@@ -235,9 +374,9 @@
             </div>
             <h4>Integración de APIs de IA (LLMs)</h4>
             <p>
-              Conexión de modelos de lenguaje avíanzados (ChatGPT 4o, Claude 3.5, Gemini 1.5, DeepSeek) a sistemas web existentes en ColdFusion, Lucee, PHP o Node.js.
+              Conexión de modelos de lenguaje avanzados (ChatGPT 4o, Claude 3.5, Gemini 1.5, DeepSeek) a sistemas web existentes en ColdFusion, Lucee, PHP o Node.js.
               <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Arquitecturas <strong>RAG</strong> (Retrievíal-Augmented Generation) y bases vectoriales.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Arquitecturas <strong>RAG</strong> (Retrieval-Augmented Generation) y bases vectoriales.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Asistentes virtuales inteligentes y agentes de atención 24/7.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Procesamiento automatizado de documentos, contratos y texto no estructurado.
             </p>
@@ -260,7 +399,7 @@
               <br><br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Clasificación automática de clientes potenciales y respuestas inteligentes.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Integración de webhooks, automatización de facturación y reportes.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Eliminación de tareas manuales repetitivías aumentando la velocidad operativía.
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Eliminación de tareas manuales repetitivas aumentando la velocidad operativa.
             </p>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustar%C3%ADa%20consultar%20sobre%20Automatizaci%C3%B3n%20de%20Flujos%20Empresariales" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
@@ -313,7 +452,7 @@
             </div>
             <h4>ColdFusion &amp; Lucee Mastery</h4>
             <p>
-              Aprende desde los fundamentos hasta técnicas avíanzadas en <strong>Adobe ColdFusion (CF4 a CF2023) y Lucee Server</strong>.
+              Aprende desde los fundamentos hasta técnicas avanzadas en <strong>Adobe ColdFusion (CF4 a CF2023) y Lucee Server</strong>.
               <br><br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Arquitectura orientada a objetos (OOP) y patrones.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Migración de sistemas legacy antiguos.<br>
@@ -359,7 +498,7 @@
               <br><br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> APIs RESTful y seguridad JWT.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Integración de Zoom, JustCall, Calendly.<br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Prompt Engineering avíanzado con ChatGPT, Claude Code y Gemini.
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Prompt Engineering avanzado con ChatGPT, Claude Code y Gemini.
             </p>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Curso%20APIs%20&%20Programación%20con%20IA" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
@@ -418,7 +557,7 @@
             <div class="col-lg-6">
               <div class="box-item">
                 <h4><a href="#services">IA &amp; Prompt Engineering</a></h4>
-                <p>Uso avíanzado de herramientas de IA (ChatGPT, Claude Code, Gemini) para acelerar el desarrollo y mantener la máxima calidad.</p>
+                <p>Uso avanzado de herramientas de IA (ChatGPT, Claude Code, Gemini) para acelerar el desarrollo y mantener la máxima calidad.</p>
               </div>
             </div>
             <div class="col-lg-12">
@@ -483,7 +622,7 @@
                       <div class="thumb">
                         <div class="row">
                           <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>JavíaScript &amp; jQuery</h4>
+                            <h4>JavaScript &amp; jQuery</h4>
                           </div>
                           <div class="col-lg-4 col-sm-4 d-none d-sm-block">
                             <h4>React.js &amp; Node.js</h4>
@@ -575,12 +714,12 @@
                             <div class="col-lg-12">
                               <div class="client-content">
                                 <img src="assets/images/quote.png" alt="">
-                                <p>Desarrollo frontend dinámico e interactivo utilizando JavíaScript moderno, jQuery, AJAX, React.js, Node.js, Bootstrap y diseños responsivos adaptados a la mejor experiencia del usuario.</p>
+                                <p>Desarrollo frontend dinámico e interactivo utilizando JavaScript moderno, jQuery, AJAX, React.js, Node.js, Bootstrap y diseños responsivos adaptados a la mejor experiencia del usuario.</p>
                               </div>
                               <div class="down-content">
                                 <div class="right-content">
                                   <h4>Frontend &amp; UI Development</h4>
-                                  <span>JavíaScript, React.js, Bootstrap, CSS3</span>
+                                  <span>JavaScript, React.js, Bootstrap, CSS3</span>
                                 </div>
                               </div>
                             </div>
@@ -615,7 +754,7 @@
                             <div class="col-lg-12">
                               <div class="client-content">
                                 <img src="assets/images/quote.png" alt="">
-                                <p>Integración de servicios web RESTful, seguridad JWT, PHP, soluciones avíanzadas en WordPress y aplicación estratégica de herramientas de IA (ChatGPT, Claude, Codex) para maximizar la velocidad de entrega.</p>
+                                <p>Integración de servicios web RESTful, seguridad JWT, PHP, soluciones avanzadas en WordPress y aplicación estratégica de herramientas de IA (ChatGPT, Claude, Codex) para maximizar la velocidad de entrega.</p>
                               </div>
                               <div class="down-content">
                                 <div class="right-content">
@@ -631,145 +770,6 @@
                   </ul>
                 </div>          
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    <div id="pricing" class="pricing-tables">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading">
-            <h4>Experiencia <em>Profesional </em> &amp; Proyectos</h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Proyectos actuales, desarrollos propios con Inteligencia Artificial y trayectoria corporativía destacada.</p>
-          </div>
-        </div>
-        <!-- Card 1: Quebec Attractions -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>Quebec Attractions</h4>
-            <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Trabajo Actual | Lucee Server</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Quebec Attractions">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Sitio Oficial</strong>: <a href="https://quebecattractions.ca/" target="_blank" style="color:#0077b5; font-weight:600;">quebecattractions.ca</a></li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Plataforma turística bilingüe líder en Quebec (atracciones, eventos y hospedaje).</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo completo de la aplicación en <strong>Lucee CFML</strong>.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Diseó e implementó <strong>100% de la interfaz visual (UI/UX)</strong> y maquetación responsivía.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Administración integral de servidores e infraestructura.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Quebec%20Attractions" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 2: CompraInversa.com -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>CompraInversa.com</h4>
-            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Proyecto Personal | ColdFusion + IA</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="CompraInversa">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Marketplace Inteligente</strong>: <a href="https://comprainvesa.com/" target="_blank" style="color:#0077b5; font-weight:600;">comprainvesa.com</a></li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Plataforma propia de marketplace para conectar demandas de compra con ofertas competitivías.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollado con <strong>Adobe ColdFusion</strong> y <strong>Microsoft SQL Server</strong>.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integración de módulos asistidos por <strong>Inteligencia Artificial (IA)</strong> para emparejamiento de requerimientos y optimización de búsqueda.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20CompraInversa.com" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3: Firebrand Creative -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>Firebrand Creative</h4>
-            <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Trabajo Actual | Agencia Digital US</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Firebrand Creative">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Sitio Oficial</strong>: <a href="https://iamfirebrand.com/" target="_blank" style="color:#0077b5; font-weight:600;">iamfirebrand.com</a></li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo senior continuo para la agencia norteamericana Firebrand Creative.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Construcción, optimización y mantenimiento de sistemas web para diversos clientes globales.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integraciones backend, desarrollo ColdFusion / PHP y soporte de plataformas complejas.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Firebrand%20Creative" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 4: Makeway -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>Makeway &amp; Clientes Internacionales</h4>
-            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Sep 2023 - Presente</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Makeway">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Gestión y optimización de rendimiento de sistemas CMS en ColdFusion y MySQL.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Refactorización de código legacy para empresas como Darran Furniture (darran.com).</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo para Trinity Furniture (trinityfurniture.com) y Peter Pepper Products.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Creación de nuevías características y resolución de errores críticos.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Makeway" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 5: Contensive Svetness CRM -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>Contensive - Svetness CRM</h4>
-            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Mar 2021 - Oct 2024</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Contensive Svetness CRM">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo Senior Fullstack ColdFusion + SQL Server + AWS para Svetness CRM.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integración de APIs de comunicación: JustCall, Zoom y Calendly.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Tuning de rendimiento de ColdFusion con FusionReactor y optimización MSSQL.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Administración de infraestructura AWS (EC2, RDS, S3) y servidores Windows.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Svetness%20CRM" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 6: Third Wave Digital & FortSystems -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>Third Wave Digital, FortSystems &amp; 2Connect</h4>
-            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">2011 - 2020</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Third Wave Digital">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Third Wave Digital (2019)</strong>: Sistema de diagnóstico e historial clínico para cáncer de mama (NQMBC).</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>FortSystems (2011-2018)</strong>: Desarrollo y administración de 800wine.com y plataformas multitienda.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>2Connect (2018-2020)</strong>: Desarrollo de plataforma web interactivía con ColdFusion, MySQL y Bootstrap.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyectos%20Salud%20y%20E-Commerce" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
-              </a>
             </div>
           </div>
         </div>

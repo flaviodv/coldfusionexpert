@@ -408,6 +408,31 @@
           line-height: normal !important;
         }
       }
+      /* Fix: template CSS hardcodes white hover/active on the 6th and last nav item
+         (designed for a CTA button in the original template layout) */
+      .header-area .main-nav .nav li:last-child a:hover,
+      .background-header .main-nav .nav li:last-child a:hover,
+      .header-area .main-nav .nav li:nth-child(6) a:hover,
+      .background-header .main-nav .nav li:nth-child(6) a:hover,
+      .header-area .main-nav .nav li:last-child a.active,
+      .background-header .main-nav .nav li:last-child a.active {
+        color: #4b8ef1 !important;
+      }
+      /* Fix: header used position:absolute until scrolled past the whole hero,
+         so it disappeared right after scrolling and only came back much later.
+         Keep it fixed at all times, with a solid background always (instead of
+         transparent-until-scrolled), so page content never shows through/behind it. */
+      .header-area.header-sticky {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff !important;
+        box-shadow: 0px 5px 8px rgba(0,0,0,0.08);
+      }
+      .header-area.header-sticky .nav li a {
+        color: #2a2a2a !important;
+      }
     </style>
   </head>
 <body>
@@ -439,12 +464,12 @@
             <ul class="nav">
               <li class="scroll-to-section"><a href="#top" class="active">Inicio</a></li>
               <li class="scroll-to-section"><a href="#services">Servicios</a></li>
+              <li class="scroll-to-section"><a href="#pricing">Experiencia</a></li>
               <li class="scroll-to-section"><a href="#seo">SEO / GEO</a></li>
               <li class="scroll-to-section"><a href="#automation">Automatización</a></li>
               <li class="scroll-to-section"><a href="#courses">Cursos Zoom</a></li>
               <li class="scroll-to-section"><a href="#about">Acerca de</a></li>
               <li class="scroll-to-section"><a href="#clients">Habilidades</a></li>
-              <li class="scroll-to-section"><a href="#pricing">Experiencia</a></li>
               <li class="scroll-to-section"><a href="#Contact">Contacto</a></li>
             </ul>        
             <a class='menu-trigger'>

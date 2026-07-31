@@ -22,9 +22,9 @@
             <ul>
               <li><a href="#top">Home</a></li>
               <li><a href="#services">Services</a></li>
+              <li><a href="#pricing">Experience</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#clients">Skills</a></li>
-              <li><a href="#pricing">Experience</a></li>
             </ul>
           </div>
         </div>

@@ -62,7 +62,7 @@
             </div>
              <h4>ColdFusion Consulting Service</h4>
              <p> We tailor strategies to align with your business objectives. 
-              Comprehensive infrastructure evíaluation, bottleneck diagnostics with FusionReactor, and legacy code refactoring. <br>
+              Comprehensive infrastructure evaluation, bottleneck diagnostics with FusionReactor, and legacy code refactoring. <br>
               <span class="highligth">The goal?</span> Maximize efficiency, security, and performance across CF4 to Adobe ColdFusion 2023 and Lucee Server.
              </p>
             <div class="card-wa-btn-wrap">
@@ -138,10 +138,144 @@
              <h4>AWS Cloud Administration &amp; Server Maintenance</h4>
              <p>Expert administration of staging and production environments on AWS (EC2, RDS MSSQL/MySQL, S3) and IIS Server on Windows/Linux.
                Proactive support, regular security patching, automated backups, and 24/7 server monitoring. <br>
-              <span class="highligth">Your applications?</span> Secure, highly avíailable, and always ahead of technological updates.
+              <span class="highligth">Your applications?</span> Secure, highly available, and always ahead of technological updates.
             </p>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20AWS%20Cloud%20&%20Server%20Maintenance" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div id="pricing" class="pricing-tables">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="section-heading">
+            <h4>Featured <em>Professional Experience</em> &amp; Projects</h4>
+            <img src="assets/images/heading-line-dec.png" alt="">
+            <p>Current enterprise roles, proprietary AI-powered developments, and proven track record.</p>
+          </div>
+        </div>
+        <!-- Card 1: Quebec Attractions -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>Quebec Attractions</h4>
+            <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Current Role | Lucee Server</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="Quebec Attractions">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Official Website</strong>: <a href="https://quebecattractions.ca/" target="_blank" style="color:#0077b5; font-weight:600;">quebecattractions.ca</a></li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Leading bilingual tourism platform in Quebec (attractions, events, and accommodations).</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Full web application development built in <strong>Lucee CFML</strong>.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Designed and implemented <strong>100% of the UI/UX layout</strong> and responsive design.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Complete server and cloud infrastructure administration.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Quebec%20Attractions%20Project" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2: CompraInversa.com -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>CompraInversa.com</h4>
+            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Personal Project | ColdFusion + AI</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="CompraInversa">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Smart Marketplace</strong>: <a href="https://comprainvesa.com/" target="_blank" style="color:#0077b5; font-weight:600;">comprainvesa.com</a></li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Proprietary marketplace platform connecting purchase procurement demands with competitive seller offers.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Built with <strong>Adobe ColdFusion</strong> and <strong>Microsoft SQL Server</strong>.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integrated <strong>Artificial Intelligence (AI)</strong> modules for automated requirement matching and smart search optimization.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20CompraInversa.com%20Project" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3: Firebrand Creative -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>Firebrand Creative</h4>
+            <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Current Role | US Digital Agency</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="Firebrand Creative">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Official Website</strong>: <a href="https://iamfirebrand.com/" target="_blank" style="color:#0077b5; font-weight:600;">iamfirebrand.com</a></li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Senior developer for US-based creative agency Firebrand Creative.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Building, optimizing, and maintaining web systems across diverse corporate and non-profit clients.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Backend integrations, ColdFusion / PHP development, and enterprise web platform support.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Firebrand%20Creative%20Project" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 4: Makeway -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>Makeway &amp; International Clients</h4>
+            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Sep 2023 - Present</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="Makeway">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Management and performance enhancement of CMS systems using MySQL and ColdFusion.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Code refactoring and performance optimization for Darran Furniture (darran.com).</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Feature development for Trinity Furniture (trinityfurniture.com) &amp; Peter Pepper Products.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Resolving complex legacy system bugs and enhancing user experience.</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Card 5: Contensive Svetness CRM -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>Contensive - Svetness CRM</h4>
+            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Mar 2021 - Oct 2024</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="Contensive Svetness CRM">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Senior Fullstack ColdFusion + SQL Server + AWS development for Svetness CRM.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Communication API integrations: JustCall, Zoom, and Calendly.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>ColdFusion performance tuning using FusionReactor and MSSQL optimization.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>AWS infrastructure management (EC2, RDS snapshots/restores, S3) &amp; Windows Servers.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Svetness%20CRM%20Project" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Card 6: Third Wave Digital & FortSystems -->
+        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
+          <div class="pricing-item-pro">
+            <h4>Third Wave Digital, FortSystems &amp; 2Connect</h4>
+            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">2011 - 2020</span>
+            <div class="icon">
+              <img src="assets/images/pricing-table-01.png" alt="Third Wave Digital">
+            </div>
+            <ul>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Third Wave Digital (2019)</strong>: Internal diagnosis and medical history system for breast cancer patients (NQMBC).</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>FortSystems (2011-2018)</strong>: Development and administration of 800wine.com and multi-store platforms.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>2Connect (2018-2020)</strong>: Web platform development using ColdFusion, MySQL, and Bootstrap.</li>
+            </ul>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Healthcare%20&%20E-Commerce%20Projects" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
                 <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
               </a>
             </div>
@@ -253,7 +387,7 @@
             <p>
               Connecting advanced language models (ChatGPT 4o, Claude 3.5, Gemini 1.5, DeepSeek) to custom web applications and ColdFusion/Lucee/Node.js backends.
               <br><br>
-              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> <strong>RAG</strong> architectures (Retrievíal-Augmented Generation) &amp; vector databases.<br>
+              <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> <strong>RAG</strong> architectures (Retrieval-Augmented Generation) &amp; vector databases.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Intelligent virtual assistants &amp; 24/7 support agents.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Automated processing of unstructured documents, contracts, and text.
             </p>
@@ -499,7 +633,7 @@
                       <div class="thumb">
                         <div class="row">
                           <div class="col-lg-4 col-sm-4 col-12">
-                            <h4>JavíaScript &amp; jQuery</h4>
+                            <h4>JavaScript &amp; jQuery</h4>
                           </div>
                           <div class="col-lg-4 col-sm-4 d-none d-sm-block">
                             <h4>React.js &amp; Node.js</h4>
@@ -591,12 +725,12 @@
                             <div class="col-lg-12">
                               <div class="client-content">
                                 <img src="assets/images/quote.png" alt="">
-                                <p>“Dynamic frontend interface development using modern JavíaScript, jQuery, AJAX, React.js, Node.js, Bootstrap, and responsive UI components tailored for optimal user experience.”</p>
+                                <p>“Dynamic frontend interface development using modern JavaScript, jQuery, AJAX, React.js, Node.js, Bootstrap, and responsive UI components tailored for optimal user experience.”</p>
                               </div>
                               <div class="down-content">
                                 <div class="right-content">
                                   <h4>Frontend &amp; UI Development</h4>
-                                  <span>JavíaScript, React.js, Bootstrap, CSS3</span>
+                                  <span>JavaScript, React.js, Bootstrap, CSS3</span>
                                 </div>
                               </div>
                             </div>
@@ -647,140 +781,6 @@
                   </ul>
                 </div>          
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-    <div id="pricing" class="pricing-tables">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="section-heading">
-            <h4>Featured <em>Professional Experience</em> &amp; Projects</h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Current enterprise roles, proprietary AI-powered developments, and proven track record.</p>
-          </div>
-        </div>
-        <!-- Card 1: Quebec Attractions -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>Quebec Attractions</h4>
-            <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Current Role | Lucee Server</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Quebec Attractions">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Official Website</strong>: <a href="https://quebecattractions.ca/" target="_blank" style="color:#0077b5; font-weight:600;">quebecattractions.ca</a></li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Leading bilingual tourism platform in Quebec (attractions, events, and accommodations).</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Full web application development built in <strong>Lucee CFML</strong>.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Designed and implemented <strong>100% of the UI/UX layout</strong> and responsive design.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Complete server and cloud infrastructure administration.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Quebec%20Attractions%20Project" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 2: CompraInversa.com -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>CompraInversa.com</h4>
-            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Personal Project | ColdFusion + AI</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="CompraInversa">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Smart Marketplace</strong>: <a href="https://comprainvesa.com/" target="_blank" style="color:#0077b5; font-weight:600;">comprainvesa.com</a></li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Proprietary marketplace platform connecting purchase procurement demands with competitive seller offers.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Built with <strong>Adobe ColdFusion</strong> and <strong>Microsoft SQL Server</strong>.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integrated <strong>Artificial Intelligence (AI)</strong> modules for automated requirement matching and smart search optimization.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20CompraInversa.com%20Project" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 3: Firebrand Creative -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>Firebrand Creative</h4>
-            <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Current Role | US Digital Agency</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Firebrand Creative">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Official Website</strong>: <a href="https://iamfirebrand.com/" target="_blank" style="color:#0077b5; font-weight:600;">iamfirebrand.com</a></li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Senior developer for US-based creative agency Firebrand Creative.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Building, optimizing, and maintaining web systems across diverse corporate and non-profit clients.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Backend integrations, ColdFusion / PHP development, and enterprise web platform support.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Firebrand%20Creative%20Project" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 4: Makeway -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>Makeway &amp; International Clients</h4>
-            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Sep 2023 - Present</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Makeway">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Management and performance enhancement of CMS systems using MySQL and ColdFusion.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Code refactoring and performance optimization for Darran Furniture (darran.com).</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Feature development for Trinity Furniture (trinityfurniture.com) &amp; Peter Pepper Products.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Resolving complex legacy system bugs and enhancing user experience.</li>
-            </ul>
-          </div>
-        </div>
-        <!-- Card 5: Contensive Svetness CRM -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>Contensive - Svetness CRM</h4>
-            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Mar 2021 - Oct 2024</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Contensive Svetness CRM">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Senior Fullstack ColdFusion + SQL Server + AWS development for Svetness CRM.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Communication API integrations: JustCall, Zoom, and Calendly.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>ColdFusion performance tuning using FusionReactor and MSSQL optimization.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>AWS infrastructure management (EC2, RDS snapshots/restores, S3) &amp; Windows Servers.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Svetness%20CRM%20Project" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
-              </a>
-            </div>
-          </div>
-        </div>
-        <!-- Card 6: Third Wave Digital & FortSystems -->
-        <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
-          <div class="pricing-item-pro">
-            <h4>Third Wave Digital, FortSystems &amp; 2Connect</h4>
-            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">2011 - 2020</span>
-            <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Third Wave Digital">
-            </div>
-            <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Third Wave Digital (2019)</strong>: Internal diagnosis and medical history system for breast cancer patients (NQMBC).</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>FortSystems (2011-2018)</strong>: Development and administration of 800wine.com and multi-store platforms.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>2Connect (2018-2020)</strong>: Web platform development using ColdFusion, MySQL, and Bootstrap.</li>
-            </ul>
-            <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Healthcare%20&%20E-Commerce%20Projects" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
-                <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
-              </a>
             </div>
           </div>
         </div>

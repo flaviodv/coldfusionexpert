@@ -22,9 +22,9 @@
             <ul>
               <li><a href="#top">Inicio</a></li>
               <li><a href="#services">Servicios</a></li>
+              <li><a href="#pricing">Experiencia</a></li>
               <li><a href="#about">Acerca de</a></li>
               <li><a href="#clients">Habilidades</a></li>
-              <li><a href="#pricing">Experiencia</a></li>
             </ul>
           </div>
         </div>
@@ -48,7 +48,7 @@
         </div>
         <div class="col-lg-12">
           <div class="copyright-text">
-            <p>Copyright &copy; 2026 Coldfusion Expert - Flavio Di Virgilio. Todos los derechos reservíados.</p>
+            <p>Copyright &copy; 2026 Coldfusion Expert - Flavio Di Virgilio. Todos los derechos reservados.</p>
           </div>
         </div>
       </div>

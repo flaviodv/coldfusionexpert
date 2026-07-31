@@ -1,21 +1,23 @@
 (function ($) {
-	// Auto-clean legacy #[object%20Object] from URL
-	if (window.location.hash && window.location.hash.indexOf('object') !== -1) {
-		if (window.history && window.history.replaceState) {
-			window.history.replaceState(null, null, window.location.pathname + window.location.search);
+	// Auto-clean any bad "#[object Object]" hash from the URL, on load and if it ever reappears
+	function cleanBadHash() {
+		if (window.location.hash && window.location.hash.indexOf('object') !== -1) {
+			if (window.history && window.history.replaceState) {
+				window.history.replaceState(null, null, window.location.pathname + window.location.search);
+			}
 		}
 	}
+	cleanBadHash();
+	window.addEventListener('hashchange', cleanBadHash);
 
-	
+
 	"use strict";
 
 	// Header Type = Fixed
   $(window).scroll(function() {
     var scroll = $(window).scrollTop();
-    var box = $('.header-text').height();
-    var header = $('header').height();
 
-    if (scroll >= box - header) {
+    if (scroll > 50) {
       $("header").addClass("background-header");
     } else {
       $("header").removeClass("background-header");
@@ -135,16 +137,18 @@ $(function() {
           });
           $(this).addClass('active');
         
-          var targetHash = this.hash;
-          var target = $(targetHash);
+          var targetHash = typeof this.hash === 'string' ? this.hash : '';
+          var target = targetHash ? $(targetHash) : $();
           if (target.length) {
             $('html, body').stop().animate({
                 scrollTop: (target.offset().top) + 1
             }, 500, 'swing', function () {
-                if (history.pushState) {
-                    history.pushState(null, null, targetHash);
-                } else {
-                    window.location.hash = targetHash;
+                if (/^#[\w-]+$/.test(targetHash)) {
+                    if (history.pushState) {
+                        history.pushState(null, null, targetHash);
+                    } else {
+                        window.location.hash = targetHash;
+                    }
                 }
                 $(document).on("scroll", onScroll);
             });
