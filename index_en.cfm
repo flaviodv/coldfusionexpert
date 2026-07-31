@@ -1050,7 +1050,19 @@
         color: #ffffff !important;
       }
       .pricing-item-pro:before {
-        display: none !important;
+        display: block !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        background-image: url(assets/images/pro-table-top.png) !important;
+        background-repeat: no-repeat !important;
+        background-size: contain !important;
+        width: 250px !important;
+        height: 170px !important;
+        z-index: 1 !important;
+        content: '' !important;
+        opacity: 0.92 !important;
+        pointer-events: none !important;
       }
       .pricing-item-pro:after {
         display: none !important;
@@ -1058,12 +1070,10 @@
       .pricing-item-pro h4 {
         position: relative !important;
         z-index: 5 !important;
-        margin-top: 15px !important;
+        margin-top: 10px !important;
         margin-bottom: 15px !important;
         color: #13aff0 !important;
-        text-shadow: none !important;
         font-weight: 700 !important;
-        font-size: 22px !important;
       }
       .pricing-item-pro:hover h4 {
         color: #ffffff !important;
