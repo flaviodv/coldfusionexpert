@@ -6,18 +6,19 @@
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>ColdFusion Expert | Flavio Di Virgilio - Desarrollador Senior ColdFusion, AWS &amp; Automatización IA</title>
-    <meta name="description" content="Flavio Di Virgilio - Desarrollador Senior Full-Stack especializado en Adobe ColdFusion, Lucee Server, SQL Server, AWS Cloud, Automatización con IA (LLMs, RAG, OpenAI, Claude) y SEO/GEO. +25 años de trayectoria. Cursos en vivo vía Zoom y consultoría internacional. Top Rated Plus en Upwork (100% Job Success).">
+    <meta name="description" content="Flavio Di Virgilio - Desarrollador Senior Full-Stack especializado en Adobe ColdFusion, Lucee Server, SQL Server, AWS Cloud, Automatización con IA (LLMs, RAG, OpenAI, Claude) y SEO/GEO. +15 años de trayectoria. Cursos en vivo vía Zoom y consultoría internacional. Top Rated Plus en Upwork (100% Job Success).">
     <meta name="keywords" content="ColdFusion expert, desarrollador ColdFusion, Lucee server, automatización IA, APIs OpenAI Claude Gemini, RAG vectores, consultoría ColdFusion, SEO GEO IA, cursos Zoom ColdFusion, AWS EC2 RDS, Quebec Attractions, CompraInversa, Firebrand Creative, Argentina, Upwork Top Rated">
     <meta name="author" content="Flavio Di Virgilio">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://coldfusionexpert.ar/?lan=es">
     <link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/?lan=es">
     <link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/?lan=en">
+    <link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/?lan=en">
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://coldfusionexpert.ar/?lan=es">
-    <meta property="og:title" content="ColdFusion Expert | Flavio Di Virgilio - Senior Full-Stack Developer &amp; AI Automation">
-    <meta property="og:description" content="Servicios de consultoría, desarrollo web a medida, automatización con IA, administración AWS, SEO/GEO y capacitación en vivo vía Zoom. +25 años de trayectoria.">
+    <meta property="og:title" content="ColdFusion Expert | Flavio Di Virgilio - Desarrollador Senior Full-Stack &amp; Automatización IA">
+    <meta property="og:description" content="Servicios de consultoría, desarrollo web a medida, automatización con IA, administración AWS, SEO/GEO y capacitación en vivo vía Zoom. +15 años de trayectoria.">
     <meta property="og:image" content="https://coldfusionexpert.ar/assets/images/flavio-profile.png">
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">

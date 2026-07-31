@@ -8,7 +8,7 @@
                 <div class="row">
                   <div class="col-lg-12">
                     <br> <br>
-                    <span class="badge-experience"><i class="fas fa-award"></i> +25 Años de Experiencia | Senior Full-Stack Developer</span>
+                    <span class="badge-experience"><i class="fas fa-award"></i> +15 Años de Experiencia | Senior Full-Stack Developer</span>
                     <h1>Flavio Di Virgilio - ColdFusion Expert</h1>
                     <h3>ColdFusion Senior Developer & AWS / Server Administrator</h3>
                     <h5>Especialista en aplicaciones web de alto rendimiento, arquitectura de datos, migración de sistemas legacy y optimización Cloud.</h5>
@@ -439,7 +439,7 @@
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Cursos &amp; Capacitación <em>vía Zoom</em></h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Clases en vivo 1 a 1 y mentores personalizados para desarrolladores y equipos, cubriendo más de 25 años de conocimiento técnico y práctico acumulado.</p>
+            <p>Clases en vivo 1 a 1 y mentores personalizados para desarrolladores y equipos, cubriendo más de 15 años de conocimiento técnico y práctico acumulado.</p>
           </div>
         </div>
       </div>

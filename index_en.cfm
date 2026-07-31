@@ -450,7 +450,7 @@
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Live Training &amp; <em>Zoom Courses</em></h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>1-on-1 live classes and tailored mentoring for individual developers and tech teams, covering over 25 years of practical knowledge.</p>
+            <p>1-on-1 live classes and tailored mentoring for individual developers and tech teams, covering over 15 years of practical knowledge.</p>
           </div>
         </div>
       </div>
@@ -542,7 +542,7 @@
           <div class="section-heading">
             <h4>About <em>Flavio Di Virgilio</em> &amp; Background</h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Flavio is a Systems Analyst graduated from J.F. Kennedy University (Buenos Aires, Argentina) and a Multimedia Designer from Da Vinci Institute, with over 25 years of hands-on experience in Full-Stack ColdFusion/CFML web application development, database architecture, and server management in high-demand environments.
+            <p>Flavio is a Systems Analyst graduated from J.F. Kennedy University (Buenos Aires, Argentina) and a Multimedia Designer from Da Vinci Institute, with over 15 years of hands-on experience in Full-Stack ColdFusion/CFML web application development, database architecture, and server management in high-demand environments.
             Throughout his career, he has designed and delivered e-commerce systems, healthcare diagnostic platforms (NQMBC), REST API integrations with JWT authentication, real-time CRM platforms, and full AWS cloud infrastructure (EC2, RDS, S3).
             Top Rated Plus Freelancer on Upwork with a 100% Job Success score and over 8,000 hours logged, he is a self-motivated professional with strong logical and coding skills who also leverages modern AI development tools (ChatGPT, Claude, Codex, Gemini) to accelerate productivity and maintain top code quality.</p>
           </div>

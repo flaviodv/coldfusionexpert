@@ -6,18 +6,19 @@
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>ColdFusion Expert | Flavio Di Virgilio - Senior ColdFusion Developer, AWS &amp; AI Automation</title>
-    <meta name="description" content="Flavio Di Virgilio - Senior Full-Stack Specialist in Adobe ColdFusion, Lucee Server, SQL Server, AWS Cloud, AI Automation (LLMs, RAG, OpenAI, Claude), and SEO/GEO. +25 years of experience. Live Zoom training courses and global consulting. Top Rated Plus on Upwork (100% Job Success).">
+    <meta name="description" content="Flavio Di Virgilio - Senior Full-Stack Specialist in Adobe ColdFusion, Lucee Server, SQL Server, AWS Cloud, AI Automation (LLMs, RAG, OpenAI, Claude), and SEO/GEO. +15 years of experience. Live Zoom training courses and global consulting. Top Rated Plus on Upwork (100% Job Success).">
     <meta name="keywords" content="ColdFusion expert, ColdFusion developer, Lucee server, AI automation, OpenAI Claude Gemini APIs, RAG vectors, ColdFusion consulting, SEO GEO AI, ColdFusion Zoom courses, AWS EC2 RDS, Quebec Attractions, CompraInversa, Firebrand Creative, Upwork Top Rated">
     <meta name="author" content="Flavio Di Virgilio">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://coldfusionexpert.ar/?lan=en">
     <link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/?lan=es">
     <link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/?lan=en">
+    <link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/?lan=en">
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://coldfusionexpert.ar/?lan=en">
     <meta property="og:title" content="ColdFusion Expert | Flavio Di Virgilio - Senior Full-Stack Developer &amp; AI Automation">
-    <meta property="og:description" content="Expert consulting, custom web development, AI automation, AWS administration, SEO/GEO, and live Zoom courses. +25 years of experience.">
+    <meta property="og:description" content="Expert consulting, custom web development, AI automation, AWS administration, SEO/GEO, and live Zoom courses. +15 years of experience.">
     <meta property="og:image" content="https://coldfusionexpert.ar/assets/images/flavio-profile.png">
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
