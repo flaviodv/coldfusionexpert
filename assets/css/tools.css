@@ -444,11 +444,17 @@
   font-weight: 600;
   transition: all 0.2s ease;
 }
-.widget-image-editor .aspect-btn:hover,
-.widget-image-editor .aspect-btn.active {
-  background: #13aff0;
-  color: #fff;
+.widget-image-editor .aspect-btn:hover {
+  background: rgba(19, 175, 240, 0.1);
+  color: #13aff0;
   border-color: #13aff0;
+}
+.widget-image-editor .aspect-btn.active {
+  background: #13aff0 !important;
+  color: #ffffff !important;
+  border-color: #13aff0 !important;
+  box-shadow: 0 3px 8px rgba(19, 175, 240, 0.35) !important;
+  font-weight: 700 !important;
 }
 
 /* ===== Widget: CSS Effects Generator ===== */

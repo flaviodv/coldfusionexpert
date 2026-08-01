@@ -285,6 +285,10 @@
   btnReset.addEventListener('click', function() {
     if (cropper) {
       cropper.reset();
+      cropper.setAspectRatio(NaN);
+      document.querySelectorAll('.widget-image-editor .aspect-btn[data-ratio]').forEach(function(b) { b.classList.remove('active'); });
+      var freeBtn = document.querySelector('.widget-image-editor .aspect-btn[data-ratio="free"]');
+      if (freeBtn) freeBtn.classList.add('active');
       scaleX = 1; scaleY = 1;
       resetFilters();
     }
