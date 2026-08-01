@@ -1,14 +1,4 @@
 <div class="tool-widget widget-time-tracker">
-  <!-- Datalist for open text Project/Client suggestions -->
-  <datalist id="project-suggestions">
-    <option value="Client Work">
-    <option value="CFML Development">
-    <option value="Web Design & CSS">
-    <option value="Bugfix & Maintenance">
-    <option value="Acme Corp">
-    <option value="Tesla Migration">
-  </datalist>
-
   <!-- Section Header & Timer Tabs Bar -->
   <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
     <h3 style="font-size:1.1rem; font-weight:700; color:#0f172a; margin:0;">
@@ -45,10 +35,10 @@
         
         <input type="text" id="tracker-desc-1" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
 
-        <input type="text" id="tracker-project-1" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
+        <input type="text" id="tracker-project-1" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:230px;">
 
         <div style="display:flex; align-items:center; gap:6px;">
-          <select id="tracker-currency-1" style="width:65px;">
+          <select id="tracker-currency-1" style="width:95px;">
             <option value="$">$ USD</option>
             <option value="€">€ EUR</option>
             <option value="ARS$">$ ARS</option>
@@ -76,10 +66,10 @@
         
         <input type="text" id="tracker-desc-2" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
 
-        <input type="text" id="tracker-project-2" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
+        <input type="text" id="tracker-project-2" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:230px;">
 
         <div style="display:flex; align-items:center; gap:6px;">
-          <select id="tracker-currency-2" style="width:65px;">
+          <select id="tracker-currency-2" style="width:95px;">
             <option value="$">$ USD</option>
             <option value="€">€ EUR</option>
             <option value="ARS$">$ ARS</option>
@@ -107,10 +97,10 @@
         
         <input type="text" id="tracker-desc-3" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
 
-        <input type="text" id="tracker-project-3" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
+        <input type="text" id="tracker-project-3" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:230px;">
 
         <div style="display:flex; align-items:center; gap:6px;">
-          <select id="tracker-currency-3" style="width:65px;">
+          <select id="tracker-currency-3" style="width:95px;">
             <option value="$">$ USD</option>
             <option value="€">€ EUR</option>
             <option value="ARS$">$ ARS</option>
@@ -514,7 +504,6 @@
 
           var editProj = document.createElement('input');
           editProj.type = 'text';
-          editProj.setAttribute('list', 'project-suggestions');
           editProj.placeholder = '<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>';
           editProj.value = entry.project;
 
