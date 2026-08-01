@@ -260,6 +260,15 @@
           catBadge.className = 'category-badge';
           catBadge.textContent = t.category;
 
+          var btnPlay = document.createElement('button');
+          btnPlay.type = 'button';
+          btnPlay.className = 'btn-icon-play';
+          btnPlay.innerHTML = '<i class="fas fa-play"></i>';
+          btnPlay.title = '<cfif local.isEs>Iniciar en Time Tracker<cfelse>Start in Time Tracker</cfif>';
+          btnPlay.addEventListener('click', function() {
+            startTaskInTimeTracker(t);
+          });
+
           var btnEdit = document.createElement('button');
           btnEdit.type = 'button';
           btnEdit.className = 'btn-icon-edit';
@@ -281,6 +290,7 @@
           item.appendChild(txt);
           item.appendChild(prioBadge);
           item.appendChild(catBadge);
+          item.appendChild(btnPlay);
           item.appendChild(btnEdit);
           item.appendChild(btnDel);
 
@@ -288,6 +298,38 @@
         }
       });
     }
+
+  function startTaskInTimeTracker(t) {
+    var MULTI_TIMERS_KEY = 'cfexpert_tracker_multi_timers';
+    var multiTimers = { 1: null, 2: null, 3: null, 4: null, 5: null };
+    try {
+      var data = localStorage.getItem(MULTI_TIMERS_KEY);
+      if (data) multiTimers = JSON.parse(data);
+    } catch(e) {}
+
+    // Find first idle slot among 1, 2, 3 or fallback to slot 1
+    var targetSlot = 1;
+    for (var s = 1; s <= 3; s++) {
+      if (!multiTimers[s] || !multiTimers[s].startTime) {
+        targetSlot = s;
+        break;
+      }
+    }
+
+    multiTimers[targetSlot] = {
+      description: t.text,
+      project: t.category || 'General',
+      rate: 0,
+      currency: '$',
+      startTime: new Date().toISOString()
+    };
+
+    try {
+      localStorage.setItem(MULTI_TIMERS_KEY, JSON.stringify(multiTimers));
+    } catch(e) {}
+
+    window.location.href = '/tools/time-tracker.cfm?slot=' + targetSlot;
+  }
 
     // Update Metrics
     var total = tasks.length;

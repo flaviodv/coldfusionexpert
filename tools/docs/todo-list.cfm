@@ -48,6 +48,13 @@
     </li>
     <li>
       <cfif local.isEs>
+        <strong>Integración Directa con Time Tracker (Botón Play ▶):</strong> Hacé clic en el botón verde de reproducción en cualquier tarea para cargarla automáticamente en el Time Tracker e iniciar el cronómetro al instante.
+      <cfelse>
+        <strong>Direct 1-Click Time Tracker Integration (Play ▶ Button):</strong> Click the green play button on any task to automatically send it to the Time Tracker and start timing instantly.
+      </cfif>
+    </li>
+    <li>
+      <cfif local.isEs>
         <strong>Exportación e Importación JSON:</strong> Guardá copias de seguridad de tus tareas en un archivo JSON o importalas en cualquier otro dispositivo.
       <cfelse>
         <strong>JSON Export &amp; Import:</strong> Backup your task list as a downloadable JSON file or import backups across any device.

@@ -923,6 +923,21 @@
     URL.revokeObjectURL(url);
   });
 
+  // Auto-switch to slot tab if passed in URL query param ?slot=N
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var paramSlot = parseInt(params.get('slot'), 10);
+    if (paramSlot >= 1 && paramSlot <= 5) {
+      tabBtns.forEach(function(b) { b.classList.remove('active'); });
+      tabPanels.forEach(function(p) { p.classList.remove('active'); });
+
+      var targetBtn = document.querySelector('.timer-tab-item[data-tab="' + paramSlot + '"]');
+      var targetPanel = document.getElementById('timer-panel-' + paramSlot);
+      if (targetBtn) targetBtn.classList.add('active');
+      if (targetPanel) targetPanel.classList.add('active');
+    }
+  } catch(e) {}
+
   renderEntries();
 })();
 </script>
