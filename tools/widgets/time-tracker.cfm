@@ -95,6 +95,7 @@
   var intervalId = null;
   var activeTimer = loadActiveTimer();
   var entries = loadEntries();
+  var editingEntryId = null;
 
   function loadActiveTimer() {
     try {
@@ -150,6 +151,14 @@
     var h = d.getHours();
     var m = d.getMinutes();
     return (h < 10 ? '0' + h : h) + ':' + (m < 10 ? '0' + m : m);
+  }
+
+  function formatDateInput(isoString) {
+    var d = new Date(isoString);
+    var year = d.getFullYear();
+    var month = String(d.getMonth() + 1).padStart(2, '0');
+    var day = String(d.getDate()).padStart(2, '0');
+    return year + '-' + month + '-' + day;
   }
 
   function updateTimerUI() {
@@ -262,6 +271,36 @@
     startTimer(entry.description, entry.project, entry.rate, entry.currency);
   }
 
+  function saveEditedEntry(id, newDesc, newProj, dateStr, startTimeStr, endTimeStr, newRate) {
+    var startIso = new Date(dateStr + 'T' + startTimeStr + ':00').toISOString();
+    var endIso = new Date(dateStr + 'T' + endTimeStr + ':00').toISOString();
+
+    var startMs = new Date(startIso).getTime();
+    var endMs = new Date(endIso).getTime();
+    var durationSec = Math.max(1, Math.floor((endMs - startMs) / 1000));
+    if (isNaN(durationSec)) durationSec = 1;
+
+    var rate = parseFloat(newRate) || 0;
+    var earned = rate > 0 ? (durationSec / 3600) * rate : 0;
+
+    entries = entries.map(function(e) {
+      if (e.id === id) {
+        e.description = newDesc.trim() || e.description;
+        e.project = newProj;
+        e.startTime = startIso;
+        e.endTime = endIso;
+        e.durationSeconds = durationSec;
+        e.rate = rate;
+        e.earned = earned;
+      }
+      return e;
+    });
+
+    editingEntryId = null;
+    saveEntries();
+    renderEntries();
+  }
+
   function renderEntries() {
     entriesContainer.innerHTML = '';
 
@@ -310,62 +349,166 @@
       entriesContainer.appendChild(groupHeader);
 
       groupEntries.forEach(function(entry) {
-        var card = document.createElement('div');
-        card.className = 'time-entry-card';
+        if (editingEntryId === entry.id) {
+          // Render Inline Edit Row
+          var editCard = document.createElement('div');
+          editCard.className = 'time-entry-edit-card';
 
-        var descEl = document.createElement('div');
-        descEl.className = 'entry-desc';
-        descEl.textContent = entry.description;
+          var editDesc = document.createElement('input');
+          editDesc.type = 'text';
+          editDesc.value = entry.description;
 
-        var projEl = document.createElement('span');
-        projEl.className = 'project-tag';
-        projEl.textContent = entry.project;
+          var editProj = document.createElement('select');
+          editProj.innerHTML = 
+            '<option value="General"' + (entry.project === 'General' ? ' selected' : '') + '>📁 General</option>' +
+            '<option value="CFML Dev"' + (entry.project === 'CFML Dev' ? ' selected' : '') + '>⚡ CFML Dev</option>' +
+            '<option value="Web Design"' + (entry.project === 'Web Design' ? ' selected' : '') + '>🎨 Web Design</option>' +
+            '<option value="Client Work"' + (entry.project === 'Client Work' ? ' selected' : '') + '>💼 Client Work</option>' +
+            '<option value="Bugfix"' + (entry.project === 'Bugfix' ? ' selected' : '') + '>🐛 Bugfix</option>';
 
-        var rangeEl = document.createElement('span');
-        rangeEl.className = 'entry-range';
-        rangeEl.textContent = formatClockTime(entry.startTime) + ' - ' + formatClockTime(entry.endTime);
+          var editDate = document.createElement('input');
+          editDate.type = 'date';
+          editDate.value = formatDateInput(entry.startTime);
 
-        var durEl = document.createElement('span');
-        durEl.className = 'entry-duration';
-        durEl.textContent = formatTimeDigits(entry.durationSeconds);
+          var editStart = document.createElement('input');
+          editStart.type = 'time';
+          editStart.value = formatClockTime(entry.startTime);
 
-        var earnedEl = document.createElement('span');
-        earnedEl.className = 'entry-earned';
-        if (entry.earned > 0) {
-          earnedEl.textContent = entry.currency + entry.earned.toFixed(2);
+          var editEnd = document.createElement('input');
+          editEnd.type = 'time';
+          editEnd.value = formatClockTime(entry.endTime);
+
+          var editRate = document.createElement('input');
+          editRate.type = 'number';
+          editRate.placeholder = '$/hr';
+          editRate.step = '0.5';
+          editRate.style.width = '80px';
+          editRate.value = entry.rate > 0 ? entry.rate : '';
+
+          var liveCalcBadge = document.createElement('span');
+          liveCalcBadge.style.cssText = 'font-weight:700; font-size:0.88rem; color:#16a34a; background:#dcfce7; padding:4px 8px; border-radius:6px;';
+          
+          function updateLiveCalc() {
+            var dStr = editDate.value;
+            var sStr = editStart.value;
+            var eStr = editEnd.value;
+            var rVal = parseFloat(editRate.value) || 0;
+
+            if (dStr && sStr && eStr) {
+              var sMs = new Date(dStr + 'T' + sStr + ':00').getTime();
+              var eMs = new Date(dStr + 'T' + eStr + ':00').getTime();
+              var sec = Math.max(1, Math.floor((eMs - sMs) / 1000));
+              var calcEarned = rVal > 0 ? (sec / 3600) * rVal : 0;
+              liveCalcBadge.textContent = formatTimeDigits(sec) + (calcEarned > 0 ? ' (' + (entry.currency || '$') + calcEarned.toFixed(2) + ')' : '');
+            }
+          }
+
+          editDate.addEventListener('input', updateLiveCalc);
+          editStart.addEventListener('input', updateLiveCalc);
+          editEnd.addEventListener('input', updateLiveCalc);
+          editRate.addEventListener('input', updateLiveCalc);
+          updateLiveCalc();
+
+          var btnSave = document.createElement('button');
+          btnSave.type = 'button';
+          btnSave.className = 'btn-social btn-upwork';
+          btnSave.style.cssText = 'padding:6px 12px; font-size:0.82rem;';
+          btnSave.innerHTML = '<i class="fas fa-check"></i> <cfif local.isEs>Guardar<cfelse>Save</cfif>';
+          btnSave.addEventListener('click', function() {
+            saveEditedEntry(entry.id, editDesc.value, editProj.value, editDate.value, editStart.value, editEnd.value, editRate.value);
+          });
+
+          var btnCancel = document.createElement('button');
+          btnCancel.type = 'button';
+          btnCancel.className = 'btn-social btn-linkedin';
+          btnCancel.style.cssText = 'padding:6px 12px; font-size:0.82rem;';
+          btnCancel.innerHTML = '<i class="fas fa-times"></i> <cfif local.isEs>Cancelar<cfelse>Cancel</cfif>';
+          btnCancel.addEventListener('click', function() {
+            editingEntryId = null;
+            renderEntries();
+          });
+
+          editCard.appendChild(editDesc);
+          editCard.appendChild(editProj);
+          editCard.appendChild(editDate);
+          editCard.appendChild(editStart);
+          editCard.appendChild(editEnd);
+          editCard.appendChild(editRate);
+          editCard.appendChild(liveCalcBadge);
+          editCard.appendChild(btnSave);
+          editCard.appendChild(btnCancel);
+
+          entriesContainer.appendChild(editCard);
         } else {
-          earnedEl.textContent = '-';
-          earnedEl.style.color = '#94a3b8';
+          // Render Normal Entry Card
+          var card = document.createElement('div');
+          card.className = 'time-entry-card';
+
+          var descEl = document.createElement('div');
+          descEl.className = 'entry-desc';
+          descEl.textContent = entry.description;
+
+          var projEl = document.createElement('span');
+          projEl.className = 'project-tag';
+          projEl.textContent = entry.project;
+
+          var rangeEl = document.createElement('span');
+          rangeEl.className = 'entry-range';
+          rangeEl.textContent = formatClockTime(entry.startTime) + ' - ' + formatClockTime(entry.endTime);
+
+          var durEl = document.createElement('span');
+          durEl.className = 'entry-duration';
+          durEl.textContent = formatTimeDigits(entry.durationSeconds);
+
+          var earnedEl = document.createElement('span');
+          earnedEl.className = 'entry-earned';
+          if (entry.earned > 0) {
+            earnedEl.textContent = entry.currency + entry.earned.toFixed(2);
+          } else {
+            earnedEl.textContent = '-';
+            earnedEl.style.color = '#94a3b8';
+          }
+
+          var actionsEl = document.createElement('div');
+          actionsEl.style.cssText = 'display:flex; gap:6px;';
+
+          var btnPlay = document.createElement('button');
+          btnPlay.type = 'button';
+          btnPlay.className = 'btn-icon-edit';
+          btnPlay.innerHTML = '<i class="fas fa-play"></i>';
+          btnPlay.title = '<cfif local.isEs>Reanudar tarea<cfelse>Resume task</cfif>';
+          btnPlay.addEventListener('click', function() { resumeEntry(entry); });
+
+          var btnEdit = document.createElement('button');
+          btnEdit.type = 'button';
+          btnEdit.className = 'btn-icon-edit';
+          btnEdit.innerHTML = '<i class="fas fa-pencil-alt"></i>';
+          btnEdit.title = '<cfif local.isEs>Editar registro<cfelse>Edit entry</cfif>';
+          btnEdit.addEventListener('click', function() {
+            editingEntryId = entry.id;
+            renderEntries();
+          });
+
+          var btnDel = document.createElement('button');
+          btnDel.type = 'button';
+          btnDel.className = 'btn-icon-danger';
+          btnDel.innerHTML = '<i class="fas fa-trash-alt"></i>';
+          btnDel.title = '<cfif local.isEs>Eliminar registro<cfelse>Delete entry</cfif>';
+          btnDel.addEventListener('click', function() { deleteEntry(entry.id); });
+
+          actionsEl.appendChild(btnPlay);
+          actionsEl.appendChild(btnEdit);
+          actionsEl.appendChild(btnDel);
+
+          card.appendChild(descEl);
+          card.appendChild(projEl);
+          card.appendChild(rangeEl);
+          card.appendChild(durEl);
+          card.appendChild(earnedEl);
+          card.appendChild(actionsEl);
+
+          entriesContainer.appendChild(card);
         }
-
-        var actionsEl = document.createElement('div');
-        actionsEl.style.cssText = 'display:flex; gap:6px;';
-
-        var btnPlay = document.createElement('button');
-        btnPlay.type = 'button';
-        btnPlay.className = 'btn-icon-edit';
-        btnPlay.innerHTML = '<i class="fas fa-play"></i>';
-        btnPlay.title = '<cfif local.isEs>Reanudar tarea<cfelse>Resume task</cfif>';
-        btnPlay.addEventListener('click', function() { resumeEntry(entry); });
-
-        var btnDel = document.createElement('button');
-        btnDel.type = 'button';
-        btnDel.className = 'btn-icon-danger';
-        btnDel.innerHTML = '<i class="fas fa-trash-alt"></i>';
-        btnDel.title = '<cfif local.isEs>Eliminar registro<cfelse>Delete entry</cfif>';
-        btnDel.addEventListener('click', function() { deleteEntry(entry.id); });
-
-        actionsEl.appendChild(btnPlay);
-        actionsEl.appendChild(btnDel);
-
-        card.appendChild(descEl);
-        card.appendChild(projEl);
-        card.appendChild(rangeEl);
-        card.appendChild(durEl);
-        card.appendChild(earnedEl);
-        card.appendChild(actionsEl);
-
-        entriesContainer.appendChild(card);
       });
     });
   }

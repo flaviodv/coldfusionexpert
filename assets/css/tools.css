@@ -1326,3 +1326,32 @@
   font-size: 0.95rem;
   color: #16a34a;
 }
+.widget-time-tracker .time-entry-edit-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  background: #f0f9ff;
+  border: 1px solid #7dd3fc;
+  border-radius: 10px;
+  padding: 14px 16px;
+  box-shadow: 0 4px 12px rgba(19, 175, 240, 0.12);
+}
+.widget-time-tracker .time-entry-edit-card input[type="text"] {
+  flex: 2;
+  min-width: 180px;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.widget-time-tracker .time-entry-edit-card select,
+.widget-time-tracker .time-entry-edit-card input[type="date"],
+.widget-time-tracker .time-entry-edit-card input[type="time"],
+.widget-time-tracker .time-entry-edit-card input[type="number"] {
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: #fff;
+}
