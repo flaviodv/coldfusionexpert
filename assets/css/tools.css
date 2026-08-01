@@ -344,7 +344,7 @@
 .widget-image-editor .dropzone {
   border: 2px dashed rgba(19, 175, 240, 0.4);
   border-radius: 15px;
-  padding: 40px 20px;
+  padding: 45px 20px;
   text-align: center;
   background: rgba(19, 175, 240, 0.02);
   cursor: pointer;
@@ -356,9 +356,9 @@
   background: rgba(19, 175, 240, 0.08);
 }
 .widget-image-editor .dropzone i {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #13aff0;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   display: block;
 }
 .widget-image-editor .editor-workspace {
@@ -381,6 +381,14 @@
   align-items: center;
   gap: 8px;
 }
+.widget-image-editor .tool-group-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-right: 4px;
+}
 .widget-image-editor label {
   font-size: 0.85rem;
   font-weight: 600;
@@ -389,24 +397,22 @@
 .widget-image-editor input[type="range"] {
   accent-color: #13aff0;
 }
-.widget-image-editor .canvas-container {
+.widget-image-editor .cropper-container-wrapper {
   position: relative;
+  background: #0f172a;
+  border-radius: 12px;
+  padding: 20px;
+  min-height: 350px;
+  max-height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #1e293b;
-  border-radius: 12px;
-  padding: 20px;
-  min-height: 300px;
-  max-height: 550px;
-  overflow: auto;
+  overflow: hidden;
 }
-.widget-image-editor canvas {
+.widget-image-editor img#cropper-target {
   max-width: 100%;
-  max-height: 500px;
-  object-fit: contain;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  border-radius: 4px;
+  max-height: 520px;
+  display: block;
 }
 .widget-image-editor .export-panel {
   display: flex;
@@ -414,9 +420,10 @@
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  padding: 16px;
+  padding: 20px;
   background: #f1f5f9;
   border-radius: 12px;
+  border: 1px solid #e2e8f0;
 }
 .widget-image-editor select,
 .widget-image-editor input[type="number"] {
@@ -425,6 +432,23 @@
   border-radius: 8px;
   font-size: 0.9rem;
   background: #fff;
+}
+.widget-image-editor .aspect-btn {
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #334155;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.widget-image-editor .aspect-btn:hover,
+.widget-image-editor .aspect-btn.active {
+  background: #13aff0;
+  color: #fff;
+  border-color: #13aff0;
 }
 
 /* ===== Widget: CSS Effects Generator ===== */
