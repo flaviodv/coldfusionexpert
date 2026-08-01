@@ -1091,6 +1091,45 @@
 .widget-todo-list .btn-icon-danger:hover {
   background: rgba(239, 68, 68, 0.1);
 }
+.widget-todo-list .btn-icon-edit {
+  border: none;
+  background: transparent;
+  color: #13aff0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.widget-todo-list .btn-icon-edit:hover {
+  background: rgba(19, 175, 240, 0.12);
+}
+.widget-todo-list .todo-item-edit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  background: #f0f9ff;
+  border: 1px solid #7dd3fc;
+  border-radius: 10px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 12px rgba(19, 175, 240, 0.12);
+}
+.widget-todo-list .todo-item-edit input[type="text"] {
+  flex: 2;
+  min-width: 180px;
+  padding: 8px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.widget-todo-list .todo-item-edit select {
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background: #fff;
+}
 .widget-todo-list .todo-empty {
   text-align: center;
   padding: 35px 20px;

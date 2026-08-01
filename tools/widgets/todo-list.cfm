@@ -91,6 +91,7 @@
 
   var tasks = loadTasks();
   var currentFilter = 'all';
+  var editingTaskId = null;
 
   function loadTasks() {
     try {
@@ -144,6 +145,23 @@
     render();
   }
 
+  function saveEditedTask(id, newText, newPrio, newCat) {
+    var trimmed = newText.trim();
+    if (!trimmed) return;
+
+    tasks = tasks.map(function(t) {
+      if (t.id === id) {
+        t.text = trimmed;
+        t.priority = newPrio;
+        t.category = newCat;
+      }
+      return t;
+    });
+    editingTaskId = null;
+    saveTasks();
+    render();
+  }
+
   function render() {
     var searchKeyword = searchInput.value.toLowerCase().trim();
 
@@ -164,42 +182,110 @@
       container.appendChild(emptyMsg);
     } else {
       filtered.forEach(function(t) {
-        var item = document.createElement('div');
-        item.className = 'todo-item' + (t.completed ? ' completed' : '');
+        if (editingTaskId === t.id) {
+          // Render Inline Edit Row
+          var editRow = document.createElement('div');
+          editRow.className = 'todo-item-edit';
 
-        var chk = document.createElement('input');
-        chk.type = 'checkbox';
-        chk.className = 'todo-checkbox';
-        chk.checked = t.completed;
-        chk.addEventListener('change', function() { toggleTask(t.id); });
+          var editInput = document.createElement('input');
+          editInput.type = 'text';
+          editInput.value = t.text;
 
-        var txt = document.createElement('span');
-        txt.className = 'todo-text';
-        txt.textContent = t.text;
+          var editPrio = document.createElement('select');
+          editPrio.innerHTML = 
+            '<option value="high"' + (t.priority === 'high' ? ' selected' : '') + '><cfif local.isEs>Alta<cfelse>High</cfif></option>' +
+            '<option value="medium"' + (t.priority === 'medium' ? ' selected' : '') + '><cfif local.isEs>Media<cfelse>Medium</cfif></option>' +
+            '<option value="low"' + (t.priority === 'low' ? ' selected' : '') + '><cfif local.isEs>Baja<cfelse>Low</cfif></option>';
 
-        var prioLabel = t.priority === 'high' ? '<cfif local.isEs>Alta<cfelse>High</cfif>' : (t.priority === 'medium' ? '<cfif local.isEs>Media<cfelse>Medium</cfif>' : '<cfif local.isEs>Baja<cfelse>Low</cfif>');
-        var prioBadge = document.createElement('span');
-        prioBadge.className = 'priority-badge priority-' + t.priority;
-        prioBadge.textContent = prioLabel;
+          var editCat = document.createElement('select');
+          editCat.innerHTML = 
+            '<option value="Work"' + (t.category === 'Work' ? ' selected' : '') + '><cfif local.isEs>Trabajo<cfelse>Work</cfif></option>' +
+            '<option value="Personal"' + (t.category === 'Personal' ? ' selected' : '') + '>Personal</option>' +
+            '<option value="Shopping"' + (t.category === 'Shopping' ? ' selected' : '') + '><cfif local.isEs>Compras<cfelse>Shopping</cfif></option>' +
+            '<option value="Project"' + (t.category === 'Project' ? ' selected' : '') + '><cfif local.isEs>Proyecto<cfelse>Project</cfif></option>';
 
-        var catBadge = document.createElement('span');
-        catBadge.className = 'category-badge';
-        catBadge.textContent = t.category;
+          var btnSave = document.createElement('button');
+          btnSave.type = 'button';
+          btnSave.className = 'btn-social btn-upwork';
+          btnSave.style.cssText = 'padding:6px 12px; font-size:0.82rem;';
+          btnSave.innerHTML = '<i class="fas fa-check"></i> <cfif local.isEs>Guardar<cfelse>Save</cfif>';
+          btnSave.addEventListener('click', function() {
+            saveEditedTask(t.id, editInput.value, editPrio.value, editCat.value);
+          });
 
-        var btnDel = document.createElement('button');
-        btnDel.type = 'button';
-        btnDel.className = 'btn-icon-danger';
-        btnDel.innerHTML = '<i class="fas fa-trash-alt"></i>';
-        btnDel.title = '<cfif local.isEs>Eliminar<cfelse>Delete</cfif>';
-        btnDel.addEventListener('click', function() { deleteTask(t.id); });
+          editInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+              saveEditedTask(t.id, editInput.value, editPrio.value, editCat.value);
+            }
+          });
 
-        item.appendChild(chk);
-        item.appendChild(txt);
-        item.appendChild(prioBadge);
-        item.appendChild(catBadge);
-        item.appendChild(btnDel);
+          var btnCancel = document.createElement('button');
+          btnCancel.type = 'button';
+          btnCancel.className = 'btn-social btn-linkedin';
+          btnCancel.style.cssText = 'padding:6px 12px; font-size:0.82rem;';
+          btnCancel.innerHTML = '<i class="fas fa-times"></i> <cfif local.isEs>Cancelar<cfelse>Cancel</cfif>';
+          btnCancel.addEventListener('click', function() {
+            editingTaskId = null;
+            render();
+          });
 
-        container.appendChild(item);
+          editRow.appendChild(editInput);
+          editRow.appendChild(editPrio);
+          editRow.appendChild(editCat);
+          editRow.appendChild(btnSave);
+          editRow.appendChild(btnCancel);
+
+          container.appendChild(editRow);
+        } else {
+          // Render Normal Task Row
+          var item = document.createElement('div');
+          item.className = 'todo-item' + (t.completed ? ' completed' : '');
+
+          var chk = document.createElement('input');
+          chk.type = 'checkbox';
+          chk.className = 'todo-checkbox';
+          chk.checked = t.completed;
+          chk.addEventListener('change', function() { toggleTask(t.id); });
+
+          var txt = document.createElement('span');
+          txt.className = 'todo-text';
+          txt.textContent = t.text;
+
+          var prioLabel = t.priority === 'high' ? '<cfif local.isEs>Alta<cfelse>High</cfif>' : (t.priority === 'medium' ? '<cfif local.isEs>Media<cfelse>Medium</cfif>' : '<cfif local.isEs>Baja<cfelse>Low</cfif>');
+          var prioBadge = document.createElement('span');
+          prioBadge.className = 'priority-badge priority-' + t.priority;
+          prioBadge.textContent = prioLabel;
+
+          var catBadge = document.createElement('span');
+          catBadge.className = 'category-badge';
+          catBadge.textContent = t.category;
+
+          var btnEdit = document.createElement('button');
+          btnEdit.type = 'button';
+          btnEdit.className = 'btn-icon-edit';
+          btnEdit.innerHTML = '<i class="fas fa-pencil-alt"></i>';
+          btnEdit.title = '<cfif local.isEs>Editar tarea<cfelse>Edit task</cfif>';
+          btnEdit.addEventListener('click', function() {
+            editingTaskId = t.id;
+            render();
+          });
+
+          var btnDel = document.createElement('button');
+          btnDel.type = 'button';
+          btnDel.className = 'btn-icon-danger';
+          btnDel.innerHTML = '<i class="fas fa-trash-alt"></i>';
+          btnDel.title = '<cfif local.isEs>Eliminar<cfelse>Delete</cfif>';
+          btnDel.addEventListener('click', function() { deleteTask(t.id); });
+
+          item.appendChild(chk);
+          item.appendChild(txt);
+          item.appendChild(prioBadge);
+          item.appendChild(catBadge);
+          item.appendChild(btnEdit);
+          item.appendChild(btnDel);
+
+          container.appendChild(item);
+        }
       });
     }
 
