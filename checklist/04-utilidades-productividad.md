@@ -18,3 +18,4 @@
 - [x] **Calculadora de Porcentajes**: Cálculo rápido de descuentos, aumentos e incrementos porcentuales.
 - [x] **Calculadora de Diferencia Entre Fechas**: Cálculo exacto de días, meses y años entre dos fechas.
 - [x] **Gestor de Lista de Tareas (To-Do App Sencilla)**: Organizador interactivo con almacenamiento local (`localStorage`).
+- [x] **Controlador de Tiempo y Tarifas (Time Tracker)**: Temporizador estilo Clockify con cálculo opcional de ganancias por hora en tiempo real y almacenamiento local.

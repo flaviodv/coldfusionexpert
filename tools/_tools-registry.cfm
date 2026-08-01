@@ -122,7 +122,12 @@ request.toolsRegistry = {
   "todo-list": {category: "utilidades-productividad", icon: "fa-tasks", iconPrefix: "fas", built: true,
     titleEn: "Simple To-Do List", titleEs: "Gestor de Lista de Tareas",
     descEn: "Interactive task organizer with local storage (localStorage).",
-    descEs: "Organizador interactivo con almacenamiento local (localStorage)."}
+    descEs: "Organizador interactivo con almacenamiento local (localStorage)."},
+
+  "time-tracker": {category: "utilidades-productividad", icon: "fa-stopwatch", iconPrefix: "fas", built: true,
+    titleEn: "Time Tracker & Rate Calculator", titleEs: "Controlador de Tiempo y Tarifas (Time Tracker)",
+    descEn: "Live task timer with optional hourly rate and real-time earnings calculator.",
+    descEs: "Temporizador de tareas en vivo con tarifa por hora opcional y cálculo de ganancias en tiempo real."}
 };
 
 // Explicit display order (struct key order isn't guaranteed) - sidebar/landing loop over this, grouped by category.
@@ -130,6 +135,6 @@ request.toolOrder = [
   "meta-tags-extractor", "whatsapp-link-generator", "email-signature-generator", "qr-code-generator",
   "image-editor", "css-effects-generator", "color-converter",
   "css-minifier", "json-formatter", "base64-encoder", "json-yaml-converter", "hash-generator", "uuid-generator", "http-status-codes",
-  "ip-lookup", "timezone-converter", "currency-converter", "password-generator", "word-counter", "text-case-converter", "percentage-calculator", "date-difference-calculator", "todo-list"
+  "ip-lookup", "timezone-converter", "currency-converter", "password-generator", "word-counter", "text-case-converter", "percentage-calculator", "date-difference-calculator", "todo-list", "time-tracker"
 ];
 </cfscript>
