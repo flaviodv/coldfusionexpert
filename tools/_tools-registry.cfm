@@ -79,47 +79,47 @@ request.toolsRegistry = {
     descEn: "Interactive guide to HTTP codes (200, 301, 404, 500, etc.).",
     descEs: "Guía interactiva de códigos HTTP (200, 301, 404, 500, etc.)."},
 
-  "ip-lookup": {category: "utilidades-productividad", icon: "fa-network-wired", iconPrefix: "fas", built: false, featured: true,
+  "ip-lookup": {category: "utilidades-productividad", icon: "fa-network-wired", iconPrefix: "fas", built: true, featured: true,
     titleEn: "IP Address Lookup & Diagnostics", titleEs: "Consulta y Diagnóstico de Dirección IP",
     descEn: "View your public IP, approximate geolocation, HTTP headers, and User-Agent.",
     descEs: "Visualización de IP pública, geolocalización aproximada, cabeceras HTTP y User-Agent."},
 
-  "timezone-converter": {category: "utilidades-productividad", icon: "fa-clock", iconPrefix: "fas", built: false,
+  "timezone-converter": {category: "utilidades-productividad", icon: "fa-clock", iconPrefix: "fas", built: true,
     titleEn: "Time Zone Converter", titleEs: "Conversor de Zonas Horarias",
     descEn: "Convert times across time zones - ideal for tourism and scheduling sites.",
     descEs: "Herramienta de conversión de horarios (ideal para sitios de turismo y coordinación)."},
 
-  "currency-converter": {category: "utilidades-productividad", icon: "fa-coins", iconPrefix: "fas", built: false,
+  "currency-converter": {category: "utilidades-productividad", icon: "fa-coins", iconPrefix: "fas", built: true,
     titleEn: "Currency Converter", titleEs: "Conversor de Monedas",
     descEn: "Real-time conversion between currencies.",
     descEs: "Cálculo de conversión entre distintas divisas en tiempo real."},
 
-  "password-generator": {category: "utilidades-productividad", icon: "fa-key", iconPrefix: "fas", built: false,
+  "password-generator": {category: "utilidades-productividad", icon: "fa-key", iconPrefix: "fas", built: true,
     titleEn: "Secure Password Generator", titleEs: "Generador de Contraseñas Seguras",
     descEn: "Configurable length, special characters, numbers, and uppercase.",
     descEs: "Configuración de longitud, caracteres especiales, números y mayúsculas."},
 
-  "word-counter": {category: "utilidades-productividad", icon: "fa-font", iconPrefix: "fas", built: false,
+  "word-counter": {category: "utilidades-productividad", icon: "fa-font", iconPrefix: "fas", built: true,
     titleEn: "Word & Character Counter", titleEs: "Contador de Palabras y Caracteres",
     descEn: "Word, character, and paragraph metrics, plus a reading-time estimate.",
     descEs: "Métricas de palabras, caracteres y párrafos, y estimación de tiempo de lectura."},
 
-  "text-case-converter": {category: "utilidades-productividad", icon: "fa-text-height", iconPrefix: "fas", built: false,
+  "text-case-converter": {category: "utilidades-productividad", icon: "fa-text-height", iconPrefix: "fas", built: true,
     titleEn: "Text Case Converter", titleEs: "Conversor de Formato de Texto",
     descEn: "UPPERCASE / lowercase, Title Case, camelCase, snake_case, kebab-case.",
     descEs: "Mayúsculas/minúsculas, Title Case, camelCase, snake_case, kebab-case."},
 
-  "percentage-calculator": {category: "utilidades-productividad", icon: "fa-percentage", iconPrefix: "fas", built: false,
+  "percentage-calculator": {category: "utilidades-productividad", icon: "fa-percentage", iconPrefix: "fas", built: true,
     titleEn: "Percentage Calculator", titleEs: "Calculadora de Porcentajes",
     descEn: "Quick calculation of discounts, increases, and percentage changes.",
     descEs: "Cálculo rápido de descuentos, aumentos e incrementos porcentuales."},
 
-  "date-difference-calculator": {category: "utilidades-productividad", icon: "fa-calendar-alt", iconPrefix: "fas", built: false,
+  "date-difference-calculator": {category: "utilidades-productividad", icon: "fa-calendar-alt", iconPrefix: "fas", built: true,
     titleEn: "Date Difference Calculator", titleEs: "Calculadora de Diferencia Entre Fechas",
     descEn: "Exact calculation of days, months, and years between two dates.",
     descEs: "Cálculo exacto de días, meses y años entre dos fechas."},
 
-  "todo-list": {category: "utilidades-productividad", icon: "fa-tasks", iconPrefix: "fas", built: false,
+  "todo-list": {category: "utilidades-productividad", icon: "fa-tasks", iconPrefix: "fas", built: true,
     titleEn: "Simple To-Do List", titleEs: "Gestor de Lista de Tareas",
     descEn: "Interactive task organizer with local storage (localStorage).",
     descEs: "Organizador interactivo con almacenamiento local (localStorage)."}
