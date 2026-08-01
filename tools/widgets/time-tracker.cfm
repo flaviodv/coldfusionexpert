@@ -343,8 +343,18 @@
     var formattedTime = formatTimeDigits(elapsedSec);
     digits.textContent = formattedTime;
 
-    var rate = parseFloat(timer.rate) || 0;
-    var curr = timer.currency || '$';
+    var rateInput = document.getElementById('tracker-rate-' + slot);
+    var currSelect = document.getElementById('tracker-currency-' + slot);
+    var descInput = document.getElementById('tracker-desc-' + slot);
+    var projInput = document.getElementById('tracker-project-' + slot);
+
+    var rate = parseFloat(rateInput ? rateInput.value : timer.rate) || 0;
+    var curr = currSelect ? currSelect.value : (timer.currency || '$');
+    
+    timer.rate = rate;
+    timer.currency = curr;
+    if (descInput && descInput.value.trim()) timer.description = descInput.value.trim();
+    if (projInput && projInput.value.trim()) timer.project = projInput.value.trim();
 
     if (rate > 0) {
       var earned = (elapsedSec / 3600) * rate;
@@ -393,18 +403,21 @@
     var durationSec = Math.floor((new Date(endTime).getTime() - new Date(timer.startTime).getTime()) / 1000);
     if (durationSec < 1) durationSec = 1;
 
-    var rate = parseFloat(timer.rate) || 0;
-    var earned = rate > 0 ? (durationSec / 3600) * rate : 0;
-
     var descInput = document.getElementById('tracker-desc-' + slot);
     var projInput = document.getElementById('tracker-project-' + slot);
+    var rateInput = document.getElementById('tracker-rate-' + slot);
+    var currSelect = document.getElementById('tracker-currency-' + slot);
+
+    var currentRate = parseFloat(rateInput ? rateInput.value : 0) || parseFloat(timer.rate) || 0;
+    var currentCurrency = currSelect ? currSelect.value : (timer.currency || '$');
+    var earned = currentRate > 0 ? (durationSec / 3600) * currentRate : 0;
 
     var newEntry = {
       id: Date.now(),
-      description: descInput.value.trim() || timer.description,
-      project: projInput.value.trim() || timer.project,
-      rate: rate,
-      currency: timer.currency || '$',
+      description: (descInput && descInput.value.trim()) || timer.description || '<cfif local.isEs>Tarea sin título<cfelse>Untitled Task</cfif>',
+      project: (projInput && projInput.value.trim()) || timer.project || 'General',
+      rate: currentRate,
+      currency: currentCurrency,
       startTime: timer.startTime,
       endTime: endTime,
       durationSeconds: durationSec,
