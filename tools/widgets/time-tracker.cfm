@@ -199,6 +199,18 @@
     </div>
   </div>
 
+  <!-- Active Task/Project Filter Banner -->
+  <div id="active-task-filter-bar" style="display:none; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; background:#f0f9ff; border:1px solid #7dd3fc; border-radius:10px; padding:10px 16px; margin-top:12px;">
+    <div style="font-size:0.9rem; font-weight:700; color:#0369a1; display:flex; align-items:center; gap:8px;">
+      <i class="fas fa-filter"></i> 
+      <span><cfif local.isEs>Filtro activo:<cfelse>Active filter:</cfif></span>
+      <span id="filter-task-label" style="background:#0284c7; color:#fff; padding:2px 10px; border-radius:20px; font-weight:700;"></span>
+    </div>
+    <button type="button" id="btn-clear-task-filter" class="btn-social btn-linkedin" style="padding:4px 12px; font-size:0.8rem; font-weight:700;">
+      <i class="fas fa-times"></i> <cfif local.isEs>Ver todas las tareas<cfelse>Show all tasks</cfif>
+    </button>
+  </div>
+
   <!-- Grouped Entries Container -->
   <div id="entries-container">
     <!-- Time entries dynamically grouped by date -->
@@ -221,6 +233,7 @@
   var countdowns = loadCountdowns();
   var entries = loadEntries();
   var editingEntryId = null;
+  var selectedTaskFilter = null;
 
   // Tab switching setup
   var tabBtns = document.querySelectorAll('.widget-time-tracker .timer-tab-item');
@@ -695,10 +708,13 @@
     var summaryTime = document.getElementById('summary-total-time');
     var summaryEarned = document.getElementById('summary-total-earned');
     var summaryCount = document.getElementById('summary-total-count');
+    var filterBar = document.getElementById('active-task-filter-bar');
+    var filterLabel = document.getElementById('filter-task-label');
 
     entriesContainer.innerHTML = '';
 
     if (entries.length === 0) {
+      if (filterBar) filterBar.style.display = 'none';
       entriesContainer.innerHTML = '<div class="todo-empty" style="margin-top:15px;">' +
         '<i class="fas fa-history" style="font-size:1.8rem; color:#cbd5e1; margin-bottom:8px; display:block;"></i>' +
         '<cfif local.isEs>No hay registros de tiempo guardados.<cfelse>No time entries saved yet.</cfif></div>';
@@ -709,12 +725,24 @@
       return;
     }
 
+    var filteredEntries = entries.filter(function(e) {
+      if (!selectedTaskFilter) return true;
+      return (e.description === selectedTaskFilter || e.project === selectedTaskFilter);
+    });
+
+    if (selectedTaskFilter) {
+      if (filterBar) filterBar.style.display = 'flex';
+      if (filterLabel) filterLabel.textContent = selectedTaskFilter + ' (' + filteredEntries.length + ')';
+    } else {
+      if (filterBar) filterBar.style.display = 'none';
+    }
+
     var totalSec = 0;
     var totalMoney = 0;
     var defaultCurr = entries[0] ? entries[0].currency : '$';
 
     var groups = {};
-    entries.forEach(function(e) {
+    filteredEntries.forEach(function(e) {
       totalSec += e.durationSeconds;
       totalMoney += (e.earned || 0);
 
@@ -725,7 +753,7 @@
 
     summaryTime.textContent = formatTimeDigits(totalSec);
     summaryEarned.textContent = defaultCurr + totalMoney.toFixed(2);
-    summaryCount.textContent = entries.length;
+    summaryCount.textContent = filteredEntries.length;
 
     Object.keys(groups).forEach(function(dateKey) {
       var groupEntries = groups[dateKey];
@@ -834,11 +862,28 @@
 
           var descEl = document.createElement('div');
           descEl.className = 'entry-desc';
-          descEl.textContent = entry.description;
+
+          var descLink = document.createElement('a');
+          descLink.className = 'entry-desc-link';
+          descLink.href = 'javascript:void(0)';
+          descLink.textContent = entry.description;
+          descLink.title = '<cfif local.isEs>Hacé clic para agrupar y sumar esta tarea<cfelse>Click to group and sum this task</cfif>';
+          descLink.addEventListener('click', function(evt) {
+            evt.stopPropagation();
+            selectedTaskFilter = entry.description;
+            renderEntries();
+          });
+          descEl.appendChild(descLink);
 
           var projEl = document.createElement('span');
           projEl.className = 'project-tag';
           projEl.textContent = entry.project;
+          projEl.title = '<cfif local.isEs>Hacé clic para agrupar por este proyecto<cfelse>Click to group by this project</cfif>';
+          projEl.addEventListener('click', function(evt) {
+            evt.stopPropagation();
+            selectedTaskFilter = entry.project;
+            renderEntries();
+          });
 
           var rangeEl = document.createElement('span');
           rangeEl.className = 'entry-range';
@@ -950,6 +995,14 @@
       if (targetPanel) targetPanel.classList.add('active');
     }
   } catch(e) {}
+
+  var btnClearFilter = document.getElementById('btn-clear-task-filter');
+  if (btnClearFilter) {
+    btnClearFilter.addEventListener('click', function() {
+      selectedTaskFilter = null;
+      renderEntries();
+    });
+  }
 
   renderEntries();
 })();

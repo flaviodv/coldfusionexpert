@@ -1731,3 +1731,27 @@
 .global-floating-timer-bar:hover .global-timer-time {
   color: #ffffff;
 }
+
+/* Interactive Task Links & Clickable Project Tags */
+.widget-time-tracker .entry-desc-link {
+  color: #1e293b;
+  font-weight: 600;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  border-bottom: 1.5px dashed #94a3b8;
+  padding-bottom: 1px;
+}
+.widget-time-tracker .entry-desc-link:hover {
+  color: #13aff0 !important;
+  border-bottom-color: #13aff0 !important;
+}
+.widget-time-tracker .project-tag {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.widget-time-tracker .project-tag:hover {
+  background: #13aff0 !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(19, 175, 240, 0.3);
+}
