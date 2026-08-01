@@ -1488,3 +1488,14 @@
 .widget-time-tracker .timer-tab-panel.active {
   display: block;
 }
+
+.widget-time-tracker .tab-live-time {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-left: 2px;
+  color: #22c55e;
+}
+.widget-time-tracker .timer-tab-item.active .tab-live-time {
+  color: #ffffff;
+}

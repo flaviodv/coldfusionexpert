@@ -3,14 +3,14 @@
   <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
     <h3 style="font-size:1.1rem; font-weight:700; color:#0f172a; margin:0;">
       <i class="fas fa-stopwatch" style="color:#13aff0;"></i> 
-      <cfif local.isEs>Cronómetros en Paralelo (Pestañas)<cfelse>Parallel Timers (Tabs)</cfif>
+      <cfif local.isEs>Cronómetros en Paralelo (5 Pestañas)<cfelse>Parallel Timers (5 Tabs)</cfif>
     </h3>
     <span style="font-size:0.82rem; color:#64748b; font-weight:600;">
-      <i class="fas fa-info-circle"></i> <cfif local.isEs>Cambiá de pestaña para gestionar cada cronómetro<cfelse>Switch tabs to manage each timer</cfif>
+      <i class="fas fa-info-circle"></i> <cfif local.isEs>Cambiá de pestaña para ver el tiempo en vivo de cada reloj<cfelse>Switch tabs to view live time on each clock</cfif>
     </span>
   </div>
 
-  <!-- Timer Tabs Bar -->
+  <!-- Timer Tabs Bar (5 Slots) -->
   <div class="timer-tabs-bar">
     <button type="button" class="timer-tab-item active" data-tab="1">
       <i class="fas fa-clock"></i> <span><cfif local.isEs>Cronómetro 1<cfelse>Timer 1</cfif></span>
@@ -23,6 +23,14 @@
     <button type="button" class="timer-tab-item" data-tab="3">
       <i class="fas fa-clock"></i> <span><cfif local.isEs>Cronómetro 3<cfelse>Timer 3</cfif></span>
       <span id="tab-status-3"></span>
+    </button>
+    <button type="button" class="timer-tab-item" data-tab="4">
+      <i class="fas fa-clock"></i> <span><cfif local.isEs>Cronómetro 4<cfelse>Timer 4</cfif></span>
+      <span id="tab-status-4"></span>
+    </button>
+    <button type="button" class="timer-tab-item" data-tab="5">
+      <i class="fas fa-clock"></i> <span><cfif local.isEs>Cronómetro 5<cfelse>Timer 5</cfif></span>
+      <span id="tab-status-5"></span>
     </button>
   </div>
 
@@ -120,6 +128,68 @@
         </button>
       </div>
     </div>
+
+    <!-- Panel 4 -->
+    <div class="timer-tab-panel" id="timer-panel-4">
+      <div class="timer-slot-card" id="timer-card-4">
+        <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 4<cfelse>Timer 4</cfif></span>
+        
+        <input type="text" id="tracker-desc-4" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
+
+        <input type="text" id="tracker-project-4" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:230px;">
+
+        <div style="display:flex; align-items:center; gap:6px;">
+          <select id="tracker-currency-4" style="width:95px;">
+            <option value="$">$ USD</option>
+            <option value="€">€ EUR</option>
+            <option value="ARS$">$ ARS</option>
+            <option value="R$">R$ BRL</option>
+            <option value="£">£ GBP</option>
+          </select>
+          <input type="number" id="tracker-rate-4" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+        </div>
+
+        <div class="timer-clock-box">
+          <span class="timer-digits" id="timer-digits-4">00:00:00</span>
+          <span class="live-earnings-badge" id="live-earnings-badge-4" style="display:none;">$0.00</span>
+        </div>
+
+        <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-4" data-slot="4">
+          <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Panel 5 -->
+    <div class="timer-tab-panel" id="timer-panel-5">
+      <div class="timer-slot-card" id="timer-card-5">
+        <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 5<cfelse>Timer 5</cfif></span>
+        
+        <input type="text" id="tracker-desc-5" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
+
+        <input type="text" id="tracker-project-5" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:230px;">
+
+        <div style="display:flex; align-items:center; gap:6px;">
+          <select id="tracker-currency-5" style="width:95px;">
+            <option value="$">$ USD</option>
+            <option value="€">€ EUR</option>
+            <option value="ARS$">$ ARS</option>
+            <option value="R$">R$ BRL</option>
+            <option value="£">£ GBP</option>
+          </select>
+          <input type="number" id="tracker-rate-5" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+        </div>
+
+        <div class="timer-clock-box">
+          <span class="timer-digits" id="timer-digits-5">00:00:00</span>
+          <span class="live-earnings-badge" id="live-earnings-badge-5" style="display:none;">$0.00</span>
+        </div>
+
+        <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-5" data-slot="5">
+          <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- Summary Dashboard Cards -->
@@ -164,8 +234,8 @@
   var ENTRIES_KEY = 'cfexpert_tracker_entries';
   var MULTI_TIMERS_KEY = 'cfexpert_tracker_multi_timers';
 
-  var slots = [1, 2, 3];
-  var intervals = { 1: null, 2: null, 3: null };
+  var slots = [1, 2, 3, 4, 5];
+  var intervals = { 1: null, 2: null, 3: null, 4: null, 5: null };
 
   var activeTimers = loadActiveTimers();
   var entries = loadEntries();
@@ -190,9 +260,9 @@
   function loadActiveTimers() {
     try {
       var data = localStorage.getItem(MULTI_TIMERS_KEY);
-      return data ? JSON.parse(data) : { 1: null, 2: null, 3: null };
+      return data ? JSON.parse(data) : { 1: null, 2: null, 3: null, 4: null, 5: null };
     } catch(e) {
-      return { 1: null, 2: null, 3: null };
+      return { 1: null, 2: null, 3: null, 4: null, 5: null };
     }
   }
 
@@ -272,7 +342,8 @@
     var elapsedSec = Math.floor((Date.now() - new Date(timer.startTime).getTime()) / 1000);
     if (elapsedSec < 0) elapsedSec = 0;
 
-    digits.textContent = formatTimeDigits(elapsedSec);
+    var formattedTime = formatTimeDigits(elapsedSec);
+    digits.textContent = formattedTime;
 
     var rate = parseFloat(timer.rate) || 0;
     var curr = timer.currency || '$';
@@ -288,9 +359,9 @@
     btn.className = 'btn-timer-toggle btn-timer-stop';
     btn.innerHTML = '<i class="fas fa-stop"></i> <span><cfif local.isEs>DETENER<cfelse>STOP</cfif></span>';
     
-    // Pulse dot on running tab
+    // Update Tab Header Status with green pulsing dot AND live running time digits!
     if (tabStatus) {
-      tabStatus.innerHTML = '<span class="tab-running-dot" title="<cfif local.isEs>Corriendo<cfelse>Running</cfif>"></span>';
+      tabStatus.innerHTML = '<span class="tab-running-dot" title="<cfif local.isEs>Corriendo<cfelse>Running</cfif>"></span> <span class="tab-live-time">' + formattedTime + '</span>';
     }
   }
 
@@ -386,7 +457,7 @@
   function resumeEntry(entry) {
     // Find first idle slot or default to slot 1
     var idleSlot = 1;
-    for (var s = 1; s <= 3; s++) {
+    for (var s = 1; s <= 5; s++) {
       if (!activeTimers[s]) {
         idleSlot = s;
         break;
