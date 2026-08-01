@@ -171,13 +171,22 @@
           <option value="fade"><cfif local.isEs>Transparencia (Fade)<cfelse>Fade</cfif></option>
         </select>
       </div>
+
+      <div class="control-row" style="margin-top:10px;">
+        <button type="button" class="btn-social btn-upwork" id="btn-play-transition" style="width:100%; justify-content:center; padding:10px 16px; font-weight:700;">
+          <i class="fas fa-play"></i> <span><cfif local.isEs>Reproducir Animación<cfelse>Play Animation</cfif></span>
+        </button>
+      </div>
     </div>
 
     <div class="preview-column">
-      <div class="preview-stage">
+      <div class="preview-stage" style="position:relative;">
         <div class="preview-box" id="preview-box-trans">
           <span><cfif local.isEs>¡Pasa el mouse!<cfelse>Hover Me!</cfif></span>
         </div>
+        <button type="button" class="btn-preview-play" id="btn-preview-play-trans" title="<cfif local.isEs>Reproducir Transición<cfelse>Play Transition</cfif>">
+          <i class="fas fa-play"></i>
+        </button>
       </div>
       <div class="code-block">
         <pre><code id="code-trans">transition: all 0.4s ease 0s;</code></pre>
@@ -392,19 +401,42 @@
   }
 
   // Hover effect styles for preview box
-  boxTrans.addEventListener('mouseenter', function() {
+  function applyHoverEffect() {
     var effect = transHoverEffect.value;
     if (effect === 'scale') boxTrans.style.transform = 'scale(1.2)';
     else if (effect === 'rotate') boxTrans.style.transform = 'rotate(15deg) scale(1.1)';
     else if (effect === 'color') boxTrans.style.backgroundColor = '#4b8ef1';
     else if (effect === 'fade') boxTrans.style.opacity = '0.3';
-  });
+  }
 
-  boxTrans.addEventListener('mouseleave', function() {
+  function resetHoverEffect() {
     boxTrans.style.transform = 'none';
     boxTrans.style.backgroundColor = '#13aff0';
     boxTrans.style.opacity = '1';
-  });
+  }
+
+  boxTrans.addEventListener('mouseenter', applyHoverEffect);
+  boxTrans.addEventListener('mouseleave', resetHoverEffect);
+
+  function triggerTransitionAnimation() {
+    var durMs = (parseFloat(transDuration.value) || 0.4) * 1000;
+    var delMs = (parseFloat(transDelay.value) || 0) * 1000;
+
+    resetHoverEffect();
+
+    setTimeout(function() {
+      applyHoverEffect();
+      setTimeout(function() {
+        resetHoverEffect();
+      }, durMs + 100);
+    }, delMs + 50);
+  }
+
+  var btnPlayTrans1 = document.getElementById('btn-play-transition');
+  var btnPlayTrans2 = document.getElementById('btn-preview-play-trans');
+
+  if (btnPlayTrans1) btnPlayTrans1.addEventListener('click', triggerTransitionAnimation);
+  if (btnPlayTrans2) btnPlayTrans2.addEventListener('click', triggerTransitionAnimation);
 
   [transProp, transDuration, transEasing, transDelay, transHoverEffect].forEach(function(el) {
     el.addEventListener('input', updateTransition);
