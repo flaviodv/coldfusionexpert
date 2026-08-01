@@ -47,13 +47,45 @@
   margin-bottom: 0;
 }
 
-.tools-sidebar-category h6 {
+.tools-sidebar-cat-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 0 0 8px;
+  cursor: pointer;
+  text-align: left;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: #8a8a8a;
   font-weight: 700;
-  margin-bottom: 8px;
+}
+
+.tools-sidebar-cat-toggle span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tools-sidebar-cat-toggle:hover {
+  color: #13aff0;
+}
+
+.tools-sidebar-chevron {
+  font-size: 0.7rem;
+  color: #8a8a8a;
+  transition: transform 0.2s ease;
+}
+
+.tools-sidebar-category:not(.open) .tools-sidebar-chevron {
+  transform: rotate(-90deg);
+}
+
+.tools-sidebar-category:not(.open) ul {
+  display: none;
 }
 
 .tools-sidebar-category ul {
@@ -68,8 +100,10 @@
   gap: 8px;
   font-size: 0.88rem;
   color: #2a2a2a;
-  padding: 6px 0;
-  transition: color 0.2s ease;
+  padding: 6px 8px;
+  margin: 0 -8px;
+  border-radius: 8px;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 .tools-sidebar-category li a i {
@@ -79,10 +113,14 @@
   font-size: 0.8rem;
 }
 
-.tools-sidebar-category li a:hover,
-.tools-sidebar-category li a.active {
+.tools-sidebar-category li a:hover {
   color: #13aff0;
-  font-weight: 600;
+}
+
+.tools-sidebar-category li a.active {
+  background: rgba(19, 175, 240, 0.1);
+  color: #13aff0;
+  font-weight: 700;
 }
 
 /* --- Main content --- */
@@ -330,8 +368,12 @@
 .timezone-map-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; color: #475569; font-size: .9rem; font-weight: 600; }
 .timezone-converter-grid { display: grid; grid-template-columns: minmax(280px, .75fr) minmax(420px, 1.25fr); gap: 28px; align-items: start; }
 .timezone-form-panel { padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc; }
-.timezone-form-panel .btn-social { margin-bottom: 8px; }
-.timezone-map-panel { min-width: 0; }
+.timezone-map-panel { min-width: 0; padding: 20px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc; }
+.timezone-result-card { display: flex; flex-direction: column; gap: 5px; padding: 18px; margin-top: 10px; border-radius: 10px; background: #eaf6fb; border-left: 4px solid #13aff0; color: #334155; }
+.timezone-result-label { color: #168fc5; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.timezone-result-card strong { color: #0f172a; font-size: 1.08rem; line-height: 1.35; }
+.timezone-result-card > span:not(.timezone-result-label) { font: .82rem monospace; color: #475569; }
+.timezone-result-card small { color: #168fc5; font-weight: 700; }
 .timezone-map-controls .tool-copy { margin: 0; }
 .timezone-map-controls .tool-copy.is-active { background: #13aff0; color: #fff; }
 .timezone-map-wrap { border: 1px solid #dfe5e8; border-radius: 10px; overflow: hidden; background: #eaf6fb; margin-bottom: 10px; }
@@ -1392,4 +1434,57 @@
 .widget-time-tracker .timer-slot-card.active-running .timer-slot-badge {
   background: rgba(34, 197, 94, 0.15);
   color: #4ade80;
+}
+
+.widget-time-tracker .timer-tabs-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+.widget-time-tracker .timer-tab-item {
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #475569;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.widget-time-tracker .timer-tab-item:hover {
+  color: #13aff0;
+  border-color: #13aff0;
+  background: rgba(19, 175, 240, 0.05);
+}
+.widget-time-tracker .timer-tab-item.active {
+  background: #13aff0 !important;
+  color: #ffffff !important;
+  border-color: #13aff0 !important;
+  box-shadow: 0 4px 12px rgba(19, 175, 240, 0.3) !important;
+}
+.widget-time-tracker .tab-running-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  display: inline-block;
+  animation: pulseDot 1.5s infinite;
+}
+@keyframes pulseDot {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.35); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+.widget-time-tracker .timer-tab-panel {
+  display: none;
+}
+.widget-time-tracker .timer-tab-panel.active {
+  display: block;
 }

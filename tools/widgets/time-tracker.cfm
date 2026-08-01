@@ -9,104 +9,126 @@
     <option value="Tesla Migration">
   </datalist>
 
-  <!-- Section Title for Timers -->
-  <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+  <!-- Section Header & Timer Tabs Bar -->
+  <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
     <h3 style="font-size:1.1rem; font-weight:700; color:#0f172a; margin:0;">
       <i class="fas fa-stopwatch" style="color:#13aff0;"></i> 
-      <cfif local.isEs>Temporizadores Múltiples en Paralelo (3 Slots)<cfelse>Parallel Multi-Timers (3 Slots)</cfif>
+      <cfif local.isEs>Cronómetros en Paralelo (Pestañas)<cfelse>Parallel Timers (Tabs)</cfif>
     </h3>
     <span style="font-size:0.82rem; color:#64748b; font-weight:600;">
-      <i class="fas fa-info-circle"></i> <cfif local.isEs>Podés ejecutar hasta 3 cronómetros simultáneamente<cfelse>Run up to 3 timers simultaneously</cfif>
+      <i class="fas fa-info-circle"></i> <cfif local.isEs>Cambiá de pestaña para gestionar cada cronómetro<cfelse>Switch tabs to manage each timer</cfif>
     </span>
   </div>
 
-  <!-- Multi-Timer Banners Container (Slots 1, 2, 3) -->
+  <!-- Timer Tabs Bar -->
+  <div class="timer-tabs-bar">
+    <button type="button" class="timer-tab-item active" data-tab="1">
+      <i class="fas fa-clock"></i> <span><cfif local.isEs>Cronómetro 1<cfelse>Timer 1</cfif></span>
+      <span id="tab-status-1"></span>
+    </button>
+    <button type="button" class="timer-tab-item" data-tab="2">
+      <i class="fas fa-clock"></i> <span><cfif local.isEs>Cronómetro 2<cfelse>Timer 2</cfif></span>
+      <span id="tab-status-2"></span>
+    </button>
+    <button type="button" class="timer-tab-item" data-tab="3">
+      <i class="fas fa-clock"></i> <span><cfif local.isEs>Cronómetro 3<cfelse>Timer 3</cfif></span>
+      <span id="tab-status-3"></span>
+    </button>
+  </div>
+
+  <!-- Tab Panels Container -->
   <div class="multi-timers-wrapper">
-    <!-- Slot 1 -->
-    <div class="timer-slot-card" id="timer-card-1">
-      <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 1<cfelse>Timer 1</cfif></span>
-      
-      <input type="text" id="tracker-desc-1" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
+    <!-- Panel 1 -->
+    <div class="timer-tab-panel active" id="timer-panel-1">
+      <div class="timer-slot-card" id="timer-card-1">
+        <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 1<cfelse>Timer 1</cfif></span>
+        
+        <input type="text" id="tracker-desc-1" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
 
-      <input type="text" id="tracker-project-1" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
+        <input type="text" id="tracker-project-1" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
 
-      <div style="display:flex; align-items:center; gap:6px;">
-        <select id="tracker-currency-1" style="width:65px;">
-          <option value="$">$ USD</option>
-          <option value="€">€ EUR</option>
-          <option value="ARS$">$ ARS</option>
-          <option value="R$">R$ BRL</option>
-          <option value="£">£ GBP</option>
-        </select>
-        <input type="number" id="tracker-rate-1" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+        <div style="display:flex; align-items:center; gap:6px;">
+          <select id="tracker-currency-1" style="width:65px;">
+            <option value="$">$ USD</option>
+            <option value="€">€ EUR</option>
+            <option value="ARS$">$ ARS</option>
+            <option value="R$">R$ BRL</option>
+            <option value="£">£ GBP</option>
+          </select>
+          <input type="number" id="tracker-rate-1" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+        </div>
+
+        <div class="timer-clock-box">
+          <span class="timer-digits" id="timer-digits-1">00:00:00</span>
+          <span class="live-earnings-badge" id="live-earnings-badge-1" style="display:none;">$0.00</span>
+        </div>
+
+        <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-1" data-slot="1">
+          <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
+        </button>
       </div>
-
-      <div class="timer-clock-box">
-        <span class="timer-digits" id="timer-digits-1">00:00:00</span>
-        <span class="live-earnings-badge" id="live-earnings-badge-1" style="display:none;">$0.00</span>
-      </div>
-
-      <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-1" data-slot="1">
-        <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
-      </button>
     </div>
 
-    <!-- Slot 2 -->
-    <div class="timer-slot-card" id="timer-card-2">
-      <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 2<cfelse>Timer 2</cfif></span>
-      
-      <input type="text" id="tracker-desc-2" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
+    <!-- Panel 2 -->
+    <div class="timer-tab-panel" id="timer-panel-2">
+      <div class="timer-slot-card" id="timer-card-2">
+        <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 2<cfelse>Timer 2</cfif></span>
+        
+        <input type="text" id="tracker-desc-2" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
 
-      <input type="text" id="tracker-project-2" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
+        <input type="text" id="tracker-project-2" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
 
-      <div style="display:flex; align-items:center; gap:6px;">
-        <select id="tracker-currency-2" style="width:65px;">
-          <option value="$">$ USD</option>
-          <option value="€">€ EUR</option>
-          <option value="ARS$">$ ARS</option>
-          <option value="R$">R$ BRL</option>
-          <option value="£">£ GBP</option>
-        </select>
-        <input type="number" id="tracker-rate-2" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+        <div style="display:flex; align-items:center; gap:6px;">
+          <select id="tracker-currency-2" style="width:65px;">
+            <option value="$">$ USD</option>
+            <option value="€">€ EUR</option>
+            <option value="ARS$">$ ARS</option>
+            <option value="R$">R$ BRL</option>
+            <option value="£">£ GBP</option>
+          </select>
+          <input type="number" id="tracker-rate-2" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+        </div>
+
+        <div class="timer-clock-box">
+          <span class="timer-digits" id="timer-digits-2">00:00:00</span>
+          <span class="live-earnings-badge" id="live-earnings-badge-2" style="display:none;">$0.00</span>
+        </div>
+
+        <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-2" data-slot="2">
+          <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
+        </button>
       </div>
-
-      <div class="timer-clock-box">
-        <span class="timer-digits" id="timer-digits-2">00:00:00</span>
-        <span class="live-earnings-badge" id="live-earnings-badge-2" style="display:none;">$0.00</span>
-      </div>
-
-      <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-2" data-slot="2">
-        <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
-      </button>
     </div>
 
-    <!-- Slot 3 -->
-    <div class="timer-slot-card" id="timer-card-3">
-      <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 3<cfelse>Timer 3</cfif></span>
-      
-      <input type="text" id="tracker-desc-3" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
+    <!-- Panel 3 -->
+    <div class="timer-tab-panel" id="timer-panel-3">
+      <div class="timer-slot-card" id="timer-card-3">
+        <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 3<cfelse>Timer 3</cfif></span>
+        
+        <input type="text" id="tracker-desc-3" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
 
-      <input type="text" id="tracker-project-3" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
+        <input type="text" id="tracker-project-3" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
 
-      <div style="display:flex; align-items:center; gap:6px;">
-        <select id="tracker-currency-3" style="width:65px;">
-          <option value="$">$ USD</option>
-          <option value="€">€ EUR</option>
-          <option value="ARS$">$ ARS</option>
-          <option value="R$">R$ BRL</option>
-          <option value="£">£ GBP</option>
-        </select>
-        <input type="number" id="tracker-rate-3" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+        <div style="display:flex; align-items:center; gap:6px;">
+          <select id="tracker-currency-3" style="width:65px;">
+            <option value="$">$ USD</option>
+            <option value="€">€ EUR</option>
+            <option value="ARS$">$ ARS</option>
+            <option value="R$">R$ BRL</option>
+            <option value="£">£ GBP</option>
+          </select>
+          <input type="number" id="tracker-rate-3" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+        </div>
+
+        <div class="timer-clock-box">
+          <span class="timer-digits" id="timer-digits-3">00:00:00</span>
+          <span class="live-earnings-badge" id="live-earnings-badge-3" style="display:none;">$0.00</span>
+        </div>
+
+        <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-3" data-slot="3">
+          <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
+        </button>
       </div>
-
-      <div class="timer-clock-box">
-        <span class="timer-digits" id="timer-digits-3">00:00:00</span>
-        <span class="live-earnings-badge" id="live-earnings-badge-3" style="display:none;">$0.00</span>
-      </div>
-
-      <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-3" data-slot="3">
-        <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
-      </button>
     </div>
   </div>
 
@@ -158,6 +180,22 @@
   var activeTimers = loadActiveTimers();
   var entries = loadEntries();
   var editingEntryId = null;
+
+  // Tab switching setup
+  var tabBtns = document.querySelectorAll('.widget-time-tracker .timer-tab-item');
+  var tabPanels = document.querySelectorAll('.widget-time-tracker .timer-tab-panel');
+
+  tabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var slot = this.dataset.tab;
+      tabBtns.forEach(function(b) { b.classList.remove('active'); });
+      tabPanels.forEach(function(p) { p.classList.remove('active'); });
+
+      this.classList.add('active');
+      var panel = document.getElementById('timer-panel-' + slot);
+      if (panel) panel.classList.add('active');
+    });
+  });
 
   function loadActiveTimers() {
     try {
@@ -226,6 +264,7 @@
     var digits = document.getElementById('timer-digits-' + slot);
     var badge = document.getElementById('live-earnings-badge-' + slot);
     var btn = document.getElementById('btn-timer-toggle-' + slot);
+    var tabStatus = document.getElementById('tab-status-' + slot);
 
     var timer = activeTimers[slot];
 
@@ -235,6 +274,7 @@
       badge.style.display = 'none';
       btn.className = 'btn-timer-toggle btn-timer-start';
       btn.innerHTML = '<i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>';
+      if (tabStatus) tabStatus.innerHTML = '';
       return;
     }
 
@@ -257,6 +297,11 @@
 
     btn.className = 'btn-timer-toggle btn-timer-stop';
     btn.innerHTML = '<i class="fas fa-stop"></i> <span><cfif local.isEs>DETENER<cfelse>STOP</cfif></span>';
+    
+    // Pulse dot on running tab
+    if (tabStatus) {
+      tabStatus.innerHTML = '<span class="tab-running-dot" title="<cfif local.isEs>Corriendo<cfelse>Running</cfif>"></span>';
+    }
   }
 
   function startSlotTimer(slot) {
@@ -359,6 +404,15 @@
     }
 
     if (activeTimers[idleSlot]) stopSlotTimer(idleSlot);
+
+    // Switch active tab to idleSlot
+    tabBtns.forEach(function(b) { b.classList.remove('active'); });
+    tabPanels.forEach(function(p) { p.classList.remove('active'); });
+
+    var targetBtn = document.querySelector('.timer-tab-item[data-tab="' + idleSlot + '"]');
+    var targetPanel = document.getElementById('timer-panel-' + idleSlot);
+    if (targetBtn) targetBtn.classList.add('active');
+    if (targetPanel) targetPanel.classList.add('active');
 
     document.getElementById('tracker-desc-' + idleSlot).value = entry.description;
     document.getElementById('tracker-project-' + idleSlot).value = entry.project;
