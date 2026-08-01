@@ -510,7 +510,7 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#top" class="active">Inicio</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#top"<cfif not (isDefined('request.isToolsSection') and request.isToolsSection)> class="active"</cfif>>Inicio</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#services">Servicios</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#pricing">Experiencia</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#seo">SEO / GEO</a></li>

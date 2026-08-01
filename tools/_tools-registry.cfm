@@ -9,72 +9,72 @@ request.toolCategories = [
 ];
 
 request.toolsRegistry = {
-  "meta-tags-extractor": {category: "marketing-seo-social", icon: "fa-tags", iconPrefix: "fas", built: false,
+  "meta-tags-extractor": {category: "marketing-seo-social", icon: "fa-tags", iconPrefix: "fas", built: true,
     titleEn: "Meta Tags & Keyword Extractor", titleEs: "Extractor de Meta Tags y Keywords",
     descEn: "Extract title, description, meta tags, and keywords from any URL.",
     descEs: "Extraer título, descripción, meta tags y palabras clave introduciendo una URL."},
 
-  "whatsapp-link-generator": {category: "marketing-seo-social", icon: "fa-whatsapp", iconPrefix: "fab", built: false,
+  "whatsapp-link-generator": {category: "marketing-seo-social", icon: "fa-whatsapp", iconPrefix: "fab", built: true,
     titleEn: "WhatsApp Link Generator", titleEs: "Generador de Enlaces de WhatsApp",
     descEn: "Create direct WhatsApp links with pre-filled messages for instant contact.",
     descEs: "Crear links directos con mensajes predefinidos para contacto instantáneo."},
 
-  "email-signature-generator": {category: "marketing-seo-social", icon: "fa-envelope", iconPrefix: "fas", built: false,
+  "email-signature-generator": {category: "marketing-seo-social", icon: "fa-envelope", iconPrefix: "fas", built: true,
     titleEn: "Email Signature Generator", titleEs: "Generador de Firmas de Correo Electrónico",
     descEn: "Customizable HTML templates for professional e-mail signatures.",
     descEs: "Plantillas HTML personalizables para firmas de e-mail profesionales."},
 
-  "qr-code-generator": {category: "marketing-seo-social", icon: "fa-qrcode", iconPrefix: "fas", built: false, featured: true,
+  "qr-code-generator": {category: "marketing-seo-social", icon: "fa-qrcode", iconPrefix: "fas", built: true, featured: true,
     titleEn: "QR Code Generator", titleEs: "Generador de Códigos QR",
     descEn: "Create custom QR codes (colors, styles, PNG/SVG download).",
     descEs: "Creación de QR personalizados (colores, estilos, descarga en PNG/SVG)."},
 
-  "image-editor": {category: "diseno-frontend-css", icon: "fa-image", iconPrefix: "fas", built: false, featured: true,
+  "image-editor": {category: "diseno-frontend-css", icon: "fa-image", iconPrefix: "fas", built: true, featured: true,
     titleEn: "Interactive Image Editor", titleEs: "Editor de Imágenes Interactivo",
     descEn: "Quick editing and export/conversion across multiple formats (WebP, PNG, JPG, etc.).",
     descEs: "Edición rápida y exportación/conversión en múltiples formatos (WebP, PNG, JPG, etc.)."},
 
-  "css-effects-generator": {category: "diseno-frontend-css", icon: "fa-magic", iconPrefix: "fas", built: false,
+  "css-effects-generator": {category: "diseno-frontend-css", icon: "fa-magic", iconPrefix: "fas", built: true,
     titleEn: "CSS Effects Generator", titleEs: "Generador de Efectos CSS con Previsualización",
     descEn: "Live-preview generator for shadows, rounded corners, transitions, animations, and gradients.",
     descEs: "Sombras, bordes redondeados, transiciones, animaciones y degradados con vista previa en tiempo real."},
 
-  "color-converter": {category: "diseno-frontend-css", icon: "fa-palette", iconPrefix: "fas", built: false,
+  "color-converter": {category: "diseno-frontend-css", icon: "fa-palette", iconPrefix: "fas", built: true,
     titleEn: "Color Picker & Converter", titleEs: "Selector y Convertidor de Colores",
     descEn: "Convert between HEX, RGB, HSL, and build/extract color palettes.",
     descEs: "Conversión entre HEX, RGB, HSL y creación/extracción de paletas de colores."},
 
-  "css-minifier": {category: "desarrollo-datos", icon: "fa-file-code", iconPrefix: "fas", built: false,
+  "css-minifier": {category: "desarrollo-datos", icon: "fa-file-code", iconPrefix: "fas", built: true,
     titleEn: "CSS Minifier & Formatter", titleEs: "Minificador y Formateador de CSS",
     descEn: "Clean up, indent, and minify stylesheets.",
     descEs: "Limpieza, sangrado y minificación de hojas de estilo."},
 
-  "json-formatter": {category: "desarrollo-datos", icon: "fa-code", iconPrefix: "fas", built: false, featured: true,
+  "json-formatter": {category: "desarrollo-datos", icon: "fa-code", iconPrefix: "fas", built: true, featured: true,
     titleEn: "JSON Minifier & Formatter", titleEs: "Minificador y Formateador de JSON",
     descEn: "Format, validate, and minify JSON structures.",
     descEs: "Formatear, validar y minificar estructuras JSON."},
 
-  "base64-encoder": {category: "desarrollo-datos", icon: "fa-lock", iconPrefix: "fas", built: false,
+  "base64-encoder": {category: "desarrollo-datos", icon: "fa-lock", iconPrefix: "fas", built: true,
     titleEn: "Base64 Encoder / Decoder", titleEs: "Codificador y Decodificador Base64",
     descEn: "Two-way conversion of text and images to/from Base64.",
     descEs: "Conversión bidireccional de texto e imágenes a Base64."},
 
-  "json-yaml-converter": {category: "desarrollo-datos", icon: "fa-exchange-alt", iconPrefix: "fas", built: false,
+  "json-yaml-converter": {category: "desarrollo-datos", icon: "fa-exchange-alt", iconPrefix: "fas", built: true,
     titleEn: "JSON &harr; YAML Converter", titleEs: "Conversor de Formatos de Datos (JSON a YAML / YAML a JSON)",
     descEn: "Quick conversion between configuration formats.",
     descEs: "Conversión rápida entre formatos de configuración."},
 
-  "hash-generator": {category: "desarrollo-datos", icon: "fa-hashtag", iconPrefix: "fas", built: false,
+  "hash-generator": {category: "desarrollo-datos", icon: "fa-hashtag", iconPrefix: "fas", built: true,
     titleEn: "Security Hash Generator", titleEs: "Generador de Hashes de Seguridad",
     descEn: "Generate MD5, SHA-256, and more.",
     descEs: "Generación de MD5, SHA-256, etc."},
 
-  "uuid-generator": {category: "desarrollo-datos", icon: "fa-fingerprint", iconPrefix: "fas", built: false,
+  "uuid-generator": {category: "desarrollo-datos", icon: "fa-fingerprint", iconPrefix: "fas", built: true,
     titleEn: "UUID / GUID Generator", titleEs: "Generador de UUID / GUID",
     descEn: "Generate unique identifiers for development.",
     descEs: "Generación de identificadores únicos para desarrollo."},
 
-  "http-status-codes": {category: "desarrollo-datos", icon: "fa-server", iconPrefix: "fas", built: false,
+  "http-status-codes": {category: "desarrollo-datos", icon: "fa-server", iconPrefix: "fas", built: true,
     titleEn: "HTTP Status Code Reference", titleEs: "Buscador / Referencia de Códigos de Estado HTTP",
     descEn: "Interactive guide to HTTP codes (200, 301, 404, 500, etc.).",
     descEs: "Guía interactiva de códigos HTTP (200, 301, 404, 500, etc.)."},
