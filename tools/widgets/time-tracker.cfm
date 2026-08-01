@@ -1,35 +1,113 @@
 <div class="tool-widget widget-time-tracker">
-  <!-- Top Timer Banner (Clockify Style) -->
-  <div class="timer-banner">
-    <input type="text" id="tracker-desc" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
+  <!-- Datalist for open text Project/Client suggestions -->
+  <datalist id="project-suggestions">
+    <option value="Client Work">
+    <option value="CFML Development">
+    <option value="Web Design & CSS">
+    <option value="Bugfix & Maintenance">
+    <option value="Acme Corp">
+    <option value="Tesla Migration">
+  </datalist>
 
-    <select id="tracker-project">
-      <option value="General">📁 General</option>
-      <option value="CFML Dev">⚡ CFML Dev</option>
-      <option value="Web Design">🎨 Web Design</option>
-      <option value="Client Work" selected>💼 Client Work</option>
-      <option value="Bugfix">🐛 Bugfix</option>
-    </select>
+  <!-- Section Title for Timers -->
+  <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+    <h3 style="font-size:1.1rem; font-weight:700; color:#0f172a; margin:0;">
+      <i class="fas fa-stopwatch" style="color:#13aff0;"></i> 
+      <cfif local.isEs>Temporizadores Múltiples en Paralelo (3 Slots)<cfelse>Parallel Multi-Timers (3 Slots)</cfif>
+    </h3>
+    <span style="font-size:0.82rem; color:#64748b; font-weight:600;">
+      <i class="fas fa-info-circle"></i> <cfif local.isEs>Podés ejecutar hasta 3 cronómetros simultáneamente<cfelse>Run up to 3 timers simultaneously</cfif>
+    </span>
+  </div>
 
-    <div style="display:flex; align-items:center; gap:6px;">
-      <select id="tracker-currency" style="width:70px;">
-        <option value="$">$ USD</option>
-        <option value="€">€ EUR</option>
-        <option value="ARS$">$ ARS</option>
-        <option value="R$">R$ BRL</option>
-        <option value="£">£ GBP</option>
-      </select>
-      <input type="number" id="tracker-rate" placeholder="<cfif local.isEs>$/hora (opcional)<cfelse>$/hr (optional)</cfif>" step="0.5" min="0" style="width:110px;">
+  <!-- Multi-Timer Banners Container (Slots 1, 2, 3) -->
+  <div class="multi-timers-wrapper">
+    <!-- Slot 1 -->
+    <div class="timer-slot-card" id="timer-card-1">
+      <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 1<cfelse>Timer 1</cfif></span>
+      
+      <input type="text" id="tracker-desc-1" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
+
+      <input type="text" id="tracker-project-1" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
+
+      <div style="display:flex; align-items:center; gap:6px;">
+        <select id="tracker-currency-1" style="width:65px;">
+          <option value="$">$ USD</option>
+          <option value="€">€ EUR</option>
+          <option value="ARS$">$ ARS</option>
+          <option value="R$">R$ BRL</option>
+          <option value="£">£ GBP</option>
+        </select>
+        <input type="number" id="tracker-rate-1" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+      </div>
+
+      <div class="timer-clock-box">
+        <span class="timer-digits" id="timer-digits-1">00:00:00</span>
+        <span class="live-earnings-badge" id="live-earnings-badge-1" style="display:none;">$0.00</span>
+      </div>
+
+      <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-1" data-slot="1">
+        <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
+      </button>
     </div>
 
-    <div class="timer-clock-box">
-      <span class="timer-digits" id="timer-digits">00:00:00</span>
-      <span class="live-earnings-badge" id="live-earnings-badge" style="display:none;">$0.00</span>
+    <!-- Slot 2 -->
+    <div class="timer-slot-card" id="timer-card-2">
+      <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 2<cfelse>Timer 2</cfif></span>
+      
+      <input type="text" id="tracker-desc-2" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
+
+      <input type="text" id="tracker-project-2" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
+
+      <div style="display:flex; align-items:center; gap:6px;">
+        <select id="tracker-currency-2" style="width:65px;">
+          <option value="$">$ USD</option>
+          <option value="€">€ EUR</option>
+          <option value="ARS$">$ ARS</option>
+          <option value="R$">R$ BRL</option>
+          <option value="£">£ GBP</option>
+        </select>
+        <input type="number" id="tracker-rate-2" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+      </div>
+
+      <div class="timer-clock-box">
+        <span class="timer-digits" id="timer-digits-2">00:00:00</span>
+        <span class="live-earnings-badge" id="live-earnings-badge-2" style="display:none;">$0.00</span>
+      </div>
+
+      <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-2" data-slot="2">
+        <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
+      </button>
     </div>
 
-    <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle">
-      <i class="fas fa-play"></i> <span id="lbl-timer-action"><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
-    </button>
+    <!-- Slot 3 -->
+    <div class="timer-slot-card" id="timer-card-3">
+      <span class="timer-slot-badge">⏱️ <cfif local.isEs>Reloj 3<cfelse>Timer 3</cfif></span>
+      
+      <input type="text" id="tracker-desc-3" placeholder="<cfif local.isEs>¿En qué estás trabajando?<cfelse>What are you working on?</cfif>" spellcheck="false">
+
+      <input type="text" id="tracker-project-3" list="project-suggestions" placeholder="<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>" style="width:160px;">
+
+      <div style="display:flex; align-items:center; gap:6px;">
+        <select id="tracker-currency-3" style="width:65px;">
+          <option value="$">$ USD</option>
+          <option value="€">€ EUR</option>
+          <option value="ARS$">$ ARS</option>
+          <option value="R$">R$ BRL</option>
+          <option value="£">£ GBP</option>
+        </select>
+        <input type="number" id="tracker-rate-3" placeholder="$/hr" step="0.5" min="0" style="width:85px;">
+      </div>
+
+      <div class="timer-clock-box">
+        <span class="timer-digits" id="timer-digits-3">00:00:00</span>
+        <span class="live-earnings-badge" id="live-earnings-badge-3" style="display:none;">$0.00</span>
+      </div>
+
+      <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-3" data-slot="3">
+        <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
+      </button>
+    </div>
   </div>
 
   <!-- Summary Dashboard Cards -->
@@ -72,45 +150,27 @@
 <script>
 (function() {
   var ENTRIES_KEY = 'cfexpert_tracker_entries';
-  var ACTIVE_TIMER_KEY = 'cfexpert_tracker_active_timer';
+  var MULTI_TIMERS_KEY = 'cfexpert_tracker_multi_timers';
 
-  var inputDesc = document.getElementById('tracker-desc');
-  var selectProject = document.getElementById('tracker-project');
-  var selectCurrency = document.getElementById('tracker-currency');
-  var inputRate = document.getElementById('tracker-rate');
+  var slots = [1, 2, 3];
+  var intervals = { 1: null, 2: null, 3: null };
 
-  var timerDigits = document.getElementById('timer-digits');
-  var liveEarnings = document.getElementById('live-earnings-badge');
-  var btnToggle = document.getElementById('btn-timer-toggle');
-  var lblAction = document.getElementById('lbl-timer-action');
-
-  var summaryTime = document.getElementById('summary-total-time');
-  var summaryEarned = document.getElementById('summary-total-earned');
-  var summaryCount = document.getElementById('summary-total-count');
-
-  var entriesContainer = document.getElementById('entries-container');
-  var btnExport = document.getElementById('btn-export-csv');
-  var btnClear = document.getElementById('btn-clear-entries');
-
-  var intervalId = null;
-  var activeTimer = loadActiveTimer();
+  var activeTimers = loadActiveTimers();
   var entries = loadEntries();
   var editingEntryId = null;
 
-  function loadActiveTimer() {
+  function loadActiveTimers() {
     try {
-      var data = localStorage.getItem(ACTIVE_TIMER_KEY);
-      return data ? JSON.parse(data) : null;
-    } catch(e) { return null; }
+      var data = localStorage.getItem(MULTI_TIMERS_KEY);
+      return data ? JSON.parse(data) : { 1: null, 2: null, 3: null };
+    } catch(e) {
+      return { 1: null, 2: null, 3: null };
+    }
   }
 
-  function saveActiveTimer() {
+  function saveActiveTimers() {
     try {
-      if (activeTimer) {
-        localStorage.setItem(ACTIVE_TIMER_KEY, JSON.stringify(activeTimer));
-      } else {
-        localStorage.removeItem(ACTIVE_TIMER_KEY);
-      }
+      localStorage.setItem(MULTI_TIMERS_KEY, JSON.stringify(activeTimers));
     } catch(e) {}
   }
 
@@ -161,68 +221,86 @@
     return year + '-' + month + '-' + day;
   }
 
-  function updateTimerUI() {
-    if (!activeTimer) {
-      timerDigits.textContent = '00:00:00';
-      liveEarnings.style.display = 'none';
-      btnToggle.className = 'btn-timer-toggle btn-timer-start';
-      btnToggle.innerHTML = '<i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>';
+  function updateSlotUI(slot) {
+    var card = document.getElementById('timer-card-' + slot);
+    var digits = document.getElementById('timer-digits-' + slot);
+    var badge = document.getElementById('live-earnings-badge-' + slot);
+    var btn = document.getElementById('btn-timer-toggle-' + slot);
+
+    var timer = activeTimers[slot];
+
+    if (!timer) {
+      card.classList.remove('active-running');
+      digits.textContent = '00:00:00';
+      badge.style.display = 'none';
+      btn.className = 'btn-timer-toggle btn-timer-start';
+      btn.innerHTML = '<i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>';
       return;
     }
 
-    var elapsedSec = Math.floor((Date.now() - new Date(activeTimer.startTime).getTime()) / 1000);
+    card.classList.add('active-running');
+    var elapsedSec = Math.floor((Date.now() - new Date(timer.startTime).getTime()) / 1000);
     if (elapsedSec < 0) elapsedSec = 0;
 
-    timerDigits.textContent = formatTimeDigits(elapsedSec);
+    digits.textContent = formatTimeDigits(elapsedSec);
 
-    var rate = parseFloat(activeTimer.rate) || 0;
-    var curr = activeTimer.currency || '$';
+    var rate = parseFloat(timer.rate) || 0;
+    var curr = timer.currency || '$';
 
     if (rate > 0) {
       var earned = (elapsedSec / 3600) * rate;
-      liveEarnings.textContent = curr + earned.toFixed(2);
-      liveEarnings.style.display = 'inline-block';
+      badge.textContent = curr + earned.toFixed(2);
+      badge.style.display = 'inline-block';
     } else {
-      liveEarnings.style.display = 'none';
+      badge.style.display = 'none';
     }
 
-    btnToggle.className = 'btn-timer-toggle btn-timer-stop';
-    btnToggle.innerHTML = '<i class="fas fa-stop"></i> <span><cfif local.isEs>DETENER<cfelse>STOP</cfif></span>';
+    btn.className = 'btn-timer-toggle btn-timer-stop';
+    btn.innerHTML = '<i class="fas fa-stop"></i> <span><cfif local.isEs>DETENER<cfelse>STOP</cfif></span>';
   }
 
-  function startTimer(desc, proj, rate, curr) {
-    activeTimer = {
-      description: desc || '<cfif local.isEs>Sin descripción<cfelse>No description</cfif>',
-      project: proj || 'General',
-      rate: rate || 0,
-      currency: curr || '$',
+  function startSlotTimer(slot) {
+    var descInput = document.getElementById('tracker-desc-' + slot);
+    var projInput = document.getElementById('tracker-project-' + slot);
+    var currSelect = document.getElementById('tracker-currency-' + slot);
+    var rateInput = document.getElementById('tracker-rate-' + slot);
+
+    activeTimers[slot] = {
+      description: descInput.value.trim() || '<cfif local.isEs>Tarea sin título<cfelse>Untitled Task</cfif>',
+      project: projInput.value.trim() || 'General',
+      rate: parseFloat(rateInput.value) || 0,
+      currency: currSelect.value || '$',
       startTime: new Date().toISOString()
     };
 
-    saveActiveTimer();
-    updateTimerUI();
+    saveActiveTimers();
+    updateSlotUI(slot);
 
-    if (intervalId) clearInterval(intervalId);
-    intervalId = setInterval(updateTimerUI, 1000);
+    if (intervals[slot]) clearInterval(intervals[slot]);
+    intervals[slot] = setInterval(function() { updateSlotUI(slot); }, 1000);
   }
 
-  function stopTimer() {
-    if (!activeTimer) return;
+  function stopSlotTimer(slot) {
+    var timer = activeTimers[slot];
+    if (!timer) return;
 
     var endTime = new Date().toISOString();
-    var durationSec = Math.floor((new Date(endTime).getTime() - new Date(activeTimer.startTime).getTime()) / 1000);
+    var durationSec = Math.floor((new Date(endTime).getTime() - new Date(timer.startTime).getTime()) / 1000);
     if (durationSec < 1) durationSec = 1;
 
-    var rate = parseFloat(activeTimer.rate) || 0;
+    var rate = parseFloat(timer.rate) || 0;
     var earned = rate > 0 ? (durationSec / 3600) * rate : 0;
+
+    var descInput = document.getElementById('tracker-desc-' + slot);
+    var projInput = document.getElementById('tracker-project-' + slot);
 
     var newEntry = {
       id: Date.now(),
-      description: inputDesc.value.trim() || activeTimer.description,
-      project: selectProject.value || activeTimer.project,
+      description: descInput.value.trim() || timer.description,
+      project: projInput.value.trim() || timer.project,
       rate: rate,
-      currency: selectCurrency.value || activeTimer.currency,
-      startTime: activeTimer.startTime,
+      currency: timer.currency || '$',
+      startTime: timer.startTime,
       endTime: endTime,
       durationSeconds: durationSec,
       earned: earned
@@ -231,26 +309,36 @@
     entries.unshift(newEntry);
     saveEntries();
 
-    activeTimer = null;
-    saveActiveTimer();
+    activeTimers[slot] = null;
+    saveActiveTimers();
 
-    if (intervalId) clearInterval(intervalId);
-    intervalId = null;
+    if (intervals[slot]) clearInterval(intervals[slot]);
+    intervals[slot] = null;
 
-    inputDesc.value = '';
-    updateTimerUI();
+    descInput.value = '';
+    updateSlotUI(slot);
     renderEntries();
   }
 
-  btnToggle.addEventListener('click', function() {
-    if (activeTimer) {
-      stopTimer();
-    } else {
-      var desc = inputDesc.value.trim();
-      var proj = selectProject.value;
-      var rate = parseFloat(inputRate.value) || 0;
-      var curr = selectCurrency.value;
-      startTimer(desc, proj, rate, curr);
+  slots.forEach(function(slot) {
+    var btn = document.getElementById('btn-timer-toggle-' + slot);
+    btn.addEventListener('click', function() {
+      if (activeTimers[slot]) {
+        stopSlotTimer(slot);
+      } else {
+        startSlotTimer(slot);
+      }
+    });
+
+    if (activeTimers[slot]) {
+      var t = activeTimers[slot];
+      document.getElementById('tracker-desc-' + slot).value = t.description || '';
+      document.getElementById('tracker-project-' + slot).value = t.project || '';
+      document.getElementById('tracker-rate-' + slot).value = t.rate > 0 ? t.rate : '';
+      document.getElementById('tracker-currency-' + slot).value = t.currency || '$';
+
+      updateSlotUI(slot);
+      intervals[slot] = setInterval(function() { updateSlotUI(slot); }, 1000);
     }
   });
 
@@ -261,14 +349,23 @@
   }
 
   function resumeEntry(entry) {
-    if (activeTimer) stopTimer();
+    // Find first idle slot or default to slot 1
+    var idleSlot = 1;
+    for (var s = 1; s <= 3; s++) {
+      if (!activeTimers[s]) {
+        idleSlot = s;
+        break;
+      }
+    }
 
-    inputDesc.value = entry.description;
-    selectProject.value = entry.project;
-    inputRate.value = entry.rate > 0 ? entry.rate : '';
-    selectCurrency.value = entry.currency || '$';
+    if (activeTimers[idleSlot]) stopSlotTimer(idleSlot);
 
-    startTimer(entry.description, entry.project, entry.rate, entry.currency);
+    document.getElementById('tracker-desc-' + idleSlot).value = entry.description;
+    document.getElementById('tracker-project-' + idleSlot).value = entry.project;
+    document.getElementById('tracker-rate-' + idleSlot).value = entry.rate > 0 ? entry.rate : '';
+    document.getElementById('tracker-currency-' + idleSlot).value = entry.currency || '$';
+
+    startSlotTimer(idleSlot);
   }
 
   function saveEditedEntry(id, newDesc, newProj, dateStr, startTimeStr, endTimeStr, newRate) {
@@ -286,7 +383,7 @@
     entries = entries.map(function(e) {
       if (e.id === id) {
         e.description = newDesc.trim() || e.description;
-        e.project = newProj;
+        e.project = newProj.trim() || e.project;
         e.startTime = startIso;
         e.endTime = endIso;
         e.durationSeconds = durationSec;
@@ -302,6 +399,11 @@
   }
 
   function renderEntries() {
+    var entriesContainer = document.getElementById('entries-container');
+    var summaryTime = document.getElementById('summary-total-time');
+    var summaryEarned = document.getElementById('summary-total-earned');
+    var summaryCount = document.getElementById('summary-total-count');
+
     entriesContainer.innerHTML = '';
 
     if (entries.length === 0) {
@@ -319,7 +421,6 @@
     var totalMoney = 0;
     var defaultCurr = entries[0] ? entries[0].currency : '$';
 
-    // Group entries by date
     var groups = {};
     entries.forEach(function(e) {
       totalSec += e.durationSeconds;
@@ -350,7 +451,6 @@
 
       groupEntries.forEach(function(entry) {
         if (editingEntryId === entry.id) {
-          // Render Inline Edit Row
           var editCard = document.createElement('div');
           editCard.className = 'time-entry-edit-card';
 
@@ -358,13 +458,11 @@
           editDesc.type = 'text';
           editDesc.value = entry.description;
 
-          var editProj = document.createElement('select');
-          editProj.innerHTML = 
-            '<option value="General"' + (entry.project === 'General' ? ' selected' : '') + '>📁 General</option>' +
-            '<option value="CFML Dev"' + (entry.project === 'CFML Dev' ? ' selected' : '') + '>⚡ CFML Dev</option>' +
-            '<option value="Web Design"' + (entry.project === 'Web Design' ? ' selected' : '') + '>🎨 Web Design</option>' +
-            '<option value="Client Work"' + (entry.project === 'Client Work' ? ' selected' : '') + '>💼 Client Work</option>' +
-            '<option value="Bugfix"' + (entry.project === 'Bugfix' ? ' selected' : '') + '>🐛 Bugfix</option>';
+          var editProj = document.createElement('input');
+          editProj.type = 'text';
+          editProj.setAttribute('list', 'project-suggestions');
+          editProj.placeholder = '<cfif local.isEs>Proyecto / Cliente...<cfelse>Project / Client...</cfif>';
+          editProj.value = entry.project;
 
           var editDate = document.createElement('input');
           editDate.type = 'date';
@@ -440,7 +538,6 @@
 
           entriesContainer.appendChild(editCard);
         } else {
-          // Render Normal Entry Card
           var card = document.createElement('div');
           card.className = 'time-entry-card';
 
@@ -513,7 +610,7 @@
     });
   }
 
-  btnClear.addEventListener('click', function() {
+  document.getElementById('btn-clear-entries').addEventListener('click', function() {
     if (confirm('<cfif local.isEs>¿Seguro que querés borrar todos los registros de tiempo?<cfelse>Are you sure you want to clear all time entries?</cfif>')) {
       entries = [];
       saveEntries();
@@ -521,7 +618,7 @@
     }
   });
 
-  btnExport.addEventListener('click', function() {
+  document.getElementById('btn-export-csv').addEventListener('click', function() {
     if (entries.length === 0) return;
     var csv = 'ID,Description,Project,StartTime,EndTime,DurationSeconds,Rate,Earned\n';
     entries.forEach(function(e) {
@@ -547,17 +644,6 @@
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
   });
-
-  // Resume active timer if any
-  if (activeTimer) {
-    inputDesc.value = activeTimer.description || '';
-    selectProject.value = activeTimer.project || 'General';
-    inputRate.value = activeTimer.rate > 0 ? activeTimer.rate : '';
-    selectCurrency.value = activeTimer.currency || '$';
-
-    updateTimerUI();
-    intervalId = setInterval(updateTimerUI, 1000);
-  }
 
   renderEntries();
 })();
