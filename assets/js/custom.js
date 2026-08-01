@@ -517,7 +517,7 @@ $(function() {
 			}
 		});
 
-		var $badge = $('#header-active-timer-badge');
+		var $badge = $('#global-floating-timer-bar');
 
 		if (activeList.length === 0) {
 			if ($badge.length) $badge.css('display', 'none');
@@ -525,13 +525,8 @@ $(function() {
 		}
 
 		if (!$badge.length) {
-			$badge = $('<a id="header-active-timer-badge" href="/tools/time-tracker.cfm" class="header-timer-badge"></a>');
-			var $ul = $('.header-area .main-nav .nav');
-			if ($ul.length) {
-				$('<li class="nav-header-timer-wrap" style="display:inline-flex; align-items:center;"></li>').append($badge).appendTo($ul);
-			} else {
-				$('body').append($badge);
-			}
+			$badge = $('<a id="global-floating-timer-bar" href="/tools/time-tracker.cfm" class="global-floating-timer-bar"></a>');
+			$('body').append($badge);
 		}
 
 		var first = activeList[0];
@@ -546,9 +541,9 @@ $(function() {
 		}
 
 		$badge.html(
-			'<span class="header-timer-dot"></span> ' +
-			'<span>' + label + '</span>' +
-			'<span class="header-timer-time">[' + displayTime + ']</span>'
+			'<span class="global-timer-dot"></span> ' +
+			'<span style="color:#ffffff !important; font-weight:700;">' + label + '</span>' +
+			'<span class="global-timer-time">[' + displayTime + ']</span>'
 		).css('display', 'inline-flex');
 	}
 

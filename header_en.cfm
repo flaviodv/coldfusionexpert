@@ -520,7 +520,6 @@
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#about">About</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#clients">Skills</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#Contact">Contact</a></li>
-              <li class="nav-standard" style="display:inline-flex; align-items:center;"><a id="header-active-timer-badge" href="/tools/time-tracker.cfm" class="header-timer-badge" style="display:none;"></a></li>
               <cfif isDefined("request.isToolsSection") and request.isToolsSection>
                 <cfset local.mnCurrentFile = listLast(cgi.script_name, "/")>
                 <cfoutput>
