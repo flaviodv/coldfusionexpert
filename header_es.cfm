@@ -140,7 +140,7 @@
     <link rel="stylesheet" href="/assets/css/templatemo-chain-app-dev.css">
     <link rel="stylesheet" href="/assets/css/animated.css">
     <link rel="stylesheet" href="/assets/css/owl.css">
-    <link rel="stylesheet" href="/assets/css/tools.css">
+    <cfoutput><link rel="stylesheet" href="/assets/css/tools.css<cfif isDefined('request.toolsCssVer')>#request.toolsCssVer#</cfif>"></cfoutput>
     <style>
       p { color: #2a2a2a; }
       .our_services .wrppr .servce_img, img.servce_img {
@@ -520,6 +520,7 @@
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#about">Acerca de</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#clients">Habilidades</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#Contact">Contacto</a></li>
+              <li class="nav-standard" style="display:inline-flex; align-items:center;"><a id="header-active-timer-badge" href="/tools/time-tracker.cfm" class="header-timer-badge" style="display:none;"></a></li>
               <cfif isDefined("request.isToolsSection") and request.isToolsSection>
                 <cfset local.mnCurrentFile = listLast(cgi.script_name, "/")>
                 <cfoutput>
