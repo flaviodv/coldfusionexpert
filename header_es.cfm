@@ -6,26 +6,29 @@
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <cfoutput><title><cfif isDefined("request.pageTitle")>#request.pageTitle#<cfelse>ColdFusion Expert | Flavio Di Virgilio - Desarrollador Senior ColdFusion, AWS &amp; Automatización IA</cfif></title></cfoutput>
-    <meta name="description" content="Flavio Di Virgilio - Desarrollador Senior Full-Stack especializado en Adobe ColdFusion, Lucee Server, SQL Server, AWS Cloud, Automatización con IA (LLMs, RAG, OpenAI, Claude) y SEO/GEO. +15 años de trayectoria. Cursos en vivo vía Zoom y consultoría internacional. Top Rated Plus en Upwork (100% Job Success).">
-    <meta name="keywords" content="ColdFusion expert, desarrollador ColdFusion, Lucee server, automatización IA, APIs OpenAI Claude Gemini, RAG vectores, consultoría ColdFusion, SEO GEO IA, cursos Zoom ColdFusion, AWS EC2 RDS, Quebec Attractions, CompraInversa, Firebrand Creative, Argentina, Upwork Top Rated">
+    <cfoutput><meta name="description" content="<cfif isDefined('request.pageDescription')>#request.pageDescription#<cfelse>Flavio Di Virgilio - Desarrollador Senior Full-Stack especializado en Adobe ColdFusion, Lucee Server, SQL Server, AWS Cloud, Automatización con IA (LLMs, RAG, OpenAI, Claude) y SEO/GEO. +15 años de trayectoria. Cursos en vivo vía Zoom y consultoría internacional. Top Rated Plus en Upwork (100% Job Success).</cfif>"></cfoutput>
+    <cfoutput><meta name="keywords" content="<cfif isDefined('request.pageKeywords')>#request.pageKeywords#<cfelse>ColdFusion expert, desarrollador ColdFusion, Lucee server, automatización IA, APIs OpenAI Claude Gemini, RAG vectores, consultoría ColdFusion, SEO GEO IA, cursos Zoom ColdFusion, AWS EC2 RDS, Quebec Attractions, CompraInversa, Firebrand Creative, Argentina, Upwork Top Rated</cfif>"></cfoutput>
     <meta name="author" content="Flavio Di Virgilio">
     <cfoutput><meta name="robots" content="<cfif isDefined('request.pageNoindex') and request.pageNoindex>noindex, follow<cfelse>index, follow</cfif>"></cfoutput>
     <cfoutput><link rel="canonical" href="<cfif isDefined('request.pageCanonical')>#request.pageCanonical#<cfelse>https://coldfusionexpert.ar/?lan=es</cfif>"></cfoutput>
-    <link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/?lan=es">
-    <link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/?lan=en">
-    <link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/?lan=en">
+    <cfoutput><link rel="alternate" hreflang="es" href="<cfif isDefined('request.pageAlternateEs')>#request.pageAlternateEs#<cfelse>https://coldfusionexpert.ar/?lan=es</cfif>"></cfoutput>
+    <cfoutput><link rel="alternate" hreflang="en" href="<cfif isDefined('request.pageAlternateEn')>#request.pageAlternateEn#<cfelse>https://coldfusionexpert.ar/?lan=en</cfif>"></cfoutput>
+    <cfoutput><link rel="alternate" hreflang="x-default" href="<cfif isDefined('request.pageAlternateEn')>#request.pageAlternateEn#<cfelse>https://coldfusionexpert.ar/?lan=en</cfif>"></cfoutput>
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://coldfusionexpert.ar/?lan=es">
-    <meta property="og:title" content="ColdFusion Expert | Flavio Di Virgilio - Desarrollador Senior Full-Stack &amp; Automatización IA">
-    <meta property="og:description" content="Servicios de consultoría, desarrollo web a medida, automatización con IA, administración AWS, SEO/GEO y capacitación en vivo vía Zoom. +15 años de trayectoria.">
+    <cfoutput><meta property="og:url" content="<cfif isDefined('request.pageOgUrl')>#request.pageOgUrl#<cfelse>https://coldfusionexpert.ar/?lan=es</cfif>"></cfoutput>
+    <cfoutput><meta property="og:title" content="<cfif isDefined('request.pageOgTitle')>#request.pageOgTitle#<cfelse>ColdFusion Expert | Flavio Di Virgilio - Desarrollador Senior Full-Stack &amp; Automatización IA</cfif>"></cfoutput>
+    <cfoutput><meta property="og:description" content="<cfif isDefined('request.pageOgDescription')>#request.pageOgDescription#<cfelse>Servicios de consultoría, desarrollo web a medida, automatización con IA, administración AWS, SEO/GEO y capacitación en vivo vía Zoom. +15 años de trayectoria.</cfif>"></cfoutput>
     <meta property="og:image" content="https://coldfusionexpert.ar/assets/images/flavio-profile.png">
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ColdFusion Expert | Flavio Di Virgilio">
-    <meta name="twitter:description" content="Especialista Senior en ColdFusion/CFML, Lucee, SQL Server, AWS Cloud y Automatización con IA. Top Rated Plus en Upwork.">
+    <cfoutput><meta name="twitter:title" content="<cfif isDefined('request.pageOgTitle')>#request.pageOgTitle#<cfelse>ColdFusion Expert | Flavio Di Virgilio</cfif>"></cfoutput>
+    <cfoutput><meta name="twitter:description" content="<cfif isDefined('request.pageOgDescription')>#request.pageOgDescription#<cfelse>Especialista Senior en ColdFusion/CFML, Lucee, SQL Server, AWS Cloud y Automatización con IA. Top Rated Plus en Upwork.</cfif>"></cfoutput>
     <meta name="twitter:image" content="https://coldfusionexpert.ar/assets/images/flavio-profile.png">
     <!-- Structured Data / JSON-LD Schema -->
+    <cfif isDefined("request.pageSchemaJson")>
+    <cfoutput><script type="application/ld+json">#request.pageSchemaJson#</script></cfoutput>
+    <cfelse>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -133,6 +136,7 @@
       ]
     }
     </script>
+    </cfif>
     <!-- Bootstrap core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Additional CSS Files -->
@@ -195,6 +199,35 @@
         font-weight: 500;
         display: inline-block;
         margin-bottom: 15px;
+      }
+      .hero-eyebrow {
+        display: block;
+        font-size: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #0a5f8a;
+        margin-bottom: 4px;
+      }
+      .hero-stats {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 18px;
+        margin-top: 10px;
+        font-size: 0.92rem;
+      }
+      .hero-stat {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+        color: #2a2a2a;
+        font-weight: 600;
+      }
+      .hero-stat i {
+        color: #14a800;
+        font-size: 0.95rem;
       }
       .badge-upwork {
         background: #14a800;

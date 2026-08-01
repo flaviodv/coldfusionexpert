@@ -9,13 +9,16 @@
                   <div class="col-lg-12">
                     <br> <br>
                     <span class="badge-experience"><i class="fas fa-award"></i> +15 Años de Experiencia | Senior Full-Stack Developer</span>
-                    <h1>Flavio Di Virgilio - ColdFusion Expert</h1>
+                    <span class="hero-eyebrow">ColdFusion Expert</span>
+                    <h1>Flavio Di Virgilio</h1>
                     <h3>ColdFusion Senior Developer & AWS / Server Administrator</h3>
                     <h5>Especialista en aplicaciones web de alto rendimiento, arquitectura de datos, migración de sistemas legacy y optimización Cloud.</h5>
-                    <p style="margin-top: 10px; font-size: 0.92rem;">
+                    <div class="hero-stats">
                       <span class="badge-upwork" style="white-space: nowrap;"><i class="fas fa-check-circle"></i> Upwork Top Rated Plus</span>
-                      <span style="white-space: nowrap;"><strong>100% Job Success</strong></span> | <span style="white-space: nowrap;">+8,000 Horas</span> | <span style="white-space: nowrap;">+40 Proyectos Exitosos</span>
-                    </p>
+                      <span class="hero-stat"><i class="fas fa-check-circle"></i> 100% Job Success</span>
+                      <span class="hero-stat"><i class="fas fa-check-circle"></i> +8,000 Horas</span>
+                      <span class="hero-stat"><i class="fas fa-check-circle"></i> +40 Proyectos Exitosos</span>
+                    </div>
                     <div style="margin-top: 20px;">
                       <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="btn-social btn-upwork">
                         <i class="fab fa-upwork"></i> Perfil en Upwork
@@ -547,26 +550,38 @@
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Nuestras <em>Herramientas Gratuitas</em></h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Creadas por nosotros: una colección creciente de herramientas gratuitas para desarrolladores, marketing y productividad diaria - una destacada por categoría.</p>
+            <p>Creadas por nosotros: una colección creciente de herramientas gratuitas para desarrolladores, marketing y productividad diaria - dos destacadas por categoría.</p>
           </div>
         </div>
       </div>
+      <cfscript>
+        local.ftCards = [];
+        for (local.ftCatIdx = 1; local.ftCatIdx <= arrayLen(request.toolCategories); local.ftCatIdx++) {
+          local.ftCat = request.toolCategories[local.ftCatIdx];
+          local.ftCount = 0;
+          for (local.ftSlugIdx = 1; local.ftSlugIdx <= arrayLen(request.toolOrder); local.ftSlugIdx++) {
+            local.ftSlug = request.toolOrder[local.ftSlugIdx];
+            local.ftTool = request.toolsRegistry[local.ftSlug];
+            if (local.ftTool.category eq local.ftCat.slug and local.ftTool.built and local.ftCount < 2) {
+              local.ftCard = duplicate(local.ftTool);
+              local.ftCard.slug = local.ftSlug;
+              arrayAppend(local.ftCards, local.ftCard);
+              local.ftCount++;
+            }
+          }
+        }
+      </cfscript>
       <cfoutput>
-      <div class="tools-grid" style="margin-bottom: 40px;">
-        <cfloop array="#request.toolCategories#" index="local.ftCat">
-          <cfloop array="#request.toolOrder#" index="local.ftSlug">
-            <cfset local.ftTool = request.toolsRegistry[local.ftSlug]>
-            <cfif local.ftTool.category eq local.ftCat.slug and structKeyExists(local.ftTool, "featured") and local.ftTool.featured>
-              <div class="tool-card">
-                <div class="tool-card-icon"><i class="#local.ftTool.iconPrefix# #local.ftTool.icon#"></i></div>
-                <h4>#local.ftTool.titleEs#</h4>
-                <p>#local.ftTool.descEs#</p>
-                <a href="/tools/#local.ftSlug#.cfm" class="btn-social btn-linkedin">
-                  <i class="fas fa-arrow-right"></i> Ver Herramienta
-                </a>
-              </div>
-            </cfif>
-          </cfloop>
+      <div class="owl-carousel tools-carousel" style="margin-bottom: 40px;">
+        <cfloop array="#local.ftCards#" index="local.ftCard">
+          <div class="tool-card">
+            <div class="tool-card-icon"><i class="#local.ftCard.iconPrefix# #local.ftCard.icon#"></i></div>
+            <h4>#local.ftCard.titleEs#</h4>
+            <p>#local.ftCard.descEs#</p>
+            <a href="/tools/#local.ftCard.slug#.cfm" class="btn-social btn-linkedin">
+              <i class="fas fa-arrow-right"></i> Ver Herramienta
+            </a>
+          </div>
         </cfloop>
       </div>
       </cfoutput>

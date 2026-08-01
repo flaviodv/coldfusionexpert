@@ -47,10 +47,63 @@ function onRequestStart(targetPage){
         request.isToolsSection = false;
         if(structKeyExists(request.toolsRegistry, slug)){
             var tool = request.toolsRegistry[slug];
+            var toolTitle = (session.lan eq "es") ? tool.titleEs : tool.titleEn;
+            var toolDescription = (session.lan eq "es") ? tool.descEs : tool.descEn;
+            var toolCategory = "";
+            var categoryLabel = "";
+            var categoryIndex = 0;
+            for(var categoryIndex = 1; categoryIndex <= arrayLen(request.toolCategories); categoryIndex++){
+                if(request.toolCategories[categoryIndex].slug eq tool.category){
+                    toolCategory = request.toolCategories[categoryIndex];
+                    categoryLabel = (session.lan eq "es") ? toolCategory.labelEs : toolCategory.labelEn;
+                    break;
+                }
+            }
             request.pageTitle = (session.lan eq "es")
-                ? tool.titleEs & " | ColdFusion Expert"
-                : tool.titleEn & " | ColdFusion Expert";
+                ? toolTitle & " | Herramienta gratuita | ColdFusion Expert"
+                : toolTitle & " | Free Online Tool | ColdFusion Expert";
+            request.pageDescription = toolDescription;
+            request.pageKeywords = toolTitle & ", " & categoryLabel & ", " & ((session.lan eq "es") ? "herramienta online gratuita" : "free online tool") & ", " & toolDescription;
             request.pageCanonical = "https://coldfusionexpert.ar/tools/" & slug & ".cfm?lan=" & session.lan;
+            request.pageAlternateEs = "https://coldfusionexpert.ar/tools/" & slug & ".cfm?lan=es";
+            request.pageAlternateEn = "https://coldfusionexpert.ar/tools/" & slug & ".cfm?lan=en";
+            request.pageOgTitle = request.pageTitle;
+            request.pageOgDescription = toolDescription;
+            request.pageOgUrl = request.pageCanonical;
+            request.pageSchemaJson = serializeJSON({
+                "@context": "https://schema.org",
+                "@graph": [
+                    {
+                        "@type": "WebApplication",
+                        "@id": request.pageCanonical & "##webapplication",
+                        "name": toolTitle,
+                        "url": request.pageCanonical,
+                        "description": toolDescription,
+                        "applicationCategory": "UtilitiesApplication",
+                        "applicationSubCategory": categoryLabel,
+                        "operatingSystem": "Any",
+                        "browserRequirements": (session.lan eq "es") ? "Requiere un navegador web moderno" : "Requires a modern web browser",
+                        "isAccessibleForFree": true,
+                        "inLanguage": session.lan,
+                        "provider": {
+                            "@type": "Organization",
+                            "name": "ColdFusion Expert",
+                            "url": "https://coldfusionexpert.ar",
+                            "logo": "https://coldfusionexpert.ar/assets/images/cf%20expert.png"
+                        },
+                        "breadcrumb": {"@id": request.pageCanonical & "##breadcrumb"}
+                    },
+                    {
+                        "@type": "BreadcrumbList",
+                        "@id": request.pageCanonical & "##breadcrumb",
+                        "itemListElement": [
+                            {"@type": "ListItem", "position": 1, "name": (session.lan eq "es") ? "Herramientas" : "Tools", "item": "https://coldfusionexpert.ar/tools.cfm?lan=" & session.lan},
+                            {"@type": "ListItem", "position": 2, "name": categoryLabel, "item": "https://coldfusionexpert.ar/tools.cfm?lan=" & session.lan & "&category=" & tool.category},
+                            {"@type": "ListItem", "position": 3, "name": toolTitle, "item": request.pageCanonical}
+                        ]
+                    }
+                ]
+            });
             request.pageNoindex = !tool.built;
             request.isToolsSection = true;
         } else if(fileName eq "tools.cfm"){

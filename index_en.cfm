@@ -9,13 +9,16 @@
                   <div class="col-lg-12">
                     <br> <br>
                     <span class="badge-experience"><i class="fas fa-award"></i> +15 Years of Experience | Senior Full-Stack Developer</span>
-                    <h1>Flavio Di Virgilio - ColdFusion Expert</h1>
+                    <span class="hero-eyebrow">ColdFusion Expert</span>
+                    <h1>Flavio Di Virgilio</h1>
                     <h3>ColdFusion Senior Developer & AWS / Server Administrator</h3>
                     <h5>Specializing in high-performance web applications, database-centric system architecture, legacy code migration, and cloud optimization.</h5>
-                    <p style="margin-top: 10px; font-size: 0.92rem;">
+                    <div class="hero-stats">
                       <span class="badge-upwork" style="white-space: nowrap;"><i class="fas fa-check-circle"></i> Upwork Top Rated Plus</span>
-                      <span style="white-space: nowrap;"><strong>100% Job Success</strong></span> | <span style="white-space: nowrap;">+8,000 Hours</span> | <span style="white-space: nowrap;">+40 Successful Projects</span>
-                    </p>
+                      <span class="hero-stat"><i class="fas fa-check-circle"></i> 100% Job Success</span>
+                      <span class="hero-stat"><i class="fas fa-check-circle"></i> +8,000 Hours</span>
+                      <span class="hero-stat"><i class="fas fa-check-circle"></i> +40 Successful Projects</span>
+                    </div>
                     <div style="margin-top: 20px;">
                       <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="btn-social btn-upwork">
                         <i class="fab fa-upwork"></i> Upwork Profile
@@ -154,7 +157,7 @@
             </div>
             <h4>Digital Marketing</h4>
             <p>Digital marketing strategy, social media management, ad campaigns, and online brand growth.
-              We are official <strong>Partners of <a href="https://viralify.digital" target="_blank" style="color:#0077b5; font-weight:600;">viralify.digital</a></strong> to boost your business's digital presence.
+              We are official <strong>Partners of viralify.digital</strong> to boost your business's digital presence.
             </p>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Digital%20Marketing" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
@@ -558,26 +561,38 @@
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Our <em>Free Tools</em></h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Built in-house: a growing set of free browser-based tools for developers, marketers, and everyday productivity - one highlight per category below.</p>
+            <p>Built in-house: a growing set of free browser-based tools for developers, marketers, and everyday productivity - two picks per category below.</p>
           </div>
         </div>
       </div>
+      <cfscript>
+        local.ftCards = [];
+        for (local.ftCatIdx = 1; local.ftCatIdx <= arrayLen(request.toolCategories); local.ftCatIdx++) {
+          local.ftCat = request.toolCategories[local.ftCatIdx];
+          local.ftCount = 0;
+          for (local.ftSlugIdx = 1; local.ftSlugIdx <= arrayLen(request.toolOrder); local.ftSlugIdx++) {
+            local.ftSlug = request.toolOrder[local.ftSlugIdx];
+            local.ftTool = request.toolsRegistry[local.ftSlug];
+            if (local.ftTool.category eq local.ftCat.slug and local.ftTool.built and local.ftCount < 2) {
+              local.ftCard = duplicate(local.ftTool);
+              local.ftCard.slug = local.ftSlug;
+              arrayAppend(local.ftCards, local.ftCard);
+              local.ftCount++;
+            }
+          }
+        }
+      </cfscript>
       <cfoutput>
-      <div class="tools-grid" style="margin-bottom: 40px;">
-        <cfloop array="#request.toolCategories#" index="local.ftCat">
-          <cfloop array="#request.toolOrder#" index="local.ftSlug">
-            <cfset local.ftTool = request.toolsRegistry[local.ftSlug]>
-            <cfif local.ftTool.category eq local.ftCat.slug and structKeyExists(local.ftTool, "featured") and local.ftTool.featured>
-              <div class="tool-card">
-                <div class="tool-card-icon"><i class="#local.ftTool.iconPrefix# #local.ftTool.icon#"></i></div>
-                <h4>#local.ftTool.titleEn#</h4>
-                <p>#local.ftTool.descEn#</p>
-                <a href="/tools/#local.ftSlug#.cfm" class="btn-social btn-linkedin">
-                  <i class="fas fa-arrow-right"></i> View Tool
-                </a>
-              </div>
-            </cfif>
-          </cfloop>
+      <div class="owl-carousel tools-carousel" style="margin-bottom: 40px;">
+        <cfloop array="#local.ftCards#" index="local.ftCard">
+          <div class="tool-card">
+            <div class="tool-card-icon"><i class="#local.ftCard.iconPrefix# #local.ftCard.icon#"></i></div>
+            <h4>#local.ftCard.titleEn#</h4>
+            <p>#local.ftCard.descEn#</p>
+            <a href="/tools/#local.ftCard.slug#.cfm" class="btn-social btn-linkedin">
+              <i class="fas fa-arrow-right"></i> View Tool
+            </a>
+          </div>
         </cfloop>
       </div>
       </cfoutput>
