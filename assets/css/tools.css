@@ -457,6 +457,95 @@
   font-weight: 700 !important;
 }
 
+/* ===== Tool Documentation & SEO Guide Section ===== */
+.tool-guide-docs {
+  margin-top: 40px;
+  padding-top: 35px;
+  border-top: 1px solid #e2e8f0;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.tool-guide-docs h2 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tool-guide-docs h2 i {
+  color: #13aff0;
+}
+
+.tool-guide-docs h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 25px;
+  margin-bottom: 12px;
+}
+
+.tool-guide-docs p {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.tool-guide-docs ul,
+.tool-guide-docs ol {
+  margin: 0 0 20px 20px;
+  padding: 0;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+.tool-guide-docs li {
+  margin-bottom: 8px;
+}
+
+.tool-guide-docs .faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.tool-guide-docs .faq-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.tool-guide-docs .faq-card h4 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.tool-guide-docs .faq-card p {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.tool-guide-docs .privacy-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(19, 175, 240, 0.08);
+  color: #13aff0;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 8px 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
 /* ===== Widget: CSS Effects Generator ===== */
 .widget-css-effects-generator {
   display: flex;
