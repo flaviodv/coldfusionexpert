@@ -24,11 +24,11 @@
       <i class="fas fa-clock"></i> <span id="tab-label-3"><cfif local.isEs>Cronómetro 3<cfelse>Timer 3</cfif></span>
       <span id="tab-status-3"></span>
     </button>
-    <button type="button" class="timer-tab-item" data-tab="4">
+    <button type="button" class="timer-tab-item timer-tab-countdown" data-tab="4">
       <i class="fas fa-hourglass-half"></i> <span id="tab-label-4"><cfif local.isEs>Temporizador 1<cfelse>Countdown 1</cfif></span>
       <span id="tab-status-4"></span>
     </button>
-    <button type="button" class="timer-tab-item" data-tab="5">
+    <button type="button" class="timer-tab-item timer-tab-countdown" data-tab="5">
       <i class="fas fa-hourglass-half"></i> <span id="tab-label-5"><cfif local.isEs>Temporizador 2<cfelse>Countdown 2</cfif></span>
       <span id="tab-status-5"></span>
     </button>
