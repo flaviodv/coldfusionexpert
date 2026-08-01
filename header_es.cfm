@@ -495,6 +495,16 @@
       </div>
     </div>
   </div>
+  <script>
+    (function () {
+      function releasePreloader() {
+        var preloader = document.getElementById('js-preloader');
+        if (preloader) preloader.classList.add('loaded');
+      }
+      window.addEventListener('load', releasePreloader);
+      window.setTimeout(releasePreloader, 2500);
+    }());
+  </script>
   <!-- ***** Preloader End ***** -->
   <!-- ***** Header Area Start ***** -->
   <cfoutput><header class="header-area header-sticky wow slideInDown<cfif isDefined('request.isToolsSection') and request.isToolsSection> in-tools-section</cfif>" data-wow-duration="0.75s" data-wow-delay="0s"></cfoutput>
@@ -516,7 +526,7 @@
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#seo">SEO / GEO</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#automation">Automatización</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#courses">Cursos Zoom</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#tools">Herramientas</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/index.cfm#tools" class="nav-tools-highlight"><i class="fas fa-toolbox"></i> Herramientas</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#about">Acerca de</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#clients">Habilidades</a></li>
               <li class="scroll-to-section nav-standard"><a href="/index.cfm#Contact">Contacto</a></li>

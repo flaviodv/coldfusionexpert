@@ -1,4 +1,22 @@
+<cfscript>
+local.faqItems = local.isEs ? [
+  {q: "¿El código generado es compatible con todos los navegadores?", a: "Sí. Propiedades como box-shadow, border-radius, transition y linear-gradient son estándares W3C ampliamente soportados por Chrome, Firefox, Safari, Edge y navegadores móviles modernos."},
+  {q: "¿Cómo copio el código a mi hoja de estilos?", a: "Simplemente ajustá los deslizadores hasta lograr el diseño deseado y hacé clic en el botón Copiar en el bloque de código oscuro ubicado debajo de la vista previa."}
+] : [
+  {q: "Is the generated CSS compatible across all browsers?", a: "Yes. Properties such as box-shadow, border-radius, transition, and linear-gradient are standard W3C CSS properties fully supported across all modern desktop and mobile browsers."},
+  {q: "How do I copy the generated code to my stylesheet?", a: "Adjust the sliders until you achieve the desired visual style, then click the Copy button in the dark code box underneath the live preview stage."}
+];
+</cfscript>
 <cfoutput>
+<script type="application/ld+json">
+#serializeJSON({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": local.faqItems.map(function(item) {
+    return {"@type": "Question", "name": item.q, "acceptedAnswer": {"@type": "Answer", "text": item.a}};
+  })
+})#
+</script>
 <section class="tool-guide-docs">
   <div class="privacy-badge">
     <i class="fas fa-code"></i>

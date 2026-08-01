@@ -1,0 +1,7 @@
+<div class="tool-widget widget-word-counter">
+  <label for="word-counter-input"><cfif local.isEs>Texto<cfelse>Text</cfif></label><textarea id="word-counter-input" rows="10" placeholder="<cfif local.isEs>Escribí o pegá tu texto acá…<cfelse>Write or paste your text here…</cfif>"></textarea>
+  <div class="hash-results"><label><cfif local.isEs>Palabras<cfelse>Words</cfif><input id="wc-words" readonly value="0"></label><label><cfif local.isEs>Caracteres<cfelse>Characters</cfif><input id="wc-chars" readonly value="0"></label><label><cfif local.isEs>Caracteres sin espacios<cfelse>Characters without spaces</cfif><input id="wc-no-spaces" readonly value="0"></label><label><cfif local.isEs>Párrafos<cfelse>Paragraphs</cfif><input id="wc-paragraphs" readonly value="0"></label><label><cfif local.isEs>Tiempo de lectura<cfelse>Reading time</cfif><input id="wc-reading" readonly value="0 min"></label></div>
+</div>
+<script>
+(function(){var input=document.getElementById('word-counter-input');function update(){var text=input.value.trim(),words=text?text.split(/\s+/).length:0,paragraphs=text?text.split(/\n\s*\n/).filter(Boolean).length:0;document.getElementById('wc-words').value=words;document.getElementById('wc-chars').value=input.value.length;document.getElementById('wc-no-spaces').value=input.value.replace(/\s/g,'').length;document.getElementById('wc-paragraphs').value=paragraphs;document.getElementById('wc-reading').value=words?Math.max(1,Math.ceil(words/200))+' <cfif local.isEs>min<cfelse>min</cfif>':'0 min';}input.addEventListener('input',update);}());
+</script>

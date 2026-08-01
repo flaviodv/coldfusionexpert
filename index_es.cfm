@@ -139,7 +139,7 @@
             </div>
             <h4>Marketing Digital</h4>
             <p>Estrategias de marketing digital, gestión de redes sociales, campañas publicitarias y crecimiento de marca online.
-              Somos <strong>Partners oficiales de <a href="https://viralify.digital" target="_blank" style="color:#0077b5; font-weight:600;">viralify.digital</a></strong> para potenciar la presencia digital de tu negocio.
+              Somos <strong>Partners oficiales de viralify.digital</strong> para potenciar la presencia digital de tu negocio.
             </p>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Marketing%20Digital" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">

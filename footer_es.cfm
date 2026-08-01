@@ -31,7 +31,7 @@
         <div class="col-lg-4">
           <div class="footer-widget">
             <h4>Perfiles Profesionales</h4>
-            <p style="color: #fff; margin-bottom: 15px;">Conecta o contrata a trav&eacute;  s de las plataformas principales:</p>
+            <p style="color: #fff; margin-bottom: 15px;">Conecta o contrata atrav&eacute;s de las plataformas principales:</p>
             <ul style="list-style: none; padding-left: 0;">
               <li style="margin-bottom: 10px;">
                 <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="btn-social btn-upwork" style="display: inline-flex;">
@@ -88,6 +88,6 @@
   <script src="/assets/js/animation.js"></script>
   <script src="/assets/js/imagesloaded.js"></script>
   <script src="/assets/js/popup.js"></script>
-  <script src="/assets/js/custom.js"></script>
+  <cfoutput><script src="/assets/js/custom.js<cfif isDefined('request.customJsVer')>#request.customJsVer#</cfif>"></script></cfoutput>
 </body>
 </html>

@@ -81,6 +81,6 @@
   <script src="/assets/js/animation.js"></script>
   <script src="/assets/js/imagesloaded.js"></script>
   <script src="/assets/js/popup.js"></script>
-  <script src="/assets/js/custom.js"></script>
+  <cfoutput><script src="/assets/js/custom.js<cfif isDefined('request.customJsVer')>#request.customJsVer#</cfif>"></script></cfoutput>
 </body>
 </html>

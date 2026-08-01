@@ -1,4 +1,24 @@
+<cfscript>
+local.faqItems = local.isEs ? [
+  {q: "¿Es seguro editar mis fotos en este sitio?", a: "Totalmente. Toda la edición corre de forma local en tu navegador utilizando la API HTML5 Canvas. Ninguna imagen se sube a nuestros servidores ni a terceros."},
+  {q: "¿Por qué convertir mis imágenes a WebP?", a: "WebP ofrece una compresión hasta un 30% superior a JPG y PNG sin perder calidad visible, lo que reduce el tiempo de carga del sitio y mejora el puntaje de Google PageSpeed."},
+  {q: "¿Cómo genero un favicon para mi sitio web?", a: "Cargá tu logotipo o ícono, elegí la proporción 1:1, selecciona el formato Favicon (.ico), elegí el tamaño (ej. 32x32 px) y hacé clic en Descargar Imagen."}
+] : [
+  {q: "Is it safe to edit my photos on this site?", a: "Absolutely. All processing occurs locally within your browser using the HTML5 Canvas API. No images are uploaded to our servers or third parties."},
+  {q: "Why should I convert images to WebP?", a: "WebP provides up to 30% better compression than JPG and PNG without noticeable quality loss, drastically speeding up page load times and boosting Google PageSpeed scores."},
+  {q: "How do I generate a website favicon?", a: "Upload your logo or icon, select the 1:1 ratio, pick the Favicon (.ico) format, choose your size (e.g. 32x32 px), and click Download Image."}
+];
+</cfscript>
 <cfoutput>
+<script type="application/ld+json">
+#serializeJSON({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": local.faqItems.map(function(item) {
+    return {"@type": "Question", "name": item.q, "acceptedAnswer": {"@type": "Answer", "text": item.a}};
+  })
+})#
+</script>
 <section class="tool-guide-docs">
   <div class="privacy-badge">
     <i class="fas fa-user-shield"></i>

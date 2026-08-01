@@ -1,0 +1,11 @@
+<div class="tool-widget widget-password-generator">
+  <label for="password-length"><cfif local.isEs>Longitud (8 a 128)<cfelse>Length (8 to 128)</cfif></label><input id="password-length" type="number" min="8" max="128" value="16">
+  <label><input id="password-upper" type="checkbox" checked> <cfif local.isEs>Incluir mayúsculas<cfelse>Include uppercase letters</cfif></label>
+  <label><input id="password-numbers" type="checkbox" checked> <cfif local.isEs>Incluir números<cfelse>Include numbers</cfif></label>
+  <label><input id="password-special" type="checkbox" checked> <cfif local.isEs>Incluir caracteres especiales<cfelse>Include special characters</cfif></label>
+  <button type="button" class="btn-social btn-upwork" id="password-run"><i class="fas fa-key"></i> <cfif local.isEs>Generar contraseña<cfelse>Generate password</cfif></button>
+  <label for="password-output"><cfif local.isEs>Contraseña generada<cfelse>Generated password</cfif></label><input id="password-output" readonly><button type="button" class="tool-copy" data-copy-target="password-output"><i class="far fa-copy"></i> <cfif local.isEs>Copiar<cfelse>Copy</cfif></button><p class="tool-message" id="password-message" aria-live="polite"></p>
+</div>
+<script>
+(function(){document.getElementById('password-run').addEventListener('click',function(){var n=Math.max(8,Math.min(128,parseInt(document.getElementById('password-length').value,10)||16)),sets=['abcdefghijkmnopqrstuvwxyz'],pool='abcdefghijkmnopqrstuvwxyz';if(document.getElementById('password-upper').checked){sets.push('ABCDEFGHJKLMNPQRSTUVWXYZ');pool+='ABCDEFGHJKLMNPQRSTUVWXYZ';}if(document.getElementById('password-numbers').checked){sets.push('23456789');pool+='23456789';}if(document.getElementById('password-special').checked){sets.push('!@$%*?-_');pool+='!@$%*?-_';}var bytes=new Uint32Array(n+sets.length);crypto.getRandomValues(bytes);var chars=sets.map(function(s,i){return s[bytes[i]%s.length];});for(var i=chars.length;i<n;i++)chars.push(pool[bytes[i]%pool.length]);for(var j=chars.length-1;j>0;j--){var k=bytes[j]% (j+1),tmp=chars[j];chars[j]=chars[k];chars[k]=tmp;}document.getElementById('password-output').value=chars.join('');document.getElementById('password-message').textContent='<cfif local.isEs>Generada localmente en tu navegador.<cfelse>Generated locally in your browser.</cfif>';});}());
+</script>

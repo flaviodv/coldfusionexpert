@@ -105,6 +105,7 @@
 .tools-sidebar-category[data-category="marketing-seo-social"] .tools-sidebar-cat-toggle { color: #ff8fc1; }
 .tools-sidebar-category[data-category="diseno-frontend-css"] .tools-sidebar-cat-toggle { color: #bb9cff; }
 .tools-sidebar-category[data-category="desarrollo-datos"] .tools-sidebar-cat-toggle { color: #5cc9ff; }
+.tools-sidebar-category[data-category="gestion-tiempo-productividad"] .tools-sidebar-cat-toggle { color: #ffd166; }
 .tools-sidebar-category[data-category="utilidades-productividad"] .tools-sidebar-cat-toggle { color: #71e0a0; }
 
 .tools-sidebar-category[data-category] .tools-sidebar-cat-toggle:hover {

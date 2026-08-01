@@ -5,136 +5,143 @@ request.toolCategories = [
   {slug: "marketing-seo-social", labelEn: "Marketing, SEO & Social", labelEs: "Marketing, SEO y Social", icon: "fa-bullhorn"},
   {slug: "diseno-frontend-css", labelEn: "Design & Frontend CSS", labelEs: "Diseño y Frontend CSS", icon: "fa-palette"},
   {slug: "desarrollo-datos", labelEn: "Development, Programming & Data", labelEs: "Desarrollo, Programación y Datos", icon: "fa-laptop-code"},
+  {slug: "gestion-tiempo-productividad", labelEn: "Time Management & Productivity", labelEs: "Gestión del Tiempo y Productividad", icon: "fa-stopwatch"},
   {slug: "utilidades-productividad", labelEn: "General Utilities & Productivity", labelEs: "Utilidades Generales y Productividad", icon: "fa-toolbox"}
 ];
 
 request.toolsRegistry = {
   "meta-tags-extractor": {category: "marketing-seo-social", icon: "fa-tags", iconPrefix: "fas", built: true,
     titleEn: "Meta Tags & Keyword Extractor", titleEs: "Extractor de Meta Tags y Keywords",
-    descEn: "Extract title, description, meta tags, and keywords from any URL.",
-    descEs: "Extraer título, descripción, meta tags y palabras clave introduciendo una URL."},
+    descEn: "Analyze any URL's title, description, meta tags, and keyword signals in seconds.",
+    descEs: "Analizá en segundos el título, la descripción, las meta tags y las señales de keywords de cualquier URL."},
 
   "whatsapp-link-generator": {category: "marketing-seo-social", icon: "fa-whatsapp", iconPrefix: "fab", built: true,
     titleEn: "WhatsApp Link Generator", titleEs: "Generador de Enlaces de WhatsApp",
-    descEn: "Create direct WhatsApp links with pre-filled messages for instant contact.",
-    descEs: "Crear links directos con mensajes predefinidos para contacto instantáneo."},
+    descEn: "Create click-to-chat WhatsApp links with ready-to-send messages for faster conversations.",
+    descEs: "Creá enlaces de WhatsApp con mensajes listos para enviar y agilizar cada conversación."},
 
   "email-signature-generator": {category: "marketing-seo-social", icon: "fa-envelope", iconPrefix: "fas", built: true,
     titleEn: "Email Signature Generator", titleEs: "Generador de Firmas de Correo Electrónico",
-    descEn: "Customizable HTML templates for professional e-mail signatures.",
-    descEs: "Plantillas HTML personalizables para firmas de e-mail profesionales."},
+    descEn: "Design a polished HTML email signature that keeps every professional detail consistent.",
+    descEs: "Diseñá una firma HTML profesional y mantené todos tus datos de contacto consistentes."},
 
   "qr-code-generator": {category: "marketing-seo-social", icon: "fa-qrcode", iconPrefix: "fas", built: true, featured: true,
     titleEn: "QR Code Generator", titleEs: "Generador de Códigos QR",
-    descEn: "Create custom QR codes (colors, styles, PNG/SVG download).",
-    descEs: "Creación de QR personalizados (colores, estilos, descarga en PNG/SVG)."},
+    descEn: "Generate branded QR codes with custom colors, styles, and PNG or SVG downloads.",
+    descEs: "Generá códigos QR con tu estilo, colores personalizados y descarga en PNG o SVG."},
+
+  "newsletter-html-previewer": {category: "marketing-seo-social", icon: "fa-envelope-open-text", iconPrefix: "fas", built: true,
+    titleEn: "Newsletter HTML Previewer", titleEs: "Previsualizador de HTML para Newsletters",
+    descEn: "Preview newsletter HTML before sending and catch layout issues in your email campaign.",
+    descEs: "Previsualizá el HTML de tu newsletter antes de enviarla y detectá problemas de diseño a tiempo."},
 
   "image-editor": {category: "diseno-frontend-css", icon: "fa-image", iconPrefix: "fas", built: true, featured: true,
     titleEn: "Interactive Image Editor", titleEs: "Editor de Imágenes Interactivo",
-    descEn: "Quick editing and export/conversion across multiple formats (WebP, PNG, JPG, etc.).",
-    descEs: "Edición rápida y exportación/conversión en múltiples formatos (WebP, PNG, JPG, etc.)."},
+    descEn: "Edit, resize, and export images quickly in WebP, PNG, JPG, and other web-ready formats.",
+    descEs: "Editá, redimensioná y exportá imágenes en WebP, PNG, JPG y otros formatos listos para la web."},
 
   "css-effects-generator": {category: "diseno-frontend-css", icon: "fa-magic", iconPrefix: "fas", built: true,
     titleEn: "CSS Effects Generator", titleEs: "Generador de Efectos CSS con Previsualización",
-    descEn: "Live-preview generator for shadows, rounded corners, transitions, animations, and gradients.",
-    descEs: "Sombras, bordes redondeados, transiciones, animaciones y degradados con vista previa en tiempo real."},
+    descEn: "Build shadows, gradients, rounded corners, transitions, and animations with a live CSS preview.",
+    descEs: "Creá sombras, degradados, bordes redondeados, transiciones y animaciones con vista previa en vivo."},
 
   "color-converter": {category: "diseno-frontend-css", icon: "fa-palette", iconPrefix: "fas", built: true,
     titleEn: "Color Picker & Converter", titleEs: "Selector y Convertidor de Colores",
-    descEn: "Convert between HEX, RGB, HSL, and build/extract color palettes.",
-    descEs: "Conversión entre HEX, RGB, HSL y creación/extracción de paletas de colores."},
+    descEn: "Pick, convert, and organize colors across HEX, RGB, HSL, and practical palettes.",
+    descEs: "Elegí, convertí y organizá colores en HEX, RGB, HSL y paletas prácticas."},
 
   "css-minifier": {category: "desarrollo-datos", icon: "fa-file-code", iconPrefix: "fas", built: true,
     titleEn: "CSS Minifier & Formatter", titleEs: "Minificador y Formateador de CSS",
-    descEn: "Clean up, indent, and minify stylesheets.",
-    descEs: "Limpieza, sangrado y minificación de hojas de estilo."},
+    descEn: "Format readable CSS for editing or minify it for a lighter production stylesheet.",
+    descEs: "Formateá CSS para editarlo cómodamente o minificalo para una hoja de estilos más liviana."},
 
   "json-formatter": {category: "desarrollo-datos", icon: "fa-code", iconPrefix: "fas", built: true, featured: true,
     titleEn: "JSON Minifier & Formatter", titleEs: "Minificador y Formateador de JSON",
-    descEn: "Format, validate, and minify JSON structures.",
-    descEs: "Formatear, validar y minificar estructuras JSON."},
+    descEn: "Validate, format, and minify JSON so your data is easier to read and ready to use.",
+    descEs: "Validá, formateá y minificá JSON para leer mejor tus datos y usarlos enseguida."},
 
   "base64-encoder": {category: "desarrollo-datos", icon: "fa-lock", iconPrefix: "fas", built: true,
     titleEn: "Base64 Encoder / Decoder", titleEs: "Codificador y Decodificador Base64",
-    descEn: "Two-way conversion of text and images to/from Base64.",
-    descEs: "Conversión bidireccional de texto e imágenes a Base64."},
+    descEn: "Encode or decode text, files, and images to and from Base64 without leaving your browser.",
+    descEs: "Codificá o decodificá texto, archivos e imágenes en Base64 sin salir del navegador."},
 
   "json-yaml-converter": {category: "desarrollo-datos", icon: "fa-exchange-alt", iconPrefix: "fas", built: true,
     titleEn: "JSON &harr; YAML Converter", titleEs: "Conversor de Formatos de Datos (JSON a YAML / YAML a JSON)",
-    descEn: "Quick conversion between configuration formats.",
-    descEs: "Conversión rápida entre formatos de configuración."},
+    descEn: "Switch cleanly between JSON and YAML for configuration files, APIs, and development workflows.",
+    descEs: "Convertí entre JSON y YAML para archivos de configuración, APIs y flujos de desarrollo."},
 
   "hash-generator": {category: "desarrollo-datos", icon: "fa-hashtag", iconPrefix: "fas", built: true,
     titleEn: "Security Hash Generator", titleEs: "Generador de Hashes de Seguridad",
-    descEn: "Generate MD5, SHA-256, and more.",
-    descEs: "Generación de MD5, SHA-256, etc."},
+    descEn: "Generate MD5, SHA-1, SHA-256, and other hashes for integrity checks and development.",
+    descEs: "Generá hashes MD5, SHA-1, SHA-256 y más para controles de integridad y desarrollo."},
 
   "uuid-generator": {category: "desarrollo-datos", icon: "fa-fingerprint", iconPrefix: "fas", built: true,
     titleEn: "UUID / GUID Generator", titleEs: "Generador de UUID / GUID",
-    descEn: "Generate unique identifiers for development.",
-    descEs: "Generación de identificadores únicos para desarrollo."},
+    descEn: "Create one or many UUIDs instantly for databases, APIs, tests, and development projects.",
+    descEs: "Creá uno o varios UUIDs al instante para bases de datos, APIs, pruebas y proyectos."},
 
   "http-status-codes": {category: "desarrollo-datos", icon: "fa-server", iconPrefix: "fas", built: true,
     titleEn: "HTTP Status Code Reference", titleEs: "Buscador / Referencia de Códigos de Estado HTTP",
-    descEn: "Interactive guide to HTTP codes (200, 301, 404, 500, etc.).",
-    descEs: "Guía interactiva de códigos HTTP (200, 301, 404, 500, etc.)."},
+    descEn: "Find the meaning and practical use of HTTP status codes, from 200 and 301 to 404 and 500.",
+    descEs: "Encontrá el significado y uso práctico de códigos HTTP, desde 200 y 301 hasta 404 y 500."},
 
   "ip-lookup": {category: "utilidades-productividad", icon: "fa-network-wired", iconPrefix: "fas", built: true, featured: true,
     titleEn: "IP Address Lookup & Diagnostics", titleEs: "Consulta y Diagnóstico de Dirección IP",
-    descEn: "View your public IP, approximate geolocation, HTTP headers, and User-Agent.",
-    descEs: "Visualización de IP pública, geolocalización aproximada, cabeceras HTTP y User-Agent."},
+    descEn: "Inspect public IPs, domains, DNS, approximate location, network data, and browser diagnostics.",
+    descEs: "Consultá IPs y dominios, DNS, ubicación aproximada, datos de red y diagnósticos del navegador."},
 
   "timezone-converter": {category: "utilidades-productividad", icon: "fa-clock", iconPrefix: "fas", built: true,
     titleEn: "Time Zone Converter", titleEs: "Conversor de Zonas Horarias",
-    descEn: "Convert times across time zones - ideal for tourism and scheduling sites.",
-    descEs: "Herramienta de conversión de horarios (ideal para sitios de turismo y coordinación)."},
+    descEn: "Compare dates and times across world time zones with an interactive map and daylight-saving awareness.",
+    descEs: "Compará fechas y horarios entre zonas del mundo con mapa interactivo y horario de verano."},
 
   "currency-converter": {category: "utilidades-productividad", icon: "fa-coins", iconPrefix: "fas", built: true,
     titleEn: "Currency Converter", titleEs: "Conversor de Monedas",
-    descEn: "Real-time conversion between currencies.",
-    descEs: "Cálculo de conversión entre distintas divisas en tiempo real."},
+    descEn: "Convert amounts between major currencies using the latest available reference exchange rate.",
+    descEs: "Convertí importes entre las principales monedas con la última tasa de referencia disponible."},
 
   "password-generator": {category: "utilidades-productividad", icon: "fa-key", iconPrefix: "fas", built: true,
     titleEn: "Secure Password Generator", titleEs: "Generador de Contraseñas Seguras",
-    descEn: "Configurable length, special characters, numbers, and uppercase.",
-    descEs: "Configuración de longitud, caracteres especiales, números y mayúsculas."},
+    descEn: "Create strong, unique passwords with the length and character types you choose.",
+    descEs: "Creá contraseñas fuertes y únicas con la longitud y los tipos de caracteres que elijas."},
 
   "word-counter": {category: "utilidades-productividad", icon: "fa-font", iconPrefix: "fas", built: true,
     titleEn: "Word & Character Counter", titleEs: "Contador de Palabras y Caracteres",
-    descEn: "Word, character, and paragraph metrics, plus a reading-time estimate.",
-    descEs: "Métricas de palabras, caracteres y párrafos, y estimación de tiempo de lectura."},
+    descEn: "Measure words, characters, paragraphs, and estimated reading time as you write.",
+    descEs: "Medí palabras, caracteres, párrafos y tiempo estimado de lectura mientras escribís."},
 
   "text-case-converter": {category: "utilidades-productividad", icon: "fa-text-height", iconPrefix: "fas", built: true,
     titleEn: "Text Case Converter", titleEs: "Conversor de Formato de Texto",
-    descEn: "UPPERCASE / lowercase, Title Case, camelCase, snake_case, kebab-case.",
-    descEs: "Mayúsculas/minúsculas, Title Case, camelCase, snake_case, kebab-case."},
+    descEn: "Transform text into uppercase, title case, camelCase, snake_case, kebab-case, and more.",
+    descEs: "Transformá texto a mayúsculas, título, camelCase, snake_case, kebab-case y más."},
 
   "percentage-calculator": {category: "utilidades-productividad", icon: "fa-percentage", iconPrefix: "fas", built: true,
     titleEn: "Percentage Calculator", titleEs: "Calculadora de Porcentajes",
-    descEn: "Quick calculation of discounts, increases, and percentage changes.",
-    descEs: "Cálculo rápido de descuentos, aumentos e incrementos porcentuales."},
+    descEn: "Calculate percentages, discounts, markups, and changes between two values in seconds.",
+    descEs: "Calculá porcentajes, descuentos, aumentos y variaciones entre dos valores en segundos."},
 
   "date-difference-calculator": {category: "utilidades-productividad", icon: "fa-calendar-alt", iconPrefix: "fas", built: true,
     titleEn: "Date Difference Calculator", titleEs: "Calculadora de Diferencia Entre Fechas",
-    descEn: "Exact calculation of days, months, and years between two dates.",
-    descEs: "Cálculo exacto de días, meses y años entre dos fechas."},
+    descEn: "See the exact years, months, days, and total days between any two dates.",
+    descEs: "Conocé los años, meses, días y días totales exactos entre dos fechas."},
 
-  "todo-list": {category: "utilidades-productividad", icon: "fa-tasks", iconPrefix: "fas", built: true,
+  "todo-list": {category: "gestion-tiempo-productividad", icon: "fa-tasks", iconPrefix: "fas", built: true,
     titleEn: "Simple To-Do List", titleEs: "Gestor de Lista de Tareas",
-    descEn: "Interactive task organizer with local storage (localStorage).",
-    descEs: "Organizador interactivo con almacenamiento local (localStorage)."},
+    descEn: "Organize everyday tasks in a simple list that stays saved locally in your browser.",
+    descEs: "Organizá tus tareas diarias en una lista simple que queda guardada localmente en tu navegador."},
 
-  "time-tracker": {category: "utilidades-productividad", icon: "fa-stopwatch", iconPrefix: "fas", built: true,
+  "time-tracker": {category: "gestion-tiempo-productividad", icon: "fa-stopwatch", iconPrefix: "fas", built: true, featured: true,
     titleEn: "Time Tracker & Rate Calculator", titleEs: "Controlador de Tiempo y Tarifas (Time Tracker)",
-    descEn: "Live task timer with optional hourly rate and real-time earnings calculator.",
-    descEs: "Temporizador de tareas en vivo con tarifa por hora opcional y cálculo de ganancias en tiempo real."}
+    descEn: "Track time by task, apply an hourly rate, and see earnings update in real time.",
+    descEs: "Registrá tiempo por tarea, aplicá una tarifa por hora y mirá tus ganancias en tiempo real."}
 };
 
 // Explicit display order (struct key order isn't guaranteed) - sidebar/landing loop over this, grouped by category.
 request.toolOrder = [
-  "meta-tags-extractor", "whatsapp-link-generator", "email-signature-generator", "qr-code-generator",
+  "meta-tags-extractor", "whatsapp-link-generator", "email-signature-generator", "qr-code-generator", "newsletter-html-previewer",
   "image-editor", "css-effects-generator", "color-converter",
   "css-minifier", "json-formatter", "base64-encoder", "json-yaml-converter", "hash-generator", "uuid-generator", "http-status-codes",
-  "ip-lookup", "timezone-converter", "currency-converter", "password-generator", "word-counter", "text-case-converter", "percentage-calculator", "date-difference-calculator", "todo-list", "time-tracker"
+  "todo-list", "time-tracker",
+  "ip-lookup", "timezone-converter", "currency-converter", "password-generator", "word-counter", "text-case-converter", "percentage-calculator", "date-difference-calculator"
 ];
 </cfscript>

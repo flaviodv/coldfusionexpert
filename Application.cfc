@@ -25,6 +25,20 @@ function onRequestStart(targetPage){
         setLocale("en_US");
     }
 
+    // Cache-busting query string for the two actively-edited assets, derived from
+    // each file's real last-modified time so browsers auto-fetch new versions
+    // instead of serving a stale cached copy after an edit.
+    try {
+        request.toolsCssVer = "?v=" & dateFormat(getFileInfo(expandPath("/assets/css/tools.css")).lastmodified, "yyyymmdd") & timeFormat(getFileInfo(expandPath("/assets/css/tools.css")).lastmodified, "HHmmss");
+    } catch (any e) {
+        request.toolsCssVer = "";
+    }
+    try {
+        request.customJsVer = "?v=" & dateFormat(getFileInfo(expandPath("/assets/js/custom.js")).lastmodified, "yyyymmdd") & timeFormat(getFileInfo(expandPath("/assets/js/custom.js")).lastmodified, "HHmmss");
+    } catch (any e) {
+        request.customJsVer = "";
+    }
+
     if(!findNoCase(".cfc", arguments.targetPage)){
         include "tools/_tools-registry.cfm";
 
