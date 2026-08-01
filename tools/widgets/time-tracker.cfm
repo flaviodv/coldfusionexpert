@@ -849,7 +849,7 @@
 
           var btnPlay = document.createElement('button');
           btnPlay.type = 'button';
-          btnPlay.className = 'btn-icon-edit';
+          btnPlay.className = 'btn-icon-play';
           btnPlay.innerHTML = '<i class="fas fa-play"></i>';
           btnPlay.title = '<cfif local.isEs>Reanudar tarea<cfelse>Resume task</cfif>';
           btnPlay.addEventListener('click', function() { resumeEntry(entry); });

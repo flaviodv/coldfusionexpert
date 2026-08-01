@@ -17,9 +17,9 @@
   top: 110px;
   max-height: calc(100vh - 130px);
   overflow-y: auto;
-  background: #ffffff;
+  background: #132238;
   border-radius: 15px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 8px 24px rgba(15, 35, 60, 0.2);
   padding: 20px;
 }
 
@@ -28,10 +28,10 @@
   align-items: center;
   gap: 8px;
   font-weight: 700;
-  color: #2a2a2a;
+  color: #f8fafc;
   padding-bottom: 14px;
   margin-bottom: 14px;
-  border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .tools-sidebar-home:hover,
@@ -40,7 +40,10 @@
 }
 
 .tools-sidebar-category {
-  margin-bottom: 18px;
+  margin-bottom: 8px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .tools-sidebar-category:last-child {
@@ -54,13 +57,13 @@
   width: 100%;
   background: none;
   border: 0;
-  padding: 0 0 8px;
+  padding: 10px 10px;
   cursor: pointer;
   text-align: left;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: #8a8a8a;
+  color: #cbd5e1;
   font-weight: 700;
 }
 
@@ -80,12 +83,17 @@
 .tools-sidebar-category[data-category="utilidades-productividad"] .tools-sidebar-cat-toggle { color: #319a67; }
 
 .tools-sidebar-category[data-category] .tools-sidebar-cat-toggle:hover {
-  filter: brightness(.85);
+  filter: brightness(1.18);
+}
+
+.tools-sidebar-category.open {
+  background: #203450;
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .tools-sidebar-chevron {
   font-size: 0.7rem;
-  color: #8a8a8a;
+  color: currentColor;
   transition: transform 0.2s ease;
 }
 
@@ -99,8 +107,10 @@
 
 .tools-sidebar-category ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
+  margin: 0 8px 8px;
+  padding: 6px;
+  background: #304a6d;
+  border-radius: 8px;
 }
 
 .tools-sidebar-category li a {
@@ -108,7 +118,7 @@
   align-items: center;
   gap: 8px;
   font-size: 0.88rem;
-  color: #2a2a2a;
+  color: #edf6ff;
   padding: 6px 8px;
   margin: 0 -8px;
   border-radius: 8px;
@@ -123,13 +133,18 @@
 }
 
 .tools-sidebar-category li a:hover {
-  color: #13aff0;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .tools-sidebar-category li a.active {
-  background: rgba(19, 175, 240, 0.1);
-  color: #13aff0;
+  background: #13aff0;
+  color: #ffffff;
   font-weight: 700;
+}
+
+.tools-sidebar-category li a.active i {
+  color: #ffffff;
 }
 
 /* --- Main content --- */
@@ -1421,6 +1436,67 @@
   border-radius: 6px;
   font-size: 0.85rem;
   background: #fff;
+}
+
+/* Modern Circular Action Buttons for History Cards */
+.widget-time-tracker .btn-icon-play,
+.widget-time-tracker .btn-icon-edit,
+.widget-time-tracker .btn-icon-danger {
+  border: none !important;
+  outline: none !important;
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.85rem !important;
+  cursor: pointer !important;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+  padding: 0 !important;
+}
+
+/* Play/Resume Button: Soft Green Circle */
+.widget-time-tracker .btn-icon-play {
+  background: #f0fdf4 !important;
+  color: #16a34a !important;
+  border: 1px solid #bbf7d0 !important;
+}
+.widget-time-tracker .btn-icon-play:hover {
+  background: #22c55e !important;
+  color: #ffffff !important;
+  border-color: #22c55e !important;
+  transform: scale(1.14) translateY(-1px);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.35) !important;
+}
+
+/* Edit Pencil Button: Soft Cyan Circle */
+.widget-time-tracker .btn-icon-edit {
+  background: #f0f9ff !important;
+  color: #0284c7 !important;
+  border: 1px solid #bae6fd !important;
+}
+.widget-time-tracker .btn-icon-edit:hover {
+  background: #13aff0 !important;
+  color: #ffffff !important;
+  border-color: #13aff0 !important;
+  transform: scale(1.14) translateY(-1px);
+  box-shadow: 0 4px 12px rgba(19, 175, 240, 0.35) !important;
+}
+
+/* Delete Trash Button: Soft Rose Circle */
+.widget-time-tracker .btn-icon-danger {
+  background: #fef2f2 !important;
+  color: #dc2626 !important;
+  border: 1px solid #fecaca !important;
+}
+.widget-time-tracker .btn-icon-danger:hover {
+  background: #ef4444 !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+  transform: scale(1.14) translateY(-1px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35) !important;
 }
 
 .widget-time-tracker .multi-timers-wrapper {
