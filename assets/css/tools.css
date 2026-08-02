@@ -329,6 +329,26 @@
 }
 
 /* --- Homepage tools carousel (2 per category) --- */
+.tools-band {
+  background: linear-gradient(180deg, #eaf6fd 0%, #f4eefc 100%);
+}
+
+/* The next section's decorative ".about-us:after" background image is 1132px tall,
+   vertically centered on its own section, so roughly half of it bleeds upward past
+   the "About" section's top edge. That always overlapped the end of "Tools", it was
+   just invisible on the old plain white background - now that "Tools" has a pastel
+   background, the overlap shows as a stray white/diagonal patch. Clipping it here
+   keeps the decoration contained to its own section. */
+.about-us {
+  overflow: hidden;
+}
+
+.tools-carousel-wrap {
+  position: relative;
+  padding: 0 50px;
+  margin-bottom: 40px;
+}
+
 .tools-carousel .owl-stage {
   display: flex;
 }
@@ -341,27 +361,50 @@
 
 .tools-carousel .owl-item .tool-card {
   width: 100%;
+  box-shadow: 0px 12px 30px rgba(15, 35, 60, 0.12);
 }
 
 .tools-carousel .owl-nav {
-  text-align: center;
-  margin-top: 25px;
+  margin: 0;
 }
 
 .tools-carousel .owl-nav button.owl-prev,
 .tools-carousel .owl-nav button.owl-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 42px;
   height: 42px;
   border-radius: 50%;
   background: #ffffff !important;
   color: #13aff0 !important;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 15px rgba(15, 35, 60, 0.15);
   font-size: 0;
-  margin: 0 6px;
+  margin: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  z-index: 5;
+}
+
+.tools-carousel .owl-nav button.owl-prev {
+  left: -21px;
+}
+
+.tools-carousel .owl-nav button.owl-next {
+  right: -21px;
+}
+
+/* .owl-carousel forces position:relative on itself, so the nav buttons above are
+   anchored to .tools-carousel's own edge (flush with the card row), not to the
+   padded .tools-carousel-wrap around it - the negative offset re-centers each
+   button on that seam instead of letting it sit fully on top of the first/last card. */
+
+@media (max-width: 600px) {
+  .tools-carousel-wrap {
+    padding: 0 42px;
+  }
 }
 
 .tools-carousel .owl-nav button.owl-prev::before,
@@ -977,11 +1020,13 @@
   border-radius: 10px;
   padding: 16px;
 }
-.widget-css-effects-generator pre {
+.widget-css-effects-generator pre,
+.widget-css-effects-generator code {
   margin: 0;
-  color: #38bdf8;
+  color: #7dd3fc;
   font-family: monospace;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   white-space: pre-wrap;
   word-break: break-all;
 }
