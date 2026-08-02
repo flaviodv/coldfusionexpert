@@ -64,6 +64,26 @@
 		$toggle.attr('aria-expanded', willOpen ? 'true' : 'false');
 	});
 
+	// Tools mobile burger menu: collapsible category groups (mirrors the desktop sidebar behavior)
+	$(document).on('click keypress', '.nav-category-label[data-category]', function (e) {
+		if (e.type === 'keypress' && e.which !== 13 && e.which !== 32) {
+			return;
+		}
+		e.preventDefault();
+		var $label = $(this);
+		var category = $label.data('category');
+		var willOpen = !$label.hasClass('open');
+		if (willOpen) {
+			$('.nav-category-label').removeClass('open').attr('aria-expanded', 'false');
+		}
+		$label.toggleClass('open', willOpen);
+		$label.attr('aria-expanded', willOpen ? 'true' : 'false');
+		$('.nav-tool-item').each(function () {
+			var $item = $(this);
+			$item.toggleClass('visible', willOpen && $item.data('category') === category);
+		});
+	});
+
 	// Tools landing page: horizontal category chip filter (desktop only, CSS hides it below 901px)
 	$(document).on('click', '.tool-chip[data-filter]', function () {
 		var $chip = $(this);
@@ -115,12 +135,17 @@
     margin: 20,
     nav: true,
     dots: true,
-    loop: false,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
     responsive: {
       0: { items: 1 },
       600: { items: 2 },
       992: { items: 3 },
-      1200: { items: 4 }
+      1200: { items: 4 },
+      1600: { items: 5 },
+      1900: { items: 6 }
     }
   });
 
@@ -191,7 +216,7 @@ $(function() {
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
         var width = $(window).width();
-        if(width < 991) {
+        if(width < 992) {
           $('.menu-trigger').removeClass('active');
           $('.header-area .nav').slideUp(200);  
         }       
@@ -205,6 +230,7 @@ $(function() {
 
   $(document).ready(function () {
       $(document).on("scroll", onScroll);
+      onScroll();
       
       //smoothscroll
       $('.scroll-to-section a[href^="#"]').on('click', function (e) {
@@ -237,24 +263,35 @@ $(function() {
       });
   });
 
-  function onScroll(event){
-      var scrollPos = $(document).scrollTop();
-      $('.nav a').each(function () {
+  function onScroll(){
+      var scrollPos = $(document).scrollTop() + 125;
+      var activeLink = null;
+
+      $('.header-area .nav .nav-standard a').each(function () {
           var currLink = $(this);
-          var hrefVal = currLink.attr("href");
-          if (hrefVal && hrefVal.indexOf("#") === 0 && hrefVal.length > 1) {
-              var refElement = $(hrefVal);
-              if (refElement.length && refElement.position()) {
-                  if (refElement.position().top <= scrollPos + 20 && refElement.position().top + refElement.height() > scrollPos) {
-                      $('.nav ul li a').removeClass("active");
-                      currLink.addClass("active");
-                  }
-                  else{
-                      currLink.removeClass("active");
-                  }
-              }
+          var hrefVal = currLink.attr('href');
+          if (!hrefVal || hrefVal.indexOf('#') === -1) return;
+
+          var hash = hrefVal.slice(hrefVal.indexOf('#'));
+          var refElement = $(hash);
+          if (refElement.length && refElement.offset() && refElement.offset().top <= scrollPos) {
+              activeLink = currLink;
           }
       });
+
+      // At the bottom of the document the footer can be visible before its
+      // top crosses the usual scroll offset. Make Contact reliably active.
+      if ($(window).scrollTop() + $(window).height() >= $(document).height() - 80) {
+          var contactLink = $('.header-area .nav .nav-standard a[href$="#Contact"]');
+          if (contactLink.length) {
+              activeLink = contactLink.first();
+          }
+      }
+
+      if (activeLink) {
+          $('.header-area .nav .nav-standard a').removeClass('active');
+          activeLink.addClass('active');
+      }
   }
 
 	// Page loading animation
@@ -270,7 +307,7 @@ $(function() {
   function mobileNav() {
     var width = $(window).width();
     $('.submenu').on('click', function() {
-      if(width < 767) {
+      if(width < 992) {
         $('.submenu ul').removeClass('active');
         $(this).find('ul').toggleClass('active');
       }

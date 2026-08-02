@@ -34,7 +34,7 @@
                 <div class="tool-card-icon"><i class="#local.tool.iconPrefix# #local.tool.icon#"></i></div>
                 <h4>#local.tool.titleEn#</h4>
                 <p>#local.tool.descEn#</p>
-                <a href="/tools/#local.slug#.cfm" class="btn-social btn-linkedin<cfif not local.tool.built> tool-card-unbuilt</cfif>">
+                <a href="/tools/#local.slug#" class="btn-social btn-linkedin<cfif not local.tool.built> tool-card-unbuilt</cfif>">
                   <i class="fas <cfif local.tool.built>fa-arrow-right<cfelse>fa-hammer</cfif>"></i> <cfif local.tool.built>View Tool<cfelse>Coming Soon</cfif>
                 </a>
               </div>

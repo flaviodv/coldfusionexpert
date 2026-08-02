@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/assets/images/image-removebg-preview (2).png">
     <link rel="shortcut icon" href="/assets/images/image-removebg-preview (2).png">
-        <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <cfoutput><title><cfif isDefined("request.pageTitle")>#request.pageTitle#<cfelse>ColdFusion Expert | Flavio Di Virgilio - Senior ColdFusion Developer, AWS &amp; AI Automation</cfif></title></cfoutput>
     <cfoutput><meta name="description" content="<cfif isDefined('request.pageDescription')>#request.pageDescription#<cfelse>Flavio Di Virgilio - Senior Full-Stack Specialist in Adobe ColdFusion, Lucee Server, SQL Server, AWS Cloud, AI Automation (LLMs, RAG, OpenAI, Claude), and SEO/GEO. +15 years of experience. Live Zoom training courses and global consulting. Top Rated Plus on Upwork (100% Job Success).</cfif>"></cfoutput>
@@ -58,7 +58,7 @@
             "https://www.upwork.com/freelancers/~0176860e6928a246f4"
           ],
           "knowsAbout": [
-            "Adobe ColdFusion (CF4 - CF2023)",
+            "Adobe ColdFusion (CF4 - CF2025)",
             "Lucee Server",
             "CFML & Fusebox OOP",
             "FusionReactor Performance Tuning",
@@ -141,7 +141,7 @@
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/templatemo-chain-app-dev.css">
+    <cfoutput><link rel="stylesheet" href="/assets/css/templatemo-chain-app-dev.css<cfif isDefined('request.templateCssVer')>#request.templateCssVer#</cfif>"></cfoutput>
     <link rel="stylesheet" href="/assets/css/animated.css">
     <link rel="stylesheet" href="/assets/css/owl.css">
     <cfoutput><link rel="stylesheet" href="/assets/css/tools.css<cfif isDefined('request.toolsCssVer')>#request.toolsCssVer#</cfif>"></cfoutput>
@@ -217,6 +217,34 @@
         margin-top: 10px;
         font-size: 0.92rem;
       }
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .hero-actions .btn-social {
+        margin: 0;
+      }
+      .hero-upwork-link {
+        display: inline-flex;
+        align-items: center;
+        line-height: 0;
+        border-radius: 25px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+      }
+      .hero-upwork-link:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(20,168,0,0.4);
+      }
+      .hero-upwork-image {
+        display: block;
+        width: auto;
+        height: 52px;
+        border-radius: 26px;
+      }
       .hero-stat {
         display: inline-flex;
         align-items: center;
@@ -228,6 +256,19 @@
       .hero-stat i {
         color: #14a800;
         font-size: 0.95rem;
+      }
+      .hero-availability {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 14px;
+        padding: 6px 12px;
+        border: 1px solid rgba(10, 95, 138, 0.2);
+        border-radius: 18px;
+        background: rgba(255,255,255,0.45);
+        color: #0a5f8a;
+        font-size: 0.84rem;
+        font-weight: 700;
       }
       .badge-upwork {
         background: #14a800;
@@ -453,6 +494,10 @@
       .background-header .main-nav .nav li:last-child a.active {
         color: #4b8ef1 !important;
       }
+      .header-area .main-nav .nav li:last-child a.active:after,
+      .background-header .main-nav .nav li:last-child a.active:after {
+        background-color: #4b8ef1 !important;
+      }
       /* Fix: header used position:absolute until scrolled past the whole hero,
          so it disappeared right after scrolling and only came back much later.
          Keep it fixed at all times, with a solid background always (instead of
@@ -476,6 +521,9 @@
         height: auto;
       }
       @media (max-width: 991px) {
+        .hero-actions {
+          justify-content: center;
+        }
         .header-area .main-nav .logo img.logo-icon-img {
           height: 40px;
           width: auto;
@@ -501,7 +549,25 @@
         color: #8a8a8a !important;
         font-weight: 700 !important;
         background: #f7f9fc !important;
-        cursor: default;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .nav-category-label[data-category="marketing-seo-social"] { color: #ff8fc1 !important; }
+      .nav-category-label[data-category="diseno-frontend-css"] { color: #bb9cff !important; }
+      .nav-category-label[data-category="desarrollo-datos"] { color: #5cc9ff !important; }
+      .nav-category-label[data-category="gestion-tiempo-productividad"] { color: #ffd166 !important; }
+      .nav-category-label[data-category="utilidades-productividad"] { color: #71e0a0 !important; }
+      .nav-category-chevron {
+        font-size: 0.7rem !important;
+        transition: transform 0.2s ease;
+      }
+      .nav-category-label.open .nav-category-chevron {
+        transform: rotate(180deg);
+      }
+      .nav-tool-item {
+        display: none;
       }
       @media (max-width: 767px) {
         header.in-tools-section .nav-standard {
@@ -510,8 +576,39 @@
         header.in-tools-section .nav-tools-mobile {
           display: block !important;
         }
+        header.in-tools-section .nav-tools-mobile.nav-category-label {
+          display: flex !important;
+        }
+        header.in-tools-section .nav-tools-mobile.nav-tool-item {
+          display: none !important;
+        }
+        header.in-tools-section .nav-tools-mobile.nav-tool-item.visible {
+          display: block !important;
+        }
         header.in-tools-section .nav-tools-mobile a {
           padding-left: 20px !important;
+        }
+        header.header-area.in-tools-section .main-nav .nav li.nav-tools-mobile {
+          background: #132238 !important;
+          border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+        }
+        header.header-area.in-tools-section .main-nav .nav li.nav-tools-mobile a {
+          background: #132238 !important;
+          color: #edf6ff !important;
+        }
+        header.header-area.in-tools-section .main-nav .nav li.nav-tools-mobile a:hover {
+          background: #203450 !important;
+          color: #ffffff !important;
+        }
+        header.header-area.in-tools-section .main-nav .nav li.nav-tools-mobile a.active {
+          background: #13aff0 !important;
+          color: #ffffff !important;
+        }
+        header.header-area.in-tools-section .main-nav .nav li.nav-category-label {
+          background: #0e1c30 !important;
+        }
+        header.header-area.in-tools-section .main-nav .nav li.nav-category-label.open {
+          background: #203450 !important;
         }
       }
     </style>
@@ -540,40 +637,52 @@
   </script>
   <!-- ***** Preloader End ***** -->
   <!-- ***** Header Area Start ***** -->
-  <cfoutput><header class="header-area header-sticky wow slideInDown<cfif isDefined('request.isToolsSection') and request.isToolsSection> in-tools-section</cfif>" data-wow-duration="0.75s" data-wow-delay="0s"></cfoutput>
+  <cfoutput><header class="header-area header-sticky<cfif isDefined('request.isToolsSection') and request.isToolsSection> in-tools-section</cfif>"></cfoutput>
     <div class="container">
       <div class="row">
         <div class="col-12">
           <nav class="main-nav">
             <!-- ***** Logo Start ***** -->
-            <a href="/index.cfm" class="logo">
+            <a href="/" class="logo">
               <img src="/assets/images/image-removebg-preview (2).png" class="logo-icon-img" alt="ColdFusion">
               <img src="/assets/images/cf expert.png" class="logo-text-img" alt="ColdFusion Expert">
             </a>
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#top"<cfif not (isDefined('request.isToolsSection') and request.isToolsSection)> class="active"</cfif>>Home</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#services">Services</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#pricing">Experience</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#seo">SEO / GEO</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#automation">AI Automation</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#courses">Zoom Courses</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#tools" class="nav-tools-highlight"><i class="fas fa-toolbox"></i> Tools</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#about">About</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#clients">Skills</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/index.cfm#Contact">Contact</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/#top"<cfif not (isDefined('request.isToolsSection') and request.isToolsSection)> class="active"</cfif>>Home</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/#services">Services</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/#pricing">Experience</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/#tools" class="nav-tools-highlight"><i class="fas fa-toolbox"></i> Tools</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/#about">About</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/#Contact">Contact</a></li>
               <cfif isDefined("request.isToolsSection") and request.isToolsSection>
                 <cfset local.mnCurrentFile = listLast(cgi.script_name, "/")>
+                <cfset local.mnActiveCategory = "">
+                <cfloop array="#request.toolOrder#" index="local.mnSlugCheck">
+                  <cfif local.mnCurrentFile eq local.mnSlugCheck & '.cfm'>
+                    <cfset local.mnActiveCategory = request.toolsRegistry[local.mnSlugCheck].category>
+                  </cfif>
+                </cfloop>
+                <cfif local.mnActiveCategory eq "" and isDefined("url.category")>
+                  <cfloop array="#request.toolCategories#" index="local.mnCatCheck">
+                    <cfif local.mnCatCheck.slug eq url.category>
+                      <cfset local.mnActiveCategory = url.category>
+                    </cfif>
+                  </cfloop>
+                </cfif>
                 <cfoutput>
-                <li class="nav-tools-mobile"><a href="/index.cfm"><i class="fas fa-arrow-left"></i> Back to Home</a></li>
-                <li class="nav-tools-mobile"><a href="/tools.cfm"<cfif local.mnCurrentFile eq 'tools.cfm'> class="active"</cfif>><i class="fas fa-toolbox"></i> All Tools</a></li>
+                <li class="nav-tools-mobile"><a href="/"><i class="fas fa-arrow-left"></i> Back to Home</a></li>
+                <li class="nav-tools-mobile"><a href="/tools"<cfif local.mnCurrentFile eq 'tools.cfm'> class="active"</cfif>><i class="fas fa-toolbox"></i> All Tools</a></li>
                 <cfloop array="#request.toolCategories#" index="local.mnCat">
-                  <li class="nav-tools-mobile nav-category-label">#local.mnCat.labelEn#</li>
+                  <li class="nav-tools-mobile nav-category-label<cfif local.mnActiveCategory eq local.mnCat.slug> open</cfif>" data-category="#local.mnCat.slug#" role="button" tabindex="0" aria-expanded="<cfif local.mnActiveCategory eq local.mnCat.slug>true<cfelse>false</cfif>">
+                    <span>#local.mnCat.labelEn#</span>
+                    <i class="fas fa-chevron-down nav-category-chevron"></i>
+                  </li>
                   <cfloop array="#request.toolOrder#" index="local.mnSlug">
                     <cfset local.mnTool = request.toolsRegistry[local.mnSlug]>
                     <cfif local.mnTool.category eq local.mnCat.slug>
-                      <li class="nav-tools-mobile"><a href="/tools/#local.mnSlug#.cfm"<cfif local.mnCurrentFile eq local.mnSlug & '.cfm'> class="active"</cfif>>#local.mnTool.titleEn#</a></li>
+                      <li class="nav-tools-mobile nav-tool-item<cfif local.mnActiveCategory eq local.mnCat.slug> visible</cfif>" data-category="#local.mnCat.slug#"><a href="/tools/#local.mnSlug#"<cfif local.mnCurrentFile eq local.mnSlug & '.cfm'> class="active"</cfif>>#local.mnTool.titleEn#</a></li>
                     </cfif>
                   </cfloop>
                 </cfloop>

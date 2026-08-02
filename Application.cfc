@@ -38,6 +38,21 @@ function onRequestStart(targetPage){
     } catch (any e) {
         request.customJsVer = "";
     }
+    try {
+        request.templateCssVer = "?v=" & dateFormat(getFileInfo(expandPath("/assets/css/templatemo-chain-app-dev.css")).lastmodified, "yyyymmdd") & timeFormat(getFileInfo(expandPath("/assets/css/templatemo-chain-app-dev.css")).lastmodified, "HHmmss");
+    } catch (any e) {
+        request.templateCssVer = "";
+    }
+    try {
+        request.heroImageVer = "?v=" & dateFormat(getFileInfo(expandPath("/assets/images/flavio-ondas-sin-marco.webp")).lastmodified, "yyyymmdd") & timeFormat(getFileInfo(expandPath("/assets/images/flavio-ondas-sin-marco.webp")).lastmodified, "HHmmss");
+    } catch (any e) {
+        request.heroImageVer = "";
+    }
+    try {
+        request.heroBlinkImageVer = "?v=" & dateFormat(getFileInfo(expandPath("/assets/images/flavio-ondas-ojos-cerrados.webp")).lastmodified, "yyyymmdd") & timeFormat(getFileInfo(expandPath("/assets/images/flavio-ondas-ojos-cerrados.webp")).lastmodified, "HHmmss");
+    } catch (any e) {
+        request.heroBlinkImageVer = "";
+    }
 
     if(!findNoCase(".cfc", arguments.targetPage)){
         include "tools/_tools-registry.cfm";
@@ -64,9 +79,9 @@ function onRequestStart(targetPage){
                 : toolTitle & " | Free Online Tool | ColdFusion Expert";
             request.pageDescription = toolDescription;
             request.pageKeywords = toolTitle & ", " & categoryLabel & ", " & ((session.lan eq "es") ? "herramienta online gratuita" : "free online tool") & ", " & toolDescription;
-            request.pageCanonical = "https://coldfusionexpert.ar/tools/" & slug & ".cfm?lan=" & session.lan;
-            request.pageAlternateEs = "https://coldfusionexpert.ar/tools/" & slug & ".cfm?lan=es";
-            request.pageAlternateEn = "https://coldfusionexpert.ar/tools/" & slug & ".cfm?lan=en";
+            request.pageCanonical = "https://coldfusionexpert.ar/tools/" & slug & "?lan=" & session.lan;
+            request.pageAlternateEs = "https://coldfusionexpert.ar/tools/" & slug & "?lan=es";
+            request.pageAlternateEn = "https://coldfusionexpert.ar/tools/" & slug & "?lan=en";
             request.pageOgTitle = request.pageTitle;
             request.pageOgDescription = toolDescription;
             request.pageOgUrl = request.pageCanonical;
@@ -97,8 +112,8 @@ function onRequestStart(targetPage){
                         "@type": "BreadcrumbList",
                         "@id": request.pageCanonical & "##breadcrumb",
                         "itemListElement": [
-                            {"@type": "ListItem", "position": 1, "name": (session.lan eq "es") ? "Herramientas" : "Tools", "item": "https://coldfusionexpert.ar/tools.cfm?lan=" & session.lan},
-                            {"@type": "ListItem", "position": 2, "name": categoryLabel, "item": "https://coldfusionexpert.ar/tools.cfm?lan=" & session.lan & "&category=" & tool.category},
+                            {"@type": "ListItem", "position": 1, "name": (session.lan eq "es") ? "Herramientas" : "Tools", "item": "https://coldfusionexpert.ar/tools?lan=" & session.lan},
+                            {"@type": "ListItem", "position": 2, "name": categoryLabel, "item": "https://coldfusionexpert.ar/tools?lan=" & session.lan & "&category=" & tool.category},
                             {"@type": "ListItem", "position": 3, "name": toolTitle, "item": request.pageCanonical}
                         ]
                     }
@@ -110,7 +125,9 @@ function onRequestStart(targetPage){
             request.pageTitle = (session.lan eq "es")
                 ? "Nuestras Herramientas Gratuitas | ColdFusion Expert"
                 : "Our Free Tools | ColdFusion Expert";
-            request.pageCanonical = "https://coldfusionexpert.ar/tools.cfm?lan=" & session.lan;
+            request.pageCanonical = "https://coldfusionexpert.ar/tools?lan=" & session.lan;
+            request.pageAlternateEs = "https://coldfusionexpert.ar/tools?lan=es";
+            request.pageAlternateEn = "https://coldfusionexpert.ar/tools?lan=en";
             request.isToolsSection = true;
         }
 

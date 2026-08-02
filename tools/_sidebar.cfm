@@ -18,7 +18,7 @@
 </cfif>
 <cfoutput>
 <nav class="tools-sidebar">
-  <a href="/tools.cfm" class="tools-sidebar-home<cfif local.sbCurrentFile eq 'tools.cfm'> active</cfif>">
+  <a href="/tools" class="tools-sidebar-home<cfif local.sbCurrentFile eq 'tools.cfm'> active</cfif>">
     <i class="fas fa-toolbox"></i> <cfif local.sbIsEs>Todas las Herramientas<cfelse>All Tools</cfif>
   </a>
   <cfloop array="#request.toolCategories#" index="local.sbCat">
@@ -32,7 +32,7 @@
           <cfset local.sbTool = request.toolsRegistry[local.sbSlug]>
           <cfif local.sbTool.category eq local.sbCat.slug>
             <li>
-              <a href="/tools/#local.sbSlug#.cfm"<cfif local.sbCurrentFile eq local.sbSlug & '.cfm'> class="active"</cfif>>
+              <a href="/tools/#local.sbSlug#"<cfif local.sbCurrentFile eq local.sbSlug & '.cfm'> class="active"</cfif>>
                 <i class="#local.sbTool.iconPrefix# #local.sbTool.icon#"></i>
                 <cfif local.sbIsEs>#local.sbTool.titleEs#<cfelse>#local.sbTool.titleEn#</cfif>
               </a>

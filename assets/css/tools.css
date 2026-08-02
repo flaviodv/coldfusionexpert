@@ -333,6 +333,11 @@
   background: linear-gradient(180deg, #eaf6fd 0%, #f4eefc 100%);
 }
 
+/* --- Homepage "Technical Stack & Core Skills" section --- */
+.skills-band {
+  background: linear-gradient(180deg, #eafaf1 0%, #fef8ec 100%);
+}
+
 /* The next section's decorative ".about-us:after" background image is 1132px tall,
    vertically centered on its own section, so roughly half of it bleeds upward past
    the "About" section's top edge. That always overlapped the end of "Tools", it was
@@ -345,8 +350,9 @@
 
 .tools-carousel-wrap {
   position: relative;
+  max-width: 1800px;
+  margin: 0 auto 40px;
   padding: 0 50px;
-  margin-bottom: 40px;
 }
 
 .tools-carousel .owl-stage {

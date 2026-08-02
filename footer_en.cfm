@@ -20,11 +20,12 @@
           <div class="footer-widget">
             <h4>Navigation</h4>
             <ul>
-              <li><a href="/index.cfm#top">Home</a></li>
-              <li><a href="/index.cfm#services">Services</a></li>
-              <li><a href="/index.cfm#pricing">Experience</a></li>
-              <li><a href="/index.cfm#about">About</a></li>
-              <li><a href="/index.cfm#clients">Skills</a></li>
+              <li><a href="/#top">Home</a></li>
+              <li><a href="/#services">Services</a></li>
+              <li><a href="/#pricing">Experience</a></li>
+              <li><a href="/#tools">Tools</a></li>
+              <li><a href="/#about">About</a></li>
+              <li><a href="/#Contact">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -34,8 +35,8 @@
             <p style="color: #fff; margin-bottom: 15px;">Connect or hire directly through key platforms:</p>
             <ul style="list-style: none; padding-left: 0;">
               <li style="margin-bottom: 10px;">
-                <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="btn-social btn-upwork" style="display: inline-flex;">
-                  <i class="fab fa-upwork"></i> Upwork Profile (Top Rated Plus)
+                <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="hero-upwork-link">
+                  <img src="/assets/images/upwork-profile.webp" class="hero-upwork-image" alt="Upwork Profile">
                 </a>
               </li>
               <li>
@@ -55,7 +56,7 @@
     </div>
   </footer>
       <!-- Floating Language Switcher -->
-  <a href="?lan=es" class="float-lang" title="Cambiar a Español">
+  <a href="?lan=es" class="float-lang" title="Cambiar a Espa&ntilde;ol">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="54" height="54">
       <clipPath id="circleClipAR">
         <circle cx="50" cy="50" r="50"/>

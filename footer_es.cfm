@@ -20,27 +20,28 @@
           <div class="footer-widget">
             <h4>Navegaci&oacute;n</h4>
             <ul>
-              <li><a href="/index.cfm#top">Inicio</a></li>
-              <li><a href="/index.cfm#services">Servicios</a></li>
-              <li><a href="/index.cfm#pricing">Experiencia</a></li>
-              <li><a href="/index.cfm#about">Acerca de</a></li>
-              <li><a href="/index.cfm#clients">Habilidades</a></li>
+              <li><a href="/#top">Inicio</a></li>
+              <li><a href="/#services">Servicios</a></li>
+              <li><a href="/#pricing">Experiencia</a></li>
+              <li><a href="/#tools">Herramientas</a></li>
+              <li><a href="/#about">Acerca de</a></li>
+              <li><a href="/#Contact">Contacto</a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="footer-widget">
             <h4>Perfiles Profesionales</h4>
-            <p style="color: #fff; margin-bottom: 15px;">Conecta o contrata atrav&eacute;s de las plataformas principales:</p>
+            <p style="color: #fff; margin-bottom: 15px;">Conect&aacute; o contrat&aacute; a trav&eacute;s de las principales plataformas:</p>
             <ul style="list-style: none; padding-left: 0;">
               <li style="margin-bottom: 10px;">
-                <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="btn-social btn-upwork" style="display: inline-flex;">
-                  <i class="fab fa-upwork"></i> Perfil Upwork (Top Rated Plus)
+                <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="hero-upwork-link">
+                  <img src="/assets/images/upwork-perfil.webp" class="hero-upwork-image" alt="Perfil de Upwork">
                 </a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/coldfusion-expert/" target="_blank" class="btn-social btn-linkedin" style="display: inline-flex;">
-                  <i class="fab fa-linkedin"></i> Perfil LinkedIn
+                  <i class="fab fa-linkedin"></i> Perfil de LinkedIn
                 </a>
               </li>
             </ul>

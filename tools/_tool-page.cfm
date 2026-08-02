@@ -17,8 +17,8 @@
   <cfoutput>
   <main class="tools-main">
     <p class="tools-breadcrumb">
-      <a href="/tools.cfm?lan=#session.lan#"><cfif local.isEs>Herramientas<cfelse>Tools</cfif></a>
-      <i class="fas fa-angle-right"></i> <a href="/tools.cfm?lan=#session.lan#&category=#local.tool.category#">#local.catLabel#</a>
+      <a href="/tools?lan=#session.lan#"><cfif local.isEs>Herramientas<cfelse>Tools</cfif></a>
+      <i class="fas fa-angle-right"></i> <a href="/tools?lan=#session.lan#&category=#local.tool.category#">#local.catLabel#</a>
       <i class="fas fa-angle-right"></i> #local.title#
     </p>
     <div class="tool-header">
@@ -48,7 +48,7 @@
 
   <cfoutput>
     <div class="tool-actions">
-      <a href="/tools.cfm" class="btn-social btn-linkedin">
+      <a href="/tools" class="btn-social btn-linkedin">
         <i class="fas fa-arrow-left"></i> <cfif local.isEs>Volver a Herramientas<cfelse>Back to Tools</cfif>
       </a>
       <cfif not local.tool.built>

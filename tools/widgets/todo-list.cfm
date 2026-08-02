@@ -328,7 +328,7 @@
       localStorage.setItem(MULTI_TIMERS_KEY, JSON.stringify(multiTimers));
     } catch(e) {}
 
-    window.location.href = '/tools/time-tracker.cfm?slot=' + targetSlot;
+    window.location.href = '/tools/time-tracker?slot=' + targetSlot;
   }
 
     // Update Metrics

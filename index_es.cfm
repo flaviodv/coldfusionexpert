@@ -7,24 +7,26 @@
               <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="row">
                   <div class="col-lg-12">
-                    <br> <br>
                     <span class="badge-experience"><i class="fas fa-award"></i> +15 Años de Experiencia | Senior Full-Stack Developer</span>
                     <span class="hero-eyebrow">ColdFusion Expert</span>
                     <h1>Flavio Di Virgilio</h1>
-                    <h3>ColdFusion Senior Developer & AWS / Server Administrator</h3>
+                    <h3>ColdFusion Senior Developer<br>&amp; AWS / Server Administrator</h3>
                     <h5>Especialista en aplicaciones web de alto rendimiento, arquitectura de datos, migración de sistemas legacy y optimización Cloud.</h5>
                     <div class="hero-stats">
                       <span class="badge-upwork" style="white-space: nowrap;"><i class="fas fa-check-circle"></i> Upwork Top Rated Plus</span>
-                      <span class="hero-stat"><i class="fas fa-check-circle"></i> 100% Job Success</span>
-                      <span class="hero-stat"><i class="fas fa-check-circle"></i> +8,000 Horas</span>
-                      <span class="hero-stat"><i class="fas fa-check-circle"></i> +40 Proyectos Exitosos</span>
+                      <span class="hero-stat"><i class="fas fa-check-circle" style="background-color:white; border-radius: 20px;"></i> 100% Job Success</span><br>
                     </div>
-                    <div style="margin-top: 20px;">
-                      <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="btn-social btn-upwork">
-                        <i class="fab fa-upwork"></i> Perfil en Upwork
+                    <div class="hero-stats">
+                      <span class="hero-stat"><i class="fas fa-check-circle" style="background-color:white; border-radius: 20px;"></i> +9,700 Horas</span>
+                      <span class="hero-stat"><i class="fas fa-check-circle" style="background-color:white; border-radius: 20px;"></i> +70 Proyectos Exitosos</span>
+                    </div>
+                    <div class="hero-availability"><i class="far fa-clock"></i> Disponibilidad flexible para América (EST/PST)</div>
+                    <div class="hero-actions">
+                      <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20hablemos%20de%20mi%20proyecto" target="_blank" rel="noopener" class="btn-social btn-upwork">
+                        <i class="fab fa-whatsapp"></i> Hablemos de tu proyecto
                       </a>
-                      <a href="https://www.linkedin.com/in/coldfusion-expert/" target="_blank" class="btn-social btn-linkedin">
-                        <i class="fab fa-linkedin"></i> Perfil en LinkedIn
+                      <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="hero-upwork-link">
+                        <img src="/assets/images/upwork-perfil.webp" class="hero-upwork-image" alt="Perfil de Upwork">
                       </a>
                     </div>
                   </div>
@@ -33,7 +35,10 @@
             </div>
             <div class="col-lg-6">
               <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <img src="assets/images/slider-dec.png" alt="ColdFusion Expert">
+                <div class="hero-blink-frame">
+                  <cfoutput><img src="/assets/images/flavio-ondas-sin-marco.webp#request.heroImageVer#" alt="ColdFusion Expert" class="hero-profile-image hero-profile-open"></cfoutput>
+                  <cfoutput><img src="/assets/images/flavio-ondas-ojos-cerrados.webp#request.heroBlinkImageVer#" alt="" aria-hidden="true" class="hero-profile-image hero-profile-closed"></cfoutput>
+                </div>
               </div>
             </div>
           </div>
@@ -41,6 +46,24 @@
       </div>
     </div>
   </div>
+  <script>
+  (function () {
+    function iniciarParpadeoHero() {
+      var retrato = document.querySelector('.main-banner .right-image');
+      if (!retrato) return;
+      function parpadear() {
+        retrato.classList.add('is-blinking');
+        window.setTimeout(function () {
+          retrato.classList.remove('is-blinking');
+          window.setTimeout(parpadear, 5500 + Math.random() * 6500);
+        }, 100);
+      }
+      window.setTimeout(parpadear, 4000);
+    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciarParpadeoHero);
+    else iniciarParpadeoHero();
+  }());
+  </script>
   <div id="services" class="services section">
     <div class="container">
       <div class="row">
@@ -66,8 +89,13 @@
              <h4>Servicio de Consultoría ColdFusion</h4>
              <p> Adaptamos las estrategias para que se ajusten a los objetivos de su negocio.
               Evaluación de infraestructura, diagnóstico con FusionReactor y refactorización de código legacy. <br>
-              <span class="highligth">¿El objetivo?</span> Maximizar la eficiencia, la seguridad y el rendimiento desde CF4 hasta Adobe ColdFusion 2023 y Lucee Server.
+              <span class="highligth">¿El objetivo?</span> Maximizar la eficiencia, la seguridad y el rendimiento desde CF4 hasta Adobe ColdFusion 2025 y Lucee Server.
              </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustar%C3%ADa%20consultar%20sobre%20Consultor%C3%ADa%20ColdFusion" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
           </div>
         </div>
         <div class="col-lg-4">
@@ -82,6 +110,11 @@
             Experiencia en CRMs empresariales, plataformas de salud (NQMBC), e-commerce e integraciones dinámicas centradas en bases de datos. <br>
             <span class="highligth">¿Los beneficios?</span> Operaciones optimizadas y arquitectura orientada al usuario.
             </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustar%C3%ADa%20consultar%20sobre%20Desarrollo%20de%20Aplicaciones%20Web%20Personalizadas" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
           </div>
         </div>
         <div class="col-lg-4">
@@ -131,8 +164,13 @@
              <h4>Administración Cloud AWS & Soporte Servidores</h4>
              <p>Administración experta de servidores staging y producción en AWS (EC2, RDS MSSQL/MySQL, S3) e IIS Server en Windows/Linux.
                Soporte proactivo, parches de seguridad, copias de seguridad y monitoreo continuo. <br>
-              <span class="highligth">¿Sus aplicaciones?</span> Estables, protegidas y a la vanguardia tecnológica.
-            </p>
+               <span class="highligth">¿Sus aplicaciones?</span> Estables, protegidas y a la vanguardia tecnológica.
+             </p>
+            <div class="card-wa-btn-wrap">
+              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustar%C3%ADa%20consultar%20sobre%20Administraci%C3%B3n%20Cloud%20AWS%20y%20Soporte%20de%20Servidores" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+                <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
+              </a>
+            </div>
           </div>
         </div>
         <div class="col-lg-4">
@@ -170,7 +208,7 @@
             <h4>Quebec Attractions</h4>
             <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Trabajo Actual | Lucee Server</span>
             <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Quebec Attractions">
+            <img src="/assets/images/projects/quebec-attractions.jpg" class="project-card-image" alt="Quebec Attractions">
             </div>
             <ul>
               <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Sitio Oficial</strong>: <a href="https://quebecattractions.ca/" target="_blank" style="color:#0077b5; font-weight:600;">quebecattractions.ca</a></li>
@@ -192,10 +230,10 @@
             <h4>CompraInversa.com</h4>
             <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Proyecto Personal | ColdFusion + IA</span>
             <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="CompraInversa">
+            <img src="/assets/images/projects/comprainversa.jpg" class="project-card-image" alt="CompraInversa">
             </div>
             <ul>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Marketplace Inteligente</strong>: <a href="https://comprainvesa.com/" target="_blank" style="color:#0077b5; font-weight:600;">comprainvesa.com</a></li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Marketplace Inteligente</strong>: <a href="https://comprainversa.com/" target="_blank" style="color:#0077b5; font-weight:600;">comprainversa.com</a></li>
               <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Plataforma propia de marketplace para conectar demandas de compra con ofertas competitivas.</li>
               <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollado con <strong>Adobe ColdFusion</strong> y <strong>Microsoft SQL Server</strong>.</li>
               <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integración de módulos asistidos por <strong>Inteligencia Artificial (IA)</strong> para emparejamiento de requerimientos y optimización de búsqueda.</li>
@@ -213,7 +251,7 @@
             <h4>Firebrand Creative</h4>
             <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Trabajo Actual | Agencia Digital US</span>
             <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Firebrand Creative">
+            <img src="/assets/images/projects/firebrand.webp" class="project-card-image" alt="Firebrand Creative">
             </div>
             <ul>
               <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Sitio Oficial</strong>: <a href="https://iamfirebrand.com/" target="_blank" style="color:#0077b5; font-weight:600;">iamfirebrand.com</a></li>
@@ -232,7 +270,7 @@
         <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
           <div class="pricing-item-pro">
             <h4>Makeway &amp; Clientes Internacionales</h4>
-            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Sep 2023 - Presente</span>
+            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Sep 2025 - Presente</span>
             <div class="icon">
               <img src="assets/images/pricing-table-01.png" alt="Makeway">
             </div>
@@ -393,7 +431,7 @@
             </div>
             <h4>Integración de APIs de IA (LLMs)</h4>
             <p>
-              Conexión de modelos de lenguaje avanzados (ChatGPT 4o, Claude 3.5, Gemini 1.5, DeepSeek) a sistemas web existentes en ColdFusion, Lucee, PHP o Node.js.
+              Integración de OpenAI, Claude, Gemini y otros modelos de lenguaje líderes con sistemas web existentes en ColdFusion, Lucee, PHP o Node.js.
               <br><br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Arquitecturas <strong>RAG</strong> (Retrieval-Augmented Generation) y bases vectoriales.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Asistentes virtuales inteligentes y agentes de atención 24/7.<br>
@@ -435,7 +473,7 @@
             </div>
             <h4>Desarrollo Acelerado con IA</h4>
             <p>
-              Ingeniería de Prompts y uso estratégico de asistentes de IA (Claude Code, Codex, ChatGPT 4) para acelerar el desarrollo de software.
+              Ingeniería de prompts y uso estratégico de asistentes de IA y herramientas de desarrollo basadas en modelos de lenguaje líderes para acelerar el desarrollo de software.
               <br><br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Refactorización automatizada de código legacy ColdFusion.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Generación instantánea de pruebas unitarias y documentación técnica.<br>
@@ -471,7 +509,7 @@
             </div>
             <h4>ColdFusion &amp; Lucee Mastery</h4>
             <p>
-              Aprende desde los fundamentos hasta técnicas avanzadas en <strong>Adobe ColdFusion (CF4 a CF2023) y Lucee Server</strong>.
+              Aprende desde los fundamentos hasta técnicas avanzadas en <strong>Adobe ColdFusion (CF4 a CF2025) y Lucee Server</strong>.
               <br><br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Arquitectura orientada a objetos (OOP) y patrones.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Migración de sistemas legacy antiguos.<br>
@@ -543,7 +581,7 @@
       </div>
     </div>
   </div>
-  <div id="tools" class="services section" style="padding-top: 80px; padding-bottom: 80px;">
+  <div id="tools" class="services section tools-band" style="padding-top: 80px; padding-bottom: 80px;">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -571,23 +609,27 @@
           }
         }
       </cfscript>
-      <cfoutput>
-      <div class="owl-carousel tools-carousel" style="margin-bottom: 40px;">
+    </div>
+    <cfoutput>
+    <div class="tools-carousel-wrap">
+      <div class="owl-carousel tools-carousel">
         <cfloop array="#local.ftCards#" index="local.ftCard">
           <div class="tool-card">
             <div class="tool-card-icon"><i class="#local.ftCard.iconPrefix# #local.ftCard.icon#"></i></div>
             <h4>#local.ftCard.titleEs#</h4>
             <p>#local.ftCard.descEs#</p>
-            <a href="/tools/#local.ftCard.slug#.cfm" class="btn-social btn-linkedin">
+            <a href="/tools/#local.ftCard.slug#" class="btn-social btn-linkedin">
               <i class="fas fa-arrow-right"></i> Ver Herramienta
             </a>
           </div>
         </cfloop>
       </div>
-      </cfoutput>
+    </div>
+    </cfoutput>
+    <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <a href="/tools.cfm" class="btn-social btn-upwork">
+          <a href="/tools" class="btn-social btn-upwork">
             <i class="fas fa-th-large"></i> Ver Todas las Herramientas
           </a>
         </div>
@@ -603,7 +645,7 @@
             <img src="assets/images/heading-line-dec.png" alt="">
             <p>Analista de Sistemas graduado de la Universidad J.F. Kennedy de Buenos Aires y Diseñador Multimedia de la Escuela Da Vinci, Flavio cuenta con más de 15 años de experiencia práctica en desarrollo Full-Stack en ColdFusion/CFML, diseño de arquitecturas orientadas a bases de datos y administración de servidores.
             Ha liderado e implementado sistemas de comercio electrónico, diagnóstico médico e historial clínico (NQMBC), integración de servicios web (JWT, REST), gestión de clientes en tiempo real y administración de infraestructura en la nube AWS (EC2, RDS, S3).
-            Freelancer Top Rated Plus en Upwork (100% Job Success, +8,000 horas registradas), se destaca por sus sólidas habilidades lógicas y de resolución de problemas, su autogestión y la aplicación proactiva de herramientas de IA (ChatGPT, Claude, Codex, Gemini) para potenciar la productividad y la calidad del desarrollo.</p>
+            Freelancer Top Rated Plus en Upwork (100% Job Success, +9,700 horas registradas), se destaca por sus sólidas habilidades lógicas y de resolución de problemas, su autogestión y la aplicación proactiva de herramientas de IA (ChatGPT, Claude, Codex, Gemini) para potenciar la productividad y la calidad del desarrollo.</p>
           </div>
           <div class="row">
             <div class="col-lg-6">
@@ -636,13 +678,13 @@
         </div>
         <div class="col-lg-6">
           <div class="right-image">
-            <img src="assets/images/flavio-profile.png" alt="Flavio Di Virgilio - ColdFusion Expert" style="max-width: 85%; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.18); border: 5px solid #ffffff;">
+            <img src="assets/images/flavio-ondas-sin-marco.webp" alt="Flavio Di Virgilio - ColdFusion Expert" style="max-width: 85%; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.18); border: 5px solid #ffffff;">
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div id="clients" class="the-clients">
+  <div id="clients" class="the-clients skills-band">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -744,7 +786,7 @@
                             <div class="col-lg-12">
                               <div class="client-content">
                                 <img src="assets/images/quote.png" alt="">
-                                <p>“Especializado en todas las versiones de Adobe ColdFusion (CF4 a CF2023), Lucee Server, arquitectura Fusebox y OOP. Experiencia profunda en desarrollo orientado a objetos, seguridad y migración de plataformas legadas.”</p>
+                                <p>Especializado en todas las versiones de Adobe ColdFusion (CF4 a CF2025), Lucee Server, arquitectura Fusebox y OOP. Experiencia profunda en desarrollo orientado a objetos, seguridad y migración de plataformas legadas.</p>
                               </div>
                               <div class="down-content">
                                 <div class="right-content">
