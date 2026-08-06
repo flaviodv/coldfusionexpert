@@ -73,7 +73,7 @@
     statusEl.className = 'tool-message';
     resultsEl.style.display = 'none';
 
-    fetch('/cfc/ToolsUtils.cfc?method=extractMetaTags&returnformat=json&url=' + encodeURIComponent(url))
+    fetch('/tools-api.cfm?method=extractMetaTags&url=' + encodeURIComponent(url))
       .then(function (r) { return r.json(); })
       .then(function (data) {
         if (!data.SUCCESS && !data.success) {

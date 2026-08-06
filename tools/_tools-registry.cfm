@@ -3,10 +3,10 @@
 // Consumed by: Application.cfc (per-page <title>/canonical/robots), _sidebar.cfm, tools_en.cfm/tools_es.cfm, _tool-page.cfm.
 request.toolCategories = [
   {slug: "marketing-seo-social", labelEn: "Marketing, SEO & Social", labelEs: "Marketing, SEO y Social", icon: "fa-bullhorn"},
-  {slug: "diseno-frontend-css", labelEn: "Design & Frontend CSS", labelEs: "Diseño y Frontend CSS", icon: "fa-palette"},
-  {slug: "desarrollo-datos", labelEn: "Development, Programming & Data", labelEs: "Desarrollo, Programación y Datos", icon: "fa-laptop-code"},
-  {slug: "gestion-tiempo-productividad", labelEn: "Time Management & Productivity", labelEs: "Gestión del Tiempo y Productividad", icon: "fa-stopwatch"},
-  {slug: "utilidades-productividad", labelEn: "General Utilities & Productivity", labelEs: "Utilidades Generales y Productividad", icon: "fa-toolbox"}
+  {slug: "diseno-frontend-css", labelEn: "Design & Frontend", labelEs: "Diseño y Frontend", icon: "fa-palette"},
+  {slug: "desarrollo-datos", labelEn: "Development & Data", labelEs: "Desarrollo y Datos", icon: "fa-laptop-code"},
+  {slug: "gestion-tiempo-productividad", labelEn: "Time & Productivity", labelEs: "Tiempo y Productividad", icon: "fa-stopwatch"},
+  {slug: "utilidades-productividad", labelEn: "General Utilities", labelEs: "Utilidades Generales", icon: "fa-toolbox"}
 ];
 
 request.toolsRegistry = {
@@ -36,7 +36,7 @@ request.toolsRegistry = {
     descEs: "Previsualizá el HTML de tu newsletter antes de enviarla y detectá problemas de diseño a tiempo."},
 
   "image-editor": {category: "diseno-frontend-css", icon: "fa-image", iconPrefix: "fas", built: true, featured: true,
-    titleEn: "Interactive Image Editor", titleEs: "Editor de Imágenes Interactivo",
+    titleEn: "Image Editor", titleEs: "Editor de Imágenes",
     descEn: "Edit, resize, and export images quickly in WebP, PNG, JPG, and other web-ready formats.",
     descEs: "Editá, redimensioná y exportá imágenes en WebP, PNG, JPG y otros formatos listos para la web."},
 
@@ -133,7 +133,12 @@ request.toolsRegistry = {
   "time-tracker": {category: "gestion-tiempo-productividad", icon: "fa-stopwatch", iconPrefix: "fas", built: true, featured: true,
     titleEn: "Time Tracker & Rate Calculator", titleEs: "Controlador de Tiempo y Tarifas (Time Tracker)",
     descEn: "Track time by task, apply an hourly rate, and see earnings update in real time.",
-    descEs: "Registrá tiempo por tarea, aplicá una tarifa por hora y mirá tus ganancias en tiempo real."}
+    descEs: "Registrá tiempo por tarea, aplicá una tarifa por hora y mirá tus ganancias en tiempo real."},
+
+  "page-auto-refresh": {category: "gestion-tiempo-productividad", icon: "fa-sync-alt", iconPrefix: "fas", built: true,
+    titleEn: "Page Auto Refresh", titleEs: "Actualizador Automático de Página",
+    descEn: "Load an allowed page in a preview and refresh it automatically at the interval you choose.",
+    descEs: "Cargá una página compatible en una vista previa y actualizala automáticamente al intervalo que elijas."}
 };
 
 // Explicit display order (struct key order isn't guaranteed) - sidebar/landing loop over this, grouped by category.
@@ -141,7 +146,7 @@ request.toolOrder = [
   "meta-tags-extractor", "whatsapp-link-generator", "email-signature-generator", "qr-code-generator", "newsletter-html-previewer",
   "image-editor", "css-effects-generator", "color-converter",
   "css-minifier", "json-formatter", "base64-encoder", "json-yaml-converter", "hash-generator", "uuid-generator", "http-status-codes",
-  "todo-list", "time-tracker",
+  "todo-list", "time-tracker", "page-auto-refresh",
   "ip-lookup", "timezone-converter", "currency-converter", "password-generator", "word-counter", "text-case-converter", "percentage-calculator", "date-difference-calculator"
 ];
 </cfscript>

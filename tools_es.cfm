@@ -15,7 +15,7 @@
   <main class="tools-main">
     <div class="tools-hero">
       <h1>Nuestras Herramientas Gratuitas</h1>
-      <p>Creadas por nosotros: una colección creciente de herramientas gratuitas para desarrolladores, marketing y productividad diaria, 100% desde el navegador. Elegí una categoría a la izquierda o recorré todas abajo.</p>
+      <p>Una colección creciente de herramientas gratuitas para desarrolladores, profesionales de marketing y tareas de productividad diaria. Todas funcionan 100% desde el navegador: elegí una categoría a la izquierda o recorré todas abajo.</p>
     </div>
     <div class="tools-chip-filter">
       <button type="button" class="tool-chip<cfif local.activeCategory eq 'all'> active</cfif>" data-filter="all">Todos</button>

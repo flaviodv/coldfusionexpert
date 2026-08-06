@@ -13,6 +13,14 @@
     </p>
     <input type="file" id="img-input" accept="image/*" style="display:none;">
   </div>
+  <div class="image-url-import">
+    <label for="img-url"><cfif local.isEs>O cargá una imagen desde una URL<cfelse>Or load an image from a URL</cfif></label>
+    <div class="image-url-import-controls">
+      <input type="url" id="img-url" placeholder="https://example.com/image.jpg" autocomplete="url">
+      <button type="button" class="btn-social btn-upwork" id="btn-load-url"><i class="fas fa-link"></i> <cfif local.isEs>Cargar URL<cfelse>Load URL</cfif></button>
+    </div>
+    <p id="img-url-message" class="image-url-message" aria-live="polite"></p>
+  </div>
 
   <div id="img-workspace" class="editor-workspace" style="display:none;">
     <!-- Toolbar Top: Aspect Ratios & Transform -->
@@ -138,6 +146,9 @@
 (function() {
   var dropzone = document.getElementById('img-dropzone');
   var fileInput = document.getElementById('img-input');
+  var imageUrlInput = document.getElementById('img-url');
+  var loadUrlButton = document.getElementById('btn-load-url');
+  var imageUrlMessage = document.getElementById('img-url-message');
   var workspace = document.getElementById('img-workspace');
   var targetImg = document.getElementById('cropper-target');
 
@@ -192,6 +203,52 @@
     }
   });
 
+  loadUrlButton.addEventListener('click', function() {
+    var imageUrl = imageUrlInput.value.trim();
+    if (!/^https?:\/\//i.test(imageUrl)) {
+      showUrlMessage('<cfif local.isEs>Ingresá una URL válida que comience con http:// o https://.<cfelse>Enter a valid URL beginning with http:// or https://.</cfif>', true);
+      return;
+    }
+    loadUrlButton.disabled = true;
+    showUrlMessage('<cfif local.isEs>Descargando imagen…<cfelse>Downloading image…</cfif>');
+    var requestedUrl = new URL(imageUrl, window.location.href);
+    // Same-site images do not need the server proxy. This also supports local
+    // development hosts, which deliberately resolve to a blocked loopback IP.
+    var imageRequest = requestedUrl.origin === window.location.origin
+      ? fetch(requestedUrl.href)
+      : fetch('/tools-api.cfm?method=importImage&url=' + encodeURIComponent(imageUrl))
+          .then(function(response) { return response.json(); })
+          .then(function(data) {
+            if (!data.success) throw new Error(data.error || 'fetch_failed');
+            return fetch(data.imageUrl);
+          });
+    imageRequest
+      .then(function(response) {
+        if (!response.ok) throw new Error('fetch_failed');
+        return response.blob();
+      })
+      .then(function(blob) {
+        if (!blob.type.match(/^image\//)) throw new Error('not_an_image');
+        loadImage(new File([blob], 'remote-image.' + (blob.type.split('/')[1] || 'jpg'), { type: blob.type }));
+        showUrlMessage('<cfif local.isEs>Imagen cargada correctamente.<cfelse>Image loaded successfully.</cfif>');
+      })
+      .catch(function(error) {
+        var messages = {
+          invalid_url: '<cfif local.isEs>La URL no es válida.<cfelse>The URL is not valid.</cfif>',
+          blocked_host: '<cfif local.isEs>No se permite esa dirección.<cfelse>That address is not allowed.</cfif>',
+          not_an_image: '<cfif local.isEs>La URL no contiene una imagen compatible.<cfelse>The URL does not contain a supported image.</cfif>',
+          file_too_large: '<cfif local.isEs>La imagen supera el límite de 15 MB.<cfelse>The image exceeds the 15 MB limit.</cfif>'
+        };
+        showUrlMessage(messages[error.message] || '<cfif local.isEs>No se pudo descargar la imagen. Probá con otra URL.<cfelse>The image could not be downloaded. Try another URL.</cfif>', true);
+      })
+      .finally(function() { loadUrlButton.disabled = false; });
+  });
+
+  function showUrlMessage(message, isError) {
+    imageUrlMessage.textContent = message;
+    imageUrlMessage.className = 'image-url-message' + (isError ? ' is-error' : '');
+  }
+
   function loadImage(file) {
     if (!file.type.match(/^image\//)) return;
     var reader = new FileReader();
@@ -201,10 +258,20 @@
         cropper = null;
       }
 
-      targetImg.src = e.target.result;
       workspace.style.display = 'flex';
 
-      initCropper();
+      // Wait for the image to finish decoding AND for the browser to finish
+      // laying out the workspace (just made visible above) before Cropper
+      // measures the container — otherwise on some viewports (notably mobile)
+      // it sizes its canvas against a stale/zero width and the image renders
+      // shrunk into part of the crop area, leaving the checkerboard "empty
+      // canvas" background visible next to it.
+      targetImg.onload = function() {
+        requestAnimationFrame(function() {
+          initCropper();
+        });
+      };
+      targetImg.src = e.target.result;
     };
     reader.readAsDataURL(file);
   }

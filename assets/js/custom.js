@@ -96,6 +96,63 @@
 		});
 	});
 
+	// Tools landing page: keep the sidebar category aligned with the section
+	// that occupies most of the viewport. Individual tool pages have no category
+	// sections, so their server-rendered active state remains untouched.
+	(function initToolsSidebarSectionObserver() {
+		var sections = document.querySelectorAll('.tools-main .tools-category-section[data-category]');
+		if (!sections.length || !('IntersectionObserver' in window)) {
+			return;
+		}
+
+		var visibleSections = {};
+
+		function activateCategory(category) {
+			var categories = document.querySelectorAll('.tools-sidebar-category[data-category]');
+			categories.forEach(function (item) {
+				var isCurrent = item.getAttribute('data-category') === category;
+				item.classList.toggle('open', isCurrent);
+				item.classList.toggle('is-current', isCurrent);
+				var toggle = item.querySelector('.tools-sidebar-cat-toggle');
+				if (toggle) {
+					toggle.setAttribute('aria-expanded', isCurrent ? 'true' : 'false');
+				}
+			});
+		}
+
+		function updateActiveCategory() {
+			var active = null;
+			Object.keys(visibleSections).forEach(function (category) {
+				if (!active || visibleSections[category] > visibleSections[active]) {
+					active = category;
+				}
+			});
+			if (active) {
+				activateCategory(active);
+			}
+		}
+
+		var observer = new IntersectionObserver(function (entries) {
+			entries.forEach(function (entry) {
+				var category = entry.target.getAttribute('data-category');
+				if (entry.isIntersecting && !entry.target.classList.contains('tools-category-hidden')) {
+					visibleSections[category] = entry.intersectionRect.height;
+				} else {
+					delete visibleSections[category];
+				}
+			});
+			updateActiveCategory();
+		}, {
+			root: null,
+			rootMargin: '-18% 0px -38% 0px',
+			threshold: [0, 0.15, 0.4, 0.7]
+		});
+
+		sections.forEach(function (section) {
+			observer.observe(section);
+		});
+	})();
+
 	"use strict";
 
 	// Header Type = Fixed
@@ -110,14 +167,21 @@
   });
 
 
+  function labelOwlDots(e) {
+    $(e.target).find('.owl-dots .owl-dot').each(function (i) {
+      $(this).attr('aria-label', 'Go to slide ' + (i + 1));
+    });
+  }
+
 	$('.loop').owlCarousel({
       center: true,
       items:1,
       loop:true,
       autoplay: true,
       nav: true,
+      navElement: 'button type="button"',
       margin:0,
-      responsive:{ 
+      responsive:{
           1200:{
               items:5
           },
@@ -128,12 +192,13 @@
             items:2
         }
       }
-  });
+  }).on('initialized.owl.carousel refreshed.owl.carousel', labelOwlDots);
 
   $('.tools-carousel').owlCarousel({
     items: 4,
     margin: 20,
     nav: true,
+    navElement: 'button type="button"',
     dots: true,
     loop: true,
     autoplay: true,
@@ -147,7 +212,7 @@
       1600: { items: 5 },
       1900: { items: 6 }
     }
-  });
+  }).on('initialized.owl.carousel refreshed.owl.carousel', labelOwlDots);
 
   $("#modal_trigger").leanModal({
 		top: 100,
@@ -293,6 +358,108 @@ $(function() {
           activeLink.addClass('active');
       }
   }
+
+  // Desktop section rail: state is driven by IntersectionObserver, never by
+  // scroll-position calculations. The skills band belongs to the About stop.
+  (function () {
+    function initSectionRail() {
+      var rail = document.querySelector('.section-rail');
+      if (!rail || !('IntersectionObserver' in window)) return;
+
+      var links = Array.prototype.slice.call(rail.querySelectorAll('.section-rail-link'));
+      var observedTargets = new Map();
+      var sectionState = new Map();
+      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var groupedTargets = { about: ['about', 'clients'] };
+
+      function setActive(targetId) {
+        links.forEach(function (link) {
+          var isActive = link.dataset.railTarget === targetId;
+          if (isActive) {
+            link.setAttribute('aria-current', 'location');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      function selectMostVisible() {
+        var activeTarget = '';
+        var largestVisibleArea = 0;
+
+        sectionState.forEach(function (visibleArea, observedElement) {
+          if (visibleArea > largestVisibleArea) {
+            largestVisibleArea = visibleArea;
+            activeTarget = observedTargets.get(observedElement);
+          }
+        });
+
+        if (activeTarget) setActive(activeTarget);
+      }
+
+      var sectionObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          // Intersection height reflects the portion occupying the focus area;
+          // it is more reliable than a ratio when sections have very different heights.
+          sectionState.set(entry.target, entry.isIntersecting ? entry.intersectionRect.height : 0);
+        });
+        selectMostVisible();
+      }, {
+        root: null,
+        rootMargin: '-22% 0px -48% 0px',
+        threshold: [0, 0.01, 0.1, 0.25, 0.5, 0.75, 1]
+      });
+
+      links.forEach(function (link) {
+        var targetId = link.dataset.railTarget;
+        var idsToObserve = groupedTargets[targetId] || [targetId];
+
+        idsToObserve.forEach(function (observedId) {
+          var section = document.getElementById(observedId);
+          if (section) {
+            observedTargets.set(section, targetId);
+            sectionState.set(section, 0);
+            sectionObserver.observe(section);
+          }
+        });
+
+        link.addEventListener('click', function (event) {
+          var section = document.getElementById(targetId);
+          if (!section) return;
+
+          event.preventDefault();
+          setActive(targetId);
+          section.scrollIntoView({
+            behavior: reducedMotion ? 'auto' : 'smooth',
+            block: 'start'
+          });
+
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', '#' + targetId);
+          }
+        });
+      });
+
+      var hero = document.getElementById('top');
+      if (hero) {
+        var heroObserver = new IntersectionObserver(function (entries) {
+          var heroEntry = entries[0];
+          rail.classList.toggle('is-visible', heroEntry.intersectionRatio < 0.85);
+        }, {
+          threshold: [0, 0.1, 0.5, 0.85, 1]
+        });
+        heroObserver.observe(hero);
+      } else {
+        rail.classList.add('is-visible');
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initSectionRail);
+    } else {
+      initSectionRail();
+    }
+  }());
 
 	// Page loading animation
 	 $(window).on('load', function() {

@@ -48,6 +48,20 @@
       </div>
     </div>
   </div>
+  <!-- Section rail navigation: displayed on desktop only. -->
+  <nav class="section-rail" aria-label="Section navigation">
+    <ul class="section-rail-list">
+      <li><a href="#top" class="section-rail-link" data-rail-target="top" data-section-label="Home" aria-label="Go to Home"><span class="section-rail-label">Home</span></a></li>
+      <li><a href="#services" class="section-rail-link" data-rail-target="services" data-section-label="Specialized services" aria-label="Go to Specialized services"><span class="section-rail-label">Specialized services</span></a></li>
+      <li><a href="#pricing" class="section-rail-link" data-rail-target="pricing" data-section-label="Experience and projects" aria-label="Go to Experience and projects"><span class="section-rail-label">Experience and projects</span></a></li>
+      <li><a href="#seo" class="section-rail-link" data-rail-target="seo" data-section-label="SEO / GEO" aria-label="Go to SEO and GEO"><span class="section-rail-label">SEO / GEO</span></a></li>
+      <li><a href="#automation" class="section-rail-link" data-rail-target="automation" data-section-label="AI automation" aria-label="Go to AI automation"><span class="section-rail-label">AI automation</span></a></li>
+      <li><a href="#courses" class="section-rail-link" data-rail-target="courses" data-section-label="Zoom courses" aria-label="Go to Zoom courses"><span class="section-rail-label">Zoom courses</span></a></li>
+      <li><a href="#tools" class="section-rail-link" data-rail-target="tools" data-section-label="Tools" aria-label="Go to Tools"><span class="section-rail-label">Tools</span></a></li>
+      <li><a href="#about" class="section-rail-link" data-rail-target="about" data-section-label="About" aria-label="Go to About"><span class="section-rail-label">About</span></a></li>
+      <li><a href="#Contact" class="section-rail-link" data-rail-target="Contact" data-section-label="Contact" aria-label="Go to Contact"><span class="section-rail-label">Contact</span></a></li>
+    </ul>
+  </nav>
   <script>
   (function () {
     function startHeroBlink() {
@@ -185,7 +199,7 @@
               We are official <strong>Partners of viralify.digital</strong> to boost your business's digital presence.
             </p>
             <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Digital%20Marketing" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+              <a href="https://wa.me/5492281403725?text=Hello%20Viralify,%20I%20would%20like%20to%20inquire%20about%20Digital%20Marketing" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
                 <i class="fab fa-whatsapp"></i> Inquire via WhatsApp
               </a>
             </div>
@@ -591,7 +605,7 @@
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Our <em>Free Tools</em></h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Built in-house: a growing set of free browser-based tools for developers, marketers, and everyday productivity - two picks per category below.</p>
+            <p>A growing set of free browser-based tools for developers, marketers, and everyday productivity. We show 2 featured tools per category, with many more to explore. <a href="/tools?lan=en">View all</a>.</p>
           </div>
         </div>
       </div>
@@ -606,6 +620,7 @@
             if (local.ftTool.category eq local.ftCat.slug and local.ftTool.built and local.ftCount < 2) {
               local.ftCard = duplicate(local.ftTool);
               local.ftCard.slug = local.ftSlug;
+              local.ftCard.categoryLabel = local.ftCat.labelEn;
               arrayAppend(local.ftCards, local.ftCard);
               local.ftCount++;
             }
@@ -618,6 +633,7 @@
       <div class="owl-carousel tools-carousel">
         <cfloop array="#local.ftCards#" index="local.ftCard">
           <div class="tool-card">
+            <div class="tool-card-category">#local.ftCard.categoryLabel#</div>
             <div class="tool-card-icon"><i class="#local.ftCard.iconPrefix# #local.ftCard.icon#"></i></div>
             <h4>#local.ftCard.titleEn#</h4>
             <p>#local.ftCard.descEn#</p>

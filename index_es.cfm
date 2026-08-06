@@ -46,6 +46,20 @@
       </div>
     </div>
   </div>
+  <!-- Navegación lateral por secciones: solo se muestra en escritorio. -->
+  <nav class="section-rail" aria-label="Navegación por secciones">
+    <ul class="section-rail-list">
+      <li><a href="#top" class="section-rail-link" data-rail-target="top" data-section-label="Inicio" aria-label="Ir a Inicio"><span class="section-rail-label">Inicio</span></a></li>
+      <li><a href="#services" class="section-rail-link" data-rail-target="services" data-section-label="Servicios especializados" aria-label="Ir a Servicios especializados"><span class="section-rail-label">Servicios especializados</span></a></li>
+      <li><a href="#pricing" class="section-rail-link" data-rail-target="pricing" data-section-label="Experiencia y proyectos" aria-label="Ir a Experiencia y proyectos"><span class="section-rail-label">Experiencia y proyectos</span></a></li>
+      <li><a href="#seo" class="section-rail-link" data-rail-target="seo" data-section-label="SEO / GEO" aria-label="Ir a SEO y GEO"><span class="section-rail-label">SEO / GEO</span></a></li>
+      <li><a href="#automation" class="section-rail-link" data-rail-target="automation" data-section-label="Automatización con IA" aria-label="Ir a Automatización con IA"><span class="section-rail-label">Automatización con IA</span></a></li>
+      <li><a href="#courses" class="section-rail-link" data-rail-target="courses" data-section-label="Cursos Zoom" aria-label="Ir a Cursos Zoom"><span class="section-rail-label">Cursos Zoom</span></a></li>
+      <li><a href="#tools" class="section-rail-link" data-rail-target="tools" data-section-label="Herramientas" aria-label="Ir a Herramientas"><span class="section-rail-label">Herramientas</span></a></li>
+      <li><a href="#about" class="section-rail-link" data-rail-target="about" data-section-label="Acerca de" aria-label="Ir a Acerca de"><span class="section-rail-label">Acerca de</span></a></li>
+      <li><a href="#Contact" class="section-rail-link" data-rail-target="Contact" data-section-label="Contacto" aria-label="Ir a Contacto"><span class="section-rail-label">Contacto</span></a></li>
+    </ul>
+  </nav>
   <script>
   (function () {
     function iniciarParpadeoHero() {
@@ -183,7 +197,7 @@
               Somos <strong>Partners oficiales de viralify.digital</strong> para potenciar la presencia digital de tu negocio.
             </p>
             <div class="card-wa-btn-wrap">
-              <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Marketing%20Digital" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
+              <a href="https://wa.me/5492281403725?text=Hola%20Viralify,%20me%20gustaría%20consultar%20sobre%20Marketing%20Digital" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
                 <i class="fab fa-whatsapp"></i> Consultar por WhatsApp
               </a>
             </div>
@@ -588,7 +602,7 @@
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Nuestras <em>Herramientas Gratuitas</em></h4>
             <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Creadas por nosotros: una colección creciente de herramientas gratuitas para desarrolladores, marketing y productividad diaria - dos destacadas por categoría.</p>
+            <p>Una colección creciente de herramientas gratuitas para desarrolladores, profesionales de marketing y tareas de productividad diaria. Te mostramos 2 herramientas destacadas por categoría, aunque hay muchas más para explorar. <a href="/tools?lan=es">Ver todas</a>.</p>
           </div>
         </div>
       </div>
@@ -603,6 +617,7 @@
             if (local.ftTool.category eq local.ftCat.slug and local.ftTool.built and local.ftCount < 2) {
               local.ftCard = duplicate(local.ftTool);
               local.ftCard.slug = local.ftSlug;
+              local.ftCard.categoryLabel = local.ftCat.labelEs;
               arrayAppend(local.ftCards, local.ftCard);
               local.ftCount++;
             }
@@ -615,6 +630,7 @@
       <div class="owl-carousel tools-carousel">
         <cfloop array="#local.ftCards#" index="local.ftCard">
           <div class="tool-card">
+            <div class="tool-card-category">#local.ftCard.categoryLabel#</div>
             <div class="tool-card-icon"><i class="#local.ftCard.iconPrefix# #local.ftCard.icon#"></i></div>
             <h4>#local.ftCard.titleEs#</h4>
             <p>#local.ftCard.descEs#</p>

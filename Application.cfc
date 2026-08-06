@@ -54,7 +54,9 @@ function onRequestStart(targetPage){
         request.heroBlinkImageVer = "";
     }
 
-    if(!findNoCase(".cfc", arguments.targetPage)){
+    // Requests under /cfc/ are either direct CFC calls or thin JSON API proxies
+    // (e.g. tools-api.cfm) — neither wants the HTML header/footer wrapped around them.
+    if(!findNoCase(".cfc", arguments.targetPage) && !findNoCase("tools-api.cfm", arguments.targetPage) && !findNoCase("tools-proxy.cfm", arguments.targetPage)){
         include "tools/_tools-registry.cfm";
 
         var fileName = getFileFromPath(arguments.targetPage);
@@ -147,7 +149,7 @@ function onRequest(targetPage){
 }
 
 function onRequestEnd(targetPage){
-    if(!findNoCase(".cfc", arguments.targetPage)){
+    if(!findNoCase(".cfc", arguments.targetPage) && !findNoCase("tools-api.cfm", arguments.targetPage) && !findNoCase("tools-proxy.cfm", arguments.targetPage)){
         if(session.lan eq "es"){
             include "footer_es.cfm";
         } else {

@@ -19,12 +19,12 @@
     <cfoutput><meta property="og:url" content="<cfif isDefined('request.pageOgUrl')>#request.pageOgUrl#<cfelse>https://coldfusionexpert.ar/?lan=es</cfif>"></cfoutput>
     <cfoutput><meta property="og:title" content="<cfif isDefined('request.pageOgTitle')>#request.pageOgTitle#<cfelse>ColdFusion Expert | Flavio Di Virgilio - Desarrollador Senior Full-Stack &amp; Automatización IA</cfif>"></cfoutput>
     <cfoutput><meta property="og:description" content="<cfif isDefined('request.pageOgDescription')>#request.pageOgDescription#<cfelse>Servicios de consultoría, desarrollo web a medida, automatización con IA, administración AWS, SEO/GEO y capacitación en vivo vía Zoom. +15 años de trayectoria.</cfif>"></cfoutput>
-    <meta property="og:image" content="https://coldfusionexpert.ar/assets/images/flavio-profile.png">
+    <meta property="og:image" content="https://coldfusionexpert.ar/assets/images/coldfusion-expert-social.png">
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
     <cfoutput><meta name="twitter:title" content="<cfif isDefined('request.pageOgTitle')>#request.pageOgTitle#<cfelse>ColdFusion Expert | Flavio Di Virgilio</cfif>"></cfoutput>
     <cfoutput><meta name="twitter:description" content="<cfif isDefined('request.pageOgDescription')>#request.pageOgDescription#<cfelse>Especialista Senior en ColdFusion/CFML, Lucee, SQL Server, AWS Cloud y Automatización con IA. Top Rated Plus en Upwork.</cfif>"></cfoutput>
-    <meta name="twitter:image" content="https://coldfusionexpert.ar/assets/images/flavio-profile.png">
+    <meta name="twitter:image" content="https://coldfusionexpert.ar/assets/images/coldfusion-expert-social.png">
     <!-- Structured Data / JSON-LD Schema -->
     <cfif isDefined("request.pageSchemaJson")>
     <cfoutput><script type="application/ld+json">#request.pageSchemaJson#</script></cfoutput>
@@ -39,7 +39,7 @@
           "name": "Flavio Di Virgilio",
           "jobTitle": "Senior Full-Stack ColdFusion Developer, AWS Administrator & AI Automation Specialist",
           "url": "https://coldfusionexpert.ar",
-          "image": "https://coldfusionexpert.ar/assets/images/flavio-profile.png",
+          "image": "https://coldfusionexpert.ar/assets/images/flavio-ondas-sin-marco.png",
           "telephone": "+5492236026142",
           "email": "flavio.di.virgilio@gmail.com",
           "address": {
@@ -76,7 +76,7 @@
           "name": "ColdFusion Expert & AI Automation - Flavio Di Virgilio",
           "url": "https://coldfusionexpert.ar",
           "logo": "https://coldfusionexpert.ar/assets/images/cf%20expert.png",
-          "image": "https://coldfusionexpert.ar/assets/images/flavio-profile.png",
+          "image": "https://coldfusionexpert.ar/assets/images/coldfusion-expert-social.png",
           "telephone": "+5492236026142",
           "email": "flavio.di.virgilio@gmail.com",
           "priceRange": "$$$",
@@ -140,7 +140,9 @@
     <!-- Bootstrap core CSS -->
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://use.fontawesome.com" crossorigin>
+    <link rel="preload" as="style" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></noscript>
     <cfoutput><link rel="stylesheet" href="/assets/css/templatemo-chain-app-dev.css<cfif isDefined('request.templateCssVer')>#request.templateCssVer#</cfif>"></cfoutput>
     <link rel="stylesheet" href="/assets/css/animated.css">
     <link rel="stylesheet" href="/assets/css/owl.css">

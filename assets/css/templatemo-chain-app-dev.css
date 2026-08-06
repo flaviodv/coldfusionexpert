@@ -1020,6 +1020,146 @@ Banner Style
   color: #fff !important;
 }
 
+/*
+---------------------------------------------
+Section rail navigation
+---------------------------------------------
+*/
+#top,
+#services,
+#pricing,
+#seo,
+#automation,
+#courses,
+#tools,
+#about,
+#clients,
+#Contact {
+  scroll-margin-top: 110px;
+}
+
+.section-rail {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .section-rail {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 34px;
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-8px, -50%);
+    transition: opacity 200ms ease, transform 200ms ease, visibility 0s linear 200ms;
+  }
+
+  .section-rail.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(0, -50%);
+    transition: opacity 200ms ease, transform 200ms ease;
+  }
+
+  .section-rail-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 6px 7px;
+    list-style: none;
+    border: 1px solid rgba(75, 142, 241, 0.18);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.82);
+    box-shadow: 0 4px 14px rgba(15, 35, 70, 0.12);
+    backdrop-filter: blur(6px);
+  }
+
+  .section-rail-link {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 12px;
+    outline: none;
+  }
+
+  .section-rail-link::before {
+    width: 7px;
+    height: 7px;
+    border: 1px solid #2d7ec3;
+    border-radius: 50%;
+    background: rgba(75, 142, 241, 0.72);
+    content: "";
+    transition: width 200ms ease, height 200ms ease, border-radius 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  .section-rail-link[aria-current="location"]::before {
+    width: 9px;
+    height: 16px;
+    border-color: #0077b5;
+    border-radius: 6px;
+    background: #14a800;
+    box-shadow: 0 2px 8px rgba(20, 168, 0, 0.35);
+  }
+
+  .section-rail-link::after {
+    position: absolute;
+    top: 50%;
+    left: 28px;
+    width: max-content;
+    max-width: 180px;
+    padding: 6px 10px;
+    border-radius: 7px;
+    background: #163a5a;
+    color: #fff;
+    content: attr(data-section-label);
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.2;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-5px, -50%);
+    transition: opacity 180ms ease, transform 180ms ease;
+    white-space: nowrap;
+  }
+
+  .section-rail-link:hover::after,
+  .section-rail-link:focus-visible::after {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+
+  .section-rail-link:focus-visible {
+    box-shadow: 0 0 0 3px rgba(75, 142, 241, 0.35);
+  }
+
+  .section-rail-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-rail,
+  .section-rail-link::before,
+  .section-rail-link::after {
+    transition: none !important;
+  }
+}
+
 /* 
 ---------------------------------------------
 Services Style

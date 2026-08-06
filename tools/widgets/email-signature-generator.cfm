@@ -2,19 +2,19 @@
   <div class="sig-form-grid">
     <div>
       <label for="sig-name"><cfif local.isEs>Nombre completo<cfelse>Full name</cfif></label>
-      <input id="sig-name" type="text" value="<cfif local.isEs>Juan Pérez<cfelse>John Doe</cfif>">
+      <input id="sig-name" type="text" placeholder="<cfif local.isEs>Juan Pérez<cfelse>John Doe</cfif>">
       <label for="sig-title"><cfif local.isEs>Cargo / Puesto<cfelse>Job title</cfif></label>
-      <input id="sig-title" type="text" value="<cfif local.isEs>Gerente de Ventas<cfelse>Sales Manager</cfif>">
+      <input id="sig-title" type="text" placeholder="<cfif local.isEs>Gerente de Ventas<cfelse>Sales Manager</cfif>">
       <label for="sig-company"><cfif local.isEs>Empresa<cfelse>Company</cfif></label>
-      <input id="sig-company" type="text" value="<cfif local.isEs>Mi Empresa<cfelse>My Company</cfif>">
+      <input id="sig-company" type="text" placeholder="<cfif local.isEs>Mi Empresa<cfelse>My Company</cfif>">
     </div>
     <div>
       <label for="sig-phone"><cfif local.isEs>Teléfono<cfelse>Phone</cfif></label>
-      <input id="sig-phone" type="text" value="+54 9 223 602-6142">
+      <input id="sig-phone" type="text" placeholder="+54 9 223 602-6142">
       <label for="sig-email"><cfif local.isEs>Email<cfelse>Email</cfif></label>
-      <input id="sig-email" type="text" value="nombre@empresa.com">
+      <input id="sig-email" type="text" placeholder="nombre@empresa.com">
       <label for="sig-website"><cfif local.isEs>Sitio web (opcional)<cfelse>Website (optional)</cfif></label>
-      <input id="sig-website" type="text" value="https://empresa.com">
+      <input id="sig-website" type="text" placeholder="https://empresa.com">
     </div>
   </div>
   <label for="sig-color"><cfif local.isEs>Color de acento<cfelse>Accent color</cfif></label>
@@ -38,13 +38,18 @@
   var preview = document.getElementById('sig-preview');
   var source = document.getElementById('sig-html-source');
 
+  function val(id) {
+    var el = document.getElementById(id);
+    return el.value.trim() || el.placeholder || '';
+  }
+
   function buildHtml() {
-    var name = document.getElementById('sig-name').value || '';
-    var title = document.getElementById('sig-title').value || '';
-    var company = document.getElementById('sig-company').value || '';
-    var phone = document.getElementById('sig-phone').value || '';
-    var email = document.getElementById('sig-email').value || '';
-    var website = document.getElementById('sig-website').value || '';
+    var name = val('sig-name');
+    var title = val('sig-title');
+    var company = val('sig-company');
+    var phone = val('sig-phone');
+    var email = val('sig-email');
+    var website = val('sig-website');
     var color = document.getElementById('sig-color').value || '#13aff0';
 
     var html = '' +

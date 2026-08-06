@@ -302,6 +302,21 @@
   margin-bottom: 15px;
 }
 
+.tool-card-category {
+  height: 32px;
+  margin-bottom: 10px;
+  color: #12833d;
+  font-size: 0.65rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.tool-card-category + .tool-card-icon {
+  margin-bottom: 15px;
+}
+
 .tool-card h4 {
   font-size: 1.05rem;
   font-weight: 700;
@@ -607,6 +622,8 @@
      replaces the persistent sidebar - see header_en.cfm / header_es.cfm */
   .tools-layout {
     padding-top: 110px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .tools-sidebar {
@@ -664,6 +681,40 @@
   margin-bottom: 12px;
   display: block;
 }
+.widget-image-editor .image-url-import {
+  padding: 14px 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #f8fafc;
+}
+.widget-image-editor .image-url-import label { display: block; margin-bottom: 8px; }
+.widget-image-editor .image-url-import-controls { display: flex; gap: 10px; }
+.widget-image-editor .image-url-import input { flex: 1; min-width: 0; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 8px; }
+.widget-image-editor .image-url-import .btn-social { border: 0; white-space: nowrap; }
+.widget-image-editor .image-url-message { min-height: 1.1em; margin: 8px 0 0; font-size: .85rem; color: #16803a; }
+.widget-image-editor .image-url-message.is-error { color: #c0392b; }
+@media (max-width: 576px) { .widget-image-editor .image-url-import-controls { flex-direction: column; } }
+
+/* ===== Widget: Page Auto Refresh ===== */
+.widget-page-auto-refresh { display: flex; flex-direction: column; gap: 16px; }
+.widget-page-auto-refresh .refresh-controls, .widget-page-auto-refresh .refresh-notice { padding: 18px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc; }
+.widget-page-auto-refresh label { font-weight: 600; color: #334155; }
+.widget-page-auto-refresh .refresh-row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 8px; }
+.widget-page-auto-refresh input, .widget-page-auto-refresh select { min-height: 42px; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 8px; background: #fff; }
+.widget-page-auto-refresh #refresh-url { flex: 1 1 280px; }
+.widget-page-auto-refresh #refresh-interval { width: 82px; }
+.widget-page-auto-refresh #refresh-height { width: 82px; }
+.widget-page-auto-refresh .refresh-interval-label { margin-left: 4px; }
+.widget-page-auto-refresh .refresh-height-label { margin-left: 4px; }
+.widget-page-auto-refresh .btn-social { border: 0; white-space: nowrap; }
+.widget-page-auto-refresh .refresh-stop { background: #64748b; }
+.widget-page-auto-refresh .refresh-status { min-height: 1.2em; margin: 12px 0 0; color: #16803a; font-size: .9rem; }
+.widget-page-auto-refresh .refresh-status.is-error { color: #c0392b; }
+.widget-page-auto-refresh .refresh-notice { display: flex; gap: 10px; color: #475569; font-size: .92rem; line-height: 1.5; }
+.widget-page-auto-refresh .refresh-notice i { color: #13aff0; margin-top: 3px; }
+.widget-page-auto-refresh .refresh-frame-wrap { height: 620px; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden; background: #fff; }
+.widget-page-auto-refresh iframe { width: 100%; height: 100%; border: 0; }
+@media (max-width: 576px) { .widget-page-auto-refresh .refresh-row { align-items: stretch; } .widget-page-auto-refresh .refresh-row > * { width: 100%; } .widget-page-auto-refresh .refresh-interval-label { margin-left: 0; } }
 .widget-image-editor .editor-workspace {
   display: flex;
   flex-direction: column;
@@ -681,6 +732,7 @@
 }
 .widget-image-editor .tool-group {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
 }
@@ -707,10 +759,16 @@
   padding: 20px;
   min-height: 350px;
   max-height: 600px;
+  overflow: hidden;
+}
+/* No flexbox here on purpose: Cropper.js sizes/centers its own canvas
+   internally based on this element's full content-box width (viewMode: 1).
+   Centering it again with flex fights that math and was producing an
+   off-center canvas (flush on one side, gap on the other). */
+.widget-image-editor .cropper-container-wrapper:not(:has(.cropper-container)) {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 .widget-image-editor img#cropper-target {
   max-width: 100%;
