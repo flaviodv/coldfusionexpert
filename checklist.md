@@ -12,5 +12,7 @@ Documento de referencia extraído de la conversación sobre el desarrollo de la 
 - [03 · Desarrollo, Programación y Datos](checklist/03-desarrollo-programacion-datos.md)
 - [04 · Utilidades Generales y Productividad](checklist/04-utilidades-productividad.md)
 - [05 · Próximos Pasos de Diseño e Implementación](checklist/05-proximos-pasos.md)
+- [06 · Migración de idioma: ?lan= → subdirectorio /es/](checklist/06-migracion-idioma-url.md) — pendiente de implementar, resuelve el problema de canonicalización visto en Search Console.
+- [07 · Herramientas pendientes](checklist/07-herramientas-pendientes.md) — hoja de ruta para nuevas herramientas CFML, SEO, datos, servidores y presupuestos.
 
 Cada archivo de categoría (`01`–`04`) es independiente entre sí — un agente puede tomar uno completo sin coordinarse con los demás, siempre que `00-arquitectura.md` ya esté resuelto (layout de página, navegación, convención de URLs).

@@ -24,8 +24,17 @@ Personal site + CV + consulting landing page for Flavio Di Virgilio (`coldfusion
 - `tools/_tools-registry.cfm` — **single source of truth** for every tool: slug, category, icon, EN/ES title & description, `built` (false = still a skeleton, gets `noindex`). The homepage `#tools` carousel shows the first 2 **built** tools per category in `request.toolOrder`, computed fresh on every request — no manual flag to maintain. `tools/_tools-registry.cfm` also defines `request.toolCategories`; add a category there before assigning tools to it.
 - `tools/_sidebar.cfm` — persistent left nav, grouped by category, reused on the landing page and every individual tool page.
 - `tools/_tool-page.cfm` — shared skeleton layout (breadcrumb, placeholder box, description, WhatsApp CTA) for a single tool. Each `tools/{slug}.cfm` file is ~2 lines: set `local.slug`, then `<cfinclude template="_tool-page.cfm">`.
-- To add a new tool: add one entry to the registry, create one `tools/{slug}.cfm` file, done — sidebar and landing pick it up automatically.
-- To make a tool "live": build the real widget inside its `_tool-page.cfm`-rendered placeholder area (or give it its own markup) and flip `built: true` in the registry so it stops being `noindex`.
+
+### Three-file structure for every tool
+
+Each tool is split across three files:
+
+1. **`tools/{slug}.cfm`** — shell only (~2 lines): `<cfset local.slug = "{slug}">` + `<cfinclude template="_tool-page.cfm">`. Never put markup or logic here.
+2. **`tools/widgets/{slug}.cfm`** — the actual interactive widget (HTML + JS). `_tool-page.cfm` includes this automatically if it exists; otherwise it renders the "under construction" placeholder. Uses `local.isEs` (set by `_tool-page.cfm`) for bilingual labels. All JS should be wrapped in an IIFE. Keep `#` signs in inline CSS escaped as `##` inside `<cfoutput>` blocks.
+3. **`tools/docs/{slug}.cfm`** — documentation section rendered below the widget: a guide, FAQ items as an array (also used to emit FAQ JSON-LD), and a `.tool-guide-docs` section with `<h2>`, `<h3>`, `<ul>`, and `.faq-grid` / `.faq-card` markup. `_tool-page.cfm` includes this automatically if it exists.
+
+- To add a new tool: add one entry to the registry, create `tools/{slug}.cfm`, done — sidebar and landing pick it up automatically.
+- To make a tool "live": create `tools/widgets/{slug}.cfm` with the real widget and flip `built: true` in the registry. Optionally add `tools/docs/{slug}.cfm` for the guide/FAQ.
 
 ## Hard-learned gotchas
 

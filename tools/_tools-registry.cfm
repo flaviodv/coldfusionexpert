@@ -6,14 +6,15 @@ request.toolCategories = [
   {slug: "diseno-frontend-css", labelEn: "Design & Frontend", labelEs: "Diseño y Frontend", icon: "fa-palette"},
   {slug: "desarrollo-datos", labelEn: "Development & Data", labelEs: "Desarrollo y Datos", icon: "fa-laptop-code"},
   {slug: "gestion-tiempo-productividad", labelEn: "Time & Productivity", labelEs: "Tiempo y Productividad", icon: "fa-stopwatch"},
-  {slug: "utilidades-productividad", labelEn: "General Utilities", labelEs: "Utilidades Generales", icon: "fa-toolbox"}
+  {slug: "utilidades-productividad", labelEn: "General Utilities", labelEs: "Utilidades Generales", icon: "fa-toolbox"},
+  {slug: "cfml-servidores", labelEn: "CFML & Servers", labelEs: "CFML y Servidores", icon: "fa-server"}
 ];
 
 request.toolsRegistry = {
   "meta-tags-extractor": {category: "marketing-seo-social", icon: "fa-tags", iconPrefix: "fas", built: true,
     titleEn: "Meta Tags & Keyword Extractor", titleEs: "Extractor de Meta Tags y Keywords",
-    descEn: "Analyze any URL's title, description, meta tags, and keyword signals in seconds.",
-    descEs: "Analizá en segundos el título, la descripción, las meta tags y las señales de keywords de cualquier URL."},
+    descEn: "Free tool to analyze any URL's title, description, meta tags, and keyword signals in seconds.",
+    descEs: "Herramienta online gratuita para analizar en segundos el título, la descripción, las meta tags y las señales de keywords de cualquier URL."},
 
   "whatsapp-link-generator": {category: "marketing-seo-social", icon: "fa-whatsapp", iconPrefix: "fab", built: true,
     titleEn: "WhatsApp Link Generator", titleEs: "Generador de Enlaces de WhatsApp",
@@ -35,10 +36,20 @@ request.toolsRegistry = {
     descEn: "Preview newsletter HTML before sending and catch layout issues in your email campaign.",
     descEs: "Previsualizá el HTML de tu newsletter antes de enviarla y detectá problemas de diseño a tiempo."},
 
+  "schema-json-ld-generator": {category: "marketing-seo-social", icon: "fa-code-branch", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "Schema JSON-LD Generator", titleEs: "Generador de Schema JSON-LD",
+    descEn: "Create valid Schema.org structured data for organizations, articles, products, services, FAQs, and breadcrumbs.",
+    descEs: "Creá datos estructurados Schema.org para organizaciones, artículos, productos, servicios, FAQs y breadcrumbs."},
+
   "image-editor": {category: "diseno-frontend-css", icon: "fa-image", iconPrefix: "fas", built: true, featured: true,
     titleEn: "Image Editor", titleEs: "Editor de Imágenes",
     descEn: "Edit, resize, and export images quickly in WebP, PNG, JPG, and other web-ready formats.",
     descEs: "Editá, redimensioná y exportá imágenes en WebP, PNG, JPG y otros formatos listos para la web."},
+
+  "favicon-editor": {category: "diseno-frontend-css", icon: "fa-th", iconPrefix: "fas", built: true,
+    titleEn: "Pixel Favicon Editor", titleEs: "Editor de Favicon Pixel a Pixel",
+    descEn: "Design pixel-perfect favicons at 16×16, 32×32, 48×48, or 64×64 px and export as .ico or .png.",
+    descEs: "Diseñá favicons pixel a pixel en 16×16, 32×32, 48×48 o 64×64 px y exportalos como .ico o .png."},
 
   "css-effects-generator": {category: "diseno-frontend-css", icon: "fa-magic", iconPrefix: "fas", built: true,
     titleEn: "CSS Effects Generator", titleEs: "Generador de Efectos CSS con Previsualización",
@@ -49,6 +60,11 @@ request.toolsRegistry = {
     titleEn: "Color Picker & Converter", titleEs: "Selector y Convertidor de Colores",
     descEn: "Pick, convert, and organize colors across HEX, RGB, HSL, and practical palettes.",
     descEs: "Elegí, convertí y organizá colores en HEX, RGB, HSL y paletas prácticas."},
+
+  "favicon-editor": {category: "diseno-frontend-css", icon: "fa-th", iconPrefix: "fas", built: true,
+    titleEn: "Favicon & Icon Editor", titleEs: "Editor de Favicon e Íconos",
+    descEn: "Design favicons and pixel art icons from scratch with a pixel editor, then export as PNG or ICO.",
+    descEs: "Diseñá favicons e íconos pixel art desde cero con editor de píxeles y exportá como PNG o ICO."},
 
   "css-minifier": {category: "desarrollo-datos", icon: "fa-file-code", iconPrefix: "fas", built: true,
     titleEn: "CSS Minifier & Formatter", titleEs: "Minificador y Formateador de CSS",
@@ -84,6 +100,11 @@ request.toolsRegistry = {
     titleEn: "HTTP Status Code Reference", titleEs: "Buscador / Referencia de Códigos de Estado HTTP",
     descEn: "Find the meaning and practical use of HTTP status codes, from 200 and 301 to 404 and 500.",
     descEs: "Encontrá el significado y uso práctico de códigos HTTP, desde 200 y 301 hasta 404 y 500."},
+
+  "text-diff-checker": {category: "desarrollo-datos", icon: "fa-not-equal", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "Text & Code Diff Checker", titleEs: "Comparador de Texto y Código",
+    descEn: "Compare two text or code blocks line by line and see additions, removals, and unchanged content instantly.",
+    descEs: "Compará dos bloques de texto o código línea por línea y detectá agregados, eliminaciones y contenido sin cambios."},
 
   "ip-lookup": {category: "utilidades-productividad", icon: "fa-network-wired", iconPrefix: "fas", built: true, featured: true,
     titleEn: "IP Address Lookup & Diagnostics", titleEs: "Consulta y Diagnóstico de Dirección IP",
@@ -125,6 +146,11 @@ request.toolsRegistry = {
     descEn: "See the exact years, months, days, and total days between any two dates.",
     descEs: "Conocé los años, meses, días y días totales exactos entre dos fechas."},
 
+  "csv-table-generator": {category: "utilidades-productividad", icon: "fa-table", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "CSV to Markdown / HTML Table", titleEs: "Generador de Tablas desde CSV",
+    descEn: "Turn CSV data into clean Markdown or HTML tables with automatic separator detection and safe escaping.",
+    descEs: "Convertí datos CSV en tablas Markdown o HTML limpias con detección automática del separador y escape seguro."},
+
   "todo-list": {category: "gestion-tiempo-productividad", icon: "fa-tasks", iconPrefix: "fas", built: true,
     titleEn: "Simple To-Do List", titleEs: "Gestor de Lista de Tareas",
     descEn: "Organize everyday tasks in a simple list that stays saved locally in your browser.",
@@ -138,15 +164,49 @@ request.toolsRegistry = {
   "page-auto-refresh": {category: "gestion-tiempo-productividad", icon: "fa-sync-alt", iconPrefix: "fas", built: true,
     titleEn: "Page Auto Refresh", titleEs: "Actualizador Automático de Página",
     descEn: "Load an allowed page in a preview and refresh it automatically at the interval you choose.",
-    descEs: "Cargá una página compatible en una vista previa y actualizala automáticamente al intervalo que elijas."}
+    descEs: "Cargá una página compatible en una vista previa y actualizala automáticamente al intervalo que elijas."},
+
+  "cfml-code-doctor": {category: "cfml-servidores", icon: "fa-stethoscope", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "CFML Code Doctor", titleEs: "Doctor de Código CFML",
+    descEn: "Scan CFML and SQL for common security, performance, and scoping issues with practical fixes.",
+    descEs: "Analizá CFML y SQL para detectar problemas comunes de seguridad, rendimiento y scopes con correcciones prácticas."}
+  ,"cfml-tag-script-converter": {category: "cfml-servidores", icon: "fa-exchange-alt", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "CFML Tag / Script Converter", titleEs: "Conversor CFML Tag / Script",
+    descEn: "Convert common CFML tag syntax to CFScript and CFScript blocks back to readable CFML tags.",
+    descEs: "Convertí sintaxis CFML con tags a CFScript y bloques de CFScript a tags CFML legibles."}
+  ,"sql-json-cfml-converter": {category: "cfml-servidores", icon: "fa-database", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "SQL / JSON / CFML Converter", titleEs: "Conversor SQL / JSON / CFML",
+    descEn: "Convert SQL or JSON data into practical JSON, CFScript structs, and CFML query mock data.",
+    descEs: "Convertí SQL o JSON a JSON práctico, structs CFScript y datos mock para queries CFML."}
+  ,"cfml-orm-entity-generator": {category: "cfml-servidores", icon: "fa-cubes", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "CFML ORM Entity Generator", titleEs: "Generador de Entidades ORM CFML",
+    descEn: "Generate a Lucee or Adobe ColdFusion ORM entity CFC from a table definition and optional relationships.",
+    descEs: "Generá una entidad ORM CFC para Lucee o Adobe ColdFusion desde una tabla y relaciones opcionales."}
+  ,"commandbox-server-json-generator": {category: "cfml-servidores", icon: "fa-terminal", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "CommandBox server.json Generator", titleEs: "Generador de server.json para CommandBox",
+    descEn: "Build a practical CommandBox server.json with CFML engine, port, SSL, JVM memory, datasources, and extensions.",
+    descEs: "Creá un server.json práctico para CommandBox con motor CFML, puerto, SSL, memoria JVM, datasources y extensiones."}
+  ,"jvm-heap-estimator": {category: "cfml-servidores", icon: "fa-memory", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "JVM Heap Memory Estimator", titleEs: "Estimador de Heap Memory JVM",
+    descEn: "Estimate Xms, Xmx, Metaspace, OS reserve, and per-instance memory for Lucee or Adobe ColdFusion servers.",
+    descEs: "Estimá Xms, Xmx, Metaspace, reserva del sistema y memoria por instancia para servidores Lucee o Adobe ColdFusion."}
+  ,"cfml-hosting-migration-calculator": {category: "cfml-servidores", icon: "fa-cloud-upload-alt", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "CFML Hosting & Migration Calculator", titleEs: "Calculadora de Hosting y Migración CFML",
+    descEn: "Estimate infrastructure resources, hosting type, monthly cost, and a practical CFML migration checklist.",
+    descEs: "Estimá recursos, tipo de hosting, costo mensual y checklist práctico para migrar proyectos CFML."}
+  ,"application-cfc-generator": {category: "cfml-servidores", icon: "fa-cogs", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "Application.cfc Generator", titleEs: "Generador de Application.cfc",
+    descEn: "Build a clean Application.cfc starter file for Lucee or Adobe ColdFusion with sessions, ORM, datasources, and mappings.",
+    descEs: "Creá una base limpia de Application.cfc para Lucee o Adobe ColdFusion con sesiones, ORM, datasources y mappings."}
 };
 
 // Explicit display order (struct key order isn't guaranteed) - sidebar/landing loop over this, grouped by category.
 request.toolOrder = [
-  "meta-tags-extractor", "whatsapp-link-generator", "email-signature-generator", "qr-code-generator", "newsletter-html-previewer",
-  "image-editor", "css-effects-generator", "color-converter",
-  "css-minifier", "json-formatter", "base64-encoder", "json-yaml-converter", "hash-generator", "uuid-generator", "http-status-codes",
+  "meta-tags-extractor", "schema-json-ld-generator", "whatsapp-link-generator", "email-signature-generator", "qr-code-generator", "newsletter-html-previewer",
+  "image-editor", "favicon-editor", "css-effects-generator", "color-converter",
+  "css-minifier", "json-formatter", "base64-encoder", "json-yaml-converter", "hash-generator", "uuid-generator", "http-status-codes", "text-diff-checker",
   "todo-list", "time-tracker", "page-auto-refresh",
-  "ip-lookup", "timezone-converter", "currency-converter", "password-generator", "word-counter", "text-case-converter", "percentage-calculator", "date-difference-calculator"
+  "ip-lookup", "timezone-converter", "currency-converter", "password-generator", "word-counter", "text-case-converter", "percentage-calculator", "date-difference-calculator", "csv-table-generator",
+  "cfml-code-doctor", "cfml-tag-script-converter", "sql-json-cfml-converter", "cfml-orm-entity-generator", "commandbox-server-json-generator", "jvm-heap-estimator", "cfml-hosting-migration-calculator", "application-cfc-generator"
 ];
 </cfscript>

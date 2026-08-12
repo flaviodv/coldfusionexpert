@@ -1,4 +1,4 @@
-  <div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+  <div class="main-banner home-solutions-hero wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.3s">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -7,37 +7,48 @@
               <div class="left-content show-up header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
                 <div class="row">
                   <div class="col-lg-12">
-                    <span class="badge-experience"><i class="fas fa-award"></i> +15 Años de Experiencia | Senior Full-Stack Developer</span>
-                    <span class="hero-eyebrow">ColdFusion Expert</span>
-                    <h1>Flavio Di Virgilio</h1>
-                    <h3>ColdFusion Senior Developer<br>&amp; AWS / Server Administrator</h3>
-                    <h5>Especialista en aplicaciones web de alto rendimiento, arquitectura de datos, migración de sistemas legacy y optimización Cloud.</h5>
-                    <div class="hero-stats">
-                      <span class="badge-upwork" style="white-space: nowrap;"><i class="fas fa-check-circle"></i> Upwork Top Rated Plus</span>
-                      <span class="hero-stat"><i class="fas fa-check-circle" style="background-color:white; border-radius: 20px;"></i> 100% Job Success</span><br>
+                    <span class="hero-kicker">Desarrollo · Modernización · Automatización</span>
+                    <h1 class="hero-business-title">Soluciones de software.<em>Hechas para negocios reales.</em></h1>
+                    <p class="hero-business-copy">Diseñamos, modernizamos y conectamos sistemas que impulsan operaciones reales: aplicaciones web, APIs, automatización con IA, WordPress e infraestructura cloud. <strong>ColdFusion y Lucee</strong> siguen siendo una especialización profunda, no un límite.</p>
+                    <div class="hero-cta-row scroll-to-section">
+                      <a href="#services" class="hero-cta hero-cta-primary"><i class="fas fa-arrow-right"></i> Explorar soluciones</a>
+                      <a href="#tools" class="hero-cta hero-cta-secondary"><i class="fas fa-toolbox"></i> Usar herramientas gratis</a>
                     </div>
-                    <div class="hero-stats">
-                      <span class="hero-stat"><i class="fas fa-check-circle" style="background-color:white; border-radius: 20px;"></i> +9,700 Horas</span>
-                      <span class="hero-stat"><i class="fas fa-check-circle" style="background-color:white; border-radius: 20px;"></i> +70 Proyectos Exitosos</span>
-                    </div>
-                    <div class="hero-availability"><i class="far fa-clock"></i> Disponibilidad flexible para América (EST/PST)</div>
-                    <div class="hero-actions">
-                      <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20hablemos%20de%20mi%20proyecto" target="_blank" rel="noopener" class="btn-social btn-upwork">
-                        <i class="fab fa-whatsapp"></i> Hablemos de tu proyecto
-                      </a>
-                      <a href="https://www.upwork.com/freelancers/coldfusionexpert" target="_blank" class="hero-upwork-link">
-                        <img src="/assets/images/upwork-perfil.webp" class="hero-upwork-image" alt="Perfil de Upwork">
-                      </a>
+                    <div class="hero-capabilities" aria-label="Capacidades principales">
+                      <span>Software a medida</span><span>APIs &amp; Integraciones</span><span>Automatización IA</span><span>WordPress</span><span>ColdFusion / Lucee</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="col-lg-6">
-              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                <div class="hero-blink-frame">
-                  <cfoutput><img src="/assets/images/flavio-ondas-sin-marco.webp#request.heroImageVer#" alt="ColdFusion Expert" class="hero-profile-image hero-profile-open"></cfoutput>
-                  <cfoutput><img src="/assets/images/flavio-ondas-ojos-cerrados.webp#request.heroBlinkImageVer#" alt="" aria-hidden="true" class="hero-profile-image hero-profile-closed"></cfoutput>
+              <div class="solutions-visual wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.45s" aria-label="Arquitectura de soluciones conectadas">
+                <div class="solutions-visual-header"><span>Ecosistema de software</span><span class="solutions-visual-status">Operativo</span></div>
+                <cfscript>
+                  local.hmCategoryLabels = {};
+                  local.hmToolTotal = 0;
+                  for (local.hmCat in request.toolCategories) local.hmCategoryLabels[local.hmCat.slug] = local.hmCat.labelEs;
+                  for (local.hmCountSlug in request.toolOrder) if (request.toolsRegistry[local.hmCountSlug].built) local.hmToolTotal++;
+                </cfscript>
+                <div id="hero-tools-marquee" class="hero-tools-marquee" aria-label="Herramientas gratuitas creadas">
+                <div class="hero-tools-marquee-header"><div class="hero-tools-marquee-title"><span><i class="fas fa-toolbox"></i> Herramientas creadas</span><a href="/tools.cfm" class="hero-tools-all-link">Ver todas <i class="fas fa-arrow-right"></i></a></div><div class="hero-tools-marquee-meta"><cfoutput><span class="hero-tools-counter"><strong data-tool-current>01</strong> / #numberFormat(local.hmToolTotal, '00')#</span></cfoutput><small><i class="fas fa-pause"></i> Pausa al pasar</small></div></div>
+                <div class="hero-tools-marquee-viewport" tabindex="0">
+                  <div class="hero-tools-marquee-track">
+                    <div class="hero-tools-marquee-list">
+                      <cfset local.hmLastCategory = ""><cfset local.hmToolNumber = 0>
+                      <cfoutput><cfloop array="#request.toolOrder#" index="local.hmSlug"><cfset local.hmTool = request.toolsRegistry[local.hmSlug]><cfif local.hmTool.built><cfif local.hmTool.category neq local.hmLastCategory><div class="hero-tools-category"><span>#local.hmCategoryLabels[local.hmTool.category]#</span></div><cfset local.hmLastCategory = local.hmTool.category></cfif><cfset local.hmToolNumber++><a href="/es/tools/#local.hmSlug#" data-tool-index="#local.hmToolNumber#" data-tool-tooltip="#encodeForHTMLAttribute(local.hmTool.descEs)#" aria-label="#encodeForHTMLAttribute(local.hmTool.titleEs)#. #encodeForHTMLAttribute(local.hmTool.descEs)#"><span class="hero-tool-sequence">#numberFormat(local.hmToolNumber, '00')#</span><i class="#local.hmTool.iconPrefix# #local.hmTool.icon#"></i><span>#local.hmTool.titleEs#</span><i class="fas fa-arrow-right"></i></a></cfif></cfloop></cfoutput>
+                    </div>
+                    <div class="hero-tools-marquee-list" aria-hidden="true">
+                      <cfset local.hmLastCategoryRepeat = ""><cfset local.hmToolNumberRepeat = 0>
+                      <cfoutput><cfloop array="#request.toolOrder#" index="local.hmSlugRepeat"><cfset local.hmToolRepeat = request.toolsRegistry[local.hmSlugRepeat]><cfif local.hmToolRepeat.built><cfif local.hmToolRepeat.category neq local.hmLastCategoryRepeat><div class="hero-tools-category"><span>#local.hmCategoryLabels[local.hmToolRepeat.category]#</span></div><cfset local.hmLastCategoryRepeat = local.hmToolRepeat.category></cfif><cfset local.hmToolNumberRepeat++><a href="/es/tools/#local.hmSlugRepeat#" tabindex="-1" data-tool-index="#local.hmToolNumberRepeat#" data-tool-tooltip="#encodeForHTMLAttribute(local.hmToolRepeat.descEs)#"><span class="hero-tool-sequence">#numberFormat(local.hmToolNumberRepeat, '00')#</span><i class="#local.hmToolRepeat.iconPrefix# #local.hmToolRepeat.icon#"></i><span>#local.hmToolRepeat.titleEs#</span><i class="fas fa-arrow-right"></i></a></cfif></cfloop></cfoutput>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <div class="solutions-visual-grid">
+                  <div class="solution-node"><i class="fas fa-layer-group"></i><span class="solution-node-arrow">↗</span><h3>Plataformas empresariales</h3><p>Sistemas estables, escalables y preparados para evolucionar.</p></div>
+                  <div class="solution-node"><i class="fas fa-random"></i><span class="solution-node-arrow">↗</span><h3>APIs &amp; Integraciones</h3><p>Datos y herramientas trabajando juntos.</p></div>
+                  <div class="solution-node"><i class="fas fa-robot"></i><span class="solution-node-arrow">↗</span><h3>IA &amp; Automatización</h3><p>Menos tareas repetitivas, mejores decisiones.</p></div>
                 </div>
               </div>
             </div>
@@ -46,45 +57,38 @@
       </div>
     </div>
   </div>
+  <section id="coldfusion-services" class="services section home-cf-services-band">
+    <div class="container"><div class="row"><div class="col-12 text-center"><div class="section-heading wow fadeInDown" data-wow-duration="1s"><h4><em>Servicios ColdFusion</em></h4><img src="/assets/images/heading-line-dec.png" alt=""><p>Soporte senior para las aplicaciones CFML de las que tu negocio ya depende.</p></div></div></div><div class="row"><div class="col-12 text-center mb-4"><a href="/es/coldfusion-development" class="home-cf-services-link">Ver todos los servicios CF <i class="fas fa-arrow-right" aria-hidden="true"></i></a></div></div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3"><a class="home-cf-service-card" href="/es/coldfusion-development#legacy-support"><i class="fas fa-life-ring" aria-hidden="true"></i><h3>Soporte ColdFusion heredado</h3><span>Mantenimiento y estabilidad para sistemas CFML existentes <i class="fas fa-arrow-right" aria-hidden="true"></i></span></a></div>
+        <div class="col-md-6 col-lg-3"><a class="home-cf-service-card" href="/es/coldfusion-development#upgrades-migration"><i class="fas fa-sync-alt" aria-hidden="true"></i><h3>Actualizaciones ColdFusion y Lucee</h3><span>Actualizaciones prácticas con menos interrupciones <i class="fas fa-arrow-right" aria-hidden="true"></i></span></a></div>
+        <div class="col-md-6 col-lg-3"><a class="home-cf-service-card" href="/es/coldfusion-development#performance-security"><i class="fas fa-shield-alt" aria-hidden="true"></i><h3>Rendimiento y seguridad</h3><span>Más confiabilidad, velocidad y calidad de código <i class="fas fa-arrow-right" aria-hidden="true"></i></span></a></div>
+        <div class="col-md-6 col-lg-3"><a class="home-cf-service-card" href="/es/coldfusion-development#api-modernization"><i class="fas fa-plug" aria-hidden="true"></i><h3>APIs y modernización</h3><span>Conexión de CFML con servicios e interfaces modernas <i class="fas fa-arrow-right" aria-hidden="true"></i></span></a></div>
+      </div>
+      <a href="/es/coldfusion-development#hosting" class="home-cf-hosting-callout"><span class="home-cf-hosting-icon"><i class="fas fa-server" aria-hidden="true"></i></span><span><strong>Hosting administrado multi-tecnología</strong><small>Alojá aplicaciones PHP y Adobe ColdFusion con SQL Server o MySQL y un panel de gestión práctico.</small></span><i class="fas fa-arrow-right home-cf-hosting-arrow" aria-hidden="true"></i></a>
+    </div>
+  </section>
   <!-- Navegación lateral por secciones: solo se muestra en escritorio. -->
   <nav class="section-rail" aria-label="Navegación por secciones">
     <ul class="section-rail-list">
       <li><a href="#top" class="section-rail-link" data-rail-target="top" data-section-label="Inicio" aria-label="Ir a Inicio"><span class="section-rail-label">Inicio</span></a></li>
+      <li><a href="#coldfusion-services" class="section-rail-link" data-rail-target="coldfusion-services" data-section-label="Servicios ColdFusion" aria-label="Ir a Servicios ColdFusion"><span class="section-rail-label">Servicios ColdFusion</span></a></li>
       <li><a href="#services" class="section-rail-link" data-rail-target="services" data-section-label="Servicios especializados" aria-label="Ir a Servicios especializados"><span class="section-rail-label">Servicios especializados</span></a></li>
-      <li><a href="#pricing" class="section-rail-link" data-rail-target="pricing" data-section-label="Experiencia y proyectos" aria-label="Ir a Experiencia y proyectos"><span class="section-rail-label">Experiencia y proyectos</span></a></li>
       <li><a href="#seo" class="section-rail-link" data-rail-target="seo" data-section-label="SEO / GEO" aria-label="Ir a SEO y GEO"><span class="section-rail-label">SEO / GEO</span></a></li>
       <li><a href="#automation" class="section-rail-link" data-rail-target="automation" data-section-label="Automatización con IA" aria-label="Ir a Automatización con IA"><span class="section-rail-label">Automatización con IA</span></a></li>
       <li><a href="#courses" class="section-rail-link" data-rail-target="courses" data-section-label="Cursos Zoom" aria-label="Ir a Cursos Zoom"><span class="section-rail-label">Cursos Zoom</span></a></li>
       <li><a href="#tools" class="section-rail-link" data-rail-target="tools" data-section-label="Herramientas" aria-label="Ir a Herramientas"><span class="section-rail-label">Herramientas</span></a></li>
-      <li><a href="#about" class="section-rail-link" data-rail-target="about" data-section-label="Acerca de" aria-label="Ir a Acerca de"><span class="section-rail-label">Acerca de</span></a></li>
+      <li><a href="#pricing" class="section-rail-link" data-rail-target="pricing" data-section-label="Experiencia y proyectos" aria-label="Ir a Experiencia y proyectos"><span class="section-rail-label">Experiencia y proyectos</span></a></li>
       <li><a href="#Contact" class="section-rail-link" data-rail-target="Contact" data-section-label="Contacto" aria-label="Ir a Contacto"><span class="section-rail-label">Contacto</span></a></li>
     </ul>
   </nav>
-  <script>
-  (function () {
-    function iniciarParpadeoHero() {
-      var retrato = document.querySelector('.main-banner .right-image');
-      if (!retrato) return;
-      function parpadear() {
-        retrato.classList.add('is-blinking');
-        window.setTimeout(function () {
-          retrato.classList.remove('is-blinking');
-          window.setTimeout(parpadear, 5500 + Math.random() * 6500);
-        }, 100);
-      }
-      window.setTimeout(parpadear, 4000);
-    }
-    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciarParpadeoHero);
-    else iniciarParpadeoHero();
-  }());
-  </script>
   <div id="services" class="services section">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading  wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4> <em>Servicios Especializados </em> </h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
+            <img src="/assets/images/heading-line-dec.png" alt="">
             <p>Servicios de desarrollo, arquitectura y mantenimiento para aplicaciones ColdFusion y Cloud:</p>
           </div>
         </div>
@@ -96,8 +100,8 @@
           <div class="service-item first-service">
             <div style="text-align:left!important">
               <picture>
-                <source class="servce_img" srcset="assets/images/ColdFusion Consulting Service.svg" type="image/webp">
-                <img class="servce_img " src="assets/images/ColdFusion Consulting Service.svg" alt="ColdFusion Consulting" width="40" height="40">
+                <source class="servce_img" srcset="/assets/images/ColdFusion%20Consulting%20Service.svg" type="image/svg+xml">
+                <img class="servce_img " src="/assets/images/ColdFusion Consulting Service.svg" alt="ColdFusion Consulting" width="40" height="40">
               </picture>
             </div>
              <h4>Servicio de Consultoría ColdFusion</h4>
@@ -116,8 +120,8 @@
           <div class="service-item second-service">
             <div >
               <picture>
-                <source class="servce_img" srcset="assets/images/ColdFusion Web Application Development.svg" type="image/webp">
-                <img class="servce_img " src="assets/images/ColdFusion Web Application Development.svg" alt="ColdFusion Web Application Development" width="40" height="40">
+                <source class="servce_img" srcset="/assets/images/ColdFusion%20Web%20Application%20Development.svg" type="image/svg+xml">
+                <img class="servce_img " src="/assets/images/ColdFusion Web Application Development.svg" alt="ColdFusion Web Application Development" width="40" height="40">
             </picture></div>
            <h4>Desarrollo de Aplicaciones Web Personalizadas</h4>
            <p>Desarrollo de aplicaciones web escalables, seguras y vanguardistas. 
@@ -135,8 +139,8 @@
           <div class="service-item third-service">
             <div >
               <picture>
-                <source class="servce_img" srcset="assets/images/ColdFusion Web Service Development.svg" type="image/webp">
-                <img class="servce_img " src="assets/images/ColdFusion Web Service Development.svg" alt="ColdFusion Web Service Development" width="40" height="40">
+                <source class="servce_img" srcset="/assets/images/ColdFusion%20Web%20Service%20Development.svg" type="image/svg+xml">
+                <img class="servce_img " src="/assets/images/ColdFusion Web Service Development.svg" alt="ColdFusion Web Service Development" width="40" height="40">
             </picture></div>
             <h4>Integración de APIs y Servicios Web REST</h4>
             <p>Construcción e integración de servicios web y APIs RESTful para comunicación fluida entre sistemas.
@@ -154,8 +158,8 @@
           <div class="service-item fourth-service">
             <div >
               <picture>
-                <source class="servce_img" srcset="assets/images/ColdFusion CMS Development.svg" type="image/webp">
-                <img class="servce_img " src="assets/images/ColdFusion CMS Development.svg" alt="ColdFusion CMS & CRM Development" width="40" height="40">
+                <source class="servce_img" srcset="/assets/images/ColdFusion%20CMS%20Development.svg" type="image/svg+xml">
+                <img class="servce_img " src="/assets/images/ColdFusion CMS Development.svg" alt="ColdFusion CMS & CRM Development" width="40" height="40">
             </picture></div>
             <h4>Desarrollo de CMS y CRM ColdFusion</h4>
             <p>Sistemas potentes e intuitivos a medida para gestión de clientes, prospectos, comisiones y contenidos.
@@ -172,8 +176,8 @@
           <div class="service-item first-service">
             <div >
               <picture>
-                <source class="servce_img" srcset="assets/images/ColdFusion Maintenance and Enhancement.svg" type="image/webp">
-                <img class="servce_img " src="assets/images/ColdFusion Maintenance and Enhancement.svg" alt="ColdFusion Maintenance and AWS" width="40" height="40">
+                <source class="servce_img" srcset="/assets/images/ColdFusion%20Maintenance%20and%20Enhancement.svg" type="image/svg+xml">
+                <img class="servce_img " src="/assets/images/ColdFusion Maintenance and Enhancement.svg" alt="ColdFusion Maintenance and AWS" width="40" height="40">
             </picture></div>
              <h4>Administración Cloud AWS & Soporte Servidores</h4>
              <p>Administración experta de servidores staging y producción en AWS (EC2, RDS MSSQL/MySQL, S3) e IIS Server en Windows/Linux.
@@ -206,13 +210,14 @@
       </div>
     </div>
   </div>
+  <cfsavecontent variable="request.homeProjectsSection">
     <div id="pricing" class="pricing-tables">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading">
             <h4>Experiencia <em>Profesional </em> &amp; Proyectos</h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
+            <img src="/assets/images/heading-line-dec.png" alt="">
             <p>Proyectos actuales, desarrollos propios con Inteligencia Artificial y trayectoria corporativa destacada.</p>
           </div>
         </div>
@@ -263,15 +268,15 @@
         <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
           <div class="pricing-item-pro">
             <h4>Firebrand Creative</h4>
-            <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Trabajo Actual | Agencia Digital US</span>
+            <span style="font-size: 0.85rem; color: #14a800; font-weight: bold;">Rol Actual | WordPress Developer</span>
             <div class="icon">
             <img src="/assets/images/projects/firebrand.webp" class="project-card-image" alt="Firebrand Creative">
             </div>
             <ul>
               <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Sitio Oficial</strong>: <a href="https://iamfirebrand.com/" target="_blank" style="color:#0077b5; font-weight:600;">iamfirebrand.com</a></li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo senior continuo para la agencia norteamericana Firebrand Creative.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Construcción, optimización y mantenimiento de sistemas web para diversos clientes globales.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Integraciones backend, desarrollo ColdFusion / PHP y soporte de plataformas complejas.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Rol actual como WordPress Developer para una agencia digital de Estados Unidos.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Trabajo sobre múltiples sitios y clientes gestionados por Firebrand Creative.</li>
+              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Actualización de contenidos, mejoras visuales, soporte técnico y administración de servidores.</li>
             </ul>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20me%20gustaría%20consultar%20sobre%20Proyecto%20Firebrand%20Creative" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
@@ -284,9 +289,9 @@
         <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
           <div class="pricing-item-pro">
             <h4>Makeway &amp; Clientes Internacionales</h4>
-            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Sep 2025 - Presente</span>
+            <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Sep 2023 - Presente</span>
             <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Makeway">
+              <img src="/assets/images/pricing-table-01.png" alt="Makeway">
             </div>
             <ul>
               <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Gestión y optimización de rendimiento de sistemas CMS en ColdFusion y MySQL.</li>
@@ -307,7 +312,7 @@
             <h4>Contensive - Svetness CRM</h4>
             <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">Mar 2021 - Oct 2024</span>
             <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Contensive Svetness CRM">
+              <img src="/assets/images/pricing-table-01.png" alt="Contensive Svetness CRM">
             </div>
             <ul>
               <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i>Desarrollo Senior Fullstack ColdFusion + SQL Server + AWS para Svetness CRM.</li>
@@ -328,7 +333,7 @@
             <h4>Third Wave Digital, FortSystems &amp; 2Connect</h4>
             <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">2011 - 2020</span>
             <div class="icon">
-              <img src="assets/images/pricing-table-01.png" alt="Third Wave Digital">
+              <img src="/assets/images/pricing-table-01.png" alt="Third Wave Digital">
             </div>
             <ul>
               <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Third Wave Digital (2019)</strong>: Sistema de diagnóstico e historial clínico para cáncer de mama (NQMBC).</li>
@@ -345,13 +350,14 @@
       </div>
     </div>
   </div>
+  </cfsavecontent>
   <div id="seo" class="services section" style="padding-top: 80px; padding-bottom: 80px;">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Optimización <em>SEO &amp; GEO (IA)</em></h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
+            <img src="/assets/images/heading-line-dec.png" alt="">
             <p>Estrategias avanzadas de posicionamiento en motores de búsqueda tradicionales (Google, Bing) y optimización de visibilidad en Inteligencia Artificial (ChatGPT, Perplexity, Claude, Gemini).</p>
           </div>
         </div>
@@ -431,7 +437,7 @@
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Soluciones de <em>Automatización con IA</em></h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
+            <img src="/assets/images/heading-line-dec.png" alt="">
             <p>Integración de Inteligencia Artificial, agentes autónomos y automatización inteligente de procesos para optimizar la eficiencia operativa y acelerar el desarrollo.</p>
           </div>
         </div>
@@ -509,8 +515,8 @@
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Cursos &amp; Capacitación <em>vía Zoom</em></h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Clases en vivo 1 a 1 y mentores personalizados para desarrolladores y equipos, cubriendo más de 15 años de conocimiento técnico y práctico acumulado.</p>
+            <img src="/assets/images/heading-line-dec.png" alt="">
+            <p>Clases en vivo 1 a 1 y mentores personalizados para desarrolladores y equipos, respaldadas por más de 15 años de experiencia técnica y práctica.</p>
           </div>
         </div>
       </div>
@@ -601,8 +607,8 @@
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
             <h4>Nuestras <em>Herramientas Gratuitas</em></h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
-            <p>Una colección creciente de herramientas gratuitas para desarrolladores, profesionales de marketing y tareas de productividad diaria. Te mostramos 2 herramientas destacadas por categoría, aunque hay muchas más para explorar. <a href="/tools?lan=es">Ver todas</a>.</p>
+            <img src="/assets/images/heading-line-dec.png" alt="">
+            <p>Una colección creciente de herramientas gratuitas para desarrolladores, profesionales de marketing y tareas de productividad diaria. Te mostramos 2 herramientas destacadas por categoría, aunque hay muchas más para explorar. <a href="/es/tools">Ver todas</a>.</p>
           </div>
         </div>
       </div>
@@ -634,7 +640,7 @@
             <div class="tool-card-icon"><i class="#local.ftCard.iconPrefix# #local.ftCard.icon#"></i></div>
             <h4>#local.ftCard.titleEs#</h4>
             <p>#local.ftCard.descEs#</p>
-            <a href="/tools/#local.ftCard.slug#" class="btn-social btn-linkedin">
+            <a href="/es/tools/#local.ftCard.slug#" class="btn-social btn-linkedin">
               <i class="fas fa-arrow-right"></i> Ver Herramienta
             </a>
           </div>
@@ -645,20 +651,22 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <a href="/tools" class="btn-social btn-upwork">
+          <a href="/es/tools" class="btn-social btn-upwork">
             <i class="fas fa-th-large"></i> Ver Todas las Herramientas
           </a>
         </div>
       </div>
     </div>
   </div>
+  <cfoutput>#request.homeProjectsSection#</cfoutput>
+  <cfif false><!-- Legacy personal resume content moved to /es/flavio-di-virgilio -->
   <div id="about" class="about-us section">
     <div class="container">
       <div class="row">
         <div class="col-lg-6 align-self-center">
           <div class="section-heading">
             <h4>Sobre <em>Flavio Di Virgilio</em> &amp; Trayectoria</h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
+            <img src="/assets/images/heading-line-dec.png" alt="">
             <p>Analista de Sistemas graduado de la Universidad J.F. Kennedy de Buenos Aires y Diseñador Multimedia de la Escuela Da Vinci, Flavio cuenta con más de 15 años de experiencia práctica en desarrollo Full-Stack en ColdFusion/CFML, diseño de arquitecturas orientadas a bases de datos y administración de servidores.
             Ha liderado e implementado sistemas de comercio electrónico, diagnóstico médico e historial clínico (NQMBC), integración de servicios web (JWT, REST), gestión de clientes en tiempo real y administración de infraestructura en la nube AWS (EC2, RDS, S3).
             Freelancer Top Rated Plus en Upwork (100% Job Success, +9,700 horas registradas), se destaca por sus sólidas habilidades lógicas y de resolución de problemas, su autogestión y la aplicación proactiva de herramientas de IA (ChatGPT, Claude, Codex, Gemini) para potenciar la productividad y la calidad del desarrollo.</p>
@@ -694,7 +702,7 @@
         </div>
         <div class="col-lg-6">
           <div class="right-image">
-            <img src="assets/images/flavio-ondas-sin-marco.webp" alt="Flavio Di Virgilio - ColdFusion Expert" style="max-width: 85%; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.18); border: 5px solid #ffffff;">
+            <img src="/assets/images/flavio-ondas-sin-marco.webp" alt="Flavio Di Virgilio - ColdFusion Expert" style="max-width: 85%; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.18); border: 5px solid #ffffff;">
           </div>
         </div>
       </div>
@@ -706,7 +714,7 @@
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading">
             <h4>Stack Tecnológico &amp; <em>Habilidades</em></h4>
-            <img src="assets/images/heading-line-dec.png" alt="">
+            <img src="/assets/images/heading-line-dec.png" alt="">
             <p>Dominio amplio y actualizado de lenguajes, frameworks, bases de datos y herramientas de infraestructura cloud.</p>
           </div>
         </div>
@@ -801,7 +809,7 @@
                           <div class="row">
                             <div class="col-lg-12">
                               <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
+                                <img src="/assets/images/quote.png" alt="">
                                 <p>Especializado en todas las versiones de Adobe ColdFusion (CF4 a CF2025), Lucee Server, arquitectura Fusebox y OOP. Experiencia profunda en desarrollo orientado a objetos, seguridad y migración de plataformas legadas.</p>
                               </div>
                               <div class="down-content">
@@ -821,7 +829,7 @@
                           <div class="row">
                             <div class="col-lg-12">
                               <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
+                                <img src="/assets/images/quote.png" alt="">
                                 <p>Diseño y administración de bases de datos relacionales y NoSQL de alto rendimiento: Microsoft SQL Server, MySQL, PostgreSQL y MongoDB. Optimización de queries complejas, Stored Procedures e índices.</p>
                               </div>
                               <div class="down-content">
@@ -841,7 +849,7 @@
                           <div class="row">
                             <div class="col-lg-12">
                               <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
+                                <img src="/assets/images/quote.png" alt="">
                                 <p>Desarrollo frontend dinámico e interactivo utilizando JavaScript moderno, jQuery, AJAX, React.js, Node.js, Bootstrap y diseños responsivos adaptados a la mejor experiencia del usuario.</p>
                               </div>
                               <div class="down-content">
@@ -861,7 +869,7 @@
                           <div class="row">
                             <div class="col-lg-12">
                               <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
+                                <img src="/assets/images/quote.png" alt="">
                                 <p>Gestión integral de infraestructura en la nube de Amazon Web Services (EC2, RDS snapshots/restores, buckets S3, Security Groups), servidores IIS en Windows y administración de ambientes Linux.</p>
                               </div>
                               <div class="down-content">
@@ -881,7 +889,7 @@
                           <div class="row">
                             <div class="col-lg-12">
                               <div class="client-content">
-                                <img src="assets/images/quote.png" alt="">
+                                <img src="/assets/images/quote.png" alt="">
                                 <p>Integración de servicios web RESTful, seguridad JWT, PHP, soluciones avanzadas en WordPress y aplicación estratégica de herramientas de IA (ChatGPT, Claude, Codex) para maximizar la velocidad de entrega.</p>
                               </div>
                               <div class="down-content">
@@ -904,3 +912,4 @@
       </div>
     </div>
   </div>
+  </cfif>

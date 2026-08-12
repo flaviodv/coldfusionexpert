@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /vendor/
+Disallow: /cfc/
 Disallow: /Application.cfc
 
 # AI Crawlers explicit permission for GEO

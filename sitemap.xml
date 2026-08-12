@@ -2,490 +2,758 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://coldfusionexpert.ar/?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/flavio-di-virgilio</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/flavio-di-virgilio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/flavio-di-virgilio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/flavio-di-virgilio"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/flavio-di-virgilio</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/flavio-di-virgilio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/flavio-di-virgilio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/flavio-di-virgilio"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/coldfusion-development</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/coldfusion-development"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/coldfusion-development"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/coldfusion-development</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/coldfusion-development"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/coldfusion-development"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/coldfusion-development"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/meta-tags-extractor?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/meta-tags-extractor</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/meta-tags-extractor?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/meta-tags-extractor?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/meta-tags-extractor?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/meta-tags-extractor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/meta-tags-extractor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/meta-tags-extractor"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/meta-tags-extractor?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/meta-tags-extractor</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/meta-tags-extractor?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/meta-tags-extractor?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/meta-tags-extractor?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/meta-tags-extractor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/meta-tags-extractor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/meta-tags-extractor"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/whatsapp-link-generator?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/whatsapp-link-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/whatsapp-link-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/whatsapp-link-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/whatsapp-link-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/whatsapp-link-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/whatsapp-link-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/whatsapp-link-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/whatsapp-link-generator?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/whatsapp-link-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/whatsapp-link-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/whatsapp-link-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/whatsapp-link-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/whatsapp-link-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/whatsapp-link-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/whatsapp-link-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/email-signature-generator?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/email-signature-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/email-signature-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/email-signature-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/email-signature-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/email-signature-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/email-signature-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/email-signature-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/email-signature-generator?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/email-signature-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/email-signature-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/email-signature-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/email-signature-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/email-signature-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/email-signature-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/email-signature-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/qr-code-generator?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/qr-code-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/qr-code-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/qr-code-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/qr-code-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/qr-code-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/qr-code-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/qr-code-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/qr-code-generator?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/qr-code-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/qr-code-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/qr-code-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/qr-code-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/qr-code-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/qr-code-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/qr-code-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/newsletter-html-previewer?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/newsletter-html-previewer</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/newsletter-html-previewer?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/newsletter-html-previewer?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/newsletter-html-previewer?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/newsletter-html-previewer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/newsletter-html-previewer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/newsletter-html-previewer"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/newsletter-html-previewer?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/newsletter-html-previewer</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/newsletter-html-previewer?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/newsletter-html-previewer?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/newsletter-html-previewer?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/newsletter-html-previewer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/newsletter-html-previewer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/newsletter-html-previewer"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/image-editor?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/image-editor</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/image-editor?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/image-editor?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/image-editor?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/image-editor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/image-editor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/image-editor"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/image-editor?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/image-editor</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/image-editor?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/image-editor?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/image-editor?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/image-editor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/image-editor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/image-editor"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/css-effects-generator?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/favicon-editor</loc>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/css-effects-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/css-effects-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/css-effects-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/favicon-editor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/favicon-editor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/favicon-editor"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/css-effects-generator?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/favicon-editor</loc>
+    <lastmod>2026-08-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/css-effects-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/css-effects-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/css-effects-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/favicon-editor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/favicon-editor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/favicon-editor"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/color-converter?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/css-effects-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/color-converter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/color-converter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/color-converter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/css-effects-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/css-effects-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/css-effects-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/color-converter?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/css-effects-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/color-converter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/color-converter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/color-converter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/css-effects-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/css-effects-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/css-effects-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/css-minifier?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/color-converter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/css-minifier?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/css-minifier?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/css-minifier?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/color-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/color-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/color-converter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/css-minifier?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/color-converter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/css-minifier?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/css-minifier?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/css-minifier?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/color-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/color-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/color-converter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/json-formatter?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/css-minifier</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/json-formatter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/json-formatter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/json-formatter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/css-minifier"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/css-minifier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/css-minifier"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/json-formatter?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/css-minifier</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/json-formatter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/json-formatter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/json-formatter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/css-minifier"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/css-minifier"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/css-minifier"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/base64-encoder?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/json-formatter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/base64-encoder?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/base64-encoder?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/base64-encoder?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/json-formatter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/json-formatter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/json-formatter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/base64-encoder?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/json-formatter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/base64-encoder?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/base64-encoder?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/base64-encoder?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/json-formatter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/json-formatter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/json-formatter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/json-yaml-converter?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/base64-encoder</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/json-yaml-converter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/json-yaml-converter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/json-yaml-converter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/base64-encoder"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/base64-encoder"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/base64-encoder"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/json-yaml-converter?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/base64-encoder</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/json-yaml-converter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/json-yaml-converter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/json-yaml-converter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/base64-encoder"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/base64-encoder"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/base64-encoder"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/hash-generator?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/json-yaml-converter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/hash-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/hash-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/hash-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/json-yaml-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/json-yaml-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/json-yaml-converter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/hash-generator?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/json-yaml-converter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/hash-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/hash-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/hash-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/json-yaml-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/json-yaml-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/json-yaml-converter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/uuid-generator?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/hash-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/uuid-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/uuid-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/uuid-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/hash-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/hash-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/hash-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/uuid-generator?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/hash-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/uuid-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/uuid-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/uuid-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/hash-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/hash-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/hash-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/http-status-codes?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/uuid-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/http-status-codes?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/http-status-codes?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/http-status-codes?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/uuid-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/uuid-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/uuid-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/http-status-codes?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/uuid-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/http-status-codes?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/http-status-codes?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/http-status-codes?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/uuid-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/uuid-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/uuid-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/ip-lookup?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/http-status-codes</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/ip-lookup?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/ip-lookup?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/ip-lookup?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/http-status-codes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/http-status-codes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/http-status-codes"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/ip-lookup?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/http-status-codes</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/ip-lookup?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/ip-lookup?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/ip-lookup?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/http-status-codes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/http-status-codes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/http-status-codes"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/timezone-converter?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/todo-list</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/timezone-converter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/timezone-converter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/timezone-converter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/todo-list"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/todo-list"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/todo-list"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/timezone-converter?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/todo-list</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/timezone-converter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/timezone-converter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/timezone-converter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/todo-list"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/todo-list"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/todo-list"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/currency-converter?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/time-tracker</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/currency-converter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/currency-converter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/currency-converter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/time-tracker"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/time-tracker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/time-tracker"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/currency-converter?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/time-tracker</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/currency-converter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/currency-converter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/currency-converter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/time-tracker"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/time-tracker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/time-tracker"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/password-generator?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/page-auto-refresh</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/password-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/password-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/password-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/page-auto-refresh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/page-auto-refresh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/page-auto-refresh"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/password-generator?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/page-auto-refresh</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/password-generator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/password-generator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/password-generator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/page-auto-refresh"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/page-auto-refresh"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/page-auto-refresh"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/word-counter?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/ip-lookup</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/word-counter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/word-counter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/word-counter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/ip-lookup"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/ip-lookup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/ip-lookup"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/word-counter?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/ip-lookup</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/word-counter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/word-counter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/word-counter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/ip-lookup"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/ip-lookup"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/ip-lookup"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/text-case-converter?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/timezone-converter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/text-case-converter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/text-case-converter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/text-case-converter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/timezone-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/timezone-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/timezone-converter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/text-case-converter?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/timezone-converter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/text-case-converter?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/text-case-converter?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/text-case-converter?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/timezone-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/timezone-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/timezone-converter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/percentage-calculator?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/currency-converter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/percentage-calculator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/percentage-calculator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/percentage-calculator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/currency-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/currency-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/currency-converter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/percentage-calculator?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/currency-converter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/percentage-calculator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/percentage-calculator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/percentage-calculator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/currency-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/currency-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/currency-converter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/date-difference-calculator?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/password-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/date-difference-calculator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/date-difference-calculator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/date-difference-calculator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/password-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/password-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/password-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/date-difference-calculator?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/password-generator</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/date-difference-calculator?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/date-difference-calculator?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/date-difference-calculator?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/password-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/password-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/password-generator"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/todo-list?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/word-counter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/todo-list?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/todo-list?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/todo-list?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/word-counter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/word-counter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/word-counter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/todo-list?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/word-counter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/todo-list?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/todo-list?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/todo-list?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/word-counter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/word-counter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/word-counter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/time-tracker?lan=en</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/tools/text-case-converter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/time-tracker?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/time-tracker?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/time-tracker?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/text-case-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/text-case-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/text-case-converter"/>
   </url>
   <url>
-    <loc>https://coldfusionexpert.ar/tools/time-tracker?lan=es</loc>
-    <lastmod>2026-08-01</lastmod>
+    <loc>https://coldfusionexpert.ar/es/tools/text-case-converter</loc>
+    <lastmod>2026-08-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/tools/time-tracker?lan=es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/time-tracker?lan=en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/time-tracker?lan=en"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/text-case-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/text-case-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/text-case-converter"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/percentage-calculator</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/percentage-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/percentage-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/percentage-calculator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/percentage-calculator</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/percentage-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/percentage-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/percentage-calculator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/date-difference-calculator</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/date-difference-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/date-difference-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/date-difference-calculator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/date-difference-calculator</loc>
+    <lastmod>2026-08-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/date-difference-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/date-difference-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/date-difference-calculator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/cfml-code-doctor</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/cfml-code-doctor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/cfml-code-doctor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/cfml-code-doctor"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/cfml-code-doctor</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/cfml-code-doctor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/cfml-code-doctor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/cfml-code-doctor"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/schema-json-ld-generator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/schema-json-ld-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/schema-json-ld-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/schema-json-ld-generator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/schema-json-ld-generator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/schema-json-ld-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/schema-json-ld-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/schema-json-ld-generator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/text-diff-checker</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/text-diff-checker"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/text-diff-checker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/text-diff-checker"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/text-diff-checker</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/text-diff-checker"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/text-diff-checker"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/text-diff-checker"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/csv-table-generator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/csv-table-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/csv-table-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/csv-table-generator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/csv-table-generator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/csv-table-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/csv-table-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/csv-table-generator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/cfml-tag-script-converter</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/cfml-tag-script-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/cfml-tag-script-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/cfml-tag-script-converter"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/cfml-tag-script-converter</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/cfml-tag-script-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/cfml-tag-script-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/cfml-tag-script-converter"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/sql-json-cfml-converter</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/sql-json-cfml-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/sql-json-cfml-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/sql-json-cfml-converter"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/sql-json-cfml-converter</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/sql-json-cfml-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/sql-json-cfml-converter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/sql-json-cfml-converter"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/cfml-orm-entity-generator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/cfml-orm-entity-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/cfml-orm-entity-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/cfml-orm-entity-generator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/cfml-orm-entity-generator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/cfml-orm-entity-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/cfml-orm-entity-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/cfml-orm-entity-generator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/commandbox-server-json-generator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/commandbox-server-json-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/commandbox-server-json-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/commandbox-server-json-generator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/commandbox-server-json-generator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/commandbox-server-json-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/commandbox-server-json-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/commandbox-server-json-generator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/jvm-heap-estimator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/jvm-heap-estimator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/jvm-heap-estimator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/jvm-heap-estimator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/jvm-heap-estimator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/jvm-heap-estimator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/jvm-heap-estimator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/jvm-heap-estimator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/cfml-hosting-migration-calculator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/cfml-hosting-migration-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/cfml-hosting-migration-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/cfml-hosting-migration-calculator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/cfml-hosting-migration-calculator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/cfml-hosting-migration-calculator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/cfml-hosting-migration-calculator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/cfml-hosting-migration-calculator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/application-cfc-generator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/application-cfc-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/application-cfc-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/application-cfc-generator"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/application-cfc-generator</loc>
+    <lastmod>2026-08-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/application-cfc-generator"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/application-cfc-generator"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/application-cfc-generator"/>
   </url>
 </urlset>
-

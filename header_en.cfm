@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PD1LE90C4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3PD1LE90C4');
+    </script>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/assets/images/image-removebg-preview (2).png">
     <link rel="shortcut icon" href="/assets/images/image-removebg-preview (2).png">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <cfoutput><title><cfif isDefined("request.pageTitle")>#request.pageTitle#<cfelse>ColdFusion Expert | Flavio Di Virgilio - Senior ColdFusion Developer, AWS &amp; AI Automation</cfif></title></cfoutput>
-    <cfoutput><meta name="description" content="<cfif isDefined('request.pageDescription')>#request.pageDescription#<cfelse>Flavio Di Virgilio - Senior Full-Stack Specialist in Adobe ColdFusion, Lucee Server, SQL Server, AWS Cloud, AI Automation (LLMs, RAG, OpenAI, Claude), and SEO/GEO. +15 years of experience. Live Zoom training courses and global consulting. Top Rated Plus on Upwork (100% Job Success).</cfif>"></cfoutput>
+        <cfoutput><title><cfif isDefined("request.pageTitle")>#request.pageTitle#<cfelse>ColdFusion Expert | Software, AI, APIs &amp; Modernization Solutions</cfif></title></cfoutput>
+    <cfoutput><meta name="description" content="<cfif isDefined('request.pageDescription')>#request.pageDescription#<cfelse>Software solutions for real businesses: web development, legacy modernization, APIs and integrations, AI automation, WordPress, and cloud—with deep ColdFusion and Lucee expertise.</cfif>"></cfoutput>
     <cfoutput><meta name="keywords" content="<cfif isDefined('request.pageKeywords')>#request.pageKeywords#<cfelse>ColdFusion expert, ColdFusion developer, Lucee server, AI automation, OpenAI Claude Gemini APIs, RAG vectors, ColdFusion consulting, SEO GEO AI, ColdFusion Zoom courses, AWS EC2 RDS, Quebec Attractions, CompraInversa, Firebrand Creative, Upwork Top Rated</cfif>"></cfoutput>
     <meta name="author" content="Flavio Di Virgilio">
     <cfoutput><meta name="robots" content="<cfif isDefined('request.pageNoindex') and request.pageNoindex>noindex, follow<cfelse>index, follow</cfif>"></cfoutput>
-    <cfoutput><link rel="canonical" href="<cfif isDefined('request.pageCanonical')>#request.pageCanonical#<cfelse>https://coldfusionexpert.ar/?lan=en</cfif>"></cfoutput>
-    <cfoutput><link rel="alternate" hreflang="es" href="<cfif isDefined('request.pageAlternateEs')>#request.pageAlternateEs#<cfelse>https://coldfusionexpert.ar/?lan=es</cfif>"></cfoutput>
-    <cfoutput><link rel="alternate" hreflang="en" href="<cfif isDefined('request.pageAlternateEn')>#request.pageAlternateEn#<cfelse>https://coldfusionexpert.ar/?lan=en</cfif>"></cfoutput>
-    <cfoutput><link rel="alternate" hreflang="x-default" href="<cfif isDefined('request.pageAlternateEn')>#request.pageAlternateEn#<cfelse>https://coldfusionexpert.ar/?lan=en</cfif>"></cfoutput>
+    <cfoutput><link rel="canonical" href="<cfif isDefined('request.pageCanonical')>#request.pageCanonical#<cfelse>https://coldfusionexpert.ar/</cfif>"></cfoutput>
+    <cfoutput><link rel="alternate" hreflang="es" href="<cfif isDefined('request.pageAlternateEs')>#request.pageAlternateEs#<cfelse>https://coldfusionexpert.ar/es/</cfif>"></cfoutput>
+    <cfoutput><link rel="alternate" hreflang="en" href="<cfif isDefined('request.pageAlternateEn')>#request.pageAlternateEn#<cfelse>https://coldfusionexpert.ar/</cfif>"></cfoutput>
+    <cfoutput><link rel="alternate" hreflang="x-default" href="<cfif isDefined('request.pageAlternateEn')>#request.pageAlternateEn#<cfelse>https://coldfusionexpert.ar/</cfif>"></cfoutput>
     <!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
     <meta property="og:type" content="website">
-    <cfoutput><meta property="og:url" content="<cfif isDefined('request.pageOgUrl')>#request.pageOgUrl#<cfelse>https://coldfusionexpert.ar/?lan=en</cfif>"></cfoutput>
-    <cfoutput><meta property="og:title" content="<cfif isDefined('request.pageOgTitle')>#request.pageOgTitle#<cfelse>ColdFusion Expert | Flavio Di Virgilio - Senior Full-Stack Developer &amp; AI Automation</cfif>"></cfoutput>
-    <cfoutput><meta property="og:description" content="<cfif isDefined('request.pageOgDescription')>#request.pageOgDescription#<cfelse>Expert consulting, custom web development, AI automation, AWS administration, SEO/GEO, and live Zoom courses. +15 years of experience.</cfif>"></cfoutput>
+    <cfoutput><meta property="og:url" content="<cfif isDefined('request.pageOgUrl')>#request.pageOgUrl#<cfelse>https://coldfusionexpert.ar/</cfif>"></cfoutput>
+    <cfoutput><meta property="og:title" content="<cfif isDefined('request.pageOgTitle')>#request.pageOgTitle#<cfelse>Software Solutions. Built for Real Business. | ColdFusion Expert</cfif>"></cfoutput>
+    <cfoutput><meta property="og:description" content="<cfif isDefined('request.pageOgDescription')>#request.pageOgDescription#<cfelse>Development, modernization, APIs, AI automation, WordPress, and cloud—with deep ColdFusion and Lucee expertise.</cfif>"></cfoutput>
     <meta property="og:image" content="https://coldfusionexpert.ar/assets/images/coldfusion-expert-social.png">
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <cfoutput><meta name="twitter:title" content="<cfif isDefined('request.pageOgTitle')>#request.pageOgTitle#<cfelse>ColdFusion Expert | Flavio Di Virgilio</cfif>"></cfoutput>
-    <cfoutput><meta name="twitter:description" content="<cfif isDefined('request.pageOgDescription')>#request.pageOgDescription#<cfelse>Senior Specialist in ColdFusion/CFML, Lucee, SQL Server, AWS Cloud, and AI Automation. Upwork Top Rated Plus.</cfif>"></cfoutput>
+    <cfoutput><meta name="twitter:title" content="<cfif isDefined('request.pageOgTitle')>#request.pageOgTitle#<cfelse>Software Solutions. Built for Real Business. | ColdFusion Expert</cfif>"></cfoutput>
+    <cfoutput><meta name="twitter:description" content="<cfif isDefined('request.pageOgDescription')>#request.pageOgDescription#<cfelse>Development, modernization, APIs, AI automation, WordPress, and cloud.</cfif>"></cfoutput>
     <meta name="twitter:image" content="https://coldfusionexpert.ar/assets/images/coldfusion-expert-social.png">
     <!-- Structured Data / JSON-LD Schema -->
     <cfif isDefined("request.pageSchemaJson")>
@@ -144,8 +152,10 @@
     <link rel="preload" as="style" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"></noscript>
     <cfoutput><link rel="stylesheet" href="/assets/css/templatemo-chain-app-dev.css<cfif isDefined('request.templateCssVer')>#request.templateCssVer#</cfif>"></cfoutput>
+    <link rel="stylesheet" href="/assets/css/home-redesign.css?v=2026080901">
     <link rel="stylesheet" href="/assets/css/animated.css">
     <link rel="stylesheet" href="/assets/css/owl.css">
+    <link rel="stylesheet" href="/assets/css/coldfusion-development.css?v=20260811ab">
     <cfoutput><link rel="stylesheet" href="/assets/css/tools.css<cfif isDefined('request.toolsCssVer')>#request.toolsCssVer#</cfif>"></cfoutput>
     <style>
       p { color: #2a2a2a; }
@@ -366,7 +376,7 @@
         transition: all 0.35s ease !important;
       }
       .service-item:hover {
-        background: #13aff0 url('assets/images/service-bg.jpg') no-repeat right top !important;
+        background: #13aff0 url('/assets/images/service-bg.jpg') no-repeat right top !important;
         background-size: cover !important;
         transform: translateY(-6px) !important;
         box-shadow: 0px 12px 30px rgba(19, 175, 240, 0.35) !important;
@@ -385,7 +395,7 @@
         position: absolute !important;
         top: 0 !important;
         left: 0 !important;
-        background-image: url(assets/images/pro-table-top.png) !important;
+        background-image: url(/assets/images/pro-table-top.png) !important;
         background-repeat: no-repeat !important;
         background-size: contain !important;
         width: 250px !important;
@@ -652,12 +662,21 @@
             <!-- ***** Logo End ***** -->
             <!-- ***** Menu Start ***** -->
             <ul class="nav">
-              <li class="scroll-to-section nav-standard"><a href="/#top"<cfif not (isDefined('request.isToolsSection') and request.isToolsSection)> class="active"</cfif>>Home</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/#services">Services</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/#pricing">Experience</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/#top"<cfif isDefined('request.isHomePage') and request.isHomePage> class="active"</cfif>><i class="fas fa-home nav-mobile-icon" aria-hidden="true"></i> Home</a></li>
+              <li class="nav-standard submenu services-menu">
+                <a href="#" aria-haspopup="true" aria-expanded="false"><i class="fas fa-layer-group nav-mobile-icon" aria-hidden="true"></i> Services</a>
+                <ul>
+                  <li class="scroll-to-section"><a href="/#coldfusion-services"><i class="fas fa-code"></i> ColdFusion Services</a></li>
+                  <li class="scroll-to-section"><a href="/#seo"><i class="fas fa-chart-line"></i> SEO &amp; GEO (AI) Optimization</a></li>
+                  <li class="scroll-to-section"><a href="/#automation"><i class="fas fa-robot"></i> AI Automation Solutions</a></li>
+                  <li class="scroll-to-section"><a href="/#courses"><i class="fas fa-graduation-cap"></i> Courses &amp; Training via Zoom</a></li>
+                </ul>
+              </li>
               <li class="scroll-to-section nav-standard"><a href="/#tools" class="nav-tools-highlight"><i class="fas fa-toolbox"></i> Tools</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/#about">About</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/#Contact">Contact</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/#pricing"><i class="fas fa-folder-open nav-mobile-icon" aria-hidden="true"></i> Projects</a></li>
+              <li class="nav-standard"><a href="/coldfusion-development"<cfif isDefined('request.isColdFusionPage') and request.isColdFusionPage> class="active"</cfif>><i class="fas fa-code nav-mobile-icon" aria-hidden="true"></i> CFML</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/flavio-di-virgilio"<cfif isDefined('request.isAboutPage') and request.isAboutPage> class="active"</cfif>><i class="fas fa-user nav-mobile-icon" aria-hidden="true"></i> About</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/#Contact"><i class="fas fa-envelope nav-mobile-icon" aria-hidden="true"></i> Contact</a></li>
               <cfif isDefined("request.isToolsSection") and request.isToolsSection>
                 <cfset local.mnCurrentFile = listLast(cgi.script_name, "/")>
                 <cfset local.mnActiveCategory = "">
@@ -691,7 +710,7 @@
                 </cfoutput>
               </cfif>
             </ul>
-            <a class='menu-trigger'>
+            <a href="#" class="menu-trigger" role="button" aria-label="Open navigation menu" aria-expanded="false">
                 <span>Menu</span>
             </a>
             <!-- ***** Menu End ***** -->

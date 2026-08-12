@@ -20,12 +20,12 @@
           <div class="footer-widget">
             <h4>Navegaci&oacute;n</h4>
             <ul>
-              <li><a href="/#top">Inicio</a></li>
-              <li><a href="/#services">Servicios</a></li>
-              <li><a href="/#pricing">Experiencia</a></li>
-              <li><a href="/#tools">Herramientas</a></li>
-              <li><a href="/#about">Acerca de</a></li>
-              <li><a href="/#Contact">Contacto</a></li>
+              <li><a href="/es/#top">Inicio</a></li>
+              <li><a href="/es/#services">Soluciones</a></li>
+              <li><a href="/es/#tools">Herramientas</a></li>
+              <li><a href="/es/#pricing">Proyectos</a></li>
+              <li><a href="/es/flavio-di-virgilio">Sobre m&iacute;</a></li>
+              <li><a href="/es/#Contact">Contacto</a></li>
             </ul>
           </div>
         </div>
@@ -56,7 +56,7 @@
     </div>
   </footer>
       <!-- Floating Language Switcher -->
-  <a href="?lan=en" class="float-lang" title="Switch to English">
+  <cfoutput><a href="#request.langSwitchUrl#" class="float-lang" title="Switch to English"></cfoutput>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="54" height="54">
       <clipPath id="circleClipUS">
         <circle cx="50" cy="50" r="50"/>
@@ -78,6 +78,9 @@
       </g>
     </svg>
   </a>
+  <button type="button" class="float-to-top" aria-label="Volver arriba" title="Volver arriba">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/5492236026142?text=Hola%20Flavio,%20vi%20tu%20sitio%20web%20y%20me%20gustar%C3%ADa%20consultarte" class="float-whatsapp" target="_blank" title="Consultar por WhatsApp">
     <i class="fab fa-whatsapp"></i>

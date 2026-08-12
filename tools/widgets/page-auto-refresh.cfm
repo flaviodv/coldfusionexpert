@@ -5,14 +5,16 @@
       <input type="url" id="refresh-url" placeholder="https://example.com" inputmode="url" autocomplete="url">
       <select id="refresh-mode" aria-label="<cfif local.isEs>Destino de la página<cfelse>Page destination</cfif>">
         <option value="iframe"><cfif local.isEs>Vista previa integrada<cfelse>In-page preview</cfif></option>
-        <option value="external"><cfif local.isEs>Pestaña externa<cfelse>External tab</cfif></option>
+        <option value="external" selected><cfif local.isEs>Pestaña externa<cfelse>External tab</cfif></option>
       </select>
       <label class="refresh-interval-label" for="refresh-interval"><cfif local.isEs>Cada<cfelse>Every</cfif></label>
       <input type="number" id="refresh-interval" value="60" min="10" max="3600" step="1">
       <span><cfif local.isEs>segundos<cfelse>seconds</cfif></span>
-      <label class="refresh-height-label" for="refresh-height"><cfif local.isEs>Alto<cfelse>Height</cfif></label>
-      <input type="number" id="refresh-height" value="620" min="300" max="2000" step="10">
-      <span>px</span>
+      <span class="refresh-height-controls" id="refresh-height-controls">
+        <label class="refresh-height-label" for="refresh-height"><cfif local.isEs>Alto<cfelse>Height</cfif></label>
+        <input type="number" id="refresh-height" value="620" min="300" max="2000" step="10">
+        <span>px</span>
+      </span>
       <button type="button" class="btn-social btn-upwork" id="refresh-load"><i class="fas fa-play"></i> <cfif local.isEs>Iniciar<cfelse>Start</cfif></button>
       <button type="button" class="btn-social btn-upwork refresh-stop" id="refresh-stop" disabled><i class="fas fa-stop"></i> <cfif local.isEs>Detener<cfelse>Stop</cfif></button>
     </div>
@@ -34,6 +36,7 @@
   var urlInput = document.getElementById('refresh-url');
   var intervalInput = document.getElementById('refresh-interval');
   var heightInput = document.getElementById('refresh-height');
+  var heightControls = document.getElementById('refresh-height-controls');
   var modeInput = document.getElementById('refresh-mode');
   var loadButton = document.getElementById('refresh-load');
   var stopButton = document.getElementById('refresh-stop');
@@ -68,6 +71,13 @@
   }
 
   heightInput.addEventListener('change', applyFrameHeight);
+
+  function updateHeightVisibility() {
+    heightControls.hidden = modeInput.value === 'external';
+  }
+
+  modeInput.addEventListener('change', updateHeightVisibility);
+  updateHeightVisibility();
 
   function getExternalWindow() {
     if (!externalWindow || externalWindow.closed) return null;

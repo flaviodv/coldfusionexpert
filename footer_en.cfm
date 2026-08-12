@@ -21,10 +21,10 @@
             <h4>Navigation</h4>
             <ul>
               <li><a href="/#top">Home</a></li>
-              <li><a href="/#services">Services</a></li>
-              <li><a href="/#pricing">Experience</a></li>
+              <li><a href="/#services">Solutions</a></li>
               <li><a href="/#tools">Tools</a></li>
-              <li><a href="/#about">About</a></li>
+              <li><a href="/#pricing">Projects</a></li>
+              <li><a href="/flavio-di-virgilio">About</a></li>
               <li><a href="/#Contact">Contact</a></li>
             </ul>
           </div>
@@ -56,7 +56,7 @@
     </div>
   </footer>
       <!-- Floating Language Switcher -->
-  <a href="?lan=es" class="float-lang" title="Cambiar a Espa&ntilde;ol">
+  <cfoutput><a href="#request.langSwitchUrl#" class="float-lang" title="Cambiar a Espa&ntilde;ol"></cfoutput>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="54" height="54">
       <clipPath id="circleClipAR">
         <circle cx="50" cy="50" r="50"/>
@@ -71,6 +71,9 @@
       </g>
     </svg>
   </a>
+  <button type="button" class="float-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20saw%20your%20website%20and%20would%20like%20to%20inquire" class="float-whatsapp" target="_blank" title="Contact via WhatsApp">
     <i class="fab fa-whatsapp"></i>
