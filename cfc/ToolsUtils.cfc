@@ -65,13 +65,18 @@ component {
 	// Downloads a remote raster image to a short-lived public folder.  This lets
 	// the browser work with image hosts that do not allow cross-origin requests.
 	remote function importImage(required string url) returnformat="json" {
-		var result = {"success": false, "error": ""};
+		// Keys must be declared quoted: unquoted dot-assignment (result.imageUrl)
+		// creates an upper-cased key, and serializeJSON then emits IMAGEURL, which
+		// the browser-side JS (case-sensitive) reads as undefined.
+		var result = {"success": false, "error": "", "imageUrl": "", "mimeType": ""};
 		var targetUrl = trim(arguments.url);
 		var httpResult = "";
 		var tempDir = expandPath("/tools/temp-images");
 		var extension = "";
 		var fileName = "";
 		var tempPath = "";
+		var hop = 0;
+		var location = "";
 
 		if (!reFindNoCase("^https?://", targetUrl)) {
 			result.error = "invalid_url";
@@ -85,8 +90,34 @@ component {
 		try {
 			if (!directoryExists(tempDir)) directoryCreate(tempDir);
 			cleanupTemporaryImages(tempDir);
-			cfhttp(url = targetUrl, method = "get", timeout = 12, throwonerror = true,
-				redirect = false, getAsBinary = "yes", useragent = "Mozilla/5.0 (compatible; ColdFusionExpertToolsBot/1.0)", result = "httpResult");
+			// redirect=false on purpose: cfhttp's own redirect follower would skip the
+			// isBlockedHost check on each hop (SSRF). Follow up to 3 hops by hand instead,
+			// re-validating every destination. Plenty of CDNs answer 301/302 on image URLs.
+			for (hop = 0; hop <= 3; hop++) {
+				cfhttp(url = targetUrl, method = "get", timeout = 12, throwonerror = false,
+					redirect = false, getAsBinary = "yes", useragent = "Mozilla/5.0 (compatible; ColdFusionExpertToolsBot/1.0)", result = "httpResult");
+
+				if (!structKeyExists(httpResult, "statusCode") || !reFind("^3[0-9][0-9]", httpResult.statusCode)) break;
+
+				location = structKeyExists(httpResult, "responseHeader") && structKeyExists(httpResult.responseHeader, "Location")
+					? httpResult.responseHeader.Location : "";
+				if (isArray(location)) location = arrayLen(location) ? location[1] : "";
+				location = trim(location);
+				if (!len(location) || hop == 3) {
+					result.error = "fetch_failed";
+					return result;
+				}
+				// Relative Location headers are resolved against the current target.
+				if (!reFindNoCase("^https?://", location)) {
+					location = reReplaceNoCase(targetUrl, "^(https?://[^/]+).*$", "\1")
+						& (left(location, 1) == "/" ? location : "/" & location);
+				}
+				targetUrl = location;
+				if (isBlockedHost(targetUrl)) {
+					result.error = "blocked_host";
+					return result;
+				}
+			}
 		} catch (any e) {
 			result.error = "fetch_failed";
 			return result;
@@ -111,9 +142,9 @@ component {
 		fileName = "image-" & replace(createUUID(), "-", "", "all") & "." & extension;
 		tempPath = tempDir & "/" & fileName;
 		fileWrite(tempPath, httpResult.fileContent);
-		result.success = true;
-		result.imageUrl = "/tools/temp-images/" & fileName;
-		result.mimeType = "image/" & (extension == "jpg" ? "jpeg" : extension);
+		result["success"] = true;
+		result["imageUrl"] = "/tools/temp-images/" & fileName;
+		result["mimeType"] = "image/" & (extension == "jpg" ? "jpeg" : extension);
 		return result;
 	}
 

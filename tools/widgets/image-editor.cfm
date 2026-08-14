@@ -219,8 +219,11 @@
       : fetch('/tools-api.cfm?method=importImage&url=' + encodeURIComponent(imageUrl))
           .then(function(response) { return response.json(); })
           .then(function(data) {
-            if (!data.success) throw new Error(data.error || 'fetch_failed');
-            return fetch(data.imageUrl);
+            // CFML can serialise struct keys upper-cased, so read both spellings.
+            var ok = data.success !== undefined ? data.success : data.SUCCESS;
+            var src = data.imageUrl || data.IMAGEURL;
+            if (!ok || !src) throw new Error(data.error || data.ERROR || 'fetch_failed');
+            return fetch(src);
           });
     imageRequest
       .then(function(response) {
