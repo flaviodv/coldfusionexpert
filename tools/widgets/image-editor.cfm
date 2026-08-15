@@ -89,8 +89,9 @@
       <img id="cropper-target" src="" alt="Editor Image">
     </div>
 
-    <!-- Export & Resize Panel -->
+    <!-- Export & Resize Panel: settings on the first row, action on the second -->
     <div class="export-panel">
+      <div class="export-settings">
       <!-- Resize Controls -->
       <div class="tool-group">
         <span class="tool-group-label"><cfif local.isEs>Dimensiones (Resize):<cfelse>Dimensions (Resize):</cfif></span>
@@ -127,17 +128,31 @@
         </select>
       </div>
 
+      <!-- Colour depth (PNG / WebP: JPG and ICO have no meaningful choice) -->
+      <div class="tool-group" id="depth-group" style="display:none;">
+        <label for="export-depth"><cfif local.isEs>Profundidad:<cfelse>Colour depth:</cfif></label>
+        <select id="export-depth">
+          <option value="24" selected><cfif local.isEs>24 bits (sin alpha)<cfelse>24-bit (no alpha)</cfif></option>
+          <option value="32"><cfif local.isEs>32 bits (con alpha)<cfelse>32-bit (with alpha)</cfif></option>
+        </select>
+        <label for="export-bg" id="export-bg-label"><cfif local.isEs>Fondo:<cfelse>Background:</cfif></label>
+        <input type="color" id="export-bg" value="#ffffff" title="<cfif local.isEs>Color que reemplaza las zonas transparentes<cfelse>Colour replacing transparent areas</cfif>">
+      </div>
+
       <!-- Quality Option -->
       <div class="tool-group" id="quality-group">
         <label for="export-quality"><cfif local.isEs>Calidad:<cfelse>Quality:</cfif></label>
-        <input type="range" id="export-quality" min="10" max="100" value="90">
-        <span id="val-quality" style="font-size:0.8rem; font-family:monospace; width:40px;">90%</span>
+        <input type="range" id="export-quality" min="10" max="100" value="80">
+        <span id="val-quality" style="font-size:0.8rem; font-family:monospace; width:40px;">80%</span>
+      </div>
       </div>
 
       <!-- Download Action -->
-      <button type="button" class="btn-social btn-upwork" id="btn-download">
-        <i class="fas fa-download"></i> <cfif local.isEs>Descargar Imagen<cfelse>Download Image</cfif>
-      </button>
+      <div class="export-actions">
+        <button type="button" class="btn-social btn-upwork" id="btn-download">
+          <i class="fas fa-download"></i> <cfif local.isEs>Descargar Imagen<cfelse>Download Image</cfif>
+        </button>
+      </div>
     </div>
   </div>
 </div>
@@ -168,6 +183,10 @@
   var exportQuality = document.getElementById('export-quality');
   var valQuality = document.getElementById('val-quality');
   var qualityGroup = document.getElementById('quality-group');
+  var depthGroup = document.getElementById('depth-group');
+  var exportDepth = document.getElementById('export-depth');
+  var exportBg = document.getElementById('export-bg');
+  var exportBgLabel = document.getElementById('export-bg-label');
   var icoSizeGroup = document.getElementById('ico-size-group');
   var icoSize = document.getElementById('ico-size');
 
@@ -185,6 +204,17 @@
   var scaleY = 1;
   var lockAspect = true;
   var isSyncingResize = false;
+  // Base name (no extension) of the loaded image, reused as the download
+  // suggestion so a file opened from a URL keeps its original name.
+  var downloadBaseName = '';
+
+  // Keeps the part before the last dot, strips anything a filesystem may reject.
+  function toBaseName(name) {
+    var base = String(name || '').replace(/\.[^.]+$/, '');
+    try { base = decodeURIComponent(base); } catch (e) {}
+    base = base.replace(/[\\/:*?"<>|]+/g, '-').replace(/\s+/g, ' ').trim();
+    return base.slice(0, 120);
+  }
 
   dropzone.addEventListener('click', function() { fileInput.click(); });
   dropzone.addEventListener('dragover', function(e) { e.preventDefault(); dropzone.classList.add('dragover'); });
@@ -232,7 +262,9 @@
       })
       .then(function(blob) {
         if (!blob.type.match(/^image\//)) throw new Error('not_an_image');
-        loadImage(new File([blob], 'remote-image.' + (blob.type.split('/')[1] || 'jpg'), { type: blob.type }));
+        // Keep the remote file's own name so the download suggests it back.
+        var remoteBase = toBaseName(requestedUrl.pathname.split('/').pop()) || 'remote-image';
+        loadImage(new File([blob], remoteBase + '.' + (blob.type.split('/')[1] || 'jpg'), { type: blob.type }));
         showUrlMessage('<cfif local.isEs>Imagen cargada correctamente.<cfelse>Image loaded successfully.</cfif>');
       })
       .catch(function(error) {
@@ -254,6 +286,7 @@
 
   function loadImage(file) {
     if (!file.type.match(/^image\//)) return;
+    downloadBaseName = toBaseName(file.name);
     var reader = new FileReader();
     reader.onload = function(e) {
       if (cropper) {
@@ -395,8 +428,11 @@
   });
 
   // Format selection
-  exportFormat.addEventListener('change', function() {
-    var val = this.value;
+  exportFormat.addEventListener('change', syncExportControls);
+  exportDepth.addEventListener('change', syncExportControls);
+
+  function syncExportControls() {
+    var val = exportFormat.value;
     if (val === 'image/x-icon') {
       icoSizeGroup.style.display = 'flex';
       qualityGroup.style.display = 'none';
@@ -404,7 +440,15 @@
       icoSizeGroup.style.display = 'none';
       qualityGroup.style.display = (val === 'image/png') ? 'none' : 'flex';
     }
-  });
+    // JPG is always opaque 24-bit and ICO is always 32-bit, so the choice only
+    // means something for PNG and WebP.
+    var depthApplies = (val === 'image/png' || val === 'image/webp');
+    depthGroup.style.display = depthApplies ? 'flex' : 'none';
+    var showBg = depthApplies && exportDepth.value === '24';
+    exportBg.style.display = showBg ? '' : 'none';
+    exportBgLabel.style.display = showBg ? '' : 'none';
+  }
+  syncExportControls();
 
   exportQuality.addEventListener('input', function() {
     valQuality.textContent = this.value + '%';
@@ -459,6 +503,99 @@
     });
   }
 
+  // ---- 24-bit PNG encoder (colour type 2, no alpha channel) -------------------
+  // The canvas API only ever produces 32-bit RGBA PNGs, so writing the chunks by
+  // hand is the only way to drop the alpha channel. Deflate comes from the
+  // built-in CompressionStream, which emits the zlib wrapper PNG expects.
+  function canEncodePng24() {
+    return typeof CompressionStream !== 'undefined' && typeof Response !== 'undefined';
+  }
+
+  var PNG_CRC_TABLE = (function() {
+    var table = new Uint32Array(256), c, n, k;
+    for (n = 0; n < 256; n++) {
+      c = n;
+      for (k = 0; k < 8; k++) c = (c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1);
+      table[n] = c >>> 0;
+    }
+    return table;
+  })();
+
+  function pngCrc32(bytes) {
+    var c = 0xFFFFFFFF;
+    for (var i = 0; i < bytes.length; i++) c = PNG_CRC_TABLE[(c ^ bytes[i]) & 0xFF] ^ (c >>> 8);
+    return (c ^ 0xFFFFFFFF) >>> 0;
+  }
+
+  function pngChunk(type, body) {
+    var out = new Uint8Array(12 + body.length);
+    var view = new DataView(out.buffer);
+    view.setUint32(0, body.length);
+    for (var i = 0; i < 4; i++) out[4 + i] = type.charCodeAt(i);
+    out.set(body, 8);
+    view.setUint32(8 + body.length, pngCrc32(out.subarray(4, 8 + body.length)));
+    return out;
+  }
+
+  // RGB scanlines with the Paeth filter, which compresses photographs well.
+  function pngScanlines(rgba, w, h) {
+    var stride = w * 3;
+    var raw = new Uint8Array((stride + 1) * h);
+    var prev = new Uint8Array(stride);
+    var cur = new Uint8Array(stride);
+    for (var y = 0; y < h; y++) {
+      for (var x = 0; x < w; x++) {
+        var src = (y * w + x) * 4, dst = x * 3;
+        cur[dst] = rgba[src];
+        cur[dst + 1] = rgba[src + 1];
+        cur[dst + 2] = rgba[src + 2];
+      }
+      var off = y * (stride + 1);
+      raw[off] = 4; // filter type: Paeth
+      for (var i = 0; i < stride; i++) {
+        var a = i >= 3 ? cur[i - 3] : 0;
+        var b = prev[i];
+        var c = i >= 3 ? prev[i - 3] : 0;
+        var p = a + b - c;
+        var pa = Math.abs(p - a), pb = Math.abs(p - b), pc = Math.abs(p - c);
+        var pred = (pa <= pb && pa <= pc) ? a : (pb <= pc ? b : c);
+        raw[off + 1 + i] = (cur[i] - pred) & 0xFF;
+      }
+      prev.set(cur);
+    }
+    return raw;
+  }
+
+  function encodePng24(canvas) {
+    var w = canvas.width, h = canvas.height;
+    var rgba = canvas.getContext('2d').getImageData(0, 0, w, h).data;
+    var raw = pngScanlines(rgba, w, h);
+    var stream = new Blob([raw]).stream().pipeThrough(new CompressionStream('deflate'));
+    return new Response(stream).arrayBuffer().then(function(buffer) {
+      var deflated = new Uint8Array(buffer);
+      var ihdr = new Uint8Array(13);
+      var view = new DataView(ihdr.buffer);
+      view.setUint32(0, w);
+      view.setUint32(4, h);
+      ihdr[8] = 8;  // bit depth per channel
+      ihdr[9] = 2;  // colour type 2 = truecolour RGB, no alpha
+      ihdr[10] = 0; // deflate
+      ihdr[11] = 0; // adaptive filtering
+      ihdr[12] = 0; // no interlace
+      var parts = [
+        new Uint8Array([137, 80, 78, 71, 13, 10, 26, 10]),
+        pngChunk('IHDR', ihdr),
+        pngChunk('IDAT', deflated),
+        pngChunk('IEND', new Uint8Array(0))
+      ];
+      var total = 0, pos = 0, out;
+      parts.forEach(function(part) { total += part.length; });
+      out = new Uint8Array(total);
+      parts.forEach(function(part) { out.set(part, pos); pos += part.length; });
+      return new Blob([out], { type: 'image/png' });
+    });
+  }
+
   // Export Download Trigger
   btnDownload.addEventListener('click', function() {
     if (!cropper) return;
@@ -476,11 +613,26 @@
     var croppedCanvas = cropper.getCroppedCanvas(cropOptions);
     if (!croppedCanvas) return;
 
+    var format = exportFormat.value;
+    var quality = parseFloat(exportQuality.value) / 100;
+    // JPG has no alpha channel at all; ICO here is always written as 32-bit.
+    var flatten = (format === 'image/jpeg') ||
+      ((format === 'image/png' || format === 'image/webp') && exportDepth.value === '24');
+
     // 2. Create final filtered canvas with brightness/contrast/saturation applied
     var finalCanvas = document.createElement('canvas');
     finalCanvas.width = croppedCanvas.width;
     finalCanvas.height = croppedCanvas.height;
-    var ctx = finalCanvas.getContext('2d');
+    // An {alpha:false} context guarantees an opaque bitmap, so the browser's own
+    // JPG/WebP encoders emit no alpha channel.
+    var ctx = finalCanvas.getContext('2d', flatten ? { alpha: false } : {});
+
+    // The background must be painted before ctx.filter is set, otherwise the
+    // brightness/contrast filter would also shift the chosen fill colour.
+    if (flatten) {
+      ctx.fillStyle = exportBg.value || '#ffffff';
+      ctx.fillRect(0, 0, finalCanvas.width, finalCanvas.height);
+    }
 
     var b = sliderBrightness.value;
     var c = sliderContrast.value;
@@ -488,25 +640,31 @@
     ctx.filter = 'brightness(' + b + '%) contrast(' + c + '%) saturate(' + s + '%)';
     ctx.drawImage(croppedCanvas, 0, 0);
 
-    var format = exportFormat.value;
-    var quality = parseFloat(exportQuality.value) / 100;
-
     // 3. Export according to format
     if (format === 'image/x-icon') {
       canvasToIcoBlob(finalCanvas, icoSize.value).then(function(icoBlob) {
-        triggerDownload(icoBlob, 'favicon.ico');
+        triggerDownload(icoBlob, (downloadBaseName || 'favicon') + '.ico');
       });
     } else {
       var ext = (format === 'image/png') ? 'png' : ((format === 'image/webp') ? 'webp' : 'jpg');
-      if (finalCanvas.toBlob) {
+      var outName = (downloadBaseName || 'edited-image') + '.' + ext;
+      // canvas.toBlob() always writes RGBA PNGs, so a true 24-bit (colour type 2)
+      // PNG has to be encoded by hand.
+      if (format === 'image/png' && flatten && canEncodePng24()) {
+        encodePng24(finalCanvas).then(function(pngBlob) {
+          triggerDownload(pngBlob, outName);
+        }).catch(function() {
+          finalCanvas.toBlob(function(blob) { triggerDownload(blob, outName); }, format);
+        });
+      } else if (finalCanvas.toBlob) {
         finalCanvas.toBlob(function(blob) {
-          triggerDownload(blob, 'edited-image.' + ext);
+          triggerDownload(blob, outName);
         }, format, quality);
       } else {
         var dataUrl = finalCanvas.toDataURL(format, quality);
         var a = document.createElement('a');
         a.href = dataUrl;
-        a.download = 'edited-image.' + ext;
+        a.download = outName;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

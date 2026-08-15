@@ -946,22 +946,91 @@
 }
 .widget-image-editor .export-panel {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
   padding: 20px;
   background: #f1f5f9;
   border-radius: 12px;
   border: 1px solid #e2e8f0;
 }
+/* Row 1: every export setting on a single baseline. Groups wrap as whole units
+   (never mid-group), so a label never gets orphaned from its control. */
+.widget-image-editor .export-settings {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 28px;
+}
+.widget-image-editor .export-settings .tool-group {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+/* Row 2: the action, separated from the settings it applies to. */
+.widget-image-editor .export-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 16px;
+  border-top: 1px solid #e2e8f0;
+}
+/* .tool-widget select above sets width:100% and a 14px bottom margin, which is
+   right for stacked forms but breaks this inline toolbar. Note background-color
+   rather than the background shorthand: the shorthand wipes out the chevron
+   background-image and leaves the select with no dropdown arrow. */
 .widget-image-editor select,
-.widget-image-editor input[type="number"] {
+.widget-image-editor input[type="number"],
+.widget-image-editor input[type="color"] {
+  width: auto;
+  height: 40px;
+  min-height: 40px;
+  margin: 0;
   padding: 8px 12px;
+  box-sizing: border-box;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 0.9rem;
-  background: #fff;
+  background-color: #fff;
+}
+.widget-image-editor select {
+  padding-right: 36px;
+  background-position: right 12px center;
+}
+/* Square colour swatch: without resetting the shadow-DOM wrapper the native
+   control renders the colour as a thin strip inside a mostly empty box. */
+.widget-image-editor input[type="color"] {
+  width: 40px;
+  padding: 3px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.widget-image-editor input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  height: 100%;
+}
+.widget-image-editor input[type="color"]::-webkit-color-swatch {
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+}
+.widget-image-editor input[type="color"]::-moz-color-swatch {
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+}
+.widget-image-editor #export-quality {
+  width: 150px;
+}
+@media (max-width: 640px) {
+  .widget-image-editor .export-settings .tool-group {
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+  .widget-image-editor .export-actions {
+    justify-content: stretch;
+  }
+  .widget-image-editor #btn-download {
+    width: 100%;
+    justify-content: center;
+  }
 }
 .widget-image-editor .aspect-btn {
   padding: 6px 12px;

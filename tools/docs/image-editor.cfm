@@ -2,11 +2,13 @@
 local.faqItems = local.isEs ? [
   {q: "¿Es seguro editar mis fotos en este sitio?", a: "Sí. La edición corre de forma local en tu navegador. Las imágenes elegidas desde tu dispositivo no se suben; al importar desde una URL, se guarda una copia temporal en nuestro servidor por hasta una hora."},
   {q: "¿Por qué convertir mis imágenes a WebP?", a: "WebP ofrece una compresión hasta un 30% superior a JPG y PNG sin perder calidad visible, lo que reduce el tiempo de carga del sitio y mejora el puntaje de Google PageSpeed."},
-  {q: "¿Cómo genero un favicon para mi sitio web?", a: "Cargá tu logotipo o ícono, elegí la proporción 1:1, selecciona el formato Favicon (.ico), elegí el tamaño (ej. 32x32 px) y hacé clic en Descargar Imagen."}
+  {q: "¿Cómo genero un favicon para mi sitio web?", a: "Cargá tu logotipo o ícono, elegí la proporción 1:1, selecciona el formato Favicon (.ico), elegí el tamaño (ej. 32x32 px) y hacé clic en Descargar Imagen."},
+  {q: "¿Cuál es la diferencia entre 24 y 32 bits?", a: "32 bits guarda 8 bits por canal RGB más un canal alpha de transparencia; 24 bits guarda solo el RGB. Si tu imagen no necesita transparencia, elegí 24 bits: el archivo pesa menos y evitás fondos transparentes inesperados. Las zonas transparentes se rellenan con el color de fondo que elijas."}
 ] : [
   {q: "Is it safe to edit my photos on this site?", a: "Yes. Editing occurs locally in your browser. Images selected from your device are never uploaded; when importing from a URL, a temporary copy is stored on our server for up to one hour so it can be loaded securely."},
   {q: "Why should I convert images to WebP?", a: "WebP provides up to 30% better compression than JPG and PNG without noticeable quality loss, drastically speeding up page load times and boosting Google PageSpeed scores."},
-  {q: "How do I generate a website favicon?", a: "Upload your logo or icon, select the 1:1 ratio, pick the Favicon (.ico) format, choose your size (e.g. 32x32 px), and click Download Image."}
+  {q: "How do I generate a website favicon?", a: "Upload your logo or icon, select the 1:1 ratio, pick the Favicon (.ico) format, choose your size (e.g. 32x32 px), and click Download Image."},
+  {q: "What is the difference between 24-bit and 32-bit?", a: "32-bit stores 8 bits per RGB channel plus an alpha transparency channel; 24-bit stores only the RGB data. If your image does not need transparency, pick 24-bit: the file is smaller and you avoid unexpected transparent backgrounds. Transparent areas are filled with the background colour you choose."}
 ];
 </cfscript>
 <cfoutput>
