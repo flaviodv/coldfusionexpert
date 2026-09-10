@@ -19,6 +19,10 @@
       <button type="button" class="btn-social btn-upwork refresh-stop" id="refresh-stop" disabled><i class="fas fa-stop"></i> <cfif local.isEs>Detener<cfelse>Stop</cfif></button>
     </div>
     <p class="refresh-status" id="refresh-status" aria-live="polite"><cfif local.isEs>Ingresá una URL para comenzar.<cfelse>Enter a URL to begin.</cfif></p>
+    <p class="refresh-countdown" id="refresh-countdown" role="timer" aria-live="off" hidden>
+      <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+      <span><cfif local.isEs>Próxima actualización en<cfelse>Next refresh in</cfif> <strong id="refresh-countdown-time">00:00</strong></span>
+    </p>
   </div>
 
   <div class="refresh-notice">
@@ -41,9 +45,12 @@
   var loadButton = document.getElementById('refresh-load');
   var stopButton = document.getElementById('refresh-stop');
   var status = document.getElementById('refresh-status');
+  var countdown = document.getElementById('refresh-countdown');
+  var countdownTime = document.getElementById('refresh-countdown-time');
   var frame = document.getElementById('refresh-frame');
   var frameWrap = document.getElementById('refresh-frame-wrap');
   var refreshTimer = null;
+  var nextRefreshAt = 0;
   var activeUrl = '';
   var activeMode = 'iframe';
   var hasLoaded = false;
@@ -58,9 +65,19 @@
   function stopRefresh(message) {
     if (refreshTimer) window.clearInterval(refreshTimer);
     refreshTimer = null;
+    nextRefreshAt = 0;
+    countdown.hidden = true;
+    countdownTime.textContent = '00:00';
     loadButton.disabled = false;
     stopButton.disabled = true;
     if (message) setStatus(message);
+  }
+
+  function updateCountdown() {
+    var remaining = Math.max(0, Math.ceil((nextRefreshAt - Date.now()) / 1000));
+    var minutes = String(Math.floor(remaining / 60)).padStart(2, '0');
+    var seconds = String(remaining % 60).padStart(2, '0');
+    countdownTime.textContent = minutes + ':' + seconds;
   }
 
   function applyFrameHeight() {
@@ -149,6 +166,7 @@
       externalWindow = window.open(activeUrl, externalWindowName);
       if (!externalWindow) {
         setStatus('<cfif local.isEs>El navegador bloqueó la pestaña externa. Permití las ventanas emergentes e intentá otra vez.<cfelse>Your browser blocked the external tab. Allow pop-ups and try again.</cfif>', true);
+        stopRefresh();
         return;
       }
       try { externalWindow.focus(); } catch (error) {}
@@ -159,7 +177,24 @@
       refreshFrame();
     }
     if (refreshTimer) window.clearInterval(refreshTimer);
-    refreshTimer = window.setInterval(refreshFrame, seconds * 1000);
+    nextRefreshAt = Date.now() + seconds * 1000;
+    countdown.hidden = false;
+    updateCountdown();
+    refreshTimer = window.setInterval(function () {
+      // Use the deadline for both refresh and display, even after a delayed tick.
+      if (Date.now() >= nextRefreshAt) {
+        nextRefreshAt = Date.now() + seconds * 1000;
+        try {
+          refreshFrame();
+        } catch (error) {
+          stopRefresh();
+          setStatus('<cfif local.isEs>No se pudo actualizar la página. Presioná Iniciar para intentarlo de nuevo.<cfelse>The page could not be refreshed. Press Start to try again.</cfif>', true);
+          return;
+        }
+        if (!refreshTimer) return;
+      }
+      updateCountdown();
+    }, 250);
     stopButton.disabled = false;
     setStatus((wasActive
       ? '<cfif local.isEs>Actualización reiniciada. Nuevo intervalo: <cfelse>Refresh restarted. New interval: </cfif>'

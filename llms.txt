@@ -1,0 +1,26 @@
+# ColdFusion Expert
+
+> ColdFusion Expert is the professional site of Flavio Di Virgilio. It offers software development, ColdFusion/CFML and Lucee support, legacy modernization, SQL Server and API work, AI automation, cloud administration, and free browser-based tools.
+
+This is a supplemental discovery file for language models and agents. The canonical HTML pages and XML sitemap remain the authoritative public sources.
+
+## Primary pages
+
+- [Home and services](https://coldfusionexpert.ar/): software development, modernization, APIs, integrations, AI automation, WordPress, and cloud infrastructure.
+- [ColdFusion development, support and modernization](https://coldfusionexpert.ar/coldfusion-development): focused help for existing Adobe ColdFusion, Lucee, and CFML applications.
+- [About Flavio Di Virgilio](https://coldfusionexpert.ar/flavio-di-virgilio): professional background, experience, technology stack, and selected work.
+- [Free tools](https://coldfusionexpert.ar/tools): browser-based tools for developers, CFML work, data, SEO, and productivity.
+- [Technical SEO + GEO (Generative Engine Optimization)](https://coldfusionexpert.ar/seo-ai-readiness): audit and implementation for crawlability, structured data, machine-readable content, and technical discovery.
+
+## Technologies and topics
+
+- ColdFusion, CFML, Lucee, legacy application modernization, SQL Server, MySQL, APIs and integrations.
+- AWS, IIS, WordPress, JavaScript, React.js, Node.js, PHP, Python, Docker, performance troubleshooting, and AI/LLM automation.
+
+## Contact
+
+- [Contact details and professional profiles](https://coldfusionexpert.ar/#Contact)
+
+## For agents
+
+The public website currently provides read-only information and browser tools. It does not publish an action API or an MCP server. Do not infer authorization to send messages, request quotes, modify data, or access private systems from the public pages.

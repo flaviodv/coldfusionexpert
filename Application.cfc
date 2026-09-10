@@ -59,6 +59,11 @@ function onRequestStart(targetPage){
         request.templateCssVer = "";
     }
     try {
+        request.coldfusionCssVer = "?v=" & dateFormat(getFileInfo(expandPath("/assets/css/coldfusion-development.css")).lastmodified, "yyyymmdd") & timeFormat(getFileInfo(expandPath("/assets/css/coldfusion-development.css")).lastmodified, "HHmmss");
+    } catch (any e) {
+        request.coldfusionCssVer = "";
+    }
+    try {
         request.heroImageVer = "?v=" & dateFormat(getFileInfo(expandPath("/assets/images/flavio-ondas-sin-marco.webp")).lastmodified, "yyyymmdd") & timeFormat(getFileInfo(expandPath("/assets/images/flavio-ondas-sin-marco.webp")).lastmodified, "HHmmss");
     } catch (any e) {
         request.heroImageVer = "";
@@ -80,6 +85,7 @@ function onRequestStart(targetPage){
         request.isHomePage = false;
         request.isAboutPage = false;
         request.isColdFusionPage = false;
+        request.isAiReadinessPage = false;
         request.langPrefix = (session.lan eq "es") ? "/es" : "";
 
         // Base clean path (no language prefix, no ?lan=) for the current page - used to
@@ -93,6 +99,8 @@ function onRequestStart(targetPage){
             basePath = "/flavio-di-virgilio";
         } else if(fileName eq "coldfusion-development.cfm"){
             basePath = "/coldfusion-development";
+        } else if(fileName eq "seo-ai-readiness.cfm"){
+            basePath = "/seo-ai-readiness";
         }
         request.langSwitchUrl = (session.lan eq "es") ? basePath : ("/es" & basePath);
         if(isDefined("url.category") and fileName eq "tools.cfm"){
@@ -164,6 +172,9 @@ function onRequestStart(targetPage){
             request.pageTitle = (session.lan eq "es")
                 ? "Nuestras Herramientas Gratuitas | ColdFusion Expert"
                 : "Our Free Tools | ColdFusion Expert";
+            request.pageDescription = (session.lan eq "es")
+                ? "Herramientas online gratuitas de navegador para desarrollo, CFML, datos, SEO y productividad, creadas por ColdFusion Expert."
+                : "Free browser-based tools for development, CFML, data, SEO, and productivity, created by ColdFusion Expert.";
             request.pageCanonical = "https://coldfusionexpert.ar" & request.langPrefix & "/tools";
             request.pageAlternateEs = "https://coldfusionexpert.ar/es/tools";
             request.pageAlternateEn = "https://coldfusionexpert.ar/tools";
@@ -202,11 +213,60 @@ function onRequestStart(targetPage){
             request.pageOgTitle = request.pageTitle;
             request.pageOgDescription = request.pageDescription;
             request.pageOgUrl = request.pageCanonical;
+        } else if(fileName eq "seo-ai-readiness.cfm"){
+            request.isAiReadinessPage = true;
+            request.pageTitle = (session.lan eq "es")
+                ? "SEO Técnico + GEO (Visibilidad en IA) | ColdFusion Expert"
+                : "Technical SEO + GEO (Generative Engine Optimization) | ColdFusion Expert";
+            request.pageDescription = (session.lan eq "es")
+                ? "Auditoría e implementación de SEO técnico, GEO, datos estructurados y contenido machine-readable para que tu sitio sea entendible por buscadores y asistentes de IA."
+                : "Technical SEO, GEO, structured data, and machine-readable content audits and implementation so search engines and AI assistants can understand your site.";
+            request.pageKeywords = (session.lan eq "es")
+                ? "SEO técnico, visibilidad IA, GEO, datos estructurados, Schema.org, AI Search, auditoría SEO"
+                : "technical SEO, AI search visibility, GEO, structured data, Schema.org, AI search, SEO audit";
+            request.pageCanonical = "https://coldfusionexpert.ar" & request.langPrefix & "/seo-ai-readiness";
+            request.pageAlternateEs = "https://coldfusionexpert.ar/es/seo-ai-readiness";
+            request.pageAlternateEn = "https://coldfusionexpert.ar/seo-ai-readiness";
+            request.pageOgTitle = request.pageTitle;
+            request.pageOgDescription = request.pageDescription;
+            request.pageOgUrl = request.pageCanonical;
         } else if(fileName eq "index.cfm"){
             request.isHomePage = true;
+            request.pageTitle = (session.lan eq "es")
+                ? "ColdFusion Expert | Software, IA, APIs y Modernizaci&oacute;n"
+                : "ColdFusion Expert | Software, AI, APIs & Modernization Solutions";
+            request.pageDescription = (session.lan eq "es")
+                ? "Soluciones de software para empresas: desarrollo web, modernización legacy, APIs e integraciones, automatización con IA, WordPress y cloud, con especialización en ColdFusion y Lucee."
+                : "Software solutions for real businesses: web development, legacy modernization, APIs and integrations, AI automation, WordPress, and cloud—with deep ColdFusion and Lucee expertise.";
             request.pageCanonical = "https://coldfusionexpert.ar" & request.langPrefix & "/";
             request.pageAlternateEs = "https://coldfusionexpert.ar/es/";
             request.pageAlternateEn = "https://coldfusionexpert.ar/";
+        } else if(fileName eq "404.cfm"){
+            request.pageTitle = (session.lan eq "es") ? "Página no encontrada | ColdFusion Expert" : "Page not found | ColdFusion Expert";
+            request.pageDescription = (session.lan eq "es") ? "La página solicitada no existe o fue movida." : "The requested page does not exist or has moved.";
+            request.pageCanonical = "https://coldfusionexpert.ar/404";
+            request.pageNoindex = true;
+        } else if(listFindNoCase("index_en.cfm,index_es.cfm,about_me_en.cfm,about_me_es.cfm,tools_en.cfm,tools_es.cfm", fileName)){
+            // Content partials are implementation files, not public entry points.
+            // They remain reachable for local maintenance but must not compete with
+            // their routed parent pages in a search index.
+            request.pageTitle = "ColdFusion Expert";
+            request.pageDescription = "Internal content template.";
+            request.pageCanonical = "https://coldfusionexpert.ar/";
+            request.pageNoindex = true;
+        }
+
+        // A page-level graph prevents unrelated schemas from being emitted on every URL.
+        // Individual tools retain their WebApplication + BreadcrumbList graph above.
+        if(!isDefined("request.pageSchemaJson") && fileName neq "404.cfm" && !(isDefined("request.pageNoindex") && request.pageNoindex)) {
+            var schemaKind = request.isHomePage ? "home" : (request.isAboutPage ? "profile" : (request.isColdFusionPage ? "coldfusion-service" : (request.isAiReadinessPage ? "ai-search-service" : (request.isToolsSection ? "tools" : "page"))));
+            request.pageSchemaJson = new cfc.SiteSchema().buildPageGraph(
+                pageKind = schemaKind,
+                language = session.lan,
+                url = request.pageCanonical,
+                title = request.pageTitle,
+                description = request.pageDescription
+            );
         }
 
         if(session.lan eq "es"){

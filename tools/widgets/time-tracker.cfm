@@ -64,6 +64,9 @@
         <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-1" data-slot="1">
           <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
         </button>
+        <a class="btn-timer-todo" href="<cfif local.isEs>/es/tools/todo-list<cfelse>/tools/todo-list</cfif>">
+          <i class="fas fa-tasks"></i> <span><cfif local.isEs>LISTA DE TAREAS<cfelse>TO-DO LIST</cfif></span>
+        </a>
       </div>
     </div>
 
@@ -95,6 +98,9 @@
         <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-2" data-slot="2">
           <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
         </button>
+        <a class="btn-timer-todo" href="<cfif local.isEs>/es/tools/todo-list<cfelse>/tools/todo-list</cfif>">
+          <i class="fas fa-tasks"></i> <span><cfif local.isEs>LISTA DE TAREAS<cfelse>TO-DO LIST</cfif></span>
+        </a>
       </div>
     </div>
 
@@ -126,6 +132,9 @@
         <button type="button" class="btn-timer-toggle btn-timer-start" id="btn-timer-toggle-3" data-slot="3">
           <i class="fas fa-play"></i> <span><cfif local.isEs>INICIAR<cfelse>START</cfif></span>
         </button>
+        <a class="btn-timer-todo" href="<cfif local.isEs>/es/tools/todo-list<cfelse>/tools/todo-list</cfif>">
+          <i class="fas fa-tasks"></i> <span><cfif local.isEs>LISTA DE TAREAS<cfelse>TO-DO LIST</cfif></span>
+        </a>
       </div>
     </div>
 
@@ -145,6 +154,9 @@
         <button type="button" class="btn-timer-toggle" id="btn-countdown-reset-4" data-slot="4" style="background:#475569; color:#fff;">
           <i class="fas fa-undo"></i> <span><cfif local.isEs>REINICIAR<cfelse>RESET</cfif></span>
         </button>
+        <a class="btn-timer-todo" href="<cfif local.isEs>/es/tools/todo-list<cfelse>/tools/todo-list</cfif>">
+          <i class="fas fa-tasks"></i> <span><cfif local.isEs>LISTA DE TAREAS<cfelse>TO-DO LIST</cfif></span>
+        </a>
       </div>
     </div>
 
@@ -164,6 +176,9 @@
         <button type="button" class="btn-timer-toggle" id="btn-countdown-reset-5" data-slot="5" style="background:#475569; color:#fff;">
           <i class="fas fa-undo"></i> <span><cfif local.isEs>REINICIAR<cfelse>RESET</cfif></span>
         </button>
+        <a class="btn-timer-todo" href="<cfif local.isEs>/es/tools/todo-list<cfelse>/tools/todo-list</cfif>">
+          <i class="fas fa-tasks"></i> <span><cfif local.isEs>LISTA DE TAREAS<cfelse>TO-DO LIST</cfif></span>
+        </a>
       </div>
     </div>
   </div>
@@ -223,6 +238,7 @@
   var ENTRIES_KEY = 'cfexpert_tracker_entries';
   var MULTI_TIMERS_KEY = 'cfexpert_tracker_multi_timers';
   var COUNTDOWNS_KEY = 'cfexpert_tracker_countdowns';
+  var LAST_RATE_KEY = 'cfexpert_tracker_last_rate';
 
   var slots = [1, 2, 3];
   var countdownSlots = [4, 5];
@@ -304,6 +320,50 @@
     try {
       localStorage.setItem(ENTRIES_KEY, JSON.stringify(entries));
     } catch(e) {}
+  }
+
+  function loadLastRate() {
+    try {
+      var data = localStorage.getItem(LAST_RATE_KEY);
+      var lastRate = data ? JSON.parse(data) : null;
+      if (lastRate && parseFloat(lastRate.rate) > 0) return lastRate;
+
+      // Preserve the user's rate from timers/history created before this preference existed.
+      var activeRateTimer = null;
+      slots.forEach(function(slot) {
+        var timer = activeTimers[slot];
+        if (timer && parseFloat(timer.rate) > 0 && (!activeRateTimer || new Date(timer.startTime) > new Date(activeRateTimer.startTime))) {
+          activeRateTimer = timer;
+        }
+      });
+      if (activeRateTimer) return { rate: activeRateTimer.rate, currency: activeRateTimer.currency || '$' };
+
+      var latestEntryWithRate = entries.filter(function(entry) { return parseFloat(entry.rate) > 0; })[0];
+      return latestEntryWithRate ? { rate: latestEntryWithRate.rate, currency: latestEntryWithRate.currency || '$' } : null;
+    } catch(e) { return null; }
+  }
+
+  function rememberRate(rate, currency) {
+    var numericRate = parseFloat(rate);
+    if (!(numericRate > 0)) return;
+    try {
+      localStorage.setItem(LAST_RATE_KEY, JSON.stringify({
+        rate: numericRate,
+        currency: currency || '$'
+      }));
+    } catch(e) {}
+  }
+
+  function applyLastRateToTimerSlots() {
+    var lastRate = loadLastRate();
+    if (!lastRate) return;
+
+    slots.forEach(function(slot) {
+      var rateInput = document.getElementById('tracker-rate-' + slot);
+      var currencySelect = document.getElementById('tracker-currency-' + slot);
+      if (rateInput && !rateInput.value) rateInput.value = lastRate.rate;
+      if (currencySelect && currencySelect.value === '$') currencySelect.value = lastRate.currency || '$';
+    });
   }
 
   function formatTimeDigits(sec) {
@@ -401,6 +461,8 @@
       startTime: new Date().toISOString()
     };
 
+    rememberRate(activeTimers[slot].rate, activeTimers[slot].currency);
+
     saveActiveTimers();
     updateSlotUI(slot);
 
@@ -424,6 +486,8 @@
     var currentRate = parseFloat(rateInput ? rateInput.value : 0) || parseFloat(timer.rate) || 0;
     var currentCurrency = currSelect ? currSelect.value : (timer.currency || '$');
     var earned = currentRate > 0 ? (durationSec / 3600) * currentRate : 0;
+
+    rememberRate(currentRate, currentCurrency);
 
     var newEntry = {
       id: Date.now(),
@@ -586,12 +650,21 @@
 
   slots.forEach(function(slot) {
     var btn = document.getElementById('btn-timer-toggle-' + slot);
+    var rateInput = document.getElementById('tracker-rate-' + slot);
+    var currencySelect = document.getElementById('tracker-currency-' + slot);
     btn.addEventListener('click', function() {
       if (activeTimers[slot]) {
         stopSlotTimer(slot);
       } else {
         startSlotTimer(slot);
       }
+    });
+
+    rateInput.addEventListener('input', function() {
+      rememberRate(this.value, currencySelect.value);
+    });
+    currencySelect.addEventListener('change', function() {
+      rememberRate(rateInput.value, this.value);
     });
 
     if (activeTimers[slot]) {
@@ -601,10 +674,14 @@
       document.getElementById('tracker-rate-' + slot).value = t.rate > 0 ? t.rate : '';
       document.getElementById('tracker-currency-' + slot).value = t.currency || '$';
 
+      rememberRate(t.rate, t.currency);
+
       updateSlotUI(slot);
       intervals[slot] = setInterval(function() { updateSlotUI(slot); }, 1000);
     }
   });
+
+  applyLastRateToTimerSlots();
 
   countdownSlots.forEach(function(slot) {
     var toggleBtn = document.getElementById('btn-countdown-toggle-' + slot);
@@ -699,6 +776,8 @@
     });
 
     editingEntryId = null;
+    var editedEntry = entries.filter(function(e) { return e.id === id; })[0];
+    if (editedEntry) rememberRate(editedEntry.rate, editedEntry.currency);
     saveEntries();
     renderEntries();
   }
@@ -893,6 +972,15 @@
           durEl.className = 'entry-duration';
           durEl.textContent = formatTimeDigits(entry.durationSeconds);
 
+          var rateEl = document.createElement('span');
+          rateEl.className = 'entry-rate';
+          if (entry.rate > 0) {
+            rateEl.textContent = (entry.currency || '$') + entry.rate.toFixed(2).replace(/\.00$/, '') + '<cfif local.isEs>/h<cfelse>/hr</cfif>';
+          } else {
+            rateEl.textContent = '<cfif local.isEs>Sin tarifa<cfelse>No rate</cfif>';
+            rateEl.classList.add('entry-rate-empty');
+          }
+
           var earnedEl = document.createElement('span');
           earnedEl.className = 'entry-earned';
           if (entry.earned > 0) {
@@ -937,6 +1025,7 @@
           card.appendChild(projEl);
           card.appendChild(rangeEl);
           card.appendChild(durEl);
+          card.appendChild(rateEl);
           card.appendChild(earnedEl);
           card.appendChild(actionsEl);
 

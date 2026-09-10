@@ -113,6 +113,7 @@
 }
 
 .tools-sidebar-category[data-category="marketing-seo-social"] .tools-sidebar-cat-toggle { color: #ff8fc1; }
+.tools-sidebar-category[data-category="redes-sociales-contenido"] .tools-sidebar-cat-toggle { color: #35c7ff; }
 .tools-sidebar-category[data-category="diseno-frontend-css"] .tools-sidebar-cat-toggle { color: #bb9cff; }
 .tools-sidebar-category[data-category="desarrollo-datos"] .tools-sidebar-cat-toggle { color: #5cc9ff; }
 .tools-sidebar-category[data-category="gestion-tiempo-productividad"] .tools-sidebar-cat-toggle { color: #ffd166; }
@@ -565,6 +566,13 @@
 .tool-widget .btn-social, .tool-copy { margin: 0 8px 16px 0; border: 0; cursor: pointer; }
 .tool-copy { background: #eef7fb; color: #168fc5; border-radius: 20px; padding: 8px 16px; font-size: .85rem; }
 .widget-buttons { display: flex; flex-wrap: wrap; }
+.social-font-results { display: grid; gap: 12px; }
+.social-font-row { display: grid; grid-template-columns: 150px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 14px; border: 1px solid #e1edf2; border-radius: 10px; background: #fbfdfe; }
+.social-font-row strong { color: #23405a; font-size: .88rem; }
+.social-font-preview { overflow-wrap: anywhere; color: #283c4a; font-size: 1.05rem; line-height: 1.45; }
+.social-font-emoji { font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif; letter-spacing: .08em; }
+.social-font-row .tool-copy { margin: 0; white-space: nowrap; }
+@media (max-width: 640px) { .social-font-row { grid-template-columns: 1fr; gap: 7px; } .social-font-row .tool-copy { justify-self: start; } }
 .widget-file-actions { margin: 0 0 14px; }
 .tool-widget .tool-file-label { display: inline-block; color: #168fc5; cursor: pointer; font-weight: 600; margin: 0; }
 .tool-widget .widget-file-actions input[type="file"] { display: none; }
@@ -855,14 +863,15 @@
   background: #f8fafc;
 }
 .widget-image-editor .image-url-import label { display: block; margin-bottom: 8px; }
-.widget-image-editor .image-url-import-controls { display: flex; gap: 10px; }
+.widget-image-editor .image-url-import-controls { display: flex; gap: 10px; align-items: center; }
 .widget-image-editor .image-url-import input { flex: 1; min-width: 0; padding: 9px 12px; border: 1px solid #cbd5e1; border-radius: 8px; }
-.widget-image-editor .image-url-import .btn-social { border: 0; white-space: nowrap; }
+.widget-image-editor .image-url-import .btn-social,
+.widget-image-editor .image-url-import .tool-copy { margin: 0; border: 0; white-space: nowrap; }
 .widget-image-editor .image-url-message { min-height: 1.1em; margin: 8px 0 0; font-size: .85rem; color: #16803a; }
 .widget-image-editor .image-url-message.is-error { color: #c0392b; }
 @media (max-width: 576px) { .widget-image-editor .image-url-import-controls { flex-direction: column; } }
 
-/* ===== Widget: Page Auto Refresh ===== */
+/* ===== Widget: Site Monitor / Page Auto Refresh ===== */
 .widget-page-auto-refresh { display: flex; flex-direction: column; gap: 16px; }
 .widget-page-auto-refresh .refresh-controls, .widget-page-auto-refresh .refresh-notice { padding: 18px; border: 1px solid #e2e8f0; border-radius: 12px; background: #f8fafc; }
 .widget-page-auto-refresh label { font-weight: 600; color: #334155; }
@@ -879,6 +888,10 @@
 .widget-page-auto-refresh .refresh-stop { background: #64748b; }
 .widget-page-auto-refresh .refresh-status { min-height: 1.2em; margin: 12px 0 0; color: #16803a; font-size: .9rem; }
 .widget-page-auto-refresh .refresh-status.is-error { color: #c0392b; }
+.widget-page-auto-refresh .refresh-countdown { display: flex; align-items: center; gap: 8px; margin: 10px 0 0; color: #334155; font-size: .95rem; }
+.widget-page-auto-refresh .refresh-countdown[hidden] { display: none; }
+.widget-page-auto-refresh .refresh-countdown i { color: #13aff0; }
+.widget-page-auto-refresh .refresh-countdown strong { color: #16803a; font-variant-numeric: tabular-nums; }
 .widget-page-auto-refresh .refresh-notice { display: flex; gap: 10px; color: #475569; font-size: .92rem; line-height: 1.5; }
 .widget-page-auto-refresh .refresh-notice i { color: #13aff0; margin-top: 3px; }
 .widget-page-auto-refresh .refresh-frame-wrap { height: 620px; border: 1px solid #cbd5e1; border-radius: 12px; overflow: hidden; background: #fff; }
@@ -1796,6 +1809,23 @@
 .widget-time-tracker .btn-timer-stop:hover {
   background: #dc2626;
 }
+.widget-time-tracker .btn-timer-todo {
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 10px;
+  background: #f59e0b !important;
+  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.widget-time-tracker .btn-timer-todo:hover {
+  background: #d97706 !important;
+  color: #fff !important;
+}
 
 .widget-time-tracker .summary-cards-grid {
   display: grid;
@@ -1886,6 +1916,20 @@
   font-size: 0.95rem;
   font-weight: 700;
   color: #0f172a;
+}
+.widget-time-tracker .entry-rate {
+  font-family: monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0369a1;
+  background: #e0f2fe;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.widget-time-tracker .entry-rate-empty {
+  color: #64748b;
+  background: #f1f5f9;
 }
 .widget-time-tracker .entry-earned {
   font-weight: 800;

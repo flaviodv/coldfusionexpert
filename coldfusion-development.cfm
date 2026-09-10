@@ -37,12 +37,13 @@
     </div>
   </div></div></div></div></div></section>
 
-  <nav class="section-rail" aria-label="Section navigation">
+  <nav class="section-rail" data-rail-always-visible="true" aria-label="Section navigation">
     <ul class="section-rail-list">
       <li><a href="#top" class="section-rail-link" data-rail-target="top" data-section-label="Overview" aria-label="Go to Overview"><span class="section-rail-label">Overview</span></a></li>
       <li><a href="#expertise" class="section-rail-link" data-rail-target="expertise" data-section-label="Expertise" aria-label="Go to Expertise"><span class="section-rail-label">Expertise</span></a></li>
-      <li><a href="#tools" class="section-rail-link" data-rail-target="tools" data-section-label="Tools" aria-label="Go to Tools"><span class="section-rail-label">Tools</span></a></li>
+      <li><a href="#legacy-takeover" class="section-rail-link" data-rail-target="legacy-takeover" data-section-label="Legacy modernization" aria-label="Go to Legacy modernization"><span class="section-rail-label">Legacy modernization</span></a></li>
       <li><a href="#services" class="section-rail-link" data-rail-target="services" data-section-label="Services" aria-label="Go to Services"><span class="section-rail-label">Services</span></a></li>
+      <li><a href="#technical-seo-geo" class="section-rail-link" data-rail-target="technical-seo-geo" data-section-label="Technical SEO + GEO" aria-label="Go to Technical SEO and GEO"><span class="section-rail-label">SEO + GEO</span></a></li>
       <li><a href="#approach" class="section-rail-link" data-rail-target="approach" data-section-label="How I work" aria-label="Go to How I work"><span class="section-rail-label">How I work</span></a></li>
       <li><a href="#faq" class="section-rail-link" data-rail-target="faq" data-section-label="FAQ" aria-label="Go to FAQ"><span class="section-rail-label">FAQ</span></a></li>
       <li><a href="#contact" class="section-rail-link" data-rail-target="contact" data-section-label="Contact" aria-label="Go to Contact"><span class="section-rail-label">Contact</span></a></li>
@@ -54,6 +55,23 @@
       <span class="hero-kicker">Trusted ColdFusion Expertise</span>
       <h2>Keep valuable systems dependable.</h2>
       <p>Legacy applications are valuable business systems, not disposable software. The right work improves stability, removes practical sources of risk, and gives your team a clear view of what should happen next. I focus on useful improvements, careful delivery, and communication you can rely on.</p>
+    </div>
+  </section>
+
+  <section id="legacy-takeover" class="cf-section is-soft cf-legacy-takeover wow fadeInUp" data-wow-duration="1s">
+    <div class="container">
+      <div class="cf-section-heading"><span class="hero-kicker">Legacy Application Takeover &amp; Safe Modernization</span><h2>Bring a complex existing application under control.</h2><p>I regularly take over ColdFusion applications built and maintained by other developers, including large legacy systems with limited documentation and tightly coupled business logic.</p></div>
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-6"><div class="cf-legacy-copy"><h3>No unnecessary rewrites.</h3><p>My approach is not to rewrite a working system unnecessarily. I first understand its architecture, undocumented dependencies, and critical workflows&mdash;then make it progressively easier to manage.</p><p>Modernization is driven by business value: quick wins first, technical debt where it is justified, and a current UI when it can improve the experience without changing the forms, actions, sessions, or business logic that already work.</p></div></div>
+        <div class="col-lg-6"><div class="cf-legacy-actions"><h3>Typical first steps</h3><ul>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Stabilize existing functionality and identify technical risks.</span></li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Deliver small, controlled changes with testing, staging, and a practical rollback path.</span></li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Improve UI, SQL, and application performance without disturbing core business logic.</span></li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Refactor only where there is a clear benefit, or plan a measured migration to PHP, .NET, Python, React, Vue, Node.js, or another suitable technology.</span></li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Document important discoveries, decisions, and changes as the work progresses.</span></li>
+        </ul></div></div>
+      </div>
+      <p class="cf-legacy-outcome">The goal is a safer, more maintainable, and more modern application&mdash;without putting the business at unnecessary risk.</p>
     </div>
   </section>
 
@@ -81,11 +99,13 @@
         <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>15+ years of web development experience</span></li>
         <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Strong ColdFusion, Lucee, CFML and SQL Server background</span></li>
         <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Practical approach for legacy and business-critical applications</span></li>
-        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Modern integrations, APIs, HTML5, JavaScript, Bootstrap and cloud-ready solutions</span></li>
+        <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Modern integrations, APIs, HTML5, JavaScript, React.js, Python, Bootstrap and cloud-ready solutions</span></li>
         <li><i class="fas fa-check-circle" aria-hidden="true"></i><span>Clear communication and ownership from diagnosis to delivery</span></li>
       </ul></div></div>
     </div>
   </section>
+
+  <section id="technical-seo-geo" class="cf-section cf-geo-callout wow fadeInUp"><div class="container"><div class="cf-section-heading"><span class="hero-kicker">Technical SEO + GEO</span><h2>Make your CFML application easier for search and AI systems to understand.</h2><p>For public-facing ColdFusion and Lucee applications, I can improve server-rendered HTML, metadata, structured data, sitemaps, and technical discovery signals without rewriting the application.</p><a href="/seo-ai-readiness" class="hero-cta hero-cta-secondary"><i class="fas fa-arrow-right"></i> Explore technical SEO + GEO</a></div></div></section>
 
   <section id="approach" class="cf-section is-soft wow fadeInUp" data-wow-duration="1s">
     <div class="container"><div class="cf-section-heading"><span class="hero-kicker">How I work</span><h2>A clear path from diagnosis to delivery.</h2></div><div class="row g-4">

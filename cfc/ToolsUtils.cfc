@@ -10,10 +10,27 @@ component {
 			"title": "",
 			"description": "",
 			"keywords": "",
+			"robots": "",
+			"viewport": "",
+			"author": "",
+			"canonical": "",
+			"charset": "",
+			"language": "",
 			"ogTitle": "",
 			"ogDescription": "",
 			"ogImage": "",
-			"canonical": ""
+			"ogType": "",
+			"ogUrl": "",
+			"ogSiteName": "",
+			"ogLocale": "",
+			"twitterCard": "",
+			"twitterTitle": "",
+			"twitterDescription": "",
+			"twitterImage": "",
+			"twitterSite": "",
+			"twitterCreator": "",
+			"schemaItems": [],
+			"schemaRawBlocks": []
 		};
 
 		var targetUrl = trim(arguments.url);
@@ -29,36 +46,93 @@ component {
 		}
 
 		var httpResult = "";
+		var hop = 0;
+		var location = "";
 		try {
-			cfhttp(
-				url = targetUrl,
-				method = "get",
-				timeout = 8,
-				throwonerror = true,
-				redirect = true,
-				useragent = "Mozilla/5.0 (compatible; ColdFusionExpertToolsBot/1.0; +https://coldfusionexpert.ar)",
-				result = "httpResult"
-			);
+			for (hop = 0; hop <= 5; hop++) {
+				cfhttp(
+					url = targetUrl,
+					method = "get",
+					timeout = 10,
+					throwonerror = false,
+					redirect = false,
+					useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+					result = "httpResult"
+				) {
+					cfhttpparam(type = "header", name = "Accept", value = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8");
+					cfhttpparam(type = "header", name = "Accept-Language", value = "en-US,en;q=0.9,es;q=0.8,fr;q=0.7");
+					cfhttpparam(type = "header", name = "Upgrade-Insecure-Requests", value = "1");
+				}
+
+				if (!structKeyExists(httpResult, "statusCode") || !reFind("^3[0-9][0-9]", httpResult.statusCode)) break;
+
+				location = structKeyExists(httpResult, "responseHeader") && structKeyExists(httpResult.responseHeader, "Location")
+					? httpResult.responseHeader.Location : "";
+				if (isArray(location)) location = arrayLen(location) ? location[1] : "";
+				location = trim(location);
+				if (!len(location) || hop == 5) {
+					result.error = "fetch_failed";
+					return result;
+				}
+				// Relative Location headers are resolved against the current target.
+				if (!reFindNoCase("^https?://", location)) {
+					location = reReplaceNoCase(targetUrl, "^(https?://[^/]+).*$", "\1")
+						& (left(location, 1) == "/" ? location : "/" & location);
+				}
+				targetUrl = location;
+				if (isBlockedHost(targetUrl)) {
+					result.error = "blocked_host";
+					return result;
+				}
+			}
 		} catch (any e) {
 			result.error = "fetch_failed";
 			return result;
 		}
 
-		if (!isSimpleValue(httpResult.fileContent)) {
+		if (!structKeyExists(httpResult, "statusCode") || !reFind("^(200|304)", httpResult.statusCode) || !isSimpleValue(httpResult.fileContent) || !len(trim(httpResult.fileContent))) {
+			result.error = "fetch_failed";
+			return result;
+		}
+		if (len(httpResult.fileContent) > 4194304) {
 			result.error = "invalid_response";
 			return result;
 		}
 
 		var html = httpResult.fileContent;
 
-		result.title = extractFirst(html, "<title[^>]*>([^<]*)</title>");
-		result.description = extractMetaContent(html, "description");
-		result.keywords = extractMetaContent(html, "keywords");
-		result.ogTitle = extractMetaContent(html, "og:title", true);
-		result.ogDescription = extractMetaContent(html, "og:description", true);
-		result.ogImage = extractMetaContent(html, "og:image", true);
-		result.canonical = extractFirst(html, '<link[^>]*rel=["'']canonical["''][^>]*href=["'']([^"'']*)["'']');
-		result.success = true;
+		result["title"] = extractFirst(html, "<title[^>]*>([^<]*)</title>");
+		result["description"] = extractMetaContent(html, "description");
+		result["keywords"] = extractMetaContent(html, "keywords");
+		result["robots"] = extractMetaContent(html, "robots");
+		result["viewport"] = extractMetaContent(html, "viewport");
+		result["author"] = extractMetaContent(html, "author");
+		result["canonical"] = extractFirst(html, '<link[^>]*rel=["'']canonical["''][^>]*href=["'']([^"'']*)["'']');
+		result["charset"] = extractFirst(html, '<meta[^>]*charset=["'']?([^"''\s/>]+)');
+		if (!len(result["charset"])) {
+			result["charset"] = extractFirst(html, '<meta[^>]*http-equiv=["'']Content-Type["''][^>]*content=["''][^"'']*charset=([^"''\s;]+)');
+		}
+		result["language"] = extractFirst(html, '<html[^>]*lang=["'']([^"'']*)["'']');
+
+		result["ogTitle"] = extractMetaContent(html, "og:title", true);
+		result["ogDescription"] = extractMetaContent(html, "og:description", true);
+		result["ogImage"] = extractMetaContent(html, "og:image", true);
+		result["ogType"] = extractMetaContent(html, "og:type", true);
+		result["ogUrl"] = extractMetaContent(html, "og:url", true);
+		result["ogSiteName"] = extractMetaContent(html, "og:site_name", true);
+		result["ogLocale"] = extractMetaContent(html, "og:locale", true);
+
+		result["twitterCard"] = extractMetaContent(html, "twitter:card", false);
+		result["twitterTitle"] = extractMetaContent(html, "twitter:title", false);
+		result["twitterDescription"] = extractMetaContent(html, "twitter:description", false);
+		result["twitterImage"] = extractMetaContent(html, "twitter:image", false);
+		result["twitterSite"] = extractMetaContent(html, "twitter:site", false);
+		result["twitterCreator"] = extractMetaContent(html, "twitter:creator", false);
+
+		var schemaData = extractSchemaData(html);
+		result["schemaItems"] = schemaData.items;
+		result["schemaRawBlocks"] = schemaData.rawBlocks;
+		result["success"] = true;
 		return result;
 	}
 
@@ -144,7 +218,7 @@ component {
 		fileWrite(tempPath, httpResult.fileContent);
 		result["success"] = true;
 		result["imageUrl"] = "/tools/temp-images/" & fileName;
-		result["mimeType"] = "image/" & (extension == "jpg" ? "jpeg" : extension);
+		result["mimeType"] = (extension == "svg" ? "image/svg+xml" : ("image/" & (extension == "jpg" ? "jpeg" : extension)));
 		return result;
 	}
 
@@ -195,12 +269,40 @@ component {
 		}
 	}
 
-	private string function imageExtension(required binary bytes) {
-		var signature = binaryEncode(arguments.bytes, "hex");
-		if (left(signature, 16) == "89504E470D0A1A0A") return "png";
-		if (left(signature, 6) == "FFD8FF") return "jpg";
-		if (left(signature, 12) == "474946383761" || left(signature, 12) == "474946383961") return "gif";
-		if (left(signature, 8) == "52494646" && mid(signature, 17, 8) == "57454250") return "webp";
+	private string function imageExtension(required any bytes) {
+		var signature = "";
+		var rawText = "";
+
+		if (isBinary(arguments.bytes)) {
+			signature = uCase(binaryEncode(arguments.bytes, "hex"));
+			if (left(signature, 16) == "89504E470D0A1A0A") return "png";
+			if (left(signature, 6) == "FFD8FF") return "jpg";
+			if (left(signature, 12) == "474946383761" || left(signature, 12) == "474946383961") return "gif";
+			if (left(signature, 8) == "52494646" && mid(signature, 17, 8) == "57454250") return "webp";
+
+			// Try converting binary to string for SVG inspection
+			try {
+				rawText = createObject("java", "java.lang.String").init(arguments.bytes, "UTF-8");
+			} catch (any e) {
+				try {
+					rawText = toString(arguments.bytes);
+				} catch (any e2) {}
+			}
+			// Hex fallback for SVG (<svg or <SVG in the first 2KB of hex)
+			if (!len(rawText) && (findNoCase("3C737667", left(signature, 2048)) || findNoCase("3C535647", left(signature, 2048)))) {
+				return "svg";
+			}
+		} else if (isSimpleValue(arguments.bytes)) {
+			rawText = arguments.bytes;
+		}
+
+		if (len(rawText)) {
+			var sampleHead = left(rawText, 2048);
+			if (reFindNoCase("<svg[\s>]", sampleHead) || reFindNoCase("<svg[^>]*xmlns", sampleHead)) {
+				return "svg";
+			}
+		}
+
 		return "";
 	}
 
@@ -243,18 +345,111 @@ component {
 		if (structKeyExists(m, "match") and arrayLen(m.match) >= 2 and len(trim(m.match[2]))) {
 			return trim(decodeEntities(m.match[2]));
 		}
+		if (structKeyExists(m, "pos") and arrayLen(m.pos) >= 2 and m.pos[2] > 0 and m.len[2] > 0) {
+			return trim(decodeEntities(mid(arguments.html, m.pos[2], m.len[2])));
+		}
 		return "";
 	}
 
 	private string function extractMetaContent(required string html, required string name, boolean isProperty = false) {
-		var attr = arguments.isProperty ? "property" : "name";
-		var p1 = '<meta[^>]*' & attr & '=["'']' & arguments.name & '["''][^>]*content=["'']([^"'']*)["'']';
-		var p2 = '<meta[^>]*content=["'']([^"'']*)["''][^>]*' & attr & '=["'']' & arguments.name & '["'']';
-		var found = extractFirst(arguments.html, p1);
-		if (len(found)) {
-			return found;
+		var pAttr = arguments.isProperty ? "property" : "name";
+		var sAttr = arguments.isProperty ? "name" : "property";
+		var safeName = replace(arguments.name, ":", "\:", "all");
+		var found = "";
+
+		found = extractFirst(arguments.html, '<meta[^>]*' & pAttr & '=["'']' & safeName & '["''][^>]*content=["'']([^"'']*)["'']');
+		if (len(found)) return found;
+		found = extractFirst(arguments.html, '<meta[^>]*content=["'']([^"'']*)["''][^>]*' & pAttr & '=["'']' & safeName & '["'']');
+		if (len(found)) return found;
+
+		found = extractFirst(arguments.html, '<meta[^>]*' & sAttr & '=["'']' & safeName & '["''][^>]*content=["'']([^"'']*)["'']');
+		if (len(found)) return found;
+		found = extractFirst(arguments.html, '<meta[^>]*content=["'']([^"'']*)["''][^>]*' & sAttr & '=["'']' & safeName & '["'']');
+		return found;
+	}
+
+	// Reads Schema.org JSON-LD blocks. A page may publish a single entity, an
+	// array, or an @graph, so each typed object is collected recursively.
+	private struct function extractSchemaData(required string html) {
+		var result = {
+			"items": [],
+			"rawBlocks": []
+		};
+		var scripts = reMatchNoCase('(?s)<script[^>]*type\s*=\s*["'']?application/ld\+json["'']?[^>]*>.*?</script>', arguments.html);
+		var script = "";
+		var jsonText = "";
+		var data = "";
+
+		// Fallback in case type attribute appears after or without standard spacing
+		if (!arrayLen(scripts)) {
+			scripts = reMatchNoCase("(?s)<script[^>]*>.*?</script>", arguments.html);
+			var filtered = [];
+			for (script in scripts) {
+				if (reFindNoCase('application/ld\+json', script)) arrayAppend(filtered, script);
+			}
+			scripts = filtered;
 		}
-		return extractFirst(arguments.html, p2);
+
+		for (script in scripts) {
+			jsonText = trim(reReplaceNoCase(script, "(?is)^\s*<script[^>]*>", "", "one"));
+			jsonText = trim(reReplaceNoCase(jsonText, "(?is)</script>\s*$", "", "one"));
+			if (!len(jsonText)) continue;
+			arrayAppend(result.rawBlocks, jsonText);
+			try {
+				data = deserializeJSON(jsonText);
+				collectSchemaItems(data, result.items);
+			} catch (any e) {
+				// Invalid third-party JSON-LD should not prevent ordinary metadata extraction.
+			}
+		}
+		return result;
+	}
+
+	private array function extractSchemaItems(required string html) {
+		return extractSchemaData(arguments.html).items;
+	}
+
+	private void function collectSchemaItems(required any node, required array items) {
+		var key = "";
+		var value = "";
+		var typeValue = "";
+		var typeName = "";
+		var item = {};
+
+		if (isArray(arguments.node)) {
+			for (value in arguments.node) collectSchemaItems(value, arguments.items);
+			return;
+		}
+		if (!isStruct(arguments.node)) return;
+
+		if (structKeyExists(arguments.node, "@type")) {
+			typeValue = arguments.node["@type"];
+			typeName = isArray(typeValue) ? arrayToList(typeValue, ", ") : toString(typeValue);
+			if (len(trim(typeName)) && arrayLen(arguments.items) < 60) {
+				item = {
+					"type": typeName,
+					"name": schemaValue(arguments.node, "name"),
+					"url": schemaValue(arguments.node, "url"),
+					"description": schemaValue(arguments.node, "description"),
+					"id": schemaValue(arguments.node, "@id"),
+					"data": arguments.node,
+					"raw": arguments.node
+				};
+				arrayAppend(arguments.items, item);
+			}
+		}
+
+		for (key in arguments.node) {
+			value = arguments.node[key];
+			if (isArray(value) || isStruct(value)) collectSchemaItems(value, arguments.items);
+		}
+	}
+
+	private string function schemaValue(required struct node, required string key) {
+		var value = "";
+		if (!structKeyExists(arguments.node, arguments.key)) return "";
+		value = arguments.node[arguments.key];
+		return isSimpleValue(value) ? trim(toString(value)) : "";
 	}
 
 	private string function decodeEntities(required string s) {

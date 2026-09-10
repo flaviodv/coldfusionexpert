@@ -18,5 +18,6 @@ switch (url.method) {
 }
 
 getPageContext().getResponse().setContentType("application/json; charset=UTF-8");
+getPageContext().getResponse().setHeader("X-Robots-Tag", "noindex, nofollow, noarchive");
 writeOutput(serializeJSON(result));
 </cfscript>

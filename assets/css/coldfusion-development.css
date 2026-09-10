@@ -235,6 +235,36 @@ html { scroll-behavior: smooth; }
 .cf-development-page .cf-section-heading p, .cf-development-page .cf-content > p { color: #607089; line-height: 1.8; }
 .cf-development-page .cf-expertise-copy { max-width: 780px; margin: 0 auto; text-align: center; }
 .cf-development-page .cf-expertise-copy p { color: #41506a; font-size: 1.08rem; line-height: 1.85; }
+.cf-development-page .cf-legacy-takeover { scroll-margin-top: 120px; background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%) !important; }
+.cf-development-page .cf-legacy-takeover .hero-kicker { color: #8be8f5; }
+.cf-development-page .cf-legacy-takeover .cf-section-heading h2,
+.cf-development-page .cf-legacy-takeover .cf-section-heading p { color: #fff; }
+.cf-development-page .cf-legacy-takeover .cf-section-heading p { opacity: .9; }
+.cf-development-page .cf-legacy-copy, .cf-development-page .cf-legacy-actions { height: 100%; padding: 32px; border: 1px solid #dbe8f6; border-radius: 16px; background: rgba(255, 255, 255, .92); box-shadow: 0 5px 20px rgba(23, 32, 51, .05); }
+.cf-development-page .cf-legacy-copy h3, .cf-development-page .cf-legacy-actions h3 { margin: 0 0 16px; color: #172033; font-size: 1.3rem; font-weight: 800; }
+.cf-development-page .cf-legacy-copy p { margin: 0 0 16px; color: #41506a; line-height: 1.8; }
+.cf-development-page .cf-legacy-copy p:last-child { margin-bottom: 0; }
+.cf-development-page .cf-legacy-actions ul { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.cf-development-page .cf-legacy-actions li { display: flex; gap: 11px; color: #41506a; line-height: 1.6; }
+.cf-development-page .cf-legacy-actions i { flex: 0 0 auto; margin-top: 4px; color: #14a800; }
+.cf-development-page .cf-legacy-outcome { max-width: 850px; margin: 30px auto 0; color: #fff; font-size: 1.08rem; font-weight: 700; line-height: 1.75; text-align: center; }
+
+/* Cross-link from CFML services to the SEO + GEO service. Mirrors the legacy
+   modernization treatment so it reads as a focused, high-value capability. */
+.cf-development-page .cf-geo-callout { background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%); }
+.cf-development-page .cf-geo-callout .hero-kicker { color: #8be8f5; }
+.cf-development-page .cf-geo-callout .cf-section-heading h2,
+.cf-development-page .cf-geo-callout .cf-section-heading p { color: #fff; }
+.cf-development-page .cf-geo-callout .cf-section-heading p { opacity: .9; }
+.cf-development-page .cf-geo-callout .hero-cta-secondary { border-color: rgba(255, 255, 255, .65); background: #fff; color: #2b5876; }
+.cf-development-page .cf-geo-callout .hero-cta-secondary:hover,
+.cf-development-page .cf-geo-callout .hero-cta-secondary:focus-visible { border-color: #fff; background: #eaf7fc; color: #172033; }
+
+/* Middle process section on the SEO + GEO landing page. */
+.cf-development-page .cf-geo-process { background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%); }
+.cf-development-page .cf-geo-process .hero-kicker { color: #8be8f5; }
+.cf-development-page .cf-geo-process .cf-section-heading h2 { color: #fff; }
+.cf-development-page .cf-geo-process .cf-step-card { border-color: rgba(255, 255, 255, .4); box-shadow: 0 12px 28px rgba(17, 28, 67, .18); }
 
 .cf-development-page .cf-service-card, .cf-development-page .cf-reason-card, .cf-development-page .cf-step-card { height: 100%; padding: 28px; border: 1px solid #e4edf8; border-radius: 15px; background: #fff; box-shadow: 0 5px 20px rgba(23, 32, 51, .05); transition: transform .25s ease, box-shadow .25s ease; }
 .cf-development-page .cf-service-card:hover, .cf-development-page .cf-service-card:focus-within, .cf-development-page .cf-reason-card:hover, .cf-development-page .cf-step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(23, 32, 51, .1); }

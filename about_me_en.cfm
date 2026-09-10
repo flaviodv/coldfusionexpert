@@ -64,7 +64,7 @@
       <span class="hero-kicker">Expertise</span>
       <h2>Broad technical foundations, with deep CFML expertise.</h2>
       <p class="section-copy">Specialized in every Adobe ColdFusion generation—from CF4 through CF2025—and Lucee Server, with hands-on experience across full-stack development, data architecture, integrations, servers, and applied automation.</p>
-      <div class="resume-skills"><span>Adobe ColdFusion / CFML</span><span>Lucee Server</span><span>Fusebox &amp; OOP</span><span>CommandBox</span><span>SQL Server</span><span>MySQL / PostgreSQL</span><span>MongoDB</span><span>JavaScript / React / Node.js</span><span>PHP / Python</span><span>REST &amp; JWT</span><span>AWS EC2 / RDS / S3</span><span>IIS / Linux</span><span>Docker / CI/CD</span><span>WordPress / ACF / Bricks</span><span>Codex / Claude Code / Gemini</span><span>AI &amp; Prompt Engineering</span></div>
+      <div class="resume-skills"><span>Adobe ColdFusion / CFML</span><span>Lucee Server</span><span>Fusebox &amp; OOP</span><span>CommandBox</span><span>SQL Server</span><span>MySQL / PostgreSQL</span><span>MongoDB</span><span>JavaScript / React.js / Node.js</span><span>PHP / Python</span><span>REST &amp; JWT</span><span>AWS EC2 / RDS / S3</span><span>IIS / Linux</span><span>Docker / CI/CD</span><span>WordPress / ACF / Bricks</span><span>Codex / Claude Code / Gemini</span><span>AI &amp; Prompt Engineering</span></div>
     </div>
   </section>
 

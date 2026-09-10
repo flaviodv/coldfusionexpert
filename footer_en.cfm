@@ -22,8 +22,9 @@
             <ul>
               <li><a href="/#top">Home</a></li>
               <li><a href="/#services">Solutions</a></li>
+              <li><a href="/seo-ai-readiness">Technical SEO + GEO</a></li>
               <li><a href="/#tools">Tools</a></li>
-              <li><a href="/#pricing">Projects</a></li>
+              <li><a href="/#projects">Projects</a></li>
               <li><a href="/flavio-di-virgilio">About</a></li>
               <li><a href="/#Contact">Contact</a></li>
             </ul>

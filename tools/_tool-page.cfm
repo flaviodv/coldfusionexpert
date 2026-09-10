@@ -1,3 +1,4 @@
+<cfprocessingdirective pageencoding="utf-8">
 <cfif not isDefined("request.toolsRegistry")>
   <cfinclude template="_tools-registry.cfm">
 </cfif>

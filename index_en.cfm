@@ -9,13 +9,13 @@
                   <div class="col-lg-12">
                     <span class="hero-kicker">Development · Modernization · Automation</span>
                     <h1 class="hero-business-title">Software solutions.<em>Built for real business.</em></h1>
-                    <p class="hero-business-copy">We design, modernize, and connect systems that power real operations: web applications, APIs, AI automation, WordPress, and cloud infrastructure. <strong>ColdFusion and Lucee</strong> remain a deep specialization—not a limitation.</p>
+                    <p class="hero-business-copy">We design, modernize, and connect systems that power real operations: web applications, APIs, React.js, Python, AI automation, WordPress, and cloud infrastructure. <strong>ColdFusion and Lucee</strong> remain a deep specialization—not a limitation.</p>
                     <div class="hero-cta-row scroll-to-section">
                       <a href="#services" class="hero-cta hero-cta-primary"><i class="fas fa-arrow-right"></i> Explore solutions</a>
                       <a href="#tools" class="hero-cta hero-cta-secondary"><i class="fas fa-toolbox"></i> Use free tools</a>
                     </div>
                     <div class="hero-capabilities" aria-label="Core capabilities">
-                      <span>Custom Software</span><span>APIs &amp; Integrations</span><span>AI Automation</span><span>WordPress</span><span>ColdFusion / Lucee</span>
+                      <span>Custom Software</span><span>APIs &amp; Integrations</span><span>AI Automation</span><span>WordPress</span><span>React.js</span><span>Python</span><span>ColdFusion / Lucee</span>
                     </div>
                   </div>
                 </div>
@@ -31,7 +31,7 @@
                   for (local.hmCountSlug in request.toolOrder) if (request.toolsRegistry[local.hmCountSlug].built) local.hmToolTotal++;
                 </cfscript>
                 <div id="hero-tools-marquee" class="hero-tools-marquee" aria-label="Free tools created">
-                <div class="hero-tools-marquee-header"><div class="hero-tools-marquee-title"><span><i class="fas fa-toolbox"></i> Tools I've built</span><a href="/tools.cfm" class="hero-tools-all-link">View all <i class="fas fa-arrow-right"></i></a></div><div class="hero-tools-marquee-meta"><cfoutput><span class="hero-tools-counter"><strong data-tool-current>01</strong> / #numberFormat(local.hmToolTotal, '00')#</span></cfoutput><small><i class="fas fa-pause"></i> Hover to pause</small></div></div>
+                <div class="hero-tools-marquee-header"><div class="hero-tools-marquee-title"><span><i class="fas fa-toolbox"></i> Tools I've built</span><a href="/tools" class="hero-tools-all-link">View all <i class="fas fa-arrow-right"></i></a></div><div class="hero-tools-marquee-meta"><cfoutput><span class="hero-tools-counter"><strong data-tool-current>01</strong> / #numberFormat(local.hmToolTotal, '00')#</span></cfoutput><small><i class="fas fa-pause"></i> Hover to pause</small></div></div>
                 <div class="hero-tools-marquee-viewport" tabindex="0">
                   <div class="hero-tools-marquee-track">
                     <div class="hero-tools-marquee-list">
@@ -88,7 +88,7 @@
       <li><a href="#automation" class="section-rail-link" data-rail-target="automation" data-section-label="AI automation" aria-label="Go to AI automation"><span class="section-rail-label">AI automation</span></a></li>
       <li><a href="#courses" class="section-rail-link" data-rail-target="courses" data-section-label="Zoom courses" aria-label="Go to Zoom courses"><span class="section-rail-label">Zoom courses</span></a></li>
       <li><a href="#tools" class="section-rail-link" data-rail-target="tools" data-section-label="Tools" aria-label="Go to Tools"><span class="section-rail-label">Tools</span></a></li>
-      <li><a href="#pricing" class="section-rail-link" data-rail-target="pricing" data-section-label="Experience and projects" aria-label="Go to Experience and projects"><span class="section-rail-label">Experience and projects</span></a></li>
+      <li><a href="#projects" class="section-rail-link" data-rail-target="projects" data-section-label="Experience and projects" aria-label="Go to Experience and projects"><span class="section-rail-label">Experience and projects</span></a></li>
       <li><a href="#Contact" class="section-rail-link" data-rail-target="Contact" data-section-label="Contact" aria-label="Go to Contact"><span class="section-rail-label">Contact</span></a></li>
     </ul>
   </nav>
@@ -221,7 +221,7 @@
     </div>
   </div>
   <cfsavecontent variable="request.homeProjectsSection">
-    <div id="pricing" class="pricing-tables">
+    <div id="projects" class="pricing-tables">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -370,6 +370,7 @@
            
             <img src="/assets/images/heading-line-dec.png" alt="">
             <p>Advanced positioning strategies for traditional search engines (Google, Bing) and visibility optimization for Artificial Intelligence engines (ChatGPT, Perplexity, Claude, Gemini).</p>
+            <p><a href="/seo-ai-readiness" class="hero-cta hero-cta-secondary"><i class="fas fa-arrow-right"></i> Explore technical SEO + GEO</a></p>
           </div>
         </div>
       </div>
@@ -405,7 +406,7 @@
             <h4>GEO &amp; AI Engine Visibility</h4>
              <p>(Generative Engine Optimization)</p>
             <p>
-              Structured optimization ensuring AI models (ChatGPT, Perplexity, Claude) accurately recognize and cite your business.
+              Structured optimization that makes it easier for AI systems to understand your business and public content.
               <br><br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Structured data implementation via <strong>JSON-LD (Schema.org)</strong>.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Explicit crawler permissions for AI bots (GPTBot, ClaudeBot, PerplexityBot).<br>
@@ -803,7 +804,7 @@
                             <h4>REST &amp; JWT API</h4>
                           </div>
                           <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                            <h4>WordPress &amp; PHP</h4>
+                            <h4>WordPress, PHP &amp; Python</h4>
                           </div>
                           <div class="col-lg-4 col-sm-4 col-12">
                             <h4>AI Prompt Engineer</h4>

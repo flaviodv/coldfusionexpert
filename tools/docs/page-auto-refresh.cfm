@@ -34,12 +34,18 @@ local.faqItems = local.isEs ? [
     <cfif local.isEs>Guía Completa y Preguntas Frecuentes<cfelse>Complete Guide &amp; FAQ</cfif>
   </h2>
 
-  <h3><cfif local.isEs>¿Qué es el Actualizador Automático de Páginas?<cfelse>What is the Page Auto-Refresh tool?</cfif></h3>
+  <h3>
+    <cfif local.slug eq "site-monitor">
+      <cfif local.isEs>¿Qué es el Monitor de Sitios?<cfelse>What is Site Monitor?</cfif>
+    <cfelse>
+      <cfif local.isEs>¿Qué es el Actualizador Automático de Páginas?<cfelse>What is the Page Auto-Refresh tool?</cfif>
+    </cfif>
+  </h3>
   <p>
     <cfif local.isEs>
-      Ingresá una URL, elegí el destino y cada cuántos segundos actualizarla. Para la vista previa integrada también podés configurar su alto. Podés escribir solo el dominio, como <code>infobae.com</code>: la herramienta agrega <code>https://</code> automáticamente.
+      Ingresá una URL, elegí el destino y cada cuántos segundos actualizarla<cfif local.slug eq "site-monitor"> para vigilar cambios</cfif>. Para la vista previa integrada también podés configurar su alto. Podés escribir solo el dominio, como <code>infobae.com</code>: la herramienta agrega <code>https://</code> automáticamente.
     <cfelse>
-      Enter a URL, choose its destination and refresh interval. You can also configure the in-page preview height. Type only a domain, such as <code>infobae.com</code>, and the tool adds <code>https://</code> automatically.
+      Enter a URL, choose its destination and refresh interval<cfif local.slug eq "site-monitor"> to watch for changes</cfif>. You can also configure the in-page preview height. Type only a domain, such as <code>infobae.com</code>, and the tool adds <code>https://</code> automatically.
     </cfif>
   </p>
 

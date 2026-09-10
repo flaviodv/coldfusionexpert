@@ -1,8 +1,10 @@
+<cfprocessingdirective pageencoding="utf-8">
 <cfscript>
 // Single source of truth for the Tools section: categories + per-tool metadata.
 // Consumed by: Application.cfc (per-page <title>/canonical/robots), _sidebar.cfm, tools_en.cfm/tools_es.cfm, _tool-page.cfm.
 request.toolCategories = [
-  {slug: "marketing-seo-social", labelEn: "Marketing, SEO & Social", labelEs: "Marketing, SEO y Social", icon: "fa-bullhorn"},
+  {slug: "redes-sociales-contenido", labelEn: "Social Media & Content", labelEs: "Redes Sociales y Contenido", icon: "fa-share-alt"},
+  {slug: "marketing-seo-social", labelEn: "SEO & GEO", labelEs: "SEO y GEO", icon: "fa-search"},
   {slug: "diseno-frontend-css", labelEn: "Design & Frontend", labelEs: "Diseño y Frontend", icon: "fa-palette"},
   {slug: "desarrollo-datos", labelEn: "Development & Data", labelEs: "Desarrollo y Datos", icon: "fa-laptop-code"},
   {slug: "gestion-tiempo-productividad", labelEn: "Time & Productivity", labelEs: "Tiempo y Productividad", icon: "fa-stopwatch"},
@@ -11,27 +13,32 @@ request.toolCategories = [
 ];
 
 request.toolsRegistry = {
-  "meta-tags-extractor": {category: "marketing-seo-social", icon: "fa-tags", iconPrefix: "fas", built: true,
-    titleEn: "Meta Tags & Keyword Extractor", titleEs: "Extractor de Meta Tags y Keywords",
-    descEn: "Free tool to analyze any URL's title, description, meta tags, and keyword signals in seconds.",
-    descEs: "Herramienta online gratuita para analizar en segundos el título, la descripción, las meta tags y las señales de keywords de cualquier URL."},
+  "social-media-font-generator": {category: "redes-sociales-contenido", icon: "fa-font", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "Social Media Font Generator", titleEs: "Generador de Fuentes para Redes Sociales",
+    descEn: "Turn plain text into copy-ready Unicode styles for posts, bios, captions, and comments across social platforms.",
+    descEs: "Transformá texto común en estilos Unicode listos para copiar en posts, bios, captions y comentarios de redes sociales."},
 
-  "whatsapp-link-generator": {category: "marketing-seo-social", icon: "fa-whatsapp", iconPrefix: "fab", built: true,
+  "meta-tags-extractor": {category: "marketing-seo-social", icon: "fa-tags", iconPrefix: "fas", built: true,
+    titleEn: "Meta Tags & Structured Data Extractor", titleEs: "Extractor de Meta Tags y Datos Estructurados",
+    descEn: "Analyze any URL's meta tags, Open Graph signals, and Schema.org JSON-LD structured data in seconds.",
+    descEs: "Analizá en segundos los meta tags, señales Open Graph y datos estructurados Schema.org (JSON-LD) de cualquier URL."},
+
+  "whatsapp-link-generator": {category: "redes-sociales-contenido", icon: "fa-whatsapp", iconPrefix: "fab", built: true,
     titleEn: "WhatsApp Link Generator", titleEs: "Generador de Enlaces de WhatsApp",
     descEn: "Create click-to-chat WhatsApp links with ready-to-send messages for faster conversations.",
     descEs: "Creá enlaces de WhatsApp con mensajes listos para enviar y agilizar cada conversación."},
 
-  "email-signature-generator": {category: "marketing-seo-social", icon: "fa-envelope", iconPrefix: "fas", built: true,
+  "email-signature-generator": {category: "redes-sociales-contenido", icon: "fa-envelope", iconPrefix: "fas", built: true,
     titleEn: "Email Signature Generator", titleEs: "Generador de Firmas de Correo Electrónico",
     descEn: "Design a polished HTML email signature that keeps every professional detail consistent.",
     descEs: "Diseñá una firma HTML profesional y mantené todos tus datos de contacto consistentes."},
 
-  "qr-code-generator": {category: "marketing-seo-social", icon: "fa-qrcode", iconPrefix: "fas", built: true, featured: true,
+  "qr-code-generator": {category: "redes-sociales-contenido", icon: "fa-qrcode", iconPrefix: "fas", built: true, featured: true,
     titleEn: "QR Code Generator", titleEs: "Generador de Códigos QR",
     descEn: "Generate branded QR codes with custom colors, styles, and PNG or SVG downloads.",
     descEs: "Generá códigos QR con tu estilo, colores personalizados y descarga en PNG o SVG."},
 
-  "newsletter-html-previewer": {category: "marketing-seo-social", icon: "fa-envelope-open-text", iconPrefix: "fas", built: true,
+  "newsletter-html-previewer": {category: "redes-sociales-contenido", icon: "fa-envelope-open-text", iconPrefix: "fas", built: true,
     titleEn: "Newsletter HTML Previewer", titleEs: "Previsualizador de HTML para Newsletters",
     descEn: "Preview newsletter HTML before sending and catch layout issues in your email campaign.",
     descEs: "Previsualizá el HTML de tu newsletter antes de enviarla y detectá problemas de diseño a tiempo."},
@@ -166,6 +173,11 @@ request.toolsRegistry = {
     descEn: "Load an allowed page in a preview and refresh it automatically at the interval you choose.",
     descEs: "Cargá una página compatible en una vista previa y actualizala automáticamente al intervalo que elijas."},
 
+  "site-monitor": {category: "marketing-seo-social", icon: "fa-binoculars", iconPrefix: "fas", built: true,
+    titleEn: "Site Monitor", titleEs: "Monitor de Sitios",
+    descEn: "Keep a site open and automatically refreshed at the interval you choose to watch for changes.",
+    descEs: "Mantené un sitio abierto y actualizalo automáticamente al intervalo que elijas para vigilar cambios."},
+
   "cfml-code-doctor": {category: "cfml-servidores", icon: "fa-stethoscope", iconPrefix: "fas", built: true, featured: true,
     titleEn: "CFML Code Doctor", titleEs: "Doctor de Código CFML",
     descEn: "Scan CFML and SQL for common security, performance, and scoping issues with practical fixes.",
@@ -198,14 +210,19 @@ request.toolsRegistry = {
     titleEn: "Application.cfc Generator", titleEs: "Generador de Application.cfc",
     descEn: "Build a clean Application.cfc starter file for Lucee or Adobe ColdFusion with sessions, ORM, datasources, and mappings.",
     descEs: "Creá una base limpia de Application.cfc para Lucee o Adobe ColdFusion con sesiones, ORM, datasources y mappings."}
+  ,"ai-usage-planner": {category: "gestion-tiempo-productividad", icon: "fa-chart-line", iconPrefix: "fas", built: true, featured: true,
+    titleEn: "AI Usage Planner", titleEs: "Planificador de Uso de IA",
+    descEn: "Plan usage across unlimited AI tools, track multiple limits, and see a safe pace for every reset window.",
+    descEs: "Planificá el uso de múltiples IAs, seguí varios límites y conocé un ritmo seguro para cada ventana de reinicio."}
 };
 
 // Explicit display order (struct key order isn't guaranteed) - sidebar/landing loop over this, grouped by category.
 request.toolOrder = [
-  "meta-tags-extractor", "schema-json-ld-generator", "whatsapp-link-generator", "email-signature-generator", "qr-code-generator", "newsletter-html-previewer",
+  "social-media-font-generator", "whatsapp-link-generator", "email-signature-generator", "qr-code-generator", "newsletter-html-previewer",
+  "meta-tags-extractor", "schema-json-ld-generator", "site-monitor",
   "image-editor", "favicon-editor", "css-effects-generator", "color-converter",
   "css-minifier", "json-formatter", "base64-encoder", "json-yaml-converter", "hash-generator", "uuid-generator", "http-status-codes", "text-diff-checker",
-  "todo-list", "time-tracker", "page-auto-refresh",
+  "todo-list", "time-tracker", "page-auto-refresh", "ai-usage-planner",
   "ip-lookup", "timezone-converter", "currency-converter", "password-generator", "word-counter", "text-case-converter", "percentage-calculator", "date-difference-calculator", "csv-table-generator",
   "cfml-code-doctor", "cfml-tag-script-converter", "sql-json-cfml-converter", "cfml-orm-entity-generator", "commandbox-server-json-generator", "jvm-heap-estimator", "cfml-hosting-migration-calculator", "application-cfc-generator"
 ];

@@ -3,15 +3,64 @@ Allow: /
 Disallow: /vendor/
 Disallow: /cfc/
 Disallow: /Application.cfc
+Disallow: /tools-api.cfm
+Disallow: /tools-proxy.cfm
+Disallow: /index_en.cfm
+Disallow: /index_es.cfm
+Disallow: /about_me_en.cfm
+Disallow: /about_me_es.cfm
+Disallow: /tools_en.cfm
+Disallow: /tools_es.cfm
 
-# AI Crawlers explicit permission for GEO
+# Explicit groups document the intended policy for currently relevant AI and
+# search crawlers. They repeat the private/internal exclusions because a
+# specific user-agent group takes precedence over the wildcard group.
 User-agent: GPTBot
 Allow: /
+Disallow: /vendor/
+Disallow: /cfc/
+Disallow: /Application.cfc
+Disallow: /tools-api.cfm
+Disallow: /tools-proxy.cfm
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /vendor/
+Disallow: /cfc/
+Disallow: /Application.cfc
+Disallow: /tools-api.cfm
+Disallow: /tools-proxy.cfm
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /vendor/
+Disallow: /cfc/
+Disallow: /Application.cfc
+Disallow: /tools-api.cfm
+Disallow: /tools-proxy.cfm
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /vendor/
+Disallow: /cfc/
+Disallow: /Application.cfc
+Disallow: /tools-api.cfm
+Disallow: /tools-proxy.cfm
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /vendor/
+Disallow: /cfc/
+Disallow: /Application.cfc
+Disallow: /tools-api.cfm
+Disallow: /tools-proxy.cfm
+
+User-agent: Google-CloudVertexBot
+Allow: /
+Disallow: /vendor/
+Disallow: /cfc/
+Disallow: /Application.cfc
+Disallow: /tools-api.cfm
+Disallow: /tools-proxy.cfm
 
 Sitemap: https://coldfusionexpert.ar/sitemap.xml

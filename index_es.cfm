@@ -9,13 +9,13 @@
                   <div class="col-lg-12">
                     <span class="hero-kicker">Desarrollo · Modernización · Automatización</span>
                     <h1 class="hero-business-title">Soluciones de software.<em>Hechas para negocios reales.</em></h1>
-                    <p class="hero-business-copy">Diseñamos, modernizamos y conectamos sistemas que impulsan operaciones reales: aplicaciones web, APIs, automatización con IA, WordPress e infraestructura cloud. <strong>ColdFusion y Lucee</strong> siguen siendo una especialización profunda, no un límite.</p>
+                    <p class="hero-business-copy">Diseñamos, modernizamos y conectamos sistemas que impulsan operaciones reales: aplicaciones web, APIs, React.js, Python, automatización con IA, WordPress e infraestructura cloud. <strong>ColdFusion y Lucee</strong> siguen siendo una especialización profunda, no un límite.</p>
                     <div class="hero-cta-row scroll-to-section">
                       <a href="#services" class="hero-cta hero-cta-primary"><i class="fas fa-arrow-right"></i> Explorar soluciones</a>
                       <a href="#tools" class="hero-cta hero-cta-secondary"><i class="fas fa-toolbox"></i> Usar herramientas gratis</a>
                     </div>
                     <div class="hero-capabilities" aria-label="Capacidades principales">
-                      <span>Software a medida</span><span>APIs &amp; Integraciones</span><span>Automatización IA</span><span>WordPress</span><span>ColdFusion / Lucee</span>
+                      <span>Software a medida</span><span>APIs &amp; Integraciones</span><span>Automatización IA</span><span>WordPress</span><span>React.js</span><span>Python</span><span>ColdFusion / Lucee</span>
                     </div>
                   </div>
                 </div>
@@ -31,7 +31,7 @@
                   for (local.hmCountSlug in request.toolOrder) if (request.toolsRegistry[local.hmCountSlug].built) local.hmToolTotal++;
                 </cfscript>
                 <div id="hero-tools-marquee" class="hero-tools-marquee" aria-label="Herramientas gratuitas creadas">
-                <div class="hero-tools-marquee-header"><div class="hero-tools-marquee-title"><span><i class="fas fa-toolbox"></i> Herramientas creadas</span><a href="/tools.cfm" class="hero-tools-all-link">Ver todas <i class="fas fa-arrow-right"></i></a></div><div class="hero-tools-marquee-meta"><cfoutput><span class="hero-tools-counter"><strong data-tool-current>01</strong> / #numberFormat(local.hmToolTotal, '00')#</span></cfoutput><small><i class="fas fa-pause"></i> Pausa al pasar</small></div></div>
+                <div class="hero-tools-marquee-header"><div class="hero-tools-marquee-title"><span><i class="fas fa-toolbox"></i> Herramientas creadas</span><a href="/es/tools" class="hero-tools-all-link">Ver todas <i class="fas fa-arrow-right"></i></a></div><div class="hero-tools-marquee-meta"><cfoutput><span class="hero-tools-counter"><strong data-tool-current>01</strong> / #numberFormat(local.hmToolTotal, '00')#</span></cfoutput><small><i class="fas fa-pause"></i> Pausa al pasar</small></div></div>
                 <div class="hero-tools-marquee-viewport" tabindex="0">
                   <div class="hero-tools-marquee-track">
                     <div class="hero-tools-marquee-list">
@@ -78,7 +78,7 @@
       <li><a href="#automation" class="section-rail-link" data-rail-target="automation" data-section-label="Automatización con IA" aria-label="Ir a Automatización con IA"><span class="section-rail-label">Automatización con IA</span></a></li>
       <li><a href="#courses" class="section-rail-link" data-rail-target="courses" data-section-label="Cursos Zoom" aria-label="Ir a Cursos Zoom"><span class="section-rail-label">Cursos Zoom</span></a></li>
       <li><a href="#tools" class="section-rail-link" data-rail-target="tools" data-section-label="Herramientas" aria-label="Ir a Herramientas"><span class="section-rail-label">Herramientas</span></a></li>
-      <li><a href="#pricing" class="section-rail-link" data-rail-target="pricing" data-section-label="Experiencia y proyectos" aria-label="Ir a Experiencia y proyectos"><span class="section-rail-label">Experiencia y proyectos</span></a></li>
+      <li><a href="#projects" class="section-rail-link" data-rail-target="projects" data-section-label="Experiencia y proyectos" aria-label="Ir a Experiencia y proyectos"><span class="section-rail-label">Experiencia y proyectos</span></a></li>
       <li><a href="#Contact" class="section-rail-link" data-rail-target="Contact" data-section-label="Contacto" aria-label="Ir a Contacto"><span class="section-rail-label">Contacto</span></a></li>
     </ul>
   </nav>
@@ -211,7 +211,7 @@
     </div>
   </div>
   <cfsavecontent variable="request.homeProjectsSection">
-    <div id="pricing" class="pricing-tables">
+    <div id="projects" class="pricing-tables">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -356,9 +356,10 @@
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="section-heading wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
-            <h4>Optimización <em>SEO &amp; GEO (IA)</em></h4>
+            <h4>Optimización de <em>SEO Técnico &amp; GEO (IA)</em></h4>
             <img src="/assets/images/heading-line-dec.png" alt="">
             <p>Estrategias avanzadas de posicionamiento en motores de búsqueda tradicionales (Google, Bing) y optimización de visibilidad en Inteligencia Artificial (ChatGPT, Perplexity, Claude, Gemini).</p>
+            <p><a href="/es/seo-ai-readiness" class="hero-cta hero-cta-secondary"><i class="fas fa-arrow-right"></i> Conocer SEO técnico + GEO</a></p>
           </div>
         </div>
       </div>
@@ -394,7 +395,7 @@
             <h4>GEO &amp; Visibilidad en Motores de IA</h4>
             <p>(Generative Engine Optimization / Optimizacion de Motores Generativos)</p>
             <p>
-              Optimización estructurada para que modelos de IA (ChatGPT, Perplexity, Claude) reconozcan y citen tu marca.
+              Optimización estructurada para que los sistemas de IA entiendan mejor tu empresa y su contenido público.
               <br><br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Marcado de datos estructurados <strong>JSON-LD (Schema.org)</strong>.<br>
               <i class="fas fa-check-circle" style="color: #14a800; font-size: 0.85rem; margin-right: 6px;"></i> Configuración de permisos explícitos para rastreadores de IA (GPTBot, ClaudeBot).<br>
@@ -791,7 +792,7 @@
                             <h4>REST &amp; JWT API</h4>
                           </div>
                           <div class="col-lg-4 col-sm-4 d-none d-sm-block">
-                            <h4>WordPress &amp; PHP</h4>
+                            <h4>WordPress, PHP &amp; Python</h4>
                           </div>
                           <div class="col-lg-4 col-sm-4 col-12">
                             <h4>IA Prompt Engineer</h4>

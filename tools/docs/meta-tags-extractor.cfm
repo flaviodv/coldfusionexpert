@@ -1,3 +1,4 @@
+<cfprocessingdirective pageencoding="utf-8">
 <cfscript>
 local.faqItems = local.isEs ? [
   {q: "¿Por qué a veces falla la extracción?", a: "Algunos sitios bloquean solicitudes automáticas o pueden estar temporalmente caídos. Si eso pasa, probá de nuevo más tarde o verificá que la URL sea accesible públicamente."},
@@ -34,20 +35,21 @@ local.faqItems = local.isEs ? [
     <cfif local.isEs>Guía Completa y Preguntas Frecuentes<cfelse>Complete Guide &amp; FAQ</cfif>
   </h2>
 
-  <h3><cfif local.isEs>¿Qué es el Extractor de Meta Tags y Keywords?<cfelse>What is the Meta Tags &amp; Keyword Extractor?</cfif></h3>
+  <h3><cfif local.isEs>¿Qué es el Extractor de Meta Tags y Datos Estructurados?<cfelse>What is the Meta Tags &amp; Structured Data Extractor?</cfif></h3>
   <p>
     <cfif local.isEs>
-      Es una herramienta gratuita para auditar el SEO on-page de cualquier sitio web. Ingresá una URL y obtené al instante su <strong>título</strong>, <strong>descripción</strong>, <strong>palabras clave</strong>, <strong>URL canónica</strong> y sus etiquetas <strong>Open Graph</strong> (incluida la imagen de vista previa), sin instalar extensiones de navegador.
+      Es una herramienta gratuita para auditar el SEO on-page y los datos estructurados de cualquier sitio web. Ingresá una URL y obtené al instante su <strong>título</strong>, <strong>meta descripción</strong>, <strong>palabras clave</strong>, <strong>URL canónica</strong>, etiquetas <strong>Open Graph y Twitter Cards</strong>, y un desglose completo de sus <strong>datos estructurados Schema.org (JSON-LD)</strong> organizados en pestañas interactivas.
     <cfelse>
-      It is a free tool for auditing any website's on-page SEO. Enter a URL and instantly get its <strong>title</strong>, <strong>description</strong>, <strong>keywords</strong>, <strong>canonical URL</strong>, and <strong>Open Graph</strong> tags (including the preview image), with no browser extension required.
+      It is a free tool for auditing any website's on-page SEO and structured data. Enter a URL and instantly get its <strong>title</strong>, <strong>meta description</strong>, <strong>keywords</strong>, <strong>canonical URL</strong>, <strong>Open Graph &amp; Twitter Cards</strong>, and a complete breakdown of its <strong>Schema.org (JSON-LD) structured data</strong> organized in interactive tabs.
     </cfif>
   </p>
 
   <h3><cfif local.isEs>Qué extrae<cfelse>What it extracts</cfif></h3>
   <ul>
-    <li><cfif local.isEs><strong>Título y descripción:</strong> los mismos que Google muestra en los resultados de búsqueda.<cfelse><strong>Title &amp; description:</strong> the same ones Google shows in search results.</cfif></li>
-    <li><cfif local.isEs><strong>Palabras clave y URL canónica:</strong> útil para detectar contenido duplicado o mal configurado.<cfelse><strong>Keywords &amp; canonical URL:</strong> useful for catching duplicate or misconfigured content.</cfif></li>
-    <li><cfif local.isEs><strong>Open Graph (og:title, og:description, og:image):</strong> con vista previa de la imagen, tal como se vería al compartir el link.<cfelse><strong>Open Graph (og:title, og:description, og:image):</strong> with an image preview, just like it would appear when the link is shared.</cfif></li>
+    <li><cfif local.isEs><strong>Meta Tags SEO:</strong> Título, descripción (con indicadores de longitud óptima), keywords, robots, viewport, autor y URL canónica (con validación de coincidencia).<cfelse><strong>SEO Meta Tags:</strong> Title, description (with optimal length indicators), keywords, robots, viewport, author, and canonical URL (with mismatch detection).</cfif></li>
+    <li><cfif local.isEs><strong>Open Graph y Redes Sociales:</strong> Etiquetas og:title, og:description, og:image, og:type, Twitter Cards y una previsualización de cómo se ve al compartir el enlace.<cfelse><strong>Open Graph &amp; Social:</strong> og:title, og:description, og:image, og:type, Twitter Cards, and a live social snippet preview.</cfif></li>
+    <li><cfif local.isEs><strong>Datos Estructurados Schema.org (JSON-LD):</strong> Desglose completo de todas las entidades detectadas (Eventos, Organizaciones, Lugares, Productos, FAQs, etc.) con todas sus propiedades anidadas, fechas, imágenes y ofertas.<cfelse><strong>Schema.org Structured Data (JSON-LD):</strong> Full inspection of detected entities (Events, Organizations, Places, Products, FAQs, etc.) with all nested properties, dates, images, and offers.</cfif></li>
+    <li><cfif local.isEs><strong>Código JSON-LD Raw:</strong> Visualización del código fuente en bruto formateado, con botón de copia rápida y enlace a la herramienta Rich Results Test de Google.<cfelse><strong>Raw JSON-LD Code:</strong> Formatted source script blocks with quick copy button and link to Google Rich Results Test.</cfif></li>
   </ul>
 
   <h3><cfif local.isEs>Preguntas Frecuentes (FAQ)<cfelse>Frequently Asked Questions (FAQ)</cfif></h3>

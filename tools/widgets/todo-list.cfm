@@ -72,6 +72,7 @@
 <script>
 (function() {
   var STORAGE_KEY = 'cfexpert_todo_tasks';
+  var LAST_CATEGORY_KEY = 'cfexpert_todo_last_category';
 
   var inputNew = document.getElementById('todo-new-input');
   var selectPriority = document.getElementById('todo-new-priority');
@@ -111,6 +112,20 @@
     } catch(e) {}
   }
 
+  function loadLastCategory() {
+    try {
+      var category = localStorage.getItem(LAST_CATEGORY_KEY);
+      var validCategories = ['Work', 'Personal', 'Shopping', 'Project'];
+      return validCategories.indexOf(category) !== -1 ? category : 'Personal';
+    } catch(e) { return 'Personal'; }
+  }
+
+  function rememberCategory(category) {
+    try {
+      localStorage.setItem(LAST_CATEGORY_KEY, category || 'Personal');
+    } catch(e) {}
+  }
+
   function addTask() {
     var text = inputNew.value.trim();
     if (!text) return;
@@ -125,6 +140,7 @@
     };
 
     tasks.unshift(newTask);
+    rememberCategory(newTask.category);
     saveTasks();
     inputNew.value = '';
     render();
@@ -158,6 +174,7 @@
       return t;
     });
     editingTaskId = null;
+    rememberCategory(newCat);
     saveTasks();
     render();
   }
@@ -341,6 +358,11 @@
   }
 
   // Event Listeners
+  selectCategory.value = loadLastCategory();
+  selectCategory.addEventListener('change', function() {
+    rememberCategory(this.value);
+  });
+
   btnAdd.addEventListener('click', addTask);
   inputNew.addEventListener('keypress', function(e) {
     if (e.key === 'Enter') addTask();

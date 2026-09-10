@@ -71,6 +71,7 @@
             "CFML & Fusebox OOP",
             "FusionReactor Performance Tuning",
             "Microsoft SQL Server & MySQL",
+            "JavaScript, React.js, Node.js, PHP & Python",
             "Amazon Web Services (AWS EC2, RDS, S3)",
             "AI Automation & LLM API Integration (OpenAI, Claude, Gemini, DeepSeek)",
             "RAG & Vector Databases",
@@ -155,7 +156,7 @@
     <link rel="stylesheet" href="/assets/css/home-redesign.css?v=2026080901">
     <link rel="stylesheet" href="/assets/css/animated.css">
     <link rel="stylesheet" href="/assets/css/owl.css">
-    <link rel="stylesheet" href="/assets/css/coldfusion-development.css?v=20260811ab">
+    <cfoutput><link rel="stylesheet" href="/assets/css/coldfusion-development.css<cfif isDefined('request.coldfusionCssVer')>#request.coldfusionCssVer#</cfif>"></cfoutput>
     <cfoutput><link rel="stylesheet" href="/assets/css/tools.css<cfif isDefined('request.toolsCssVer')>#request.toolsCssVer#</cfif>"></cfoutput>
     <style>
       p { color: #2a2a2a; }
@@ -567,6 +568,7 @@
         gap: 8px;
       }
       .nav-category-label[data-category="marketing-seo-social"] { color: #ff8fc1 !important; }
+      .nav-category-label[data-category="redes-sociales-contenido"] { color: #35c7ff !important; }
       .nav-category-label[data-category="diseno-frontend-css"] { color: #bb9cff !important; }
       .nav-category-label[data-category="desarrollo-datos"] { color: #5cc9ff !important; }
       .nav-category-label[data-category="gestion-tiempo-productividad"] { color: #ffd166 !important; }
@@ -667,13 +669,13 @@
                 <a href="#" aria-haspopup="true" aria-expanded="false"><i class="fas fa-layer-group nav-mobile-icon" aria-hidden="true"></i> Servicios</a>
                 <ul>
                   <li class="scroll-to-section"><a href="/es/#coldfusion-services"><i class="fas fa-code"></i> Servicios ColdFusion</a></li>
-                  <li class="scroll-to-section"><a href="/es/#seo"><i class="fas fa-chart-line"></i> Optimización SEO &amp; GEO (IA)</a></li>
+                  <li class="scroll-to-section"><a href="/es/#seo"><i class="fas fa-chart-line"></i> SEO técnico + GEO</a></li>
                   <li class="scroll-to-section"><a href="/es/#automation"><i class="fas fa-robot"></i> Soluciones de Automatización con IA</a></li>
                   <li class="scroll-to-section"><a href="/es/#courses"><i class="fas fa-graduation-cap"></i> Cursos &amp; Capacitación vía Zoom</a></li>
                 </ul>
               </li>
               <li class="scroll-to-section nav-standard"><a href="/es/#tools" class="nav-tools-highlight"><i class="fas fa-toolbox"></i> Herramientas</a></li>
-              <li class="scroll-to-section nav-standard"><a href="/es/#pricing"><i class="fas fa-folder-open nav-mobile-icon" aria-hidden="true"></i> Proyectos</a></li>
+              <li class="scroll-to-section nav-standard"><a href="/es/#projects"><i class="fas fa-folder-open nav-mobile-icon" aria-hidden="true"></i> Proyectos</a></li>
               <li class="nav-standard"><a href="/es/coldfusion-development"<cfif isDefined('request.isColdFusionPage') and request.isColdFusionPage> class="active"</cfif>><i class="fas fa-code nav-mobile-icon" aria-hidden="true"></i> CFML</a></li>
               <li class="scroll-to-section nav-standard"><a href="/es/flavio-di-virgilio"<cfif isDefined('request.isAboutPage') and request.isAboutPage> class="active"</cfif>><i class="fas fa-user nav-mobile-icon" aria-hidden="true"></i> Sobre mí</a></li>
               <li class="scroll-to-section nav-standard"><a href="/es/#Contact"><i class="fas fa-envelope nav-mobile-icon" aria-hidden="true"></i> Contacto</a></li>

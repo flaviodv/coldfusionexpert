@@ -11,13 +11,14 @@
         <strong>Drag &amp; drop an image here</strong> or click to browse
       </cfif>
     </p>
-    <input type="file" id="img-input" accept="image/*" style="display:none;">
+    <input type="file" id="img-input" accept="image/*,.svg" style="display:none;">
   </div>
   <div class="image-url-import">
     <label for="img-url"><cfif local.isEs>O cargá una imagen desde una URL<cfelse>Or load an image from a URL</cfif></label>
     <div class="image-url-import-controls">
-      <input type="url" id="img-url" placeholder="https://example.com/image.jpg" autocomplete="url">
+      <input type="url" id="img-url" placeholder="https://example.com/image.png, .svg, .jpg" autocomplete="url">
       <button type="button" class="btn-social btn-upwork" id="btn-load-url"><i class="fas fa-link"></i> <cfif local.isEs>Cargar URL<cfelse>Load URL</cfif></button>
+      <button type="button" class="tool-copy" id="btn-paste-url"><i class="fas fa-paste"></i> <cfif local.isEs>Pegar<cfelse>Paste</cfif></button>
     </div>
     <p id="img-url-message" class="image-url-message" aria-live="polite"></p>
   </div>
@@ -108,8 +109,8 @@
       <div class="tool-group">
         <label for="export-format"><cfif local.isEs>Formato:<cfelse>Format:</cfif></label>
         <select id="export-format">
-          <option value="image/png">PNG</option>
-          <option value="image/jpeg" selected>JPG / JPEG</option>
+          <option value="image/png" selected>PNG</option>
+          <option value="image/jpeg">JPG / JPEG</option>
           <option value="image/webp">WebP</option>
           <option value="image/x-icon">Favicon (.ico)</option>
         </select>
@@ -128,12 +129,12 @@
         </select>
       </div>
 
-      <!-- Colour depth (PNG / WebP: JPG and ICO have no meaningful choice) -->
+      <!-- Transparency/depth (PNG / WebP: JPG and ICO have no meaningful choice) -->
       <div class="tool-group" id="depth-group" style="display:none;">
-        <label for="export-depth"><cfif local.isEs>Profundidad:<cfelse>Colour depth:</cfif></label>
+        <label for="export-depth"><cfif local.isEs>Transparencia:<cfelse>Transparency:</cfif></label>
         <select id="export-depth">
-          <option value="24" selected><cfif local.isEs>24 bits (sin alpha)<cfelse>24-bit (no alpha)</cfif></option>
-          <option value="32"><cfif local.isEs>32 bits (con alpha)<cfelse>32-bit (with alpha)</cfif></option>
+          <option value="24" selected><cfif local.isEs>Sin transparencia (24 bits)<cfelse>No transparency (24-bit)</cfif></option>
+          <option value="32"><cfif local.isEs>Con transparencia (32 bits)<cfelse>With transparency (32-bit)</cfif></option>
         </select>
         <label for="export-bg" id="export-bg-label"><cfif local.isEs>Fondo:<cfelse>Background:</cfif></label>
         <input type="color" id="export-bg" value="#ffffff" title="<cfif local.isEs>Color que reemplaza las zonas transparentes<cfelse>Colour replacing transparent areas</cfif>">
@@ -159,10 +160,12 @@
 
 <script>
 (function() {
+  var isEs = <cfif local.isEs>true<cfelse>false</cfif>;
   var dropzone = document.getElementById('img-dropzone');
   var fileInput = document.getElementById('img-input');
   var imageUrlInput = document.getElementById('img-url');
   var loadUrlButton = document.getElementById('btn-load-url');
+  var pasteUrlButton = document.getElementById('btn-paste-url');
   var imageUrlMessage = document.getElementById('img-url-message');
   var workspace = document.getElementById('img-workspace');
   var targetImg = document.getElementById('cropper-target');
@@ -216,6 +219,101 @@
     return base.slice(0, 120);
   }
 
+  function cleanPastedUrl(raw) {
+    var text = (raw || '').trim();
+    if (!text) return '';
+    var md = text.match(/\[[^\]]*\]\((https?:\/\/[^\s)]+)\)/i);
+    if (md) return md[1].trim();
+    var anchor = text.match(/href\s*=\s*["']([^"']+)["']/i);
+    if (anchor) return anchor[1].trim();
+    text = text.replace(/^[\s"'\u201C\u201D\u2018\u2019<(\[]+|[\s"'\u201C\u201D\u2018\u2019>)\]]+$/g, '');
+    var urlMatch = text.match(/(https?:\/\/[^\s"'<>()]+|www\.[^\s"'<>()]+)/i);
+    if (urlMatch) text = urlMatch[0];
+    text = text.replace(/[.,;:!?]+$/, '');
+    return text.trim();
+  }
+
+  function handlePastedText(text) {
+    var cleaned = cleanPastedUrl(text);
+    if (cleaned) {
+      if (!/^https?:\/\//i.test(cleaned) && /^www\./i.test(cleaned)) {
+        cleaned = 'https://' + cleaned;
+      }
+      imageUrlInput.value = cleaned;
+      imageUrlInput.focus();
+      showUrlMessage(isEs ? 'URL pegada desde el portapapeles.' : 'URL pasted from clipboard.');
+    } else if (text && text.trim().length > 0) {
+      imageUrlInput.value = text.trim();
+      imageUrlInput.focus();
+      showUrlMessage(isEs ? 'Texto pegado en el campo de URL.' : 'Text pasted into URL field.');
+    } else {
+      showUrlMessage(isEs ? 'El portapapeles está vacío o no contiene una URL válida.' : 'The clipboard is empty or does not contain a valid URL.', true);
+    }
+  }
+
+  function handlePasteError() {
+    showUrlMessage(isEs ? 'No se pudo acceder al portapapeles. Revisá los permisos o usá Ctrl+V.' : 'Could not access the clipboard. Check browser permissions or use Ctrl+V.', true);
+  }
+
+  if (pasteUrlButton) {
+    pasteUrlButton.addEventListener('click', function() {
+      if (navigator.clipboard && navigator.clipboard.read) {
+        navigator.clipboard.read().then(function(items) {
+          var foundImage = false;
+          for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            var imageType = item.types.find(function(t) { return t.startsWith('image/'); });
+            if (imageType) {
+              foundImage = true;
+              item.getType(imageType).then(function(blob) {
+                var ext = imageType.split('/')[1] || 'png';
+                if (imageType === 'image/svg+xml') ext = 'svg';
+                loadImage(new File([blob], 'clipboard-image.' + ext, { type: imageType }));
+                showUrlMessage(isEs ? 'Imagen cargada desde el portapapeles.' : 'Image loaded from clipboard.');
+              });
+              break;
+            }
+          }
+          if (!foundImage) {
+            if (navigator.clipboard.readText) {
+              navigator.clipboard.readText().then(handlePastedText).catch(handlePasteError);
+            } else {
+              handlePasteError();
+            }
+          }
+        }).catch(function() {
+          if (navigator.clipboard && navigator.clipboard.readText) {
+            navigator.clipboard.readText().then(handlePastedText).catch(handlePasteError);
+          } else {
+            handlePasteError();
+          }
+        });
+      } else if (navigator.clipboard && navigator.clipboard.readText) {
+        navigator.clipboard.readText().then(handlePastedText).catch(handlePasteError);
+      } else {
+        showUrlMessage(isEs ? 'Tu navegador no permite pegar automáticamente. Pegá con Ctrl+V.' : 'Your browser does not allow automatic paste. Paste with Ctrl+V.', true);
+      }
+    });
+  }
+
+  // Global paste handler for images or dropped text
+  window.addEventListener('paste', function(e) {
+    if (e.clipboardData && e.clipboardData.items) {
+      for (var i = 0; i < e.clipboardData.items.length; i++) {
+        var item = e.clipboardData.items[i];
+        if (item.type.indexOf('image') !== -1) {
+          var blob = item.getAsFile();
+          if (blob) {
+            loadImage(blob);
+            showUrlMessage(isEs ? 'Imagen pegada desde el portapapeles.' : 'Image pasted from clipboard.');
+            e.preventDefault();
+            return;
+          }
+        }
+      }
+    }
+  });
+
   dropzone.addEventListener('click', function() { fileInput.click(); });
   dropzone.addEventListener('dragover', function(e) { e.preventDefault(); dropzone.classList.add('dragover'); });
   dropzone.addEventListener('dragleave', function() { dropzone.classList.remove('dragover'); });
@@ -261,10 +359,13 @@
         return response.blob();
       })
       .then(function(blob) {
-        if (!blob.type.match(/^image\//)) throw new Error('not_an_image');
+        var isSvg = blob.type === 'image/svg+xml' || (blob.type && blob.type.indexOf('svg') !== -1) || requestedUrl.pathname.match(/\.svg$/i) || (blob.type === 'text/xml' && requestedUrl.pathname.match(/\.svg$/i));
+        if (!blob.type.match(/^image\//) && !isSvg) throw new Error('not_an_image');
         // Keep the remote file's own name so the download suggests it back.
         var remoteBase = toBaseName(requestedUrl.pathname.split('/').pop()) || 'remote-image';
-        loadImage(new File([blob], remoteBase + '.' + (blob.type.split('/')[1] || 'jpg'), { type: blob.type }));
+        var ext = isSvg ? 'svg' : (blob.type.split('/')[1] || 'jpg');
+        var mime = isSvg ? 'image/svg+xml' : blob.type;
+        loadImage(new File([blob], remoteBase + '.' + ext, { type: mime }));
         showUrlMessage('<cfif local.isEs>Imagen cargada correctamente.<cfelse>Image loaded successfully.</cfif>');
       })
       .catch(function(error) {
@@ -285,7 +386,8 @@
   }
 
   function loadImage(file) {
-    if (!file.type.match(/^image\//)) return;
+    var isSvg = file.type === 'image/svg+xml' || (file.type && file.type.indexOf('svg') !== -1) || (file.name && file.name.match(/\.svg$/i));
+    if (!file.type.match(/^image\//) && !isSvg) return;
     downloadBaseName = toBaseName(file.name);
     var reader = new FileReader();
     reader.onload = function(e) {
@@ -325,9 +427,17 @@
         if (!isSyncingResize) {
           var data = cropper.getData(true);
           resizeWidth.value = data.width;
-          resizeHeight.value = data.height;
-        }
+        resizeHeight.value = data.height;
       }
+    }
+    });
+
+    // Bring the newly available editor into view so the user immediately sees
+    // that the upload or URL import completed successfully.
+    requestAnimationFrame(function() {
+      // Leave room for the fixed site header so both toolbar rows remain visible.
+      var top = workspace.getBoundingClientRect().top + window.pageYOffset - 120;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
     });
   }
 
