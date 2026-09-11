@@ -622,6 +622,128 @@ $(function() {
 	setInterval(updateGlobalHeaderTimer, 1000);
 	$(document).ready(updateGlobalHeaderTimer);
 
+	// Global Floating Bottom-Left AI Usage Panel
+	var AI_PANEL_PROVIDER_LABELS = {
+		'codex': 'Codex',
+		'claude-code': 'Claude Code',
+		'gemini-models': 'Gemini Models',
+		'gemini-other-models': 'Gemini Other Models'
+	};
+
+	function escAiPanel(s) {
+		return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+			return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+		});
+	}
+
+	function aiPanelDisplayName(ai, isEs) {
+		if (ai.providerKey === 'custom') {
+			return ai.name || (isEs ? 'IA sin nombre' : 'Unnamed AI');
+		}
+		return AI_PANEL_PROVIDER_LABELS[ai.providerKey] || ai.name || (isEs ? 'Personalizado / otro' : 'Custom / other');
+	}
+
+	function aiPanelWorstLimit(ai) {
+		var worst = null;
+		(ai.limits || []).forEach(function (l) {
+			var usedPercent = Math.max(0, Math.min(100, Number(l.usedPercent) || 0));
+			var windowHours = Math.max(0.1, Number(l.windowHours) || 168);
+			var left = Math.max(0, (new Date(l.resetAt).getTime() - Date.now()) / 3600000);
+			var elapsed = Math.max(0, Math.min(windowHours, windowHours - left));
+			var expected = 100 * (elapsed / windowHours);
+			var delta = usedPercent - expected;
+			var signal = (usedPercent >= 100 && left > 0) ? 'bad' : delta > 15 ? 'bad' : delta > 5 ? 'warn' : 'good';
+			var pctLeft = 100 - usedPercent;
+			if (!worst || pctLeft < worst.pctLeft || (signal === 'bad' && worst.signal !== 'bad')) {
+				worst = { usedPercent: usedPercent, pctLeft: pctLeft, signal: signal };
+			}
+		});
+		return worst;
+	}
+
+	function unfloatAiPanelItem(id) {
+		try {
+			var ids = JSON.parse(localStorage.getItem('coldfusionexpert.aiUsagePlanner.floating.v1') || '');
+			if (!Array.isArray(ids)) ids = [];
+		} catch (e) {
+			ids = [];
+		}
+		ids = ids.filter(function (existingId) { return existingId !== id; });
+		try {
+			localStorage.setItem('coldfusionexpert.aiUsagePlanner.floating.v1', JSON.stringify(ids));
+		} catch (e) {}
+		updateGlobalAiPanel();
+	}
+
+	function updateGlobalAiPanel() {
+		var isEs = document.documentElement.lang === 'es';
+		var state = null;
+		var floatingIds = [];
+
+		try {
+			var stateData = localStorage.getItem('coldfusionexpert.aiUsagePlanner.v1');
+			if (stateData) state = JSON.parse(stateData);
+		} catch (e) {}
+
+		try {
+			var floatData = localStorage.getItem('coldfusionexpert.aiUsagePlanner.floating.v1');
+			var parsedIds = floatData ? JSON.parse(floatData) : [];
+			if (Array.isArray(parsedIds)) floatingIds = parsedIds;
+		} catch (e) {}
+
+		var $panel = $('#global-floating-ai-panel');
+
+		var items = (state && Array.isArray(state.ais) && floatingIds.length)
+			? floatingIds.map(function (id) {
+				return state.ais.find(function (ai) { return ai.id === id; });
+			}).filter(Boolean)
+			: [];
+
+		if (!items.length) {
+			if ($panel.length) $panel.css('display', 'none');
+			return;
+		}
+
+		if (!$panel.length) {
+			$panel = $('<div id="global-floating-ai-panel" class="global-floating-ai-panel"></div>');
+			$('body').append($panel);
+			$panel.on('click', '.global-floating-ai-close', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				unfloatAiPanelItem($(this).attr('data-unfloat-id'));
+			});
+		}
+
+		var closeTitle = isEs ? 'Quitar del panel flotante' : 'Remove from floating panel';
+
+		var html = items.map(function (ai) {
+			var worst = aiPanelWorstLimit(ai);
+			var signal = worst ? worst.signal : 'warn';
+			var dotClass = signal === 'good' ? '' : signal;
+			var pctText = worst ? Math.round(worst.usedPercent) + '%' : '—';
+			var name = aiPanelDisplayName(ai, isEs);
+
+			return '<div class="global-floating-ai-item">' +
+				'<a href="/tools/ai-usage-planner#update" class="global-floating-ai-link">' +
+				'<span class="global-floating-ai-dot ' + dotClass + '"></span>' +
+				'<span class="global-floating-ai-name">' + escAiPanel(name) + '</span>' +
+				'<span class="global-floating-ai-pct ' + dotClass + '">' + pctText + '</span>' +
+				'</a>' +
+				'<button type="button" class="global-floating-ai-close" data-unfloat-id="' + escAiPanel(ai.id) + '" title="' + closeTitle + '" aria-label="' + closeTitle + '">&times;</button>' +
+				'</div>';
+		}).join('');
+
+		$panel.html(html).css('display', 'flex');
+	}
+
+	setInterval(updateGlobalAiPanel, 1000);
+	$(document).ready(updateGlobalAiPanel);
+	$(window).on('storage', function (e) {
+		if (e.originalEvent && (e.originalEvent.key === 'coldfusionexpert.aiUsagePlanner.v1' || e.originalEvent.key === 'coldfusionexpert.aiUsagePlanner.floating.v1')) {
+			updateGlobalAiPanel();
+		}
+	});
+
 })(window.jQuery);
 
 (function () {

@@ -810,4 +810,22 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/application-cfc-generator"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/application-cfc-generator"/>
   </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/tools/ai-usage-planner</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/ai-usage-planner"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/ai-usage-planner"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/ai-usage-planner"/>
+  </url>
+  <url>
+    <loc>https://coldfusionexpert.ar/es/tools/ai-usage-planner</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://coldfusionexpert.ar/es/tools/ai-usage-planner"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://coldfusionexpert.ar/tools/ai-usage-planner"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://coldfusionexpert.ar/tools/ai-usage-planner"/>
+  </url>
 </urlset>

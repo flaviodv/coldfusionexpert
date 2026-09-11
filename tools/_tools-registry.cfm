@@ -222,7 +222,7 @@ request.toolOrder = [
   "meta-tags-extractor", "schema-json-ld-generator", "site-monitor",
   "image-editor", "favicon-editor", "css-effects-generator", "color-converter",
   "css-minifier", "json-formatter", "base64-encoder", "json-yaml-converter", "hash-generator", "uuid-generator", "http-status-codes", "text-diff-checker",
-  "todo-list", "time-tracker", "page-auto-refresh", "ai-usage-planner",
+  "ai-usage-planner", "time-tracker", "todo-list", "page-auto-refresh",
   "ip-lookup", "timezone-converter", "currency-converter", "password-generator", "word-counter", "text-case-converter", "percentage-calculator", "date-difference-calculator", "csv-table-generator",
   "cfml-code-doctor", "cfml-tag-script-converter", "sql-json-cfml-converter", "cfml-orm-entity-generator", "commandbox-server-json-generator", "jvm-heap-estimator", "cfml-hosting-migration-calculator", "application-cfc-generator"
 ];

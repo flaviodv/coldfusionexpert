@@ -2202,6 +2202,92 @@
   color: #ffffff;
 }
 
+/* Global Floating Bottom-Left AI Usage Panel */
+.global-floating-ai-panel {
+  position: fixed;
+  left: 20px;
+  bottom: 24px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: calc(100vw - 40px);
+}
+.global-floating-ai-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #0f172a;
+  border: 2px solid #13aff0;
+  border-radius: 30px;
+  padding: 8px 10px 8px 16px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.4), 0 0 15px rgba(19, 175, 240, 0.3);
+  backdrop-filter: blur(8px);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.global-floating-ai-item:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 12px 30px rgba(19, 175, 240, 0.5);
+}
+.global-floating-ai-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none !important;
+}
+.global-floating-ai-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+  animation: pulseDot 1.5s infinite;
+}
+.global-floating-ai-dot.warn { background: #f0ad00; box-shadow: 0 0 10px #f0ad00; }
+.global-floating-ai-dot.bad { background: #dc3545; box-shadow: 0 0 10px #dc3545; }
+.global-floating-ai-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff !important;
+  white-space: nowrap;
+}
+.global-floating-ai-pct {
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #22c55e;
+  white-space: nowrap;
+}
+.global-floating-ai-pct.warn { color: #f0ad00; }
+.global-floating-ai-pct.bad { color: #ff6b6b; }
+.global-floating-ai-close {
+  border: 0;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s ease;
+}
+.global-floating-ai-close:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+@media (max-width: 575px) {
+  .global-floating-ai-panel { left: 12px; bottom: 12px; }
+  .global-floating-ai-item { padding: 7px 8px 7px 12px; }
+  .global-floating-ai-name { max-width: 100px; overflow: hidden; text-overflow: ellipsis; }
+}
+
 /* Interactive Task Links & Clickable Project Tags */
 .widget-time-tracker .entry-desc-link {
   color: #1e293b;
