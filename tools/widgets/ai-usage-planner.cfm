@@ -163,6 +163,13 @@
   .widget-ai-usage-planner .aip-text-warn { color:#d97706; }
   .widget-ai-usage-planner .aip-text-good { color:#16a34a; }
 
+  .widget-ai-usage-planner .aip-pace-tip { display:flex; align-items:flex-start; gap:8px; margin-top:10px; padding:8px 10px; border-radius:10px; font-size:.8rem; line-height:1.35; }
+  .widget-ai-usage-planner .aip-pace-tip i { margin-top:2px; flex-shrink:0; }
+  .widget-ai-usage-planner .aip-pace-tip.upgrade { background:#eff9f1; color:#166534; }
+  .widget-ai-usage-planner .aip-pace-tip.upgrade i { color:#16a34a; }
+  .widget-ai-usage-planner .aip-pace-tip.economize { background:#fef6e9; color:#92400e; }
+  .widget-ai-usage-planner .aip-pace-tip.economize i { color:#d97706; }
+
   .widget-ai-usage-planner .aip-modal-backdrop { display:none; position:fixed; inset:0; background:rgba(15,23,42,.55); z-index:1000; align-items:flex-start; justify-content:center; padding:40px 16px; overflow-y:auto; }
   .widget-ai-usage-planner .aip-modal-backdrop.open { display:flex; }
   .widget-ai-usage-planner .aip-modal { background:#fff; border-radius:16px; max-width:640px; width:100%; box-shadow:0 20px 60px rgba(0,0,0,.25); margin:auto; }
@@ -329,6 +336,8 @@
     watchPace: '<cfif local.isEs>Vigilar ritmo<cfelse>Watch pace</cfif>',
     overPace: '<cfif local.isEs>Ritmo excedido<cfelse>Over pace</cfif>',
     noLimits: '<cfif local.isEs>No hay límites configurados.<cfelse>No limits configured.</cfif>',
+    upgradeTip: '<cfif local.isEs>Vas bien de ritmo, te queda buen margen y el período termina pronto: buen momento para probar el modelo más potente.<cfelse>You\'re on pace, have plenty of headroom left, and this window resets soon: a good time to try the more powerful model.</cfif>',
+    economizeTip: '<cfif local.isEs>Todavía falta mucho para el reinicio: conviene usar modelos más económicos para hacer rendir la cuota.<cfelse>This window still has a long way to go before it resets: consider using more economical models to make your quota last.</cfif>',
     filterAll: '<cfif local.isEs>Todas<cfelse>All</cfif>',
     noFilterMatch: '<cfif local.isEs>Ninguna IA coincide con este filtro.<cfelse>No AI matches this filter.</cfif>',
     updateUsageBtn: '<cfif local.isEs>Actualizar uso<cfelse>Update usage</cfif>',
@@ -421,6 +430,8 @@
   function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
   function barSignal(c){ return c.usedPercent>=90?'bad':(c.signal==='good'?'good':'warn'); }
   function bar(c){ return '<div class="aip-progress"><div class="aip-progress-bar '+barSignal(c)+'" style="width:'+Math.max(0,Math.min(100,c.usedPercent))+'%"></div></div>'; }
+  function paceTip(c){ var timeLeftPct=100-c.expected; if(c.signal==='good'&&c.pct>=30&&timeLeftPct<=20)return 'upgrade'; if(c.signal!=='good'&&timeLeftPct>=60)return 'economize'; return null; }
+  function paceTipHtml(c){ var tip=paceTip(c); if(!tip)return ''; return '<div class="aip-pace-tip '+tip+'"><i class="fas fa-'+(tip==='upgrade'?'rocket':'piggy-bank')+'" aria-hidden="true"></i><span>'+(tip==='upgrade'?T.upgradeTip:T.economizeTip)+'</span></div>'; }
   var WINDOW_SORT_RANK = {168:0,5:1,24:2,720:3};
   function sortedLimits(limits){ return limits.slice().sort(function(a,b){ var ra=WINDOW_SORT_RANK[a.windowHours]!=null?WINDOW_SORT_RANK[a.windowHours]:99, rb=WINDOW_SORT_RANK[b.windowHours]!=null?WINDOW_SORT_RANK[b.windowHours]:99; return ra-rb; }); }
   function healthLabel(signal){ return signal==='good'?T.onTrack:signal==='warn'?T.watchPace:T.overPace; }
@@ -437,7 +448,7 @@
     return {label:T.paceWarningLabelPrefix+' '+windowLabelShort(l.windowHours)+':',msg:msg};
   }
   function paceWarningHtml(l,c){ var pw=paceWarningInfo(l,c); if(!pw) return ''; var collapsed=!!collapsedPaceWarnings[l.id]; return '<div class="aip-pace-warning'+(collapsed?' is-collapsed':'')+'"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i>'+(collapsed?'':'<span><strong>'+pw.label+'</strong> '+pw.msg+'</span>')+'<button type="button" class="aip-pace-warning-toggle" data-aip-toggle-warning="'+l.id+'" title="'+(collapsed?T.restoreWarning:T.minimizeWarning)+'" aria-label="'+(collapsed?T.restoreWarning:T.minimizeWarning)+'"><i class="fas fa-'+(collapsed?'chevron-down':'chevron-up')+'" aria-hidden="true"></i></button></div>'; }
-  function limitHtml(ai,l){ var c=calc(l), expectedClass=c.delta>0?'aip-text-bad':'aip-text-good', floatKey=ai.id+'|'+l.id, pinned=isFloating(floatKey); return '<div class="aip-limit"><div class="aip-limit-head"><strong>'+esc(windowLabelShort(l.windowHours))+'</strong><span class="aip-limit-head-right"><b>'+fmtNum(c.pct)+'%</b> '+T.left+'<button type="button" class="aip-pin-btn aip-pin-btn-sm'+(pinned?' is-pinned':'')+'" data-aip-toggle-float="'+floatKey+'" title="'+(pinned?T.unpinTitle:T.pinTitle)+'" aria-pressed="'+(pinned?'true':'false')+'" aria-label="'+(pinned?T.unpinTitle:T.pinTitle)+' &mdash; '+esc(windowLabelShort(l.windowHours))+'"><i class="fas fa-thumbtack" aria-hidden="true"></i></button></span></div>'+bar(c)+paceWarningHtml(l,c)+'<div class="aip-limit-details"><span>'+T.used+'<b>'+fmtNum(c.usedPercent)+'%</b></span><span>'+T.reset+'<b class="aip-reset-value">'+resetRingHtml(l,c)+(c.left<24?fmtNum(c.left)+'h':fmtNum(c.left/24)+'d')+'</b></span><span>'+T.safePace+'<b>'+fmtNum(c.perHour)+' '+T.perHourSuffix+'</b></span><span>'+T.safePace+'<b>'+fmtNum(c.perDay)+' '+T.perDaySuffix+'</b></span><span>'+T.expectedVsActual+'<b class="'+expectedClass+'">'+fmtNum(c.expected)+'% / '+fmtNum(c.usedPercent)+'%</b></span></div></div>'; }
+  function limitHtml(ai,l){ var c=calc(l), expectedClass=c.delta>0?'aip-text-bad':'aip-text-good', floatKey=ai.id+'|'+l.id, pinned=isFloating(floatKey); return '<div class="aip-limit"><div class="aip-limit-head"><strong>'+esc(windowLabelShort(l.windowHours))+'</strong><span class="aip-limit-head-right"><b>'+fmtNum(c.pct)+'%</b> '+T.left+'<button type="button" class="aip-pin-btn aip-pin-btn-sm'+(pinned?' is-pinned':'')+'" data-aip-toggle-float="'+floatKey+'" title="'+(pinned?T.unpinTitle:T.pinTitle)+'" aria-pressed="'+(pinned?'true':'false')+'" aria-label="'+(pinned?T.unpinTitle:T.pinTitle)+' &mdash; '+esc(windowLabelShort(l.windowHours))+'"><i class="fas fa-thumbtack" aria-hidden="true"></i></button></span></div>'+bar(c)+paceWarningHtml(l,c)+'<div class="aip-limit-details"><span>'+T.used+'<b>'+fmtNum(c.usedPercent)+'%</b></span><span>'+T.reset+'<b class="aip-reset-value">'+resetRingHtml(l,c)+(c.left<24?fmtNum(c.left)+'h':fmtNum(c.left/24)+'d')+'</b></span><span>'+T.safePace+'<b>'+fmtNum(c.perHour)+' '+T.perHourSuffix+'</b></span><span>'+T.safePace+'<b>'+fmtNum(c.perDay)+' '+T.perDaySuffix+'</b></span><span>'+T.expectedVsActual+'<b class="'+expectedClass+'">'+fmtNum(c.expected)+'% / '+fmtNum(c.usedPercent)+'%</b></span></div>'+paceTipHtml(c)+'</div>'; }
 
   function introHtml(){ return '<div class="aip-intro"><div class="aip-intro-main"><p class="aip-kicker">'+T.introKicker+'</p><h3>'+T.introTitle+'</h3><p>'+T.introDesc+'</p><button class="btn-social btn-upwork" type="button" data-aip-action="add">'+T.configureFirstAi+' <i class="fas fa-arrow-right"></i></button></div><div class="aip-intro-side"><i class="fas fa-compass"></i><strong>'+T.howItWorksTitle+'</strong><p>'+T.howItWorksDesc+'</p></div></div>'; }
   function emptyHtml(title,desc){ return '<div class="aip-empty"><i class="fas fa-layer-group"></i><h4>'+title+'</h4><p>'+desc+'</p><button class="btn-social btn-upwork" type="button" data-aip-action="add"><i class="fas fa-plus"></i> '+T.addAi+'</button></div>'; }
