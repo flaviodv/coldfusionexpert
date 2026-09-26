@@ -2202,11 +2202,11 @@
   color: #ffffff;
 }
 
-/* Global Floating Bottom-Left AI Usage Panel */
+/* Global Floating Bottom-Right AI Usage Panel — stacked above the WhatsApp/language/back-to-top buttons in that same corner */
 .global-floating-ai-panel {
   position: fixed;
-  left: 20px;
-  bottom: 24px;
+  right: 20px;
+  bottom: 230px;
   z-index: 99999;
   display: flex;
   flex-direction: column;
@@ -2253,6 +2253,11 @@
   color: #ffffff !important;
   white-space: nowrap;
 }
+.global-floating-ai-window {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8 !important;
+}
 .global-floating-ai-pct {
   font-family: monospace;
   font-size: 0.85rem;
@@ -2283,7 +2288,7 @@
   background: rgba(255, 255, 255, 0.28);
 }
 @media (max-width: 575px) {
-  .global-floating-ai-panel { left: 12px; bottom: 12px; }
+  .global-floating-ai-panel { right: 12px; bottom: 212px; }
   .global-floating-ai-item { padding: 7px 8px 7px 12px; }
   .global-floating-ai-name { max-width: 100px; overflow: hidden; text-overflow: ellipsis; }
 }

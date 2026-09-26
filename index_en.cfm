@@ -220,7 +220,8 @@
       </div>
     </div>
   </div>
-  <cfsavecontent variable="request.homeProjectsSection">
+  <!--- Legacy inline project cards replaced by the shared data-driven renderer below. --->
+  <!--- <cfsavecontent variable="request.homeProjectsSection">
     <div id="projects" class="pricing-tables">
     <div class="container">
       <div class="row">
@@ -337,18 +338,16 @@
             </div>
           </div>
         </div>
-        <!-- Card 6: Third Wave Digital & FortSystems -->
+        <!-- Card 6: Third Wave Digital -->
         <div class="col-lg-4 col-md-6" style="margin-bottom: 30px;">
           <div class="pricing-item-pro">
-            <h4>Third Wave Digital, FortSystems &amp; 2Connect</h4>
+            <h4>Third Wave Digital</h4>
             <span style="font-size: 0.85rem; color: #4b6cb7; font-weight: bold;">2011 - 2020</span>
             <div class="icon">
-              <img src="/assets/images/pricing-table-01.png" alt="Third Wave Digital">
+              <img src="/assets/images/projects/third-wave-digital.jpg" alt="Third Wave Digital">
             </div>
             <ul>
               <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>Third Wave Digital (2019)</strong>: Internal diagnosis and medical history system for breast cancer patients (NQMBC).</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>FortSystems (2011-2018)</strong>: Development and administration of 800wine.com and multi-store platforms.</li>
-              <li><i class="fas fa-check-circle" style="color: #14a800; margin-right: 6px;"></i><strong>2Connect (2018-2020)</strong>: Web platform development using ColdFusion, MySQL, and Bootstrap.</li>
             </ul>
             <div class="card-wa-btn-wrap">
               <a href="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Healthcare%20&%20E-Commerce%20Projects" target="_blank" class="btn-social btn-upwork" style="font-size: 0.82rem; padding: 6px 14px; margin: 0; display: inline-flex;">
@@ -360,6 +359,91 @@
       </div>
     </div>
   </div>
+  </cfsavecontent> --->
+  <cfscript>
+    local.homeProjectsHeading = "Featured <em>Professional</em> Experience &amp; Projects";
+    local.homeProjectsIntro = "Proprietary products and client platforms built around measurable outcomes, thoughtful technology, and continuous evolution.";
+    local.homeProjectsTabsAria = "Project categories";
+    local.homeProjectsOwnLabel = "Products I built";
+    local.homeProjectsClientLabel = "Client projects";
+    local.homeProjectsTechLabel = "Core technologies";
+    local.homeProjectsContactLabel = "Inquire via WhatsApp";
+    local.homeProjectItems = [
+      {
+        type="own", title="Compra Inversa", alt="Compra Inversa marketplace", label="Marketplace &amp; Commerce Platform",
+        logo="/assets/images/projects/logos/comprainversa.png", logoAlt="Compra Inversa logo", logoTheme="dark",
+        image="/assets/images/projects/comprainversa.jpg", siteUrl="https://comprainversa.com/", siteLabel="comprainversa.com",
+        description="A marketplace that combines traditional commerce with a reverse-buying model: buyers publish what they need and receive offers from sellers.",
+        technologies="Adobe ColdFusion, Microsoft SQL Server, JavaScript, and applied AI", details=["Intelligent matching between purchase needs and competitive seller offers."],
+        contactUrl="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Compra%20Inversa"
+      },
+      {
+        type="own", title="Apuesta Exitosa", alt="Apuesta Exitosa web platform", label="Web Platform · AI-Assisted Development",
+        logo="/assets/images/projects/logos/apuestaexitosa.png", logoAlt="Apuesta Exitosa logo",
+        image="/assets/images/projects/apuestaexitosa-en.jpg", siteUrl="https://apuestaexitosa.com/", siteLabel="apuestaexitosa.com",
+        description="A web platform developed through a strongly AI-assisted workflow using Claude Code and programming agents.",
+        technologies="ColdFusion, JavaScript, Claude Code, and programming agents", details=["A delivery workflow designed to move quickly without losing technical judgment or quality."],
+        contactUrl="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Apuesta%20Exitosa"
+      },
+      {
+        type="own", title="Telaruma", alt="Telaruma marketing SaaS platform", label="Marketing SaaS Platform",
+        logo="/assets/images/projects/logos/telaruma.png", logoAlt="Telaruma logo", logoText="Telaruma",
+        image="/assets/images/projects/telaruma-en.jpg", siteUrl="https://telaruma.com/", siteLabel="telaruma.com",
+        description="A SaaS platform for agencies and businesses focused on marketing, client management, strategy, communications, APIs, and automation.",
+        technologies="ColdFusion, APIs, automation, and client management", details=["A centralized ecosystem for turning strategy and communication into measurable operations."],
+        contactUrl="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Telaruma"
+      },
+      {
+        type="client", title="Quebec Attractions", alt="Quebec Attractions CMS", label="Current role · Lucee Server",
+        logo="/assets/images/projects/logos/quebec-attractions.jpg", logoAlt="Quebec Attractions logo",
+        image="/assets/images/projects/quebec-attractions.jpg", siteUrl="https://quebecattractions.ca/", siteLabel="quebecattractions.ca",
+        description="End-to-end development and evolution of a bilingual tourism platform for attractions, events, and accommodations in Quebec.",
+        technologies="Lucee CFML, responsive UI/UX, and cloud infrastructure", details=["Full application development plus complete server and infrastructure administration."],
+        contactUrl="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Quebec%20Attractions%20Project"
+      },
+      {
+        type="client", title="Firebrand Creative", alt="Firebrand Creative agency", label="Current role · WordPress Developer",
+        logo="/assets/images/projects/logos/firebrand.png", logoAlt="Firebrand Creative logo",
+        image="/assets/images/projects/firebrand.jpg", siteUrl="https://iamfirebrand.com/", siteLabel="iamfirebrand.com",
+        description="Maintenance, content, visual improvements, technical support, and server administration across websites managed by a US digital agency.",
+        technologies="WordPress, frontend, technical support, and infrastructure", details=["Ongoing work across multiple websites and clients managed by Firebrand Creative."],
+        contactUrl="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Firebrand%20Creative%20Project"
+      },
+      {
+        type="client", title="Makeway &amp; International Clients", alt="Makeway client CMS platforms", label="Sep. 2023 · Present", logoText="MAKEWAY",
+        image="/assets/images/pricing-table-01.png", siteUrl="https://www.darran.com/", siteLabel="darran.com",
+        description="Maintaining and evolving enterprise CMS platforms for Darran Furniture, Trinity Furniture, and Peter Pepper Products.",
+        technologies="ColdFusion, MySQL, refactoring, and performance optimization", details=["Feature development and resolution of complex issues in legacy systems."],
+        contactUrl="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Makeway%20Project"
+      },
+      {
+        type="client", title="Svetness CRM", alt="Svetness CRM", label="Mar. 2021 · Oct. 2024",
+        logo="/assets/images/projects/logos/svetness.png", logoAlt="Svetness logo", logoTheme="dark",
+        image="/assets/images/projects/svetness.jpg", siteUrl="https://www.svetness.com/", siteLabel="svetness.com",
+        description="Full-stack development and optimization of an operational CRM for personal training and team management.",
+        technologies="ColdFusion, SQL Server, AWS, and FusionReactor", details=["JustCall, Zoom, and Calendly integrations, plus EC2, RDS, and S3 administration."],
+        contactUrl="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20Svetness%20CRM%20Project"
+      },
+      {
+        type="client", title="2Connect", alt="2Connect dating and networking platform", label="Dating &amp; Networking Platform · Web development",
+        logo="/assets/images/projects/logos/2connect.png", logoAlt="2Connect logo",
+        image="/assets/images/projects/2connect.jpg", siteUrl="https://www.2connect.ie/", siteLabel="2connect.ie",
+        description="A web platform for connection, dating, events, and coaching, helping people meet and build meaningful relationships.",
+        technologies="ColdFusion, responsive frontend, content, and SEO", details=["Development and evolution of a digital platform focused on networking and experiences in Ireland."],
+        contactUrl="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%202Connect%20Project"
+      },
+      {
+        type="client", title="Third Wave Digital", alt="Third Wave Digital digital agency", label="Digital platform · Web development",
+        logo="/assets/images/projects/logos/third-wave-digital.svg", logoAlt="Third Wave Digital logo", logoTheme="dark",
+        image="/assets/images/projects/third-wave-digital.jpg", siteUrl="https://www.thirdwavedigital.com/", siteLabel="thirdwavedigital.com",
+        description="A digital agency focused on developing websites, content platforms, and digital experiences for organizations and brands.",
+        technologies="ColdFusion, CMS, responsive frontend, and technical support", details=["Development and evolution of web platforms focused on experience, content, and digital results."],
+        contactUrl="https://wa.me/5492236026142?text=Hello%20Flavio,%20I%20would%20like%20to%20inquire%20about%20the%20Third%20Wave%20Digital%20Project"
+      }
+    ];
+  </cfscript>
+  <cfsavecontent variable="request.homeProjectsSection">
+    <cfinclude template="home-projects.cfm">
   </cfsavecontent>
   <div id="seo" class="services section" style="padding-top: 80px; padding-bottom: 80px;">
     <div class="container">

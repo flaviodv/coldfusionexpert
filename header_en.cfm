@@ -672,9 +672,10 @@
                   <li class="scroll-to-section"><a href="/#seo"><i class="fas fa-chart-line"></i> Technical SEO + GEO</a></li>
                   <li class="scroll-to-section"><a href="/#automation"><i class="fas fa-robot"></i> AI Automation Solutions</a></li>
                   <li class="scroll-to-section"><a href="/#courses"><i class="fas fa-graduation-cap"></i> Courses &amp; Training via Zoom</a></li>
+                  <li class="scroll-to-section"><a href="/#tools"><i class="fas fa-toolbox"></i> Best Tools</a></li>
                 </ul>
               </li>
-              <li class="scroll-to-section nav-standard"><a href="/#tools" class="nav-tools-highlight"><i class="fas fa-toolbox"></i> Tools</a></li>
+              <li class="nav-standard"><a href="/tools" class="nav-tools-highlight"><i class="fas fa-toolbox"></i> Tools</a></li>
               <li class="scroll-to-section nav-standard"><a href="/#projects"><i class="fas fa-folder-open nav-mobile-icon" aria-hidden="true"></i> Projects</a></li>
               <li class="nav-standard"><a href="/coldfusion-development"<cfif isDefined('request.isColdFusionPage') and request.isColdFusionPage> class="active"</cfif>><i class="fas fa-code nav-mobile-icon" aria-hidden="true"></i> CFML</a></li>
               <li class="scroll-to-section nav-standard"><a href="/flavio-di-virgilio"<cfif isDefined('request.isAboutPage') and request.isAboutPage> class="active"</cfif>><i class="fas fa-user nav-mobile-icon" aria-hidden="true"></i> About</a></li>

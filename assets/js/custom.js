@@ -643,32 +643,34 @@ $(function() {
 		return AI_PANEL_PROVIDER_LABELS[ai.providerKey] || ai.name || (isEs ? 'Personalizado / otro' : 'Custom / other');
 	}
 
-	function aiPanelWorstLimit(ai) {
-		var worst = null;
-		(ai.limits || []).forEach(function (l) {
-			var usedPercent = Math.max(0, Math.min(100, Number(l.usedPercent) || 0));
-			var windowHours = Math.max(0.1, Number(l.windowHours) || 168);
-			var left = Math.max(0, (new Date(l.resetAt).getTime() - Date.now()) / 3600000);
-			var elapsed = Math.max(0, Math.min(windowHours, windowHours - left));
-			var expected = 100 * (elapsed / windowHours);
-			var delta = usedPercent - expected;
-			var signal = (usedPercent >= 100 && left > 0) ? 'bad' : delta > 15 ? 'bad' : delta > 5 ? 'warn' : 'good';
-			var pctLeft = 100 - usedPercent;
-			if (!worst || pctLeft < worst.pctLeft || (signal === 'bad' && worst.signal !== 'bad')) {
-				worst = { usedPercent: usedPercent, pctLeft: pctLeft, signal: signal };
-			}
-		});
-		return worst;
+	function aiPanelWindowLabel(hours, isEs) {
+		hours = Number(hours);
+		if (hours === 5) return isEs ? 'Sesión' : 'Session';
+		if (hours === 24) return isEs ? 'Diario' : 'Daily';
+		if (hours === 168) return isEs ? 'Semanal' : 'Weekly';
+		if (hours === 720) return isEs ? 'Mensual' : 'Monthly';
+		return isEs ? 'Personalizada' : 'Custom';
 	}
 
-	function unfloatAiPanelItem(id) {
+	function aiPanelLimitSignal(l) {
+		var usedPercent = Math.max(0, Math.min(100, Number(l.usedPercent) || 0));
+		var windowHours = Math.max(0.1, Number(l.windowHours) || 168);
+		var left = Math.max(0, (new Date(l.resetAt).getTime() - Date.now()) / 3600000);
+		var elapsed = Math.max(0, Math.min(windowHours, windowHours - left));
+		var expected = 100 * (elapsed / windowHours);
+		var delta = usedPercent - expected;
+		var signal = (usedPercent >= 100 && left > 0) ? 'bad' : delta > 15 ? 'bad' : delta > 5 ? 'warn' : 'good';
+		return { usedPercent: usedPercent, signal: signal };
+	}
+
+	function unfloatAiPanelItem(key) {
 		try {
 			var ids = JSON.parse(localStorage.getItem('coldfusionexpert.aiUsagePlanner.floating.v1') || '');
 			if (!Array.isArray(ids)) ids = [];
 		} catch (e) {
 			ids = [];
 		}
-		ids = ids.filter(function (existingId) { return existingId !== id; });
+		ids = ids.filter(function (existingId) { return existingId !== key; });
 		try {
 			localStorage.setItem('coldfusionexpert.aiUsagePlanner.floating.v1', JSON.stringify(ids));
 		} catch (e) {}
@@ -694,8 +696,15 @@ $(function() {
 		var $panel = $('#global-floating-ai-panel');
 
 		var items = (state && Array.isArray(state.ais) && floatingIds.length)
-			? floatingIds.map(function (id) {
-				return state.ais.find(function (ai) { return ai.id === id; });
+			? floatingIds.map(function (key) {
+				var sep = String(key).indexOf('|');
+				if (sep < 0) return null;
+				var aiId = key.slice(0, sep), limitId = key.slice(sep + 1);
+				var ai = state.ais.find(function (a) { return a.id === aiId; });
+				if (!ai) return null;
+				var limit = (ai.limits || []).find(function (l) { return l.id === limitId; });
+				if (!limit) return null;
+				return { key: key, ai: ai, limit: limit };
 			}).filter(Boolean)
 			: [];
 
@@ -716,20 +725,20 @@ $(function() {
 
 		var closeTitle = isEs ? 'Quitar del panel flotante' : 'Remove from floating panel';
 
-		var html = items.map(function (ai) {
-			var worst = aiPanelWorstLimit(ai);
-			var signal = worst ? worst.signal : 'warn';
-			var dotClass = signal === 'good' ? '' : signal;
-			var pctText = worst ? Math.round(worst.usedPercent) + '%' : '—';
-			var name = aiPanelDisplayName(ai, isEs);
+		var html = items.map(function (item) {
+			var sig = aiPanelLimitSignal(item.limit);
+			var dotClass = sig.signal === 'good' ? '' : sig.signal;
+			var pctText = Math.round(sig.usedPercent) + '%';
+			var name = aiPanelDisplayName(item.ai, isEs);
+			var windowLabel = aiPanelWindowLabel(item.limit.windowHours, isEs);
 
 			return '<div class="global-floating-ai-item">' +
 				'<a href="/tools/ai-usage-planner#update" class="global-floating-ai-link">' +
 				'<span class="global-floating-ai-dot ' + dotClass + '"></span>' +
-				'<span class="global-floating-ai-name">' + escAiPanel(name) + '</span>' +
+				'<span class="global-floating-ai-name">' + escAiPanel(name) + ' <span class="global-floating-ai-window">&middot; ' + escAiPanel(windowLabel) + '</span></span>' +
 				'<span class="global-floating-ai-pct ' + dotClass + '">' + pctText + '</span>' +
 				'</a>' +
-				'<button type="button" class="global-floating-ai-close" data-unfloat-id="' + escAiPanel(ai.id) + '" title="' + closeTitle + '" aria-label="' + closeTitle + '">&times;</button>' +
+				'<button type="button" class="global-floating-ai-close" data-unfloat-id="' + escAiPanel(item.key) + '" title="' + closeTitle + '" aria-label="' + closeTitle + '">&times;</button>' +
 				'</div>';
 		}).join('');
 
@@ -764,6 +773,57 @@ $(function() {
 
 	window.addEventListener('scroll', updateBackToTop, { passive: true });
 	updateBackToTop();
+}());
+
+(function () {
+	var projects = document.getElementById('projects');
+	if (!projects) return;
+
+	var tabs = projects.querySelectorAll('[data-project-tab]');
+	var cards = projects.querySelectorAll('[data-project-card]');
+	var grid = projects.querySelector('[data-project-card]') ? projects.querySelector('.projects-grid') : null;
+	if (!tabs.length || !cards.length || !grid) return;
+
+	function activateProjectsTab(type, moveFocus) {
+		tabs.forEach(function (tab) {
+			var isActive = tab.getAttribute('data-project-tab') === type;
+			tab.classList.toggle('is-active', isActive);
+			tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+			tab.setAttribute('tabindex', isActive ? '0' : '-1');
+			if (isActive && moveFocus) tab.focus();
+		});
+
+		cards.forEach(function (card) {
+			var isVisible = card.getAttribute('data-project-type') === type;
+			card.classList.toggle('is-filtered-out', !isVisible);
+			card.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
+			if (isVisible) {
+				card.classList.remove('is-entering');
+				void card.offsetWidth;
+				card.classList.add('is-entering');
+			}
+		});
+		grid.setAttribute('aria-label', type === 'own' ? grid.getAttribute('data-project-own-label') : grid.getAttribute('data-project-client-label'));
+	}
+
+	tabs.forEach(function (tab, index) {
+		tab.addEventListener('click', function () {
+			activateProjectsTab(tab.getAttribute('data-project-tab'), false);
+		});
+		tab.addEventListener('keydown', function (event) {
+			var nextIndex = index;
+			if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (index + 1) % tabs.length;
+			if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (index - 1 + tabs.length) % tabs.length;
+			if (event.key === 'Home') nextIndex = 0;
+			if (event.key === 'End') nextIndex = tabs.length - 1;
+			if (nextIndex !== index || event.key === 'Home' || event.key === 'End') {
+				event.preventDefault();
+				activateProjectsTab(tabs[nextIndex].getAttribute('data-project-tab'), true);
+			}
+		});
+	});
+
+	activateProjectsTab('own', false);
 }());
 
 (function () {

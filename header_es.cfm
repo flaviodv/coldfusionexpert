@@ -672,9 +672,10 @@
                   <li class="scroll-to-section"><a href="/es/#seo"><i class="fas fa-chart-line"></i> SEO técnico + GEO</a></li>
                   <li class="scroll-to-section"><a href="/es/#automation"><i class="fas fa-robot"></i> Soluciones de Automatización con IA</a></li>
                   <li class="scroll-to-section"><a href="/es/#courses"><i class="fas fa-graduation-cap"></i> Cursos &amp; Capacitación vía Zoom</a></li>
+                  <li class="scroll-to-section"><a href="/es/#tools"><i class="fas fa-toolbox"></i> Mejores herramientas</a></li>
                 </ul>
               </li>
-              <li class="scroll-to-section nav-standard"><a href="/es/#tools" class="nav-tools-highlight"><i class="fas fa-toolbox"></i> Herramientas</a></li>
+              <li class="nav-standard"><a href="/es/tools" class="nav-tools-highlight"><i class="fas fa-toolbox"></i> Herramientas</a></li>
               <li class="scroll-to-section nav-standard"><a href="/es/#projects"><i class="fas fa-folder-open nav-mobile-icon" aria-hidden="true"></i> Proyectos</a></li>
               <li class="nav-standard"><a href="/es/coldfusion-development"<cfif isDefined('request.isColdFusionPage') and request.isColdFusionPage> class="active"</cfif>><i class="fas fa-code nav-mobile-icon" aria-hidden="true"></i> CFML</a></li>
               <li class="scroll-to-section nav-standard"><a href="/es/flavio-di-virgilio"<cfif isDefined('request.isAboutPage') and request.isAboutPage> class="active"</cfif>><i class="fas fa-user nav-mobile-icon" aria-hidden="true"></i> Sobre mí</a></li>
